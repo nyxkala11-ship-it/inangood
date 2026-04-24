@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TuiGiayKraft from "../components/Products.astro"
+import Header from '../components/Header.astro';
+import "../styles/global.css"
+import Body from "../layouts/Body.astro";
+import Footer from "../components/Footer.astro";
+import { getEntry, render } from 'astro:content';
+---
+
+<Layout >
+    <Header />
+    <TuiGiayKraft />
+    <Footer />
+</Layout>

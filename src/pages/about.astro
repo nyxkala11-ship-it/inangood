@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AboutPost from '../components/AboutsPost.astro';
+import Header from '../components/Header.astro';
+import "../styles/global.css"
+import Body from "../layouts/Body.astro";
+import Footer from "../components/Footer.astro"
+
+import { getEntry, render } from 'astro:content';
+---
+
+<Layout >
+    <Header />
+       <AboutPost /> 
+    <Footer />
+</Layout>

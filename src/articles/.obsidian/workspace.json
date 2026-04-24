@@ -1,0 +1,200 @@
+{
+  "main": {
+    "id": "7977ae7959158ad5",
+    "type": "split",
+    "children": [
+      {
+        "id": "ecc5d0d3835adbe2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "566736cc27d16ae6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "products/tuikraft.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "tuikraft"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5cc19a85e0e656c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "c4c154b0afed0c13",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cea3de71c78c3dd9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "7e65cfa2edd15ddd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "7f04a4058245e920",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3211aedff5818425",
+    "type": "split",
+    "children": [
+      {
+        "id": "06a7c86be1f47d3e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ba6d810f249a28eb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "products/tuikraft.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for tuikraft"
+            }
+          },
+          {
+            "id": "c7ae04cd45e01f50",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "products/tuikraft.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from tuikraft"
+            }
+          },
+          {
+            "id": "d29376f5de3ba47f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f7e7b2e37ee365fd",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "cc44c211baafaf5f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "products/tuikraft.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of tuikraft"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "cea3de71c78c3dd9",
+  "lastOpenFiles": [
+    "about.md",
+    "products/tuikraft.md",
+    "products/tui-giay-kraft.md",
+    "z7123338921559_e5e9a3b10a7e5f3bad78f298782f4585.jpg",
+    "z7098579478749_99079c6320c01a631e83f33a1d87da36.jpg",
+    "products/tui-giay-kraft/z7000389932267_8110a5561e6ae704133cc0b53ddf8a1e.jpg",
+    "products/tui-giay-kraft",
+    "products/tui-giay-kraft/z7000389917021_471dc38922b1e63509cd682cde71c71a.jpg",
+    "products/tui-giay-kraft/z6973094739921_2e6f88ef97f243418b6437750fab6d08.jpg",
+    "products/tui-giay-kraft/z6973093850895_9706e1071c04dd86b0c4e8f7292f2283.jpg",
+    "products/tui-giay-kraft/z6906080979863_a60f8d983ec6c2bce8a41c08bbabf41f.jpg"
+  ]
+}
