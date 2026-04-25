@@ -1,9 +1,9 @@
 ---
 
 ---
-<div class="flex flex-col" id="container-head">
+<div class="flex-col max-w-10/10" id="container-head">
 
-    <div id="header" class="flex flex-col items-end justify-end">
+    <div id="header" class="flex-col items-end">
         <!-- Top bar -->
             <div class="header">
                 <ul class="flex justify-end">
@@ -14,33 +14,33 @@
                 </ul>
     </div>
 
-    <div class="menu-header flex justify-between">
+            <div class="flex flex-row menu-header items-stretch">
 
-            <!-- Tiêu đề logo -->
-            <a href="/" class="p-4">
-                    <img alt="/" src="/good.png" width="200px" >
-            </a>
+                    <!-- Tiêu đề logo -->
+                    <a href="/" class="p-4">
+                            <img alt="/" src="/good.png" width="200px" >
+                    </a>
 
 
-            <!-- menu-header -->
-            <div id="div-search" class="flex items-center justify-end">
-                <!-- Thanh tìm kiếm -->
-                <input id="MenuSearch" type="text" placeholder="Tìm ấn phẩm"> 
-            </div>
-                
-                <div class="content-center flex items-stretch">
-                <card class="flex items-center">
-                    Bảo mật thông tin an toàn
-                </card>
-                <card class="flex items-center">
-                    Đảm bảo 100% hài lòng
-                </card>
-                </div>
+                    <!-- menu-header -->
+                    <div id="div-search" class="flex items-center justify-end">
+                        <!-- Thanh tìm kiếm -->
+                        <input class="rounded-xl" id="MenuSearch" type="text" placeholder="Tìm ấn phẩm"> 
+                    </div>
+                        
+                        <div class="content-center flex items-stretch">
+                        <card class="flex items-center">
+                            Bảo mật thông tin an toàn
+                        </card>
+                        <card class="flex items-center">
+                            Đảm bảo 100% hài lòng
+                        </card>
+                        </div>
             </div> 
     </div>
 
     <!-- Main Menu -->
-            <div id="Menu" class="flex items-start bg-cyan-500 shadow-lg shadow-cyan-500/50">
+            <div id="Menu" class="items-start bg-cyan-500 shadow-lg shadow-cyan-500/50">
                 <ul class="flex items-start">
                     <li id="Menu-items"><a href="/">Trang chủ</a></li>
                     <ul id="Menu-items" class="drophover">
@@ -127,6 +127,7 @@
                     <li id="Menu-items"><a href="#">In nhanh</a></li>
                 </ul>
             </div> 
+
 </div>
 
 
@@ -141,6 +142,8 @@
     }
     #Menu {
         width: 1440px;
+
+        max-width: 100%;
         margin-top: 10px;
         background-color: rgb(0, 225, 255);
         border-radius: 5px;
@@ -181,7 +184,7 @@
     font-size: 17px;
     background-color: aliceblue;
     margin: 10px;
-    border-radius: 10px;
+    
     right: 0;
     max-lines: 1;
     height: 2.5rem;
@@ -200,8 +203,8 @@
     }
     .menu-header {
         background-color: #f191a6;
-        height: 100%;
         width: 1440px;
+        max-width: fit-content;
     }
     /*Strip the ul of padding and list styling*/
     ul {

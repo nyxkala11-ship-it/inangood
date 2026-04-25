@@ -1,0 +1,99 @@
+---
+import { Zap, Tags, BaggageClaim, FastForward, Brush, TruckElectric } from '@lucide/astro';
+---
+<div id="title" class="relative">
+    <div id="title-red" class="absolute">
+        <p><Zap size={45} class="inline-block" /> Lý do khách chọn xưởng</p>
+    </div>
+    <div class="pt-9" >
+    <div id="backdrop" class="border-3 grid grid-cols-5">
+        <div class="text-center pr-2 col- items-start span-1 border-r place-content-top">
+            <div class="m-1 p-2">
+            <Tags size={45} class="inline-block" />
+            <h1>GIÁ TẬN GỐC</h1>
+            <p>Không qua trung gian</p>
+            </div>
+        </div>
+        <div class="text-center pr-2 pl-2 items-start col-span-1 border-r place-content-top">
+            <div class="m-1 p-2">
+            <BaggageClaim size={45} class="inline-block" />
+            <h1>NHẬN SỐ LƯỢNG ÍT</h1>
+            <p>Linh hoạt</p>
+            </div>
+        </div>
+        <div class="text-center pr-2 pl-2 items-start col-span-1 border-r place-content-top">
+            <div class="m-1 p-2">
+            <FastForward size={45} class="inline-block" />
+            <h1>IN NHANH</h1>
+            <p>Có hàng trong ngày</p>
+            </div>
+        </div>
+        <div class="text-center pr-2 pl-2 items-start col-span-1 border-r place-content-top">
+            <div class="m-1 p-2">
+            <Brush size={45} class="inline-block" />
+            <h1>MIỄN PHÍ THIẾT KẾ</h1>
+            <p>Đến khi ưng ý</p>
+            </div>
+        </div>
+        <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
+            <div class="m-1 p-2">
+            <TruckElectric size={45} class="inline-block" />
+            <h1>GIAO HÀNG TOÀN QUỐC</h1>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<style>
+    #title {
+        width: 1440px;
+        max-width: 100%;
+    }
+    .vl {
+        border-left: 6px solid green;
+        height: auto;
+        position: absolute;
+        z-index: 3;
+        }
+    #backdrop {
+        border-color: #781722;
+        backdrop-filter: blur(20px);
+        background-color: rgba(176, 176, 176, 0.262);
+        padding: 1rem;
+        padding-top: 1.5rem;
+        border-radius: 0px 25px 25px 25px;
+    }
+    #backdrop div div {
+        border-radius: 10px;
+        transition: .35s;
+        height: 100%;
+    }
+    #backdrop div:hover div {
+        border-radius: 15px;
+        background-color: aliceblue;
+    }
+    #backdrop div:hover div h1 {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    #title-red p {
+        font-size: 1.5rem !important;
+        font-weight: 500;
+    }
+    #title-red p {
+        font-size: 1.7rem !important;
+        font-weight: 600;
+    }
+    #title-red {
+        z-index: 2;
+		background-color: #781722;
+        color: aliceblue;
+		padding: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+		border-radius: 25px 25px 25px 0px;
+		display: inline-block;
+		line-height: 2rem;
+	}
+</style>

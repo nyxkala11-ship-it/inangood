@@ -1,24 +1,57 @@
 ---
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
+import introbackground from '../assets/intro/advicesbackground.png';
+
+import Material from '../components/Material.astro';
+// Lucide icons
+import { CircleCheckBig, Layers, ClockCheck } from '@lucide/astro';
+import { Printer } from '@lucide/astro';
+
 ---
 
 <div class="flex flex-col" id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
+	<!--<img id="background" src={background.src} alt="" fetchpriority="high" />-->
 	<main>
 
 	<div id="intro">
+
 		<p id="XI">XƯỞNG IN</p>
-		<h1>TÚI GIẤY KRAFT & TÚI NỀN MÀU</h1>
-		<div><p>GIÁ GỐC - NHẬN TỪ 50 TÚI</p></div>
-		<p>CÓ HÀNG TRONG NGÀY</p>
-		<p>Cần in túi giấy để kịp bán hàng</p>
-		<p>Xưởng in trực tiếp - làm nhanh, lấy liền, không cần số lượng lớn.</p>
-		<p>Chỉ từ 50 túi, bạn đã có túi giấy in logo riêng - phù hợp shop mới, bán online hoặc test thị trường.</p>
-		<p>Ngoài ra, xưởng nhận in trọn bộ: Hóa đơn, tem nhãn, tag treo, voucher, menu, bao bì đóng gói -> giúp bạn có bộ nhận diện đồng bộ, bán chuyên nghiệp hơn.</p>
-	</div>
+		<h1 id="intro-title">TÚI GIẤY KRAFT<br>& TÚI NỀN MÀU</h1>
+		<div id="red-intro"><p>GIÁ GỐC - NHẬN TỪ 50 TÚI</p></div>
+		<p id="intro-h2">CÓ HÀNG TRONG NGÀY</p>
+
+		<div class="grid grid-cols-5">
+			<ul id="intro-list" class="col-span-2">
+
+		<li class="items-start grid grid-cols-10">
+		<CircleCheckBig size={44} />
+		<p style="padding: 0; padding-left: 1rem; padding-bottom: 2rem;" class="col-span-9"> Cần in túi giấy để kịp bán hàng</p>
+		</li>
+
+		<li class="items-start grid grid-cols-10">
+		<Printer size={44} />
+		<p style="padding: 0; padding-left: 1rem; padding-bottom: 2rem;" class="col-span-9"> Xưởng in trực tiếp - làm nhanh, lấy liền, không cần số lượng lớn.</p>
+		</li>
+		
+		<li class="items-start grid grid-cols-10">
+		<Layers style="display: block;" size={44} />
+		<p style="padding: 0; padding-left: 1rem; padding-bottom: 2rem;" class="col-span-9"> Chỉ từ 50 túi, bạn đã có túi giấy in logo riêng - 
+			phù hợp shop mới, bán online hoặc test thị trường.</p>
+		</li>
+
+		<div class="items-start grid grid-cols-10">
+		<ClockCheck style="display: inline-block;" size={44} />
+		<p style="padding: 0; padding-left: 1rem; padding-bottom: 2rem;" class="col-span-9"> Ngoài ra, xưởng nhận in trọn bộ: Hóa đơn,
+			 tem nhãn, tag treo, voucher, menu, bao bì đóng gói
+			  -> giúp bạn có bộ nhận diện đồng bộ, bán chuyên nghiệp hơn.</p>
+		</div>
 	
+	</ul>
+	</div>
 	</main>
+	
+	<Material />
 	<!--
 		<a href="https://astro.build/blog/astro-6-beta/" id="news" class="box">
 		<p>Phần class box có thể dùng Chat hỗ trợ!</p>
@@ -27,6 +60,53 @@ import background from '../assets/background.svg';
 </div>
 
 <style>
+
+	#intro-list p {
+		padding: 1rem;
+		padding-left: 2rem;
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+	}
+	#intro-h2 {
+		font-size: 2rem !important;
+		color: #781722 !important;
+		padding: 1rem; 
+		padding-left: 1.5rem;
+		margin-top: 0.5rem;
+		margin-bottom: 2rem;
+	}
+	#red-intro {
+		background-color: #781722;
+		padding: 5px;
+		margin-top: 1.5rem;
+		border-radius: 20px;
+		position: relative;
+		display: inline-block;
+		line-height: 2rem;
+	}
+	#red-intro p {
+		color: white;
+		padding-left: 1.2rem;
+		padding-right: 1.2rem;
+		padding-top: 0.9rem;
+		padding-bottom: 0.7rem;
+		font-size: 2rem;
+	}
+	#intro-title {
+		color: #781722 !important;
+		font-size: 5rem !important;
+		font-family: Tahoma, sans-serif !important;
+		font-weight: 800;
+		line-height: 5rem;
+	}
+	#XI {
+		color: #717171;
+		font-size: 2rem;
+		font-weight: 600;
+	}
+	#intro {
+		padding: 2rem;
+	}
 	#background {
 		position: fixed;
 		top: 0;
@@ -37,16 +117,22 @@ import background from '../assets/background.svg';
 	}
 
 	#container {
+		padding-top: 1.2em;
 		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 		height: 100%;
 		align-items: center;
 	}
 
 	main {
-		height: auto;
+		height: 100%;
 		display: flex;
 		justify-content: center;
 		max-width: 1440px;
+		background-image: url("../assets/intro/advicesbackground.png");
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-attachment: inherit;
+		background-position: right;
 	}
 
 	#hero {
