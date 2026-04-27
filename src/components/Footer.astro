@@ -1,5 +1,5 @@
 ---
-import { BadgeCentIcon, BaggageClaim, MessageCircleMore } from "@lucide/astro"
+import { ArrowBigRight, ArrowBigRightDash, BadgeCentIcon, BaggageClaim, MessageCircleMore } from "@lucide/astro"
 
 import ImgCTam from '../assets/salers/ctam.png';
 import ImgCTruyen from '../assets/salers/ctruyen.png';
@@ -8,43 +8,43 @@ import ImgThu from '../assets/salers/thu.png';
 <footer >
 <div class="flex flex-col" id="container-footer">
     <!-- Top bar -->
-    <div class="bg-sky-50 w-[1440px] max-w-full grid grid-cols-7 gap-2">
-        <div class="bg-amber-400 col-span-3">
-            <div class="flex content-center p-3 bg-linear-65 from-red-800 to-red-700 m-2 rounded-xl border-2 border-solid border-orange-200">
+    <div class="bg-sky-50 w-[1440px] max-w-full grid grid-cols-2">
+        <div class="bg-[#781722] col-span-2 pt-4 pl-4">
+            <div id="ibnow" class="block items-center justify-center p-3 bg-linear-95 from-red-800 to-red-600 m-3 rounded-2xl border-2 border-solid border-orange-200 w-fit float-left flex flex-row">
+
                 <BaggageClaim class="inline-block h-auto text-white" size={52} />
-                    
-                <h5 style="" class="pl-2 text-3xl inline-block self-center text-white">
-                    INBOX NGAY
+                
+                <h5 style="" class="pl-2 text-3xl  self-center text-white">
+                    INBOX NGAY <ArrowBigRightDash id="ArrowBigRightDash" class="inline" size={32} />
                 </h5>
+
             </div>
 
-            <ul class=" block hotline">
-                <div>
-                    <a>📞 Hotline KD:</a>
-                </div>
-                <li>
-                    <img src={ImgCTam.src} width="52px" style="display: inline">
-                    <a>Hotline: </a>
-                    <a id="link-social" href="https://zalo.me/0706371048">0706 371 048</a>
+            <ul class="flex flex-row flex-wrap justify-center h-[100%] hotline">
+                <li class="min-w-auto flex-row flex items-center">
+                    <img src={ImgCTam.src} class="h-20 rounded-[60px] bg-orange-100 ml-3 my-2">
+
+                    <p class="inline-block p-3 pr-5 rounded-r-2xl border-y-1 border-r-1 border-orange-200">Hotline: 
+                    <a id="link-social" href="https://zalo.me/0706371048" target="_blank">0706 371 048</a></p>
                 </li>
-                <li>
-                    <img src="../ico-footer/zalo.png" width="22px" style="display: inline">
-                    <a>Hotline: </a><a id="link-social" href="https://zalo.me/0847547776">0847 547 776</a>
+                <li class="min-w-auto flex-row flex items-center">
+                    <img src={ImgCTruyen.src} style="display: inline" class="h-20 rounded-[60px] bg-orange-100 ml-3 my-2">
+                    <p class="inline-block p-3 pr-5 rounded-r-2xl border-y-1 border-r-1 border-orange-200">Hotline: <a id="link-social" target="_blank" href="https://zalo.me/0847547776">0847 547 776</a></p>
                 </li>
-                <li>
-                    <img src="../ico-footer/zalo.png" width="22px" style="display: inline">
-                    <a>Hotline: </a><a id="link-social" href="https://zalo.me/0901036457">0901 036 457</a>
+                <li class="min-w-auto flex-row flex items-center">
+                    <img src={ImgThu.src} style="display: inline" class="h-20 rounded-[60px] bg-orange-100 ml-3 my-2">
+                    <p class="inline-block p-3 pr-5 rounded-r-2xl border-y-1 border-r-1 border-orange-200">Hotline: <a id="link-social" target="_blank" href="https://zalo.me/0901036457">0901 036 457</a></p>
                 </li>
             </ul>
         </div>
-        <div class="bg-amber-400 col-span-2">
-            <div class="py-12 address">
+        <div class="px-8 py-2 bg-[#781722] col-span-2">
+            <div class="address">
                 <a>📍 Địa chỉ: KDC Hoàng Phát, Số 6, Đường Huỳnh Thị Đê, Phường Bạc Liêu
                 </a>
             </div>
         </div>
-        <div class="bg-amber-400 col-span-2">
-            <ul class="py-8 social">
+        <div class="bg-[#781722] col-span-2 px-8 py-8 pt-0">
+            <ul class="social">
                 <li>
                     <img src="../ico-footer/facebook.png" width="22px" style="display: inline">
                     <a>Fanpage: In ấn bao bì Cần Thơ
@@ -52,23 +52,23 @@ import ImgThu from '../assets/salers/thu.png';
                 </li>
                 <li>
                     <img src="../ico-footer/tik-tok.png" width="22px" style="display: inline">
-                    <a>Tiktok: </a><a id="link-social" href="https://www.tiktok.com/@locphat1210?is_from_webapp=1&sender_device=">Good in ấn bao bì Cần Thơ</a>
+                    <a>Tiktok: </a><a id="link-social" target="_blank" href="https://www.tiktok.com/@locphat1210?is_from_webapp=1&sender_device=">Good in ấn bao bì Cần Thơ</a>
                         </li>
                         <li>
                         <img src="../ico-footer/shopee.png" width="22px" style="display: inline">
-                         <a>Shopee: </a><a id="link-social" href="https://vn.shp.ee/NBJcLCE">Good - In ấn bao bì</a>
+                         <a>Shopee: </a><a id="link-social" target="_blank" href="https://vn.shp.ee/NBJcLCE">Good - In ấn bao bì</a>
                         </li>
                         <li>
                         <img src="../ico-footer/shopee.png" width="22px" style="display: inline">
-                         <a>Shopee: </a><a id="link-social" href="https://vn.shp.ee/PCXxUHn">LỘC PHÁT - BAO BÌ BẠC LIÊU</a>
+                         <a>Shopee: </a><a id="link-social" target="_blank" href="https://vn.shp.ee/PCXxUHn">LỘC PHÁT - BAO BÌ BẠC LIÊU</a>
                         </li>
                         <li>
                         <img src="../ico-footer/shopee.png" width="22px" style="display: inline">
-                         <a>Shopee: </a><a id="link-social" href="https://vn.shp.ee/sECwMnF">bao bì - túi giấy</a>
+                         <a>Shopee: </a><a id="link-social" target="_blank" href="https://vn.shp.ee/sECwMnF">bao bì - túi giấy</a>
                         </li>
                         <li>
                         <img src="../ico-footer/zalo.png" width="22px" style="display: inline">
-                         <a>Tham gia ngay </a><a id="link-social" href="https://zalo.me/g/dztqfp388">nhóm khách sỉ nhận ưu đãi</a>
+                         <a>Tham gia ngay </a><a id="link-social" target="_blank" href="https://zalo.me/g/dztqfp388">nhóm khách sỉ nhận ưu đãi</a>
                         </li>
                     </ul>
             </div>
@@ -86,10 +86,6 @@ import ImgThu from '../assets/salers/thu.png';
     card {
         width: 55px;
     }
-    /*Strip the ul of padding and list styling*/
-    ul {
-        list-style-type:none;
-    }
     /*Create a horizontal list with spacing*/
     li {
         float: left;
@@ -98,29 +94,53 @@ import ImgThu from '../assets/salers/thu.png';
 		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 		align-items: center;
 	}
-    .social {
-        border-color: aquamarine;
-    }
-    .social > li,  {
-        padding: 5px;
+    .social li  {
         display: inline-block;
+        padding: 10px;
     }
-    .social > li > p {
-        color: aliceblue;
-        
+    .social li p {
+        color: antiquewhite;
         font-size: 1.3rem !important;
     }
-    .social > li > a{
-        color: aliceblue;
-        
-        font-size: 1.3rem !important;
+    .social li a {
+        color: antiquewhite;
+        font-size: 1.3rem;
     }
     #link-social {
         color: darkcyan;
     }
     .address a, .hotline a {
-        color: aliceblue;
-        
+        color: antiquewhite;
         font-size: 1.3rem !important;
+    }
+    li p {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: antiquewhite;
+        height: fit-content;
+    }
+    li a {
+        font-weight: 800;
+    }
+    #ibnow {
+        transition: transform .35s;
+    }
+    #ibnow:hover {
+        -ms-transform: scale(3.45);
+            /* IE 9 */
+        -webkit-transform: scale(1.125);
+            /* Safari 3-8 */
+        transform: scale(1.125);
+        cursor: pointer;
+    }
+    #ibnow #ArrowBigRightDash {
+        transition: transform .45s;
+    }
+    #ibnow:hover #ArrowBigRightDash {
+        -ms-transform: scale(4.6);
+            /* IE 9 */
+        -webkit-transform: scale(1.5);
+            /* Safari 3-8 */
+        transform: scale(1.5);
     }
 </style>

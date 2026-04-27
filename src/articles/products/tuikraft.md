@@ -17,7 +17,7 @@ Túi giấy kraft không chỉ là một sản phẩm bao bì thông thường m
 ### 🌿 Vẻ Đẹp Tự Nhiên & Gần Gũi
 
 Màu nâu đặc trưng của giấy kraft mang lại cảm giác ấm áp, thân thiện và tối giản – rất phù hợp với phong cách thiết kế hiện đại, eco-friendly.
-![[z6906080979863_a60f8d983ec6c2bce8a41c08bbabf41f.jpg]]
+![hey](./tui-giay-kraft/z6906080979863_a60f8d983ec6c2bce8a41c08bbabf41f.jpg)
 ### 💪 Độ Bền Vượt Trội
 
 Giấy kraft có kết cấu sợi dài, giúp:
@@ -37,7 +37,7 @@ Giấy kraft có kết cấu sợi dài, giúp:
     
 - Giảm thiểu rác thải nhựa
     
-![[z6973093850895_9706e1071c04dd86b0c4e8f7292f2283.jpg]]
+![](./tui-giay-kraft/z6973093850895_9706e1071c04dd86b0c4e8f7292f2283.jpg)
 
 ---
 
@@ -63,7 +63,7 @@ Giấy kraft có kết cấu sợi dài, giúp:
     
 - Phù hợp hội nghị, event
     
-![[z6973094739921_2e6f88ef97f243418b6437750fab6d08.jpg]]
+![](./tui-giay-kraft/z6973094739921_2e6f88ef97f243418b6437750fab6d08.jpg)
 
 ---
 
@@ -88,8 +88,8 @@ Giấy kraft có kết cấu sợi dài, giúp:
     
 - Dập nổi / dập chìm độc đáo
     
-![[z7000389917021_471dc38922b1e63509cd682cde71c71a.jpg]]
-![[z7000389932267_8110a5561e6ae704133cc0b53ddf8a1e.jpg]]
+![](./tui-giay-kraft/z7000389917021_471dc38922b1e63509cd682cde71c71a.jpg)
+![](./tui-giay-kraft/z7000389932267_8110a5561e6ae704133cc0b53ddf8a1e.jpg)
 
 ---
 
@@ -117,7 +117,7 @@ Giấy kraft có kết cấu sợi dài, giúp:
     
 - Phù hợp từng loại sản phẩm
     
-![[z7098579478749_99079c6320c01a631e83f33a1d87da36.jpg]]
+![](./tui-giay-kraft/z7098579478749_99079c6320c01a631e83f33a1d87da36.jpg)
 
 ---
 
@@ -141,7 +141,7 @@ Chúng tôi cung cấp túi giấy kraft với tiêu chuẩn cao về chất lư
     
 - Kiểm tra kỹ lưỡng trước khi giao hàng
     
-![[z7123338921559_e5e9a3b10a7e5f3bad78f298782f4585.jpg]]
+![](./tui-giay-kraft/z7123338921559_e5e9a3b10a7e5f3bad78f298782f4585.jpg)
 
 ---
 

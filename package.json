@@ -17,6 +17,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.9",
     "astro-splide": "^2.0.2",
+    "fast-glob": "^3.3.3",
     "tailwindcss": "^4.2.2"
   }
 }

@@ -4,15 +4,15 @@ import background from '../assets/background.svg';
 
 import * as aboutPost from "../articles/about.md";
 import Content from "../articles/about.md";
+
 ---
 
-<div class="flex flex-col" id="container">
+<div class="flex flex-col text-2xl p-8" id="container">
 	<img id="background" src={background.src} alt="" fetchpriority="high" />
 	<main>
 			<h1 >{aboutPost.frontmatter.title}</h1>
-    <p>"Cập nhật ngày:" {aboutPost.frontmatter.date}</p>
+    <p>Cập nhật ngày: {aboutPost.frontmatter.date}</p>
 	<br>
-	
     <Content />
 	</main>
 
@@ -50,16 +50,9 @@ import Content from "../articles/about.md";
 		max-width: 1440px;
 	}
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
-
 	h1 {
-		font-size: 2rem;
+		font-size: 3rem;
+		font-weight: 800;
 		margin-top: 0.25em;
 	}
 	h2 {
