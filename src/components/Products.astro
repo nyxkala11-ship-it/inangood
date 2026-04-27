@@ -7,7 +7,7 @@ import Content from "../articles/products/tuikraft.md";
 
 // const products = Object.values(import.meta.glob('./articles/products/*.md', {eager: true }));
 
-const products = await Astro.glob("./articles/products.*.md");
+const products = Object.values(import.meta.glob("./articles/products.*.md"));
 ---
 
 <div class="flex flex-col text-2xl p-8" id="container">
@@ -30,9 +30,9 @@ const products = await Astro.glob("./articles/products.*.md");
 	<p>Relate posts:</p>
 	<ul>
 		ul - li
-		{products.map(product => <li><a href={product.url}>{product.frontmatter.title}</a></li>)}
+		{products.map(product => <li><a href={product.arguments}>{product}</a></li>)}
 	</ul>
-
+<!--  -->
 </div>
 
 <style>
@@ -50,6 +50,8 @@ const products = await Astro.glob("./articles/products.*.md");
 
 	#container {
 		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		width: 1440px;
+		max-width: 100%;
 		height: 100%;
 		align-items: center;
 		margin-top: 5vh;
