@@ -1,47 +1,49 @@
 ---
 import { Zap, Tags, BaggageClaim, FastForward, Brush, TruckElectric } from '@lucide/astro';
+import globallcss from '../styles/global.css'
 ---
-<div id="title" class="relative">
-    <div id="title-red" class="absolute">
+<div id="title" class="flex flex-col">
+    <div id="title-red" class="">
         <p><Zap size={45} class="inline-block" /> Lý do khách chọn xưởng</p>
     </div>
-    <div class="pt-9" >
-    <div id="backdrop" class="border-3 grid grid-cols-5 divide-x-1 divide-solid">
-        <div class="text-center pr-2 col- items-start span-1 place-content-top">
-            <div class="m-1 p-2">
-            <Tags size={45} class="inline-block" />
-            <h1>GIÁ TẬN GỐC</h1>
-            <p>Không qua trung gian</p>
+
+    <div class="" >
+        <div id="backdrop" class="border-3 grid grid-cols-5 divide-x-1 divide-solid">
+            <div class="text-center pr-2 col- items-start span-1 place-content-top">
+                <div class="m-1 p-2">
+                <Tags size={45} class="inline-block" />
+                <h1>GIÁ TẬN GỐC</h1>
+                <p>Không qua trung gian</p>
+                </div>
+            </div>
+            <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
+                <div class="m-1 p-2">
+                <BaggageClaim size={45} class="inline-block" />
+                <h1>NHẬN SỐ LƯỢNG ÍT</h1>
+                <p>Linh hoạt</p>
+                </div>
+            </div>
+            <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
+                <div class="m-1 p-2">
+                <FastForward size={45} class="inline-block" />
+                <h1>IN NHANH</h1>
+                <p>Có hàng trong ngày</p>
+                </div>
+            </div>
+            <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
+                <div class="m-1 p-2">
+                <Brush size={45} class="inline-block" />
+                <h1>MIỄN PHÍ THIẾT KẾ</h1>
+                <p>Đến khi ưng ý</p>
+                </div>
+            </div>
+            <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
+                <div class="m-1 p-2">
+                <TruckElectric size={45} class="inline-block" />
+                <h1>GIAO HÀNG TOÀN QUỐC</h1>
+                </div>
             </div>
         </div>
-        <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-            <div class="m-1 p-2">
-            <BaggageClaim size={45} class="inline-block" />
-            <h1>NHẬN SỐ LƯỢNG ÍT</h1>
-            <p>Linh hoạt</p>
-            </div>
-        </div>
-        <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-            <div class="m-1 p-2">
-            <FastForward size={45} class="inline-block" />
-            <h1>IN NHANH</h1>
-            <p>Có hàng trong ngày</p>
-            </div>
-        </div>
-        <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-            <div class="m-1 p-2">
-            <Brush size={45} class="inline-block" />
-            <h1>MIỄN PHÍ THIẾT KẾ</h1>
-            <p>Đến khi ưng ý</p>
-            </div>
-        </div>
-        <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-            <div class="m-1 p-2">
-            <TruckElectric size={45} class="inline-block" />
-            <h1>GIAO HÀNG TOÀN QUỐC</h1>
-            </div>
-        </div>
-    </div>
     </div>
 </div>
 
@@ -50,23 +52,19 @@ import { Zap, Tags, BaggageClaim, FastForward, Brush, TruckElectric } from '@luc
         width: 1440px;
         max-width: 100%;
     }
-    .vl {
-        border-left: 6px solid green;
-        height: auto;
-        position: absolute;
-        z-index: 3;
-        }
     #backdrop {
-        border-color: #781722;
+        background-color: rgba(240, 248, 255, 0.024);
         backdrop-filter: blur(20px);
-        background-color: rgba(255, 255, 255, 0.262);
+        background-color: var(--main-color);
         padding: 1rem;
-        padding-top: 1.5rem;
-        border-radius: 0px 25px 25px 25px;
+        border-bottom-left-radius: var(--radius-border);
+        border-bottom-right-radius: var(--radius-border);
+        border-top-right-radius: var(--radius-border);
+        z-index: 990;
     }
     #backdrop div div {
-        border-radius: 10px;
-        transition: transform .35s;
+        border-radius: var(--radius-border);
+        transition: all .5s;
         height: 100%;
     }
     #backdrop div:hover div {
@@ -74,7 +72,7 @@ import { Zap, Tags, BaggageClaim, FastForward, Brush, TruckElectric } from '@luc
         background-color: rgb(255, 255, 255);
     }
     #backdrop div div h1 {
-    transition: transform .35s;
+    transition: all .35s;
     }
     #backdrop div div:hover h1 {
         -ms-transform: scale(4.6);
@@ -86,6 +84,7 @@ import { Zap, Tags, BaggageClaim, FastForward, Brush, TruckElectric } from '@luc
     #title-red p {
         font-size: 1.5rem !important;
         font-weight: 500;
+        z-index: 999;
     }
     #title-red p {
         font-size: 1.7rem !important;
@@ -98,7 +97,8 @@ import { Zap, Tags, BaggageClaim, FastForward, Brush, TruckElectric } from '@luc
 		padding: 0.5rem;
         padding-left: 1rem;
         padding-right: 1rem;
-		border-radius: 25px 25px 25px 0px;
+		border-radius: var(--radius-border);
+        border-bottom-left-radius: 0;
 		display: inline-block;
 		line-height: 2rem;
 	}

@@ -8,5 +8,6 @@ image:
 catergory: Tem - Decal
 parent: none
 id: temdecalp
+index: "9"
 ---
 # Tổng hợp các mục in Tem - Decal trong caterogy

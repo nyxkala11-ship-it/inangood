@@ -72,11 +72,11 @@ import "../styles/global.css";
 	window.onscroll = function() {scrollFunction()};
 
 	function scrollFunction() {
-	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		mybutton!.style.display = "block";
-	} else {
-		mybutton!.style.display = "none";
-	}
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			mybutton!.style.display = "block";
+		} else {
+			mybutton!.style.display = "none";
+		}
 	}
 	mybutton!.onclick = function() {topFunction()};
 	// When the user clicks on the button, scroll to the top of the document
@@ -85,4 +85,6 @@ import "../styles/global.css";
 	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 	console.log('on Top');
 	} 
+
+
 </script>

@@ -12,10 +12,6 @@ catergory: Bằng đào tạo nghề
 parent: Bằng - Hợp đồng
 id: bangdaotaonghe
 images:
-  - /src/articles/products/bangdaotaonghe/vid1.mp4
-  - /src/articles/products/bangdaotaonghe/vid2.mp4
-  - /src/articles/products/bangdaotaonghe/vid3.mp4
-  - /src/articles/products/bangdaotaonghe/vid4.mp4
   - /src/articles/products/bangdaotaonghe/img1.jpg
   - /src/articles/products/bangdaotaonghe/img2.jpg
   - /src/articles/products/bangdaotaonghe/img3.jpg
@@ -28,6 +24,11 @@ images:
   - /src/articles/products/bangdaotaonghe/img10.jpg
   - /src/articles/products/bangdaotaonghe/img11.jpg
   - /src/articles/products/bangdaotaonghe/img12.jpg
+videos:
+  - /src/articles/products/bangdaotaonghe/vid1.mp4
+  - /src/articles/products/bangdaotaonghe/vid2.mp4
+  - /src/articles/products/bangdaotaonghe/vid3.mp4
+  - /src/articles/products/bangdaotaonghe/vid4.mp4
 ---
 # In Bằng Đào Tạo Nghề – Trang Trọng, Chuẩn Mực & Nâng Tầm Giá Trị Chứng Nhận
 

@@ -2,6 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
+    "index": {},
     "title": {
       "type": "string"
     },
@@ -30,11 +31,18 @@
         "type": "string"
       }
     },
+    "videos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "$schema": {
       "type": "string"
     }
   },
   "required": [
+    "index",
     "title",
     "date",
     "catergory",

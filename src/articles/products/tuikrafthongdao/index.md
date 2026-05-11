@@ -11,6 +11,14 @@ image:
 catergory: Túi giấy Kraft nền Hồng đào
 parent: Túi giấy Kraft
 id: tuikrafthongdao
+images:
+  - /src/articles/products/tuikrafthongdao/img1.jpg
+  - /src/articles/products/tuikrafthongdao/img2.jpg
+  - /src/articles/products/tuikrafthongdao/img3.jpg
+  - /src/articles/products/tuikrafthongdao/img4.jpg
+  - /src/articles/products/tuikrafthongdao/img5.jpg
+videos:
+  - /src/articles/products/tuikrafthongdao/vid1.mp4
 ---
 # Túi Giấy Kraft Nền Hồng Đào – Ngọt Ngào, Hiện Đại & Khác Biệt
 

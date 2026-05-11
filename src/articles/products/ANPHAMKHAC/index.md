@@ -12,5 +12,6 @@ parent: none
 id: anphamkhac
 images:
   - none
+index: "13"
 ---
 # Tổng hợp các mục in các ấn phẩm khác trong caterogy

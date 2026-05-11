@@ -12,5 +12,6 @@ parent: none
 id: banghopdong
 images:
   - none
+index: "8"
 ---
 # Tổng hợp các mục in bằng - hợp đồng trong caterogy

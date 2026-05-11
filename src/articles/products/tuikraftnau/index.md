@@ -11,6 +11,20 @@ image:
 catergory: Túi Kraft nâu
 parent: Túi giấy Kraft
 id: tuikraftnau
+images:
+  - /src/articles/products/tuikraftnau/img1.jpg
+  - /src/articles/products/tuikraftnau/img2.jpg
+  - /src/articles/products/tuikraftnau/img3.jpg
+  - /src/articles/products/tuikraftnau/img4.jpg
+  - /src/articles/products/tuikraftnau/img5.jpg
+  - /src/articles/products/tuikraftnau/img6.jpg
+  - /src/articles/products/tuikraftnau/img7.jpg
+  - /src/articles/products/tuikraftnau/img8.jpg
+videos:
+  - /src/articles/products/tuikraftnau/vid1.mp4
+  - /src/articles/products/tuikraftnau/vid2.mp4
+  - /src/articles/products/tuikraftnau/vid3.mp4
+  - /src/articles/products/tuikraftnau/vid4.mp4
 ---
 # Túi Giấy Kraft Nâu – Mộc Mạc, Bền Bỉ & Đậm Chất Thương Hiệu
 

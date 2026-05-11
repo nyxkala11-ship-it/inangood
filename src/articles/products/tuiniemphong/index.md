@@ -10,6 +10,19 @@ image:
 catergory: Túi Niêm Phong
 parent: Bọc - Túi
 id: tuiniemphong
+images:
+  - /src/articles/products/tuiniemphong/img1.jpg
+  - /src/articles/products/tuiniemphong/img2.jpg
+  - /src/articles/products/tuiniemphong/img3.jpg
+  - /src/articles/products/tuiniemphong/img4.jpg
+  - /src/articles/products/tuiniemphong/img5.jpg
+videos:
+  - /src/articles/products/tuiniemphong/vid1.mp4
+  - /src/articles/products/tuiniemphong/vid2.mp4
+  - /src/articles/products/tuiniemphong/vid3.mp4
+  - /src/articles/products/tuiniemphong/vid4.mp4
+  - /src/articles/products/tuiniemphong/vid5.mp4
+  - /src/articles/products/tuiniemphong/vid6.mp4
 ---
 # Túi Niêm Phong – Bảo Mật, Chắc Chắn & Chuyên Nghiệp Cho Mọi Đơn Hàng
 

@@ -11,7 +11,13 @@ catergory: Bao bánh mì
 parent: Bao giấy - Folder
 id: baobanhmi
 images:
-  - none
+  - /src/articles/products/baobanhmi/img1.jpg
+  - /src/articles/products/baobanhmi/img2.jpg
+  - /src/articles/products/baobanhmi/img3.jpg
+  - /src/articles/products/baobanhmi/img4.jpg
+  - /src/articles/products/baobanhmi/img5.jpg
+videos:
+  - /src/articles/products/baobanhmi/vid1.mp4
 ---
 # Bao Bánh Mì – Sạch Sẽ, Tiện Lợi & Tăng Nhận Diện Thương Hiệu
 

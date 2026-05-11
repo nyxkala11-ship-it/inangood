@@ -12,7 +12,17 @@ catergory: Bao đựng trang sức
 parent: Bao giấy - Folder
 id: baodungtrangsuc
 images:
-  - none
+  - /src/articles/products/baodungtrangsuc/img1.jpg
+  - /src/articles/products/baodungtrangsuc/img2.jpg
+  - /src/articles/products/baodungtrangsuc/img3.jpg
+  - /src/articles/products/baodungtrangsuc/img4.jpg
+  - /src/articles/products/baodungtrangsuc/img5.jpg
+  - /src/articles/products/baodungtrangsuc/img6.jpg
+videos:
+  - /src/articles/products/baodungtrangsuc/vid1.mp4
+  - /src/articles/products/baodungtrangsuc/vid2.mp4
+  - /src/articles/products/baodungtrangsuc/vid3.mp4
+  - /src/articles/products/baodungtrangsuc/vid4.mp4
 ---
 # Bao Đựng Trang Sức – Tinh Tế, Bảo Vệ Tốt & Nâng Tầm Giá Trị Sản Phẩm
 

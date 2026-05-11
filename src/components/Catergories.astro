@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import { Debug } from "astro:components";
 import MenuDynamix from "./MenuDynamics.astro";
 const ProductsCol = await getCollection('blogCollection');
 ---
 <div id="cater-container" class="flex justify-center">
     <!-- Về sau thay này thành category của từng mục sản phẩm -->
 <div id="catergory">
+    <h1>Danh mục</h1>
          {ProductsCol.slice(0, 15).map((product) => 
                 <ul class="inline-block flex-wrap flex" >
                 {product.data.tags.map((tag) =>
@@ -29,6 +29,7 @@ const ProductsCol = await getCollection('blogCollection');
     #catergory {
         width: 1440px;
         max-width: 100%;
+        max-lines: 3;
     }
     li {
         text-align: center;

@@ -8,6 +8,26 @@ image:
 catergory: Tag treo
 parent: Tag treo - Card
 id: tagtreo
+images:
+  - /src/articles/products/tagtreo/img1.jpg
+  - /src/articles/products/tagtreo/img2.jpg
+  - /src/articles/products/tagtreo/img3.jpg
+  - /src/articles/products/tagtreo/img4.jpg
+  - /src/articles/products/tagtreo/img5.jpg
+  - /src/articles/products/tagtreo/img6.jpg
+  - /src/articles/products/tagtreo/img7.jpg
+  - /src/articles/products/tagtreo/img8.jpg
+  - /src/articles/products/tagtreo/img9.jpg
+  - /src/articles/products/tagtreo/img10.jpg
+  - /src/articles/products/tagtreo/img11.jpg
+  - /src/articles/products/tagtreo/img12.jpg
+  - /src/articles/products/tagtreo/img13.jpg
+videos:
+  - /src/articles/products/tagtreo/vid1.mp4
+  - /src/articles/products/tagtreo/vid2.mp4
+  - /src/articles/products/tagtreo/vid3.mp4
+  - /src/articles/products/tagtreo/vid4.mp4
+  - /src/articles/products/tagtreo/vid5.mp4
 ---
 # In Tag Treo (Thẻ Treo) – Nhỏ Gọn, Tinh Tế & Tăng Nhận Diện Thương Hiệu
 

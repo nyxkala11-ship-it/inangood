@@ -9,5 +9,6 @@ image:
 catergory: Tag treo - Card
 parent: none
 id: tagtreocard
+index: "6"
 ---
 # Tổng hợp các mục in tag treo - card trong caterogy

@@ -8,5 +8,6 @@ image:
 catergory: Menu - Thiệp
 parent: none
 id: menuthiep
+index: "11"
 ---
 # Tổng hợp các mục in Menu - Thiệp trong caterogy

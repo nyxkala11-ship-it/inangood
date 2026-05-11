@@ -8,6 +8,35 @@ image:
 catergory: In Sổ
 parent: Hóa đơn - Phiếu ship
 id: inso
+images:
+  - /src/articles/products/inso/img1.jpg
+  - /src/articles/products/inso/img2.jpg
+  - /src/articles/products/inso/img3.jpg
+  - /src/articles/products/inso/img4.jpg
+  - /src/articles/products/inso/img5.jpg
+  - /src/articles/products/inso/img6.jpg
+  - /src/articles/products/inso/img7.jpg
+  - /src/articles/products/inso/img8.jpg
+  - /src/articles/products/inso/img9.jpg
+  - /src/articles/products/inso/img10.jpg
+  - /src/articles/products/inso/img11.jpg
+  - /src/articles/products/inso/img12.jpg
+  - /src/articles/products/inso/img13.jpg
+  - /src/articles/products/inso/img14.jpg
+  - /src/articles/products/inso/img15.jpg
+  - /src/articles/products/inso/img16.jpg
+videos:
+  - /src/articles/products/inso/vid1.mp4
+  - /src/articles/products/inso/vid2.mp4
+  - /src/articles/products/inso/vid3.mp4
+  - /src/articles/products/inso/vid4.mp4
+  - /src/articles/products/inso/vid5.mp4
+  - /src/articles/products/inso/vid6.mp4
+  - /src/articles/products/inso/vid7.mp4
+  - /src/articles/products/inso/vid8.mp4
+  - /src/articles/products/inso/vid9.mp4
+  - /src/articles/products/inso/vid10.mp4
+  - /src/articles/products/inso/vid11.mp4
 ---
 # In Sổ – Chuyên Nghiệp, Thẩm Mỹ & Cá Nhân Hóa Theo Nhu Cầu
 

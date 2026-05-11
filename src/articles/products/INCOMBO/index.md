@@ -8,6 +8,7 @@ image:
 catergory: In COMBO
 parent: none
 id: incombo
+index: "3"
 ---
 # In Combo Bao Bì – Đồng Bộ Nhận Diện, Tối Ưu Chi Phí & Tăng Trải Nghiệm
 

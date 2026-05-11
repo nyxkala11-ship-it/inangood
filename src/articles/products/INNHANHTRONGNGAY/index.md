@@ -8,6 +8,7 @@ image:
 catergory: In nhanh trong ngày
 parent: none
 id: innhanhtrongngay
+index: "1"
 ---
 # Túi Giấy Kraft Có Sẵn – Giao Nhanh, Tiện Lợi & Tiết Kiệm
 

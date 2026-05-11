@@ -6,10 +6,56 @@ tags:
   - Túi
   - Giấy
 date: 2026-04-28T00:00:00
-image: /src/products/tuikraft/z6973093850895_9706e1071c04dd86b0c4e8f7292f2283.jpg
+image: /src/products/tuikraft/img1.jpg
 catergory: Túi Kraft
 parent: Túi giấy Kraft
 id: tuikraft
+images:
+  - /src/articles/products/tuikraft/img1.jpg
+  - /src/articles/products/tuikraft/img2.jpg
+  - /src/articles/products/tuikraft/img3.jpg
+  - /src/articles/products/tuikraft/img4.jpg
+  - /src/articles/products/tuikraft/img5.jpg
+  - /src/articles/products/tuikraft/img6.jpg
+  - /src/articles/products/tuikraft/img7.jpg
+  - /src/articles/products/tuikraft/img8.jpg
+  - /src/articles/products/tuikraft/img9.jpg
+  - /src/articles/products/tuikraft/img10.jpg
+  - /src/articles/products/tuikraft/img11.jpg
+  - /src/articles/products/tuikraft/img12.jpg
+  - /src/articles/products/tuikraft/img13.jpg
+  - /src/articles/products/tuikraft/img14.jpg
+  - /src/articles/products/tuikraft/img15.jpg
+  - /src/articles/products/tuikraft/img16.jpg
+  - /src/articles/products/tuikraft/img17.jpg
+  - /src/articles/products/tuikraft/img18.jpg
+  - /src/articles/products/tuikraft/img19.jpg
+  - /src/articles/products/tuikraft/img20.jpg
+  - /src/articles/products/tuikraft/img21.jpg
+  - /src/articles/products/tuikraft/img22.jpg
+  - /src/articles/products/tuikraft/img23.jpg
+  - /src/articles/products/tuikraft/img24.jpg
+  - /src/articles/products/tuikraft/img25.jpg
+  - /src/articles/products/tuikraft/img26.jpg
+  - /src/articles/products/tuikraft/img27.jpg
+  - /src/articles/products/tuikraft/img28.jpg
+  - /src/articles/products/tuikraft/img29.jpg
+  - /src/articles/products/tuikraft/img30.jpg
+  - /src/articles/products/tuikraft/img31.jpg
+  - /src/articles/products/tuikraft/img32.jpg
+  - /src/articles/products/tuikraft/img33.jpg
+  - /src/articles/products/tuikraft/img34.jpg
+  - /src/articles/products/tuikraft/img35.jpg
+  - /src/articles/products/tuikraft/img36.jpg
+  - /src/articles/products/tuikraft/img37.jpg
+  - /src/articles/products/tuikraft/img38.jpg
+  - /src/articles/products/tuikraft/img39.jpg
+  - /src/articles/products/tuikraft/img40.jpg
+  - /src/articles/products/tuikraft/img41.jpg
+  - /src/articles/products/tuikraft/img42.jpg
+  - /src/articles/products/tuikraft/img43.jpg
+  - /src/articles/products/tuikraft/img44.jpg
+  - /src/articles/products/tuikraft/img45.jpg
 ---
 
 # *Túi Giấy Kraft – Giải Pháp Bao Bì Xanh, Tinh Tế & Đẳng Cấp*
@@ -24,7 +70,7 @@ Túi giấy kraft không chỉ là một sản phẩm bao bì thông thường m
 ### *🌿 Vẻ Đẹp Tự Nhiên & Gần Gũi*
 
 Màu nâu đặc trưng của giấy kraft mang lại cảm giác ấm áp, thân thiện và tối giản – rất phù hợp với phong cách thiết kế hiện đại, eco-friendly.
-![hey](../tuikraft/z6906080979863_a60f8d983ec6c2bce8a41c08bbabf41f.jpg)
+![hey](../tuikraft/img3.jpg)
 ### 💪 Độ Bền Vượt Trội
 
 Giấy kraft có kết cấu sợi dài, giúp:
@@ -44,7 +90,7 @@ Giấy kraft có kết cấu sợi dài, giúp:
     
 - Giảm thiểu rác thải nhựa
     
-![](../tuikraft/z6973093850895_9706e1071c04dd86b0c4e8f7292f2283.jpg)
+![](../tuikraft/img5.jpg)
 
 ---
 
@@ -70,7 +116,7 @@ Giấy kraft có kết cấu sợi dài, giúp:
     
 - Phù hợp hội nghị, event
     
-![](../tuikraft/z6973094739921_2e6f88ef97f243418b6437750fab6d08.jpg)
+![](../tuikraft/img8.jpg)
 
 ---
 
@@ -95,8 +141,8 @@ Giấy kraft có kết cấu sợi dài, giúp:
     
 - Dập nổi / dập chìm độc đáo
     
-![](../tuikraft/z7000389917021_471dc38922b1e63509cd682cde71c71a.jpg)
-![](../tuikraft/z7000389932267_8110a5561e6ae704133cc0b53ddf8a1e.jpg)
+![](../tuikraft/img12.jpg)
+![](../tuikraft/img19.jpg)
 
 ---
 
@@ -124,7 +170,7 @@ Giấy kraft có kết cấu sợi dài, giúp:
     
 - Phù hợp từng loại sản phẩm
     
-![](../tuikraft/z7098579478749_99079c6320c01a631e83f33a1d87da36.jpg)
+![](../tuikraft/img25.jpg)
 
 ---
 
@@ -148,7 +194,7 @@ Chúng tôi cung cấp túi giấy kraft với tiêu chuẩn cao về chất lư
     
 - Kiểm tra kỹ lưỡng trước khi giao hàng
     
-![](../tuikraft/z7123338921559_e5e9a3b10a7e5f3bad78f298782f4585.jpg)
+![](../tuikraft/img26.jpg)
 
 ---
 

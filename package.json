@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "dev": "astro dev --host",
@@ -14,12 +14,12 @@
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/sitemap": "^3.7.2",
-    "@lucide/astro": "^1.11.0",
+    "@lucide/astro": "^1.14.0",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.2.1",
-    "astro-splide": "^2.1.0",
+    "astro": "^6.2.2",
+    "astro-splide": "^2.1.1",
     "fast-glob": "^3.3.3",
     "lan-network": "^0.2.1",
     "splide": "^0.0.1-security",

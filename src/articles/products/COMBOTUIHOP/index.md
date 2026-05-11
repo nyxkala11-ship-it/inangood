@@ -10,6 +10,7 @@ image:
 catergory: Combo Túi Hộp
 parent: none
 id: combotuihop
+index: "10"
 ---
 # Combo Túi + Hộp – Đồng Bộ Bao Bì, Nâng Tầm Trải Nghiệm & Thương Hiệu
 

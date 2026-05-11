@@ -11,9 +11,10 @@ import '@splidejs/splide'
 import { SplideExtension, SplideSlide } from 'astro-splide';
 import Image from 'astro/components/Image.astro';
 import "@splidejs/splide/css"
+import { ArrowBigLeftDash, ArrowBigRight, ArrowBigRightDash } from '@lucide/astro';
 
 type Props = CollectionEntry<"blogCollection">["data"];
-const { title, date, catergory, parent, id, images } = Astro.props;
+const { title, date, catergory, parent, id, images, videos } = Astro.props;
 
 export interface PropsImg {
    imagePath: string;
@@ -40,24 +41,27 @@ console.log(images);
 
 ---
 <Layout>
-    <head>
-        <BaseHead title={title} description={catergory} />
-    </head>
-
+	<BaseHead />
     <body>
 		<main class="flex flex-col items-center w-full" >
 			<div class="text-2xl p-4"id="container">
 				<p>Danh mục: {parent === "none" ? catergory : parent} </p>
 				<div id="desimg" class="grid grid-cols-2 my-3">
-					<div id="preview" class="col-span-1">
-							
+					<div id="preview" class="col-span-1 flex items-center justify-center">
+							{videos?.map(img =>
+							(img === "none") ? <div class="none">&nbsp;</div> :
+								<video width="500" height="500" class="mySlides aspect-square" controls>
+								 	<source style="object-fit: fill; aspect-square" src=`${img}`>
+								</video>	
+							)}							
 							{images?.map(img =>
-							(img === "none") ? <div>Chưa cập nhật ảnh hiển thị</div> :
-								<video class="mySlides" src=`${img}` controls />
-								<Image class="mySlides" src=`${img}` alt="" width={150} height={300} />			
+							(img === "none") ? <div class="none">&nbsp;</div> :
+								<Image loading="lazy" class="mySlides aspect-square" src=`${img}` alt="" height={500} width={500} />	
 							)}
-							<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-							<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>	
+
+							<button id="nextbtn" onclick="nextSlide()" class="button previousbtn flex items-center py-3 text-white hover:bg-blue-400"><ArrowBigLeftDash size={55} /></button>
+
+							<button id="prebtn" onclick="nextSlide()" class="button nextbtn flex items-center py-3 text-white hover:bg-blue-400"><ArrowBigRightDash size={55} /></button>
 
 						<!---<slot /> -->
 					</div>
@@ -117,6 +121,17 @@ console.log(images);
 		filter: blur(100px);
 	}
 
+
+	.mySlides {
+		display: none;
+		position: absolute;
+		height: 100%;
+	}
+
+	.displaySlide {
+		display: block;
+	}
+
 	#container {
 		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 		width: 1440px;
@@ -165,6 +180,23 @@ console.log(images);
 			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
 			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
 		border-radius: 10px;
+	}
+
+	#preview {
+		position: relative;
+	}
+
+	.button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.previousbtn {
+		left: 0;
+	}
+	.nextbtn {
+		right: 0;
 	}
 
 	#links a.button:hover {
@@ -267,31 +299,89 @@ console.log(images);
 // Source - https://stackoverflow.com/a/58773720
 // Posted by Jonas Wilms, modified by community. See post 'Timeline' for change history
 // Retrieved 2026-05-02, License - CC BY-SA 4.0
+/*
+var slideIndex = 0;
+showDivs();
 
-var slideIndex = 1;
-showDivs(slideIndex);
+// Get the button:
+let mybutton = document.getElementById("demo");
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+mybutton!.onclick = function() {currentDivs()};
+ 
+function plusDivs() {
+	slideIndex++;
+	showDivs()
 }
 
-function currentDiv(n) {
-  showDivs(slideIndex = n);
+function currentDivs() {
+  slideIndex--;
+  showDivs()
 }
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;;
-  var dots = document.getElementsByClassName("demo") as HTMLCollectionOf<HTMLElement>;;
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
+function showDivs() {
+  let i;
+  let x = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
+  
+  
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";  
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-red", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-red";
+  slideIndex++;
+
+  if (slideIndex > x.length) {
+        slideIndex = 1;
+    }
+
+    x[slideIndex - 1].style.display = "block";
+    
+    setTimeout(showDivs, 2000);
 }
+*/
+/// Build with brocode yt
+
+const slides = document.querySelectorAll(".mySlides");
+let slideIndex = 0;
+let intervalId: null | ReturnType<typeof setInterval> = null;
+
+let nextbtn = document.getElementById("nextbtn");
+let prebtn = document.getElementById("prebtn");
+// initializeSlider()
+document.addEventListener("DOMContentLoaded", initializeSlider);
+
+function initializeSlider(){
+	if (slides.length > 0){
+		slides[slideIndex].classList.add("displaySlide");
+		intervalId = setInterval(nextSlide, 5000);
+	}
+}
+
+nextbtn!.onclick = function() {nextSlide()};
+prebtn!.onclick = function() {prevSlide()};
+
+function showSlide(index){
+
+	if (index >= slides.length) {
+		slideIndex = 0;
+	}
+	else if (index < 0) {
+		slideIndex = slides.length - 1;
+	}
+
+	slides.forEach(slide => {
+		slide.classList.remove("displaySlide");
+	});
+	slides[slideIndex].classList.add("displaySlide");
+
+}
+
+function prevSlide(){
+	slideIndex--;
+	showSlide(slideIndex);
+}
+
+function nextSlide(){
+	slideIndex++;
+	showSlide(slideIndex);
+}
+
 </script>

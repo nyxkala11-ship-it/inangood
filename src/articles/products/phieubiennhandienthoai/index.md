@@ -13,6 +13,14 @@ image:
 catergory: Phiếu BH - Biên nhận điện thoại
 parent: Tag treo - Card
 id: phieubiennhandienthoai
+images:
+  - /src/articles/products/phieubiennhandienthoai/img1.jpg
+  - /src/articles/products/phieubiennhandienthoai/img2.jpg
+  - /src/articles/products/phieubiennhandienthoai/img3.jpg
+  - /src/articles/products/phieubiennhandienthoai/img4.jpg
+  - /src/articles/products/phieubiennhandienthoai/img5.jpg
+  - /src/articles/products/phieubiennhandienthoai/img6.jpg
+  - /src/articles/products/phieubiennhandienthoai/img7.jpg
 ---
 # In Phiếu Bảo Hành & Biên Nhận Điện Thoại – Rõ Ràng, Tin Cậy & Chuyên Nghiệp
 

@@ -11,6 +11,33 @@ image:
 catergory: Túi giấy Kraft
 parent: Túi giấy Kraft
 id: tuicaocap
+images:
+  - /src/articles/products/tuicaocap/img1.jpg
+  - /src/articles/products/tuicaocap/img2.jpg
+  - /src/articles/products/tuicaocap/img3.jpg
+  - /src/articles/products/tuicaocap/img4.jpg
+  - /src/articles/products/tuicaocap/img5.jpg
+  - /src/articles/products/tuicaocap/img6.jpg
+  - /src/articles/products/tuicaocap/img7.jpg
+  - /src/articles/products/tuicaocap/img8.jpg
+  - /src/articles/products/tuicaocap/img9.jpg
+  - /src/articles/products/tuicaocap/img10.jpg
+  - /src/articles/products/tuicaocap/img11.jpg
+  - /src/articles/products/tuicaocap/img12.jpg
+  - /src/articles/products/tuicaocap/img13.jpg
+  - /src/articles/products/tuicaocap/img14.jpg
+  - /src/articles/products/tuicaocap/img15.jpg
+  - /src/articles/products/tuicaocap/img16.jpg
+  - /src/articles/products/tuicaocap/img17.jpg
+videos:
+  - /src/articles/products/tuicaocap/vid1.mp4
+  - /src/articles/products/tuicaocap/vid2.mp4
+  - /src/articles/products/tuicaocap/vid3.mp4
+  - /src/articles/products/tuicaocap/vid4.mp4
+  - /src/articles/products/tuicaocap/vid5.mp4
+  - /src/articles/products/tuicaocap/vid6.mp4
+  - /src/articles/products/tuicaocap/vid7.mp4
+  - /src/articles/products/tuicaocap/vid8.mp4
 ---
 # Túi Giấy C250 Ivory – Thanh Lịch, Cứng Cáp & Nâng Tầm Thương Hiệu
 

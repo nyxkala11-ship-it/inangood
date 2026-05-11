@@ -9,5 +9,6 @@ image:
 catergory: Bọc - Túi
 parent: none
 id: boctui
+index: "7"
 ---
 # Tổng hợp các mục in Bọc Nilon - Túi trong caterogy

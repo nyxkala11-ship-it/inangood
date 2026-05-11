@@ -7,6 +7,7 @@ const blogCollection = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: ({ image }) =>
 		z.object({
+			index: z.any(),
 			title: z.string(),
 			// Transform string to Date object
 			date: z.coerce.date(),
@@ -15,7 +16,9 @@ const blogCollection = defineCollection({
 			parent: z.string(),
 			tags: z.string().array(),
 			id: z.string(),
+			
 			images: z.string().array().optional(),
+			videos: z.string().array().optional(),
 		}),
 });
 
@@ -25,5 +28,14 @@ const imgCollection = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.string(),
 });
-export const collections = { blogCollection, imgCollection };
 
+const slideCollection = defineCollection(
+	{
+		loader: glob({base: './src/assets/slide/', pattern: `*.{jpeg,jpg,png,gif}`}),
+		schema: z.object({
+			title: z.string(),
+		}),
+	}
+);
+
+export const collections = { blogCollection, imgCollection, slideCollection };

@@ -8,6 +8,53 @@ image:
 catergory: Menu
 parent: Menu - Thiệp
 id: inmenu
+images:
+  - /src/articles/products/inmenu/img1.jpg
+  - /src/articles/products/inmenu/img2.jpg
+  - /src/articles/products/inmenu/img3.jpg
+  - /src/articles/products/inmenu/img4.jpg
+  - /src/articles/products/inmenu/img5.jpg
+  - /src/articles/products/inmenu/img6.jpg
+  - /src/articles/products/inmenu/img7.jpg
+  - /src/articles/products/inmenu/img8.jpg
+  - /src/articles/products/inmenu/img9.jpg
+  - /src/articles/products/inmenu/img10.jpg
+  - /src/articles/products/inmenu/img11.jpg
+  - /src/articles/products/inmenu/img12.jpg
+  - /src/articles/products/inmenu/img13.jpg
+  - /src/articles/products/inmenu/img14.jpg
+  - /src/articles/products/inmenu/img15.jpg
+  - /src/articles/products/inmenu/img16.jpg
+  - /src/articles/products/inmenu/img17.jpg
+  - /src/articles/products/inmenu/img18.jpg
+  - /src/articles/products/inmenu/img19.jpg
+  - /src/articles/products/inmenu/img20.jpg
+  - /src/articles/products/inmenu/img21.jpg
+  - /src/articles/products/inmenu/img22.jpg
+  - /src/articles/products/inmenu/img23.jpg
+  - /src/articles/products/inmenu/img24.jpg
+  - /src/articles/products/inmenu/img25.jpg
+  - /src/articles/products/inmenu/img26.jpg
+  - /src/articles/products/inmenu/img27.jpg
+videos:
+  - /src/articles/products/inmenu/vid1.mp4
+  - /src/articles/products/inmenu/vid2.mp4
+  - /src/articles/products/inmenu/vid3.mp4
+  - /src/articles/products/inmenu/vid4.mp4
+  - /src/articles/products/inmenu/vid5.mp4
+  - /src/articles/products/inmenu/vid6.mp4
+  - /src/articles/products/inmenu/vid7.mp4
+  - /src/articles/products/inmenu/vid8.mp4
+  - /src/articles/products/inmenu/vid9.mp4
+  - /src/articles/products/inmenu/vid10.mp4
+  - /src/articles/products/inmenu/vid11.mp4
+  - /src/articles/products/inmenu/vid12.mp4
+  - /src/articles/products/inmenu/vid13.mp4
+  - /src/articles/products/inmenu/vid14.mp4
+  - /src/articles/products/inmenu/vid15.mp4
+  - /src/articles/products/inmenu/vid16.mp4
+  - /src/articles/products/inmenu/vid17.mp4
+  - /src/articles/products/inmenu/vid18.mp4
 ---
 # In Menu – Rõ Ràng, Thẩm Mỹ & Tăng Trải Nghiệm Khách Hàng
 

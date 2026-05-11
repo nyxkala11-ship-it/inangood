@@ -4,6 +4,11 @@
     
 }
 
+@theme {
+    --radius-border: 2vw;
+    --main-color: rgba(245, 255, 230, 0.5);
+}
+
 @media screen and (max-width: 600px) {
     p, a, pre {
         font-size: 1rem;

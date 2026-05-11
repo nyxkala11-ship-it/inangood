@@ -8,6 +8,23 @@ image:
 catergory: Tem Decal
 parent: Tem - Decal
 id: temdecal
+images:
+  - /src/articles/products/temdecal/img1.jpg
+  - /src/articles/products/temdecal/img2.jpg
+  - /src/articles/products/temdecal/img3.jpg
+  - /src/articles/products/temdecal/img4.jpg
+  - /src/articles/products/temdecal/img5.jpg
+  - /src/articles/products/temdecal/img6.jpg
+  - /src/articles/products/temdecal/img7.jpg
+  - /src/articles/products/temdecal/img8.jpg
+videos:
+  - /src/articles/products/temdecal/vid1.mp4
+  - /src/articles/products/temdecal/vid2.mp4
+  - /src/articles/products/temdecal/vid3.mp4
+  - /src/articles/products/temdecal/vid4.mp4
+  - /src/articles/products/temdecal/vid5.mp4
+  - /src/articles/products/temdecal/vid6.mp4
+  - /src/articles/products/temdecal/vid7.mp4
 ---
 # In Tem Decal – Bám Dính Tốt, Sắc Nét & Nâng Tầm Thương Hiệu
 

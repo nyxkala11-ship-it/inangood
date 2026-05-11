@@ -12,5 +12,6 @@ image:
 catergory: Hóa đơn - phiếu ship
 parent: none
 id: hoadonphieuship
+index: "4"
 ---
 # Tổng hợp các mục in hóa đơn phiếu ship trong caterogy

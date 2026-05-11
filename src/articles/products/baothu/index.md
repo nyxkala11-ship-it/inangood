@@ -10,7 +10,19 @@ catergory: Bao thư
 parent: Bao giấy - Folder
 id: baothu
 images:
-  - none
+  - /src/articles/products/baothu/img1.jpg
+  - /src/articles/products/baothu/img2.jpg
+  - /src/articles/products/baothu/img3.jpg
+  - /src/articles/products/baothu/img4.jpg
+  - /src/articles/products/baothu/img5.jpg
+  - /src/articles/products/baothu/img6.jpg
+  - /src/articles/products/baothu/img7.jpg
+videos:
+  - /src/articles/products/baothu/vid1.mp4
+  - /src/articles/products/baothu/vid2.mp4
+  - /src/articles/products/baothu/vid3.mp4
+  - /src/articles/products/baothu/vid4.mp4
+  - /src/articles/products/baothu/vid5.mp4
 ---
 # In Bao Thư (Envelope) – Chuyên Nghiệp, Đồng Bộ & Nâng Tầm Hình Ảnh Doanh Nghiệp
 

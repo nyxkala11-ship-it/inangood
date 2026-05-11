@@ -12,5 +12,6 @@ parent: none
 id: baogiayfolder
 images:
   - none
+index: "12"
 ---
 # Tổng hợp các mục in Bao giấy - Folder trong caterogy
