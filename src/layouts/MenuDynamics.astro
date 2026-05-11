@@ -36,24 +36,27 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
 							Trang chủ (Dynamics)
 						</a>
 					</li>
-                            {ProductsCol.filter(product => product.data.parent === 'none').map((product) => 
-                                <ul id={product.data.index} class="drophover Menu-items">
-                                <a href={`/products/${product.id}`} class="menitext" id={product.data.index}>
+                    {ProductsCol.filter(product => product.data.parent === 'none').map((product) => 
+                        
+                        <ul id={product.data.index} class={`${product.data.catergory} drophover Menu-items parent`}>
+                            <a href={`/products/${product.id}`} class={`menitext`} id={product.data.index}>
                                     {product.data.title}
-                                </a>
-                                <ul class="bg-sky-500 drop">
-                                    {ProductsCol.filter(productsub => productsub.data.parent === product.data.catergory).map(
-                                        productsub => 
-                                        productsub.data.parent === product.data.catergory ?
-                                        <li class="menitext flex min-w-[240px] flex-col gap-1 p-1.5">
-                                            <a href={`/products/${productsub.id}`}>
-                                                {productsub.data.title}
-                                            </a>
+                            </a>
+
+                            <!-- parent nếu có -->
+                            <ul class="bg-sky-500 drop">
+                                {ProductsCol.filter(productsub => productsub.data.parent === product.data.catergory).map(
+                                    productsub => 
+                                    productsub.data.parent === product.data.catergory ?
+                                        <li id={product.data.catergory} class={`${productsub.data.catergory} menitext flex min-w-[240px] flex-col gap-1 p-1.5`}>                                            <a href={`/products/${productsub.id}`}>
+                                                <a href={`/products/${productsub.id}`}>{productsub.data.title}</a>
+                                                    
+                                                </a>
                                         </li> : null
-                                    )}
-                                </ul>
+                                )}
+                            </ul>
                                 
-                                </ul>
+                        </ul>
                             )
                             }
                     
@@ -147,23 +150,36 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
 <script defer>
 
 document.addEventListener("DOMContentLoaded", sortList);
+document.addEventListener("DOMContentLoaded", appendList);
 
     function sortList() {
         let list, one, i, j, switching, b, shouldSwitch;
-        list = document.getElementById("");
+        // Lấy thuộc tính có id là Menu (bao gồm cả Menu com và mobile)
+        list = document.getElementById("Menu");
+        // switching dùng để kiểm tra xem có tiếp tục switch danh sách hay không
         switching = true;
+        // one dùng gỡ lỗi một lần
         one = true;
         while (switching) {
+            // tắt switching dùng để kiểm tra xem có tiếp tục switch danh sách hay không
             switching=false;
+
+            // lấy danh sách các ul có trong id Menu
             b = list.getElementsByTagName("ul");
+
             while (one == true) {
                 one = false;
             }
+
+            // Nếu id không đặt index, mặc định index = 0 để sort
             for (i=0; i< (b.length - 1); i++) {
                 if (b[i].id === "") {
                     b[i].setAttribute('id', '0');
                 }
             }
+
+            /// sort theo thứ số nguyên, nếu id hiện tại lớn hơn id phía sau thì
+            // thực hiện switch bằng cách đặt shouldSwitch = true
             for (i=0; i< (b.length - 1); i++) {
                 shouldSwitch = false;
                 if (parseInt(b[i].id) > parseInt(b[i+1].id)) {
@@ -171,7 +187,7 @@ document.addEventListener("DOMContentLoaded", sortList);
                 break;
             }
         }
-
+            /// chèn vị trí sau lên trước id hiện tại nếu id hiện tại lớn hơn
             if (shouldSwitch) {
                 b[i].parentNode.insertBefore(b[i + 1], b[i]);
                 switching = true;
@@ -179,5 +195,47 @@ document.addEventListener("DOMContentLoaded", sortList);
         }
 
         return b;
+    }
+    function appendList() {
+        let i, j, li, k, parent, parentul, child;
+        // lấy document có class là menu
+        parent = document.getElementById("Menu");
+        parentul = parent.getElementsByTagName("ul");
+        child = parent.getElementsByTagName("li");
+        // lặp qua danh sách, nếu có class name giống với class parent-parent thì add vô parent
+        
+        console.log(`ParentUL ${parentul.length}`);
+
+        for (i = 0; i < parentul.length; i++) {
+
+
+            console.log(`===============================================`);
+            console.log(`Lớp ${parentul[i].className}`);
+            li = parentul[i].classList;
+
+            console.log(li);
+            console.log(parentul[i].textContent);
+            // kiểm tra lớp có phải cần parent không
+            for (k = 0; k<li.length; k++)
+            {
+                if (li[k] == "parent")  {
+                    // Nếu có parent thì cho chạy tìm child để add vô
+                    for (j = 0; j < child.length; j++) {
+                        // nếu nó có id hay class trùng với li thì add
+                        if (parentul[i].textContent.trim() === child[j].id.trim()) {
+                            console.log(`============+++++++++++++++====================`);
+                            
+                            console.log(`child: ${child[j].textContent}`);
+                            console.log(`===`);
+                            console.log(`thêm ${child[j]}`);
+                            console.log(`===`);
+                            parentul[i].appendChild(child[j]);
+                            console.log(parentul[i]);
+                            console.log(`=========++++++++++++=======================`);
+                        }
+                    }
+                }
+        }
+    }
     }
 </script>
