@@ -8,7 +8,7 @@ tags:
 date: 2026-04-28T00:00:00
 image:
 catergory: Túi Niêm Phong
-parent: Bọc - Túi
+parent: Bọc Nilon - Túi
 id: tuiniemphong
 images:
   - /src/articles/products/tuiniemphong/img1.jpg

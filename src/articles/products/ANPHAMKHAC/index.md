@@ -7,7 +7,7 @@ tags:
   - Khác
 date: 2026-04-28T00:00:00
 image:
-catergory: Ấn phẩm khác
+catergory: Ấn Phẩm Khác
 parent: none
 id: anphamkhac
 images:

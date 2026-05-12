@@ -8,7 +8,7 @@ tags:
   - Nghề
 date: 2026-04-28T00:00:00
 image:
-catergory: Bằng đào tạo nghề
+catergory: Bằng Đào Tạo Nghề
 parent: Bằng - Hợp đồng
 id: bangdaotaonghe
 images:

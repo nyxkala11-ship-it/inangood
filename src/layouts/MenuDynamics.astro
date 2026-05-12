@@ -48,14 +48,13 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
                                 {ProductsCol.filter(productsub => productsub.data.parent === product.data.catergory).map(
                                     productsub => 
                                     productsub.data.parent === product.data.catergory ?
-                                        <li id={product.data.catergory} class={`${productsub.data.catergory} menitext flex min-w-[240px] flex-col gap-1 p-1.5`}>                                            <a href={`/products/${productsub.id}`}>
+                                        <li id={product.data.catergory} class={`${productsub.data.catergory} menitext flex min-w-[240px] flex-col gap-1 p-1.5 child`}>                                            <a href={`/products/${productsub.id}`}>
                                                 <a href={`/products/${productsub.id}`}>{productsub.data.title}</a>
                                                     
                                                 </a>
                                         </li> : null
                                 )}
                             </ul>
-                                
                         </ul>
                             )
                             }
@@ -148,7 +147,7 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
 </style>
 
 <script defer>
-
+const para = document.createElement("p");
 document.addEventListener("DOMContentLoaded", sortList);
 document.addEventListener("DOMContentLoaded", appendList);
 
@@ -189,7 +188,8 @@ document.addEventListener("DOMContentLoaded", appendList);
         }
             /// chèn vị trí sau lên trước id hiện tại nếu id hiện tại lớn hơn
             if (shouldSwitch) {
-                b[i].parentNode.insertBefore(b[i + 1], b[i]);
+                console.log(`${b[i].parentElement}`);
+                b[i].parentElement.insertBefore(b[i + 1], b[i]);
                 switching = true;
             }
         }
@@ -197,12 +197,13 @@ document.addEventListener("DOMContentLoaded", appendList);
         return b;
     }
     function appendList() {
-        let i, j, li, k, parent, parentul, child;
+        let i, j, z, li, k, parent, parentul, parentultext, child;
         // lấy document có class là menu
-        parent = document.getElementById("Menu");
-        parentul = parent.getElementsByTagName("ul");
+        parent = document.getElementById("MenuCom");
+        parentul = parent.getElementsByTagName("ul"); // Tất cả danh mục dung menuCom
+        parentuldrop = document.getElementsByTagName("li"); // Tất cả danh mục dung menuCom
         child = parent.getElementsByTagName("li");
-        // lặp qua danh sách, nếu có class name giống với class parent-parent thì add vô parent
+        // lọc qua danh sách, nếu có class name giống với class parent-parent thì add vô parent
         
         console.log(`ParentUL ${parentul.length}`);
 
@@ -210,31 +211,55 @@ document.addEventListener("DOMContentLoaded", appendList);
 
 
             console.log(`===============================================`);
-            console.log(`Lớp ${parentul[i].className}`);
+            console.log(`Lớp: ${parentul[i].className} Có Text Danh mục: ${parentul[i].textContent}`);
             li = parentul[i].classList;
 
-            console.log(li);
-            console.log(parentul[i].textContent);
+            console.log(`Danh sách lớp: ${li}`);
+            console.log(`Nội dung text của lớp: ${parentul[i].textContent.trim()}
+            `);
             // kiểm tra lớp có phải cần parent không
             for (k = 0; k<li.length; k++)
             {
-                if (li[k] == "parent")  {
-                    // Nếu có parent thì cho chạy tìm child để add vô
-                    for (j = 0; j < child.length; j++) {
+
+
+                if (li[k] === "drophover")  {
+                    // drop mới có child, bạn đang mò đường
+                    const childElement = document.getElementsByTagName('LI');
+                    console.log(`
+                    : CÓ DANH MỤC CON
+                    : drop mới có child, bạn đang mò đường
+                    : li tạm là: ${li.toString()} với các child: ${parentul[i].textContent}
+                    : có thuộc tính parent
+                    : Chạy vòng lặp để add tất cả các thuộc tính con
+                    : child đang có: ${childElement.length}
+                    `);
+                    parentultext = parentul[i].textContent.trim();
+                    // const lidrop = parentul.getElementsByClassName("drop");
+                if (childElement.length > 0) {
+                    for (j = 0; j < childElement.length; j++) {
+                        console.log(`
+                        :child ${childElement[j].textContent.trim()} có id là: ${childElement[j].id.trim()}
+                        : parent[i] hiện tại là: ${parentul[i].className.trim()} có textContent là ${parentul[i].textContent.trim()}
+                        ${childElement[j].id.trim().toUpperCase()} so voi ${parentultext.trim().toUpperCase()}
+                        `);
                         // nếu nó có id hay class trùng với li thì add
-                        if (parentul[i].textContent.trim() === child[j].id.trim()) {
-                            console.log(`============+++++++++++++++====================`);
-                            
-                            console.log(`child: ${child[j].textContent}`);
+
+                        if (childElement[j].id.trim().toUpperCase() === parentultext.trim().toUpperCase()) {
+                        console.log(`Thêm child: ${childElement[j].id.trim().toUpperCase()} vô ${parentul[i].textContent.trim().toUpperCase()}`);
+                        console.log(`=========++++++++++++====================`);
+                            console.log(`child id: ${childElement[j].id} | text: ${childElement[j].textContent}`);
+                            console.log(`===`);i
                             console.log(`===`);
-                            console.log(`thêm ${child[j]}`);
-                            console.log(`===`);
-                            parentul[i].appendChild(child[j]);
-                            console.log(parentul[i]);
+                            ///
+                            parentul[i].push.apply(childElement[j]);
+                            ///
+                            console.log(parentul[i].textContent);
                             console.log(`=========++++++++++++=======================`);
                         }
                     }
                 }
+                }
+            
         }
     }
     }
