@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import ProductArticles from '../../layouts/ProductsArticles.astro';
-
+import ProductCatergories from '../../layouts/ProductsCatergories.astro';
 export async function getStaticPaths() {
 	const posts = await getCollection('blogCollection');
 	return posts.map((post) => ({
@@ -14,12 +14,20 @@ type Props = CollectionEntry<'blogCollection'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+const isParent = post.data.parent === 'none';
+
 console.log(`post id la: ${post.id}`)
 
 ---
+{isParent ? (
+<ProductCatergories {...post.data}>
+	<Content class="contentclass" />
+</ProductCatergories>
+) : (
 <ProductArticles {...post.data}>
 	<Content class="contentclass" />
 </ProductArticles>
+)}
 
 <style>
 	p {

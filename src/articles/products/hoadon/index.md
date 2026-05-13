@@ -49,6 +49,7 @@ images:
   - /src/articles/products/hoadon/img37.jpg
 videos:
   - /src/articles/products/hoadon/vid1.mp4
+index: "0"
 ---
 
 # In Hóa Đơn – Chuyên Nghiệp, Rõ Ràng & Đồng Bộ Thương Hiệu

@@ -23,6 +23,7 @@ videos:
   - /src/articles/products/tuiniemphong/vid4.mp4
   - /src/articles/products/tuiniemphong/vid5.mp4
   - /src/articles/products/tuiniemphong/vid6.mp4
+index: "0"
 ---
 # Túi Niêm Phong – Bảo Mật, Chắc Chắn & Chuyên Nghiệp Cho Mọi Đơn Hàng
 

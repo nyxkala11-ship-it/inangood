@@ -33,6 +33,7 @@ images:
   - /src/articles/products/phieushiphang/img21.jpg
 videos:
   - /src/articles/products/phieushiphang/vid1.mp4
+index: "0"
 ---
 # Phiếu Ship Hàng – Rõ Ràng, Chuyên Nghiệp & Tối Ưu Vận Hành
 

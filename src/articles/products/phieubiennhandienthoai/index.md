@@ -21,6 +21,7 @@ images:
   - /src/articles/products/phieubiennhandienthoai/img5.jpg
   - /src/articles/products/phieubiennhandienthoai/img6.jpg
   - /src/articles/products/phieubiennhandienthoai/img7.jpg
+index: "0"
 ---
 # In Phiếu Bảo Hành & Biên Nhận Điện Thoại – Rõ Ràng, Tin Cậy & Chuyên Nghiệp
 

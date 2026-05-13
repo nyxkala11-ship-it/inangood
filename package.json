@@ -24,5 +24,8 @@
     "lan-network": "^0.2.1",
     "splide": "^0.0.1-security",
     "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "glob": "^13.0.6"
   }
 }

@@ -25,6 +25,7 @@ images:
   - /src/articles/products/logo/img12.jpg
   - /src/articles/products/logo/img13.jpg
   - /src/articles/products/logo/img14.jpg
+index: "0"
 ---
 **# Thiết Kế & In Logo – Nhận Diện Chuẩn, Ấn Tượng & Đồng Bộ Thương Hiệu
 

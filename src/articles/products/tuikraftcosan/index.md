@@ -44,6 +44,7 @@ videos:
   - /src/articles/products/tuikraftcosan/vid4.mp4
   - /src/articles/products/tuikraftcosan/vid5.mp4
   - /src/articles/products/tuikraftcosan/vid6.mp4
+index: "0"
 ---
 # Túi Giấy Kraft Có Sẵn – Giao Nhanh, Tiện Lợi & Tiết Kiệm
 

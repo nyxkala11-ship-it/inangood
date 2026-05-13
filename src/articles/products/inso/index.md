@@ -37,6 +37,7 @@ videos:
   - /src/articles/products/inso/vid9.mp4
   - /src/articles/products/inso/vid10.mp4
   - /src/articles/products/inso/vid11.mp4
+index: "0"
 ---
 # In Sổ – Chuyên Nghiệp, Thẩm Mỹ & Cá Nhân Hóa Theo Nhu Cầu
 

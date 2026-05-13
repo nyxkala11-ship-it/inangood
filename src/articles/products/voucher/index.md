@@ -30,6 +30,7 @@ videos:
   - /src/articles/products/voucher/vid4.mp4
   - /src/articles/products/voucher/vid5.mp4
   - /src/articles/products/voucher/vid6.mp4
+index: "0"
 ---
 # In Voucher (Phiếu Quà Tặng) – Thu Hút Khách Hàng & Tăng Doanh Thu Hiệu Quả
 

@@ -23,6 +23,7 @@ videos:
   - /src/articles/products/baothu/vid3.mp4
   - /src/articles/products/baothu/vid4.mp4
   - /src/articles/products/baothu/vid5.mp4
+index: "0"
 ---
 # In Bao Thư (Envelope) – Chuyên Nghiệp, Đồng Bộ & Nâng Tầm Hình Ảnh Doanh Nghiệp
 

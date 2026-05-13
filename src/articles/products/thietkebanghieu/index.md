@@ -12,6 +12,7 @@ image:
 catergory: Thiết kế bảng hiệu
 parent: Ấn phẩm khác
 id: thietkebanghieu
+index: "0"
 ---
 # In Bảng Hiệu – Nổi Bật, Thu Hút & Tăng Nhận Diện Thương Hiệu
 
