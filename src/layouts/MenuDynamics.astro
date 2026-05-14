@@ -1,51 +1,144 @@
 ---
+
+
 // Dùng getCollection được define tại product.config.ts
 import { getCollection, render } from 'astro:content';
-import { LogsIcon } from '@lucide/astro';
-import { sortmenu } from '../scripts/untils';
-import { parse } from "astro:schema";
-// Get all data 'src/articles/products/' entries
-const ProductsCol = (await getCollection('blogCollection')).sort(
-    (a, b) => b.data.index - a.data.index,
-);
-//const slide = await getCollection('slide');
-//const matches = import.meta.glob('../articles/products/*.md', { eager: true });
-//const products = Object.values(matches);
+import { GripVerticalIcon, LogsIcon } from '@lucide/astro';
+// Lấy và sort data
+const allProducts = await getCollection('blogCollection');
+const sortedProducts = [...allProducts].sort((a, b) => {
+    // Nếu cả hai đều có index, sort theo index tăng dần
+   
+        console.log('srt tăng dần');
+        return a.data.index - b.data.index;
+});
 
-console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
+console.log('=== SORTED: Index items first, then no-index ===');
+sortedProducts.forEach((product, i) => {
+    const index = product.data.index;
+    console.log(`${i + 1}. ${product.data.title} - Index: ${index || 'NO INDEX'}`);
+});
+// Xây dựng cấu trúc cây menu
+interface MenuItem {
+  id: string;
+  title: string;
+  slug: string;
+  index: number;
+  category: string;
+  children: MenuItem[];
+}
+
+// Map tra cứu nhanh
+const productMap = new Map<string, MenuItem>();
+// Tạo map catergory
+const categoryMap = new Map<string, MenuItem>();
+
+//const slide = await getCollection('slide');
+// Debug từng item - Xem cấu trúc đầy đủ
+console.log('=== TOTAL PRODUCTS:', allProducts.length);
+console.log('========================================');
+// Tạo menu items cho parent (category)
+sortedProducts.forEach(product => {
+    if (product.data.parent === 'none') {
+        const menuItem: MenuItem = {
+            id: product.id,
+            title: product.data.title,
+            slug: `/products/${product.id}`,
+            index: product.data.index,
+            category: product.data.catergory,
+            children: []
+        };
+        categoryMap.set(product.data.catergory, menuItem);
+        productMap.set(product.id, menuItem);
+    }
+});
+
+sortedProducts.forEach(product => {
+    if (product.data.parent !== 'none') {
+        const menuItem: MenuItem = {
+            id: product.id,
+            title: product.data.title,
+            slug: `/products/${product.id}`,
+            index: product.data.index,
+            category: product.data.catergory,
+            children: []
+        };
+        productMap.set(product.id, menuItem);
+        
+        // Tìm parent theo category
+        const parentItem = categoryMap.get(product.data.parent);
+        if (parentItem) {
+            parentItem.children.push(menuItem);
+            //console.log(`✅ Đã thêm "${menuItem.title}" vào parent "${parentItem.title}"`);
+        } else {
+            //console.log(`⚠️ Không tìm thấy parent category: "${product.data.parent}" cho child "${menuItem.title}"`);
+        }
+    }
+});
+
+// Lấy menu items gốc
+const rootMenus = Array.from(categoryMap.values());
 
 ---
 
+<!-- Component Menu -->
+<div class="menu-container flex flex-cols justify-center">
+  <button id="menuMobileBtn" class="menu-mobile-btn">
+    <LogsIcon size="32" class="inline" />
+    <span class="pl-2">Menu</span>
+  </button>
 
+  <ul id="mainMenu" class="main-menu">
+    <li class="menu-item">
+      <a href="/">Trang chủ</a>
+    </li>
+    
+    {rootMenus.map(menuitem => (
+    <li class={`menu-item ${menuitem.children.length > 0 ? 'has-dropdown' : ''}`}>
+        <a href={menuitem.slug}>{menuitem.title} {menuitem.children.length > 0 ? <GripVerticalIcon class="inline" /> : ""}</a>
+        
+        {menuitem.children.length > 0 && (
+        <ul class="dropdown-menu">
+            {menuitem.children.map(child => (
+            <li >
+                <a href={child.slug}>{child.title}</a>
+            </li>
+            ))}
+        </ul>
+        )}
+    </li>
+    ))}
+  </ul>
+</div>
 
-<!-- Main Menu <Debug {products} />-->
+<!-- Main Menu <Debug {products} />
     
      <div class="flex flex-col items-center">
 
             <div id="Menu" class="items-center shadow-xl">
 
-                <div id="MenuMobile" class="my-2">
+                <button onclick="displayCom()" id="MenuMobile" class="my-2">
                     <LogsIcon size="32" class="inline" />
                     <p class="inline pl-2">Menu</p>
-                </div>
+                </button>
                 <ul id="MenuCom" class="flex items-start flex-wrap">
-					
-                    <!-- Trang chủ -->
+					-->
+                    <!-- Trang chủ 
                     <li id="Menu-items-tt">
 						<a href="/">
 							Trang chủ (Dynamics)
 						</a>
 					</li>
-                    {ProductsCol.filter(product => product.data.parent === 'none').map((product) => 
+                    {sortedProducts.filter(product => product.data.parent === 'none').map((product) => 
                         
                         <ul id={product.data.index} class={`${product.data.catergory} drophover Menu-items parent`}>
                             <a href={`/products/${product.id}`} class={`menitext`} id={product.data.index}>
                                     {product.data.title}
                             </a>
-
-                            <!-- parent nếu có -->
+-->
+                            <!-- parent nếu có 
                             <ul class="bg-sky-500 drop">
-                                {ProductsCol.filter(productsub => productsub.data.parent === product.data.catergory).map(
+                                {sortedProducts.filter(productsub => productsub.data.parent === product.data.catergory).map(
                                     productsub => 
                                     productsub.data.parent === product.data.catergory ?
                                         <li id={product.data.catergory} class={`${productsub.data.catergory} menitext flex min-w-[240px] flex-col gap-1 p-1.5 child`}>                                            <a href={`/products/${productsub.id}`}>
@@ -63,10 +156,114 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
 
             </div> 
 	
-    </div>
-
-<style>
+    </div>-->
     
+<style is:global>
+.menu-container {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.main-menu {
+  max-width: 1440px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  position: relative;
+  padding: 6pt 1.5rem 6pt 6pt;
+}
+
+.menu-item a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-item:hover {
+  background-color: aliceblue;
+  transition: 0.35s;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: aliceblue;
+  padding: 1rem;
+  border-radius: 5px;
+  min-width: 240px;
+  list-style: none;
+  margin: 0;
+  z-index: 999;
+        margin-left: 0rem;
+        overflow: auto;
+        max-width: 350px;
+        transition: all 0.35s;
+        cursursor: pointer;
+}
+
+.has-dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.dropdown-menu li {
+  padding: 8px 0;
+}
+
+.dropdown-menu li a {
+  font-size: 1rem;
+}
+
+/* Mobile styles */
+.menu-mobile-btn {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-mobile-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .main-menu {
+    display: none;
+    flex-direction: column;
+  }
+  
+  .main-menu.active {
+    display: flex;
+  }
+  
+  .menu-item {
+    width: 100%;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    display: none;
+    padding-left: 20px;
+  }
+  
+  .has-dropdown.active .dropdown-menu {
+    display: block;
+  }
+}
+
+
+/*    
     #Menu {
         width: 1440px;
         max-width: 100%;
@@ -109,17 +306,7 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
     }
     
     .drophover:hover .drop{
-        margin-top: 7pt;
-        margin-left: -7pt;
-        display: block;
-        overflow: auto;
-        position: absolute;
-        max-width: 350px;
-        background-color: aliceblue;
-        padding: 15px;
-        border-radius: 5px;
-        transition: 0.35s, display .45s;
-        cursursor: pointer;
+        
     }
 
     @media screen and (max-width: 600px) {
@@ -144,124 +331,33 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
             font-size: larger;
         }
     }
+*/
 </style>
+<script>
+// Clean, simple JavaScript, Dùng sropdown javascript thay cho html
 
-<script defer>
-const para = document.createElement("p");
-document.addEventListener("DOMContentLoaded", sortList);
-
-//document.addEventListener("DOMContentLoaded", appendList);
-
-    function sortList() {
-        let list, one, i, j, switching, b, shouldSwitch;
-        // Lấy thuộc tính có id là Menu (bao gồm cả Menu com và mobile)
-        list = document.getElementById("Menu");
-        // switching dùng để kiểm tra xem có tiếp tục switch danh sách hay không
-        switching = true;
-        // one dùng gỡ lỗi một lần
-        one = true;
-        while (switching) {
-            // tắt switching dùng để kiểm tra xem có tiếp tục switch danh sách hay không
-            switching=false;
-
-            // lấy danh sách các ul có trong id Menu
-            b = list.getElementsByTagName("ul");
-
-            while (one == true) {
-                one = false;
-            }
-
-            // Nếu id không đặt index, mặc định index = 0 để sort
-            for (i=0; i< (b.length - 1); i++) {
-                if (b[i].id === "") {
-                    b[i].setAttribute('id', '0');
-                }
-            }
-
-            /// sort theo thứ số nguyên, nếu id hiện tại lớn hơn id phía sau thì
-            // thực hiện switch bằng cách đặt shouldSwitch = true
-            for (i=0; i< (b.length - 1); i++) {
-                shouldSwitch = false;
-                if (parseInt(b[i].id) > parseInt(b[i+1].id)) {
-                shouldSwitch = true;
-                break;
-            }
-        }
-            /// chèn vị trí sau lên trước id hiện tại nếu id hiện tại lớn hơn
-            if (shouldSwitch) {
-                console.log(`${b[i].parentElement}`);
-                b[i].parentElement.insertBefore(b[i + 1], b[i]);
-                switching = true;
-            }
-        }
-
-        return b;
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('menuMobileBtn');
+  const mainMenu = document.getElementById('mainMenu');
+  
+  if (menuBtn && mainMenu) {
+    // Mobile menu toggle
+    menuBtn.addEventListener('click', () => {
+      mainMenu.classList.toggle('active');
+    });
+    
+    // Mobile dropdown toggle
+    if (window.innerWidth <= 600) {
+      const dropdownItems = document.querySelectorAll('.has-dropdown > a');
+      dropdownItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const parent = item.parentElement;
+          parent!.classList.toggle('active');
+        });
+      });
     }
-    function appendList() {
-        let i, j, z, li, k, parent, parentul, parentultext, child;
-        // lấy document có class là menu
-        parent = document.getElementById("MenuCom");
-        parentul = parent.getElementsByTagName("ul"); // Tất cả danh mục dung menuCom
-        parentuldrop = document.getElementsByTagName("li"); // Tất cả danh mục dung menuCom
-        child = parent.getElementsByTagName("li");
-        // lọc qua danh sách, nếu có class name giống với class parent-parent thì add vô parent
-        
-        console.log(`ParentUL ${parentul.length}`);
+  }
+});
 
-        for (i = 0; i < parentul.length; i++) {
-
-
-            console.log(`===============================================`);
-            console.log(`Lớp: ${parentul[i].className} Có Text Danh mục: ${parentul[i].textContent}`);
-            li = parentul[i].classList;
-
-            console.log(`Danh sách lớp: ${li}`);
-            console.log(`Nội dung text của lớp: ${parentul[i].textContent.trim()}
-            `);
-            // kiểm tra lớp có phải cần parent không
-            for (k = 0; k<li.length; k++)
-            {
-
-
-                if (li[k] === "drophover")  {
-                    // drop mới có child, bạn đang mò đường
-                    const childElement = document.getElementsByTagName('LI');
-                    console.log(`
-                    : CÓ DANH MỤC CON
-                    : drop mới có child, bạn đang mò đường
-                    : li tạm là: ${li.toString()} với các child: ${parentul[i].textContent}
-                    : có thuộc tính parent
-                    : Chạy vòng lặp để add tất cả các thuộc tính con
-                    : child đang có: ${childElement.length}
-                    `);
-                    parentultext = parentul[i].textContent.trim();
-                    // const lidrop = parentul.getElementsByClassName("drop");
-                if (childElement.length > 0) {
-                    for (j = 0; j < childElement.length; j++) {
-                        console.log(`
-                        :child ${childElement[j].textContent.trim()} có id là: ${childElement[j].id.trim()}
-                        : parent[i] hiện tại là: ${parentul[i].className.trim()} có textContent là ${parentul[i].textContent.trim()}
-                        ${childElement[j].id.trim().toUpperCase()} so voi ${parentultext.trim().toUpperCase()}
-                        `);
-                        // nếu nó có id hay class trùng với li thì add
-
-                        if (childElement[j].id.trim().toUpperCase() === parentultext.trim().toUpperCase()) {
-                        console.log(`Thêm child: ${childElement[j].id.trim().toUpperCase()} vô ${parentul[i].textContent.trim().toUpperCase()}`);
-                        console.log(`=========++++++++++++====================`);
-                            console.log(`child id: ${childElement[j].id} | text: ${childElement[j].textContent}`);
-                            console.log(`===`);i
-                            console.log(`===`);
-                            ///
-                            parentul[i].push.apply(childElement[j]);
-                            ///
-                            console.log(parentul[i].textContent);
-                            console.log(`=========++++++++++++=======================`);
-                        }
-                    }
-                }
-                }
-            
-        }
-    }
-    }
 </script>

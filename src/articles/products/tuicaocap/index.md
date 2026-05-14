@@ -38,6 +38,7 @@ videos:
   - /src/articles/products/tuicaocap/vid6.mp4
   - /src/articles/products/tuicaocap/vid7.mp4
   - /src/articles/products/tuicaocap/vid8.mp4
+index: "0"
 ---
 # Túi Giấy C250 Ivory – Thanh Lịch, Cứng Cáp & Nâng Tầm Thương Hiệu
 

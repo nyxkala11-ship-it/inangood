@@ -18,6 +18,7 @@ images:
 videos:
   - /src/articles/products/tuizip/vid1.mp4
   - /src/articles/products/tuizip/vid2.mp4
+index: "0"
 ---
 # Túi Zip (Zipper Bag) – Tiện Lợi, Tái Sử Dụng & Bảo Quản Hiệu Quả
 

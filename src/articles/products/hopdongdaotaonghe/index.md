@@ -35,6 +35,7 @@ videos:
   - /src/articles/products/hopdongdaotaonghe/vid4.mp4
   - /src/articles/products/hopdongdaotaonghe/vid5.mp4
   - /src/articles/products/hopdongdaotaonghe/vid6.mp4
+index: "0"
 ---
 # In Hợp Đồng Đào Tạo Nghề – Chuẩn Mực Pháp Lý, Rõ Ràng & Chuyên Nghiệp
 

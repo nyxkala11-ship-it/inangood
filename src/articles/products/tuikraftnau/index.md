@@ -25,6 +25,7 @@ videos:
   - /src/articles/products/tuikraftnau/vid2.mp4
   - /src/articles/products/tuikraftnau/vid3.mp4
   - /src/articles/products/tuikraftnau/vid4.mp4
+index: "0"
 ---
 # Túi Giấy Kraft Nâu – Mộc Mạc, Bền Bỉ & Đậm Chất Thương Hiệu
 

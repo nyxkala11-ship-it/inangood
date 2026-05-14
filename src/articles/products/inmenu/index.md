@@ -55,6 +55,7 @@ videos:
   - /src/articles/products/inmenu/vid16.mp4
   - /src/articles/products/inmenu/vid17.mp4
   - /src/articles/products/inmenu/vid18.mp4
+index: "0"
 ---
 # In Menu – Rõ Ràng, Thẩm Mỹ & Tăng Trải Nghiệm Khách Hàng
 

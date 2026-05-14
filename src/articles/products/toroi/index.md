@@ -27,6 +27,7 @@ videos:
   - /src/articles/products/toroi/vid3.mp4
   - /src/articles/products/toroi/vid4.mp4
   - /src/articles/products/toroi/vid5.mp4
+index: "0"
 ---
 # In Tờ Rơi – Tiếp Cận Nhanh, Chi Phí Thấp & Tăng Hiệu Quả Quảng Bá
 

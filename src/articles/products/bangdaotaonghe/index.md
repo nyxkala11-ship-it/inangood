@@ -29,6 +29,7 @@ videos:
   - /src/articles/products/bangdaotaonghe/vid2.mp4
   - /src/articles/products/bangdaotaonghe/vid3.mp4
   - /src/articles/products/bangdaotaonghe/vid4.mp4
+index: "0"
 ---
 # In Bằng Đào Tạo Nghề – Trang Trọng, Chuẩn Mực & Nâng Tầm Giá Trị Chứng Nhận
 

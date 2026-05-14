@@ -24,6 +24,7 @@ images:
 videos:
   - /src/articles/products/temvo/vid1.mp4
   - /src/articles/products/temvo/vid2.mp4
+index: "0"
 ---
 # In Tem Vỡ (Tem Niêm Phong) – Chống Giả, Chống Mở & Bảo Vệ Sản Phẩm
 

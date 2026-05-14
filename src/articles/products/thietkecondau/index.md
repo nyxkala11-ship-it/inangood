@@ -26,6 +26,7 @@ videos:
   - /src/articles/products/thietkecondau/vid3.mp4
   - /src/articles/products/thietkecondau/vid4.mp4
   - /src/articles/products/thietkecondau/vid5.mp4
+index: "0"
 ---
 # Con Dấu – Chuẩn Mực Pháp Lý, Nhanh Gọn & Chuyên Nghiệp
 

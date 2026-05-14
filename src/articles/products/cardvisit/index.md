@@ -32,6 +32,7 @@ videos:
   - /src/articles/products/cardvisit/vid3.mp4
   - /src/articles/products/cardvisit/vid4.mp4
   - /src/articles/products/cardvisit/vid5.mp4
+index: "0"
 ---
 # Card Visit (Name Card) – Nhỏ Gọn, Ấn Tượng & Chuyên Nghiệp
 

@@ -28,6 +28,7 @@ videos:
   - /src/articles/products/tagtreo/vid3.mp4
   - /src/articles/products/tagtreo/vid4.mp4
   - /src/articles/products/tagtreo/vid5.mp4
+index: "0"
 ---
 # In Tag Treo (Thẻ Treo) – Nhỏ Gọn, Tinh Tế & Tăng Nhận Diện Thương Hiệu
 

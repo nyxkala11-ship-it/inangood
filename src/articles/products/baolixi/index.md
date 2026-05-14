@@ -27,6 +27,7 @@ images:
   - /src/articles/products/baolixi/img15.jpg
   - /src/articles/products/baolixi/img16.jpg
   - /src/articles/products/baolixi/img17.jpg
+index: "0"
 ---
 # In Bao Lì Xì – May Mắn, Thẩm Mỹ & Nâng Tầm Thương Hiệu Dịp Tết
 

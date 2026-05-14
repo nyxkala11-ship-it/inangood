@@ -14,6 +14,7 @@ images:
 videos:
   - /src/articles/products/folder/vid1.mp4
   - /src/articles/products/folder/vid2.mp4
+index: "0"
 ---
 # In Folder (Bìa Hồ Sơ) – Gọn Gàng, Chuyên Nghiệp & Đồng Bộ Thương Hiệu
 

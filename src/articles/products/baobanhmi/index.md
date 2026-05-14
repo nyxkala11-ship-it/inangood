@@ -18,6 +18,7 @@ images:
   - /src/articles/products/baobanhmi/img5.jpg
 videos:
   - /src/articles/products/baobanhmi/vid1.mp4
+index: "0"
 ---
 # Bao Bánh Mì – Sạch Sẽ, Tiện Lợi & Tăng Nhận Diện Thương Hiệu
 

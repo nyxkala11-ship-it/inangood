@@ -23,6 +23,7 @@ videos:
   - /src/articles/products/baodungtrangsuc/vid2.mp4
   - /src/articles/products/baodungtrangsuc/vid3.mp4
   - /src/articles/products/baodungtrangsuc/vid4.mp4
+index: "0"
 ---
 # Bao Đựng Trang Sức – Tinh Tế, Bảo Vệ Tốt & Nâng Tầm Giá Trị Sản Phẩm
 

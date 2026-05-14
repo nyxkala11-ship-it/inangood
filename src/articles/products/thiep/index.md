@@ -48,6 +48,7 @@ videos:
   - /src/articles/products/thiep/vid10.mp4
   - /src/articles/products/thiep/vid11.mp4
   - /src/articles/products/thiep/vid12.mp4
+index: "0"
 ---
 # In Thiệp – Tinh Tế, Cá Nhân Hóa & Truyền Tải Cảm Xúc
 

@@ -19,6 +19,7 @@ images:
   - /src/articles/products/tuikrafthongdao/img5.jpg
 videos:
   - /src/articles/products/tuikrafthongdao/vid1.mp4
+index: "0"
 ---
 # Túi Giấy Kraft Nền Hồng Đào – Ngọt Ngào, Hiện Đại & Khác Biệt
 

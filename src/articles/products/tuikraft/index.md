@@ -56,6 +56,7 @@ images:
   - /src/articles/products/tuikraft/img43.jpg
   - /src/articles/products/tuikraft/img44.jpg
   - /src/articles/products/tuikraft/img45.jpg
+index: "0"
 ---
 
 # *Túi Giấy Kraft – Giải Pháp Bao Bì Xanh, Tinh Tế & Đẳng Cấp*

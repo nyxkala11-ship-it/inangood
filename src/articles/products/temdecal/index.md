@@ -25,6 +25,7 @@ videos:
   - /src/articles/products/temdecal/vid5.mp4
   - /src/articles/products/temdecal/vid6.mp4
   - /src/articles/products/temdecal/vid7.mp4
+index: "0"
 ---
 # In Tem Decal – Bám Dính Tốt, Sắc Nét & Nâng Tầm Thương Hiệu
 
