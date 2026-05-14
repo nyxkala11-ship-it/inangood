@@ -9,9 +9,62 @@ import type { CollectionEntry } from "astro:content";
 import type { Options } from '@splidejs/splide';
 import "@splidejs/splide"
 import { ArrowBigLeftDash, ArrowBigRight, ArrowBigRightDash } from '@lucide/astro';
+import { url } from 'astro:schema';
 
 type Props = CollectionEntry<"blogCollection">["data"];
 const { title, date, catergory, parent, id, images, videos } = Astro.props;
+
+const currentPath = import.meta.url;
+
+const currentDir = new URL('.', currentPath).pathname;
+
+// Lấy danh sách các file từ thư mục hiện tại
+const getAssets = () => {
+	// Sử dụng import tất car các file ảnh trong thư mục hiện tại
+	const allAssets = import.meta.glob('./**/*.{jpg,png,svg,mp4,webm}', {
+		eager: true,
+		as: 'url',
+	});
+
+	// hoacwj raw 
+	const rawImgAssets = import.meta.glob('./**/*.{jpg,png,svg,webm}', {
+		eager: true,
+	});
+
+	// hoacwj raw 
+	const rawVidAssets = import.meta.glob('./**/*.mp4', {
+		eager: true,
+		as: 'url',
+	});
+
+	return {allAssets, rawImgAssets, rawVidAssets};
+};
+
+const assets = getAssets();
+
+const processedImages = images?.map(imgName => {
+	if (imgName === 'none') return 'none';
+
+	// timf file anhr trong thuw mucj hieenj taij
+	for (const [path, module] of Object.entries(assets.rawImgAssets)) {
+		if (path.includes(imgName) || path.endsWith(imgName)) {
+			return module;
+		}
+	}
+	return imgName;
+});
+
+const processedVideos = videos?.map(vidName => {
+	if (vidName === 'none') return 'none';
+
+	// timf file anhr trong thuw mucj hieenj taij
+	for (const [path, module] of Object.entries(assets.rawVidAssets)) {
+		if (path.includes(vidName) || path.endsWith(vidName)) {
+			return module;
+		}
+	}
+	return vidName;
+});
 
 export interface PropsImg {
    imagePath: string;
@@ -45,18 +98,18 @@ console.log(images);
 				<p>Danh mục: {parent === "none" ? catergory : parent} </p>
 				<div id="desimg" class="grid grid-cols-2 my-3">
 					<div id="preview" class="col-span-1 flex items-center justify-center">
-							{videos?.map(img =>
-							(img === "none") ? <div class="none">&nbsp;</div> :
+							{processedVideos?.map(img =>
+							(img !== "none") &&
 								<video width="500" height="500" class="mySlides aspect-square" controls>
 								 	<source style="object-fit: fill; aspect-square" src=`${img}`>
-								</video>	
-							)}							
-							{images?.map(img =>
+								</video>
+							)}		
+									
+							{processedImages?.map(img =>
 							(img === "none") ? <div class="none">&nbsp;</div> :
 							//<!-- change image to img  -->
 								<img loading="lazy" class="mySlides aspect-square" src=`${img}` alt="" height={500} width={500} />	
 							)}
-
 							<button id="nextbtn" onclick="nextSlide()" class="button previousbtn flex items-center py-3 text-white hover:bg-blue-400"><ArrowBigLeftDash size={55} /></button>
 
 							<button id="prebtn" onclick="nextSlide()" class="button nextbtn flex items-center py-3 text-white hover:bg-blue-400"><ArrowBigRightDash size={55} /></button>
