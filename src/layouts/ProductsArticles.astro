@@ -8,9 +8,6 @@ import type { CollectionEntry } from "astro:content";
 
 import type { Options } from '@splidejs/splide';
 import '@splidejs/splide'
-import { SplideExtension, SplideSlide } from 'astro-splide';
-import Image from 'astro/components/Image.astro';
-import "@splidejs/splide"
 import { ArrowBigLeftDash, ArrowBigRight, ArrowBigRightDash } from '@lucide/astro';
 
 type Props = CollectionEntry<"blogCollection">["data"];
@@ -56,7 +53,7 @@ console.log(images);
 							)}							
 							{images?.map(img =>
 							(img === "none") ? <div class="none">&nbsp;</div> :
-								<Image loading="lazy" class="mySlides aspect-square" src=`${img}` alt="" height={500} width={500} />	
+								<img loading="lazy" class="mySlides aspect-square" src=`${img}` alt="" height={500} width={500} />	
 							)}
 
 							<button id="nextbtn" onclick="nextSlide()" class="button previousbtn flex items-center py-3 text-white hover:bg-blue-400"><ArrowBigLeftDash size={55} /></button>

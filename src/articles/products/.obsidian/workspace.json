@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b3258be6f757526c",
+        "id": "f822e890a7c966eb",
         "type": "tabs",
         "children": [
           {
-            "id": "b2ca75ff1ad19289",
+            "id": "150574d4b091448a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "voucher/index.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "index"
+              "title": "New tab"
             }
           }
         ]
@@ -183,8 +179,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "b2ca75ff1ad19289",
+  "active": "150574d4b091448a",
   "lastOpenFiles": [
+    "2026-05-13.md",
+    "voucher/index.md",
     "temvo/index.md",
     "toroi/index.md",
     "tuikraft/index.md",
@@ -204,7 +202,6 @@
     "logo/index.md",
     "thietkebanghieu/index.md",
     "thietkecondau/index.md",
-    "voucher/index.md",
     "baolixi/index.md",
     "BAOGIAYFOLDER/index.md",
     "baobanhmi/index.md",
@@ -212,7 +209,6 @@
     "thiep/index.md",
     "COMBOTUIHOP/index.md",
     "INCOMBO/index.md",
-    "BANGHOPDONG/index.md",
-    "phieubiennhandienthoai/index.md"
+    "BANGHOPDONG/index.md"
   ]
 }
