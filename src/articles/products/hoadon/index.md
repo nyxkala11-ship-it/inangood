@@ -10,45 +10,45 @@ catergory: Hóa đơn
 parent: Hóa đơn - Phiếu ship
 id: hoadon
 images:
-  - /src/articles/products/hoadon/img1.jpg
-  - /src/articles/products/hoadon/img2.jpg
-  - /src/articles/products/hoadon/img3.jpg
-  - /src/articles/products/hoadon/img4.jpg
-  - /src/articles/products/hoadon/img5.jpg
-  - /src/articles/products/hoadon/img6.jpg
-  - /src/articles/products/hoadon/img7.jpg
-  - /src/articles/products/hoadon/img8.jpg
-  - /src/articles/products/hoadon/img9.jpg
-  - /src/articles/products/hoadon/img10.jpg
-  - /src/articles/products/hoadon/img11.jpg
-  - /src/articles/products/hoadon/img12.jpg
-  - /src/articles/products/hoadon/img13.jpg
-  - /src/articles/products/hoadon/img14.jpg
-  - /src/articles/products/hoadon/img15.jpg
-  - /src/articles/products/hoadon/img16.jpg
-  - /src/articles/products/hoadon/img17.jpg
-  - /src/articles/products/hoadon/img18.jpg
-  - /src/articles/products/hoadon/img19.jpg
-  - /src/articles/products/hoadon/img20.jpg
-  - /src/articles/products/hoadon/img21.jpg
-  - /src/articles/products/hoadon/img22.jpg
-  - /src/articles/products/hoadon/img23.jpg
-  - /src/articles/products/hoadon/img24.jpg
-  - /src/articles/products/hoadon/img25.jpg
-  - /src/articles/products/hoadon/img26.jpg
-  - /src/articles/products/hoadon/img27.jpg
-  - /src/articles/products/hoadon/img28.jpg
-  - /src/articles/products/hoadon/img29.jpg
-  - /src/articles/products/hoadon/img30.jpg
-  - /src/articles/products/hoadon/img31.jpg
-  - /src/articles/products/hoadon/img32.jpg
-  - /src/articles/products/hoadon/img33.jpg
-  - /src/articles/products/hoadon/img34.jpg
-  - /src/articles/products/hoadon/img35.jpg
-  - /src/articles/products/hoadon/img36.jpg
-  - /src/articles/products/hoadon/img37.jpg
+  - /products/hoadon/img1.jpg
+  - /products/hoadon/img2.jpg
+  - /products/hoadon/img3.jpg
+  - /products/hoadon/img4.jpg
+  - /products/hoadon/img5.jpg
+  - /products/hoadon/img6.jpg
+  - /products/hoadon/img7.jpg
+  - /products/hoadon/img8.jpg
+  - /products/hoadon/img9.jpg
+  - /products/hoadon/img10.jpg
+  - /products/hoadon/img11.jpg
+  - /products/hoadon/img12.jpg
+  - /products/hoadon/img13.jpg
+  - /products/hoadon/img14.jpg
+  - /products/hoadon/img15.jpg
+  - /products/hoadon/img16.jpg
+  - /products/hoadon/img17.jpg
+  - /products/hoadon/img18.jpg
+  - /products/hoadon/img19.jpg
+  - /products/hoadon/img20.jpg
+  - /products/hoadon/img21.jpg
+  - /products/hoadon/img22.jpg
+  - /products/hoadon/img23.jpg
+  - /products/hoadon/img24.jpg
+  - /products/hoadon/img25.jpg
+  - /products/hoadon/img26.jpg
+  - /products/hoadon/img27.jpg
+  - /products/hoadon/img28.jpg
+  - /products/hoadon/img29.jpg
+  - /products/hoadon/img30.jpg
+  - /products/hoadon/img31.jpg
+  - /products/hoadon/img32.jpg
+  - /products/hoadon/img33.jpg
+  - /products/hoadon/img34.jpg
+  - /products/hoadon/img35.jpg
+  - /products/hoadon/img36.jpg
+  - /products/hoadon/img37.jpg
 videos:
-  - /src/articles/products/hoadon/vid1.mp4
+  - /products/hoadon/vid1.mp4
 index: "0"
 ---
 

@@ -11,10 +11,10 @@ catergory: Phiếu giữ xe
 parent: Hóa đơn - Phiếu ship
 id: phieugiuxe
 images:
-  - /src/articles/products/phieugiuxe/img1.jpg
-  - /src/articles/products/phieugiuxe/img2.jpg
+  - /products/phieugiuxe/img1.jpg
+  - /products/phieugiuxe/img2.jpg
 videos:
-  - /src/articles/products/phieugiuxe/vid1.mp4
+  - /products/phieugiuxe/vid1.mp4
 index: "0"
 ---
 # In Phiếu Giữ Xe – Quản Lý Nhanh, Rõ Ràng & Chuyên Nghiệp

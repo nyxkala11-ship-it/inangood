@@ -11,20 +11,20 @@ catergory: Thiết kế logo
 parent: Ấn phẩm khác
 id: logo
 images:
-  - /src/articles/products/logo/img1.jpg
-  - /src/articles/products/logo/img2.jpg
-  - /src/articles/products/logo/img3.jpg
-  - /src/articles/products/logo/img4.jpg
-  - /src/articles/products/logo/img5.jpg
-  - /src/articles/products/logo/img6.jpg
-  - /src/articles/products/logo/img7.jpg
-  - /src/articles/products/logo/img8.jpg
-  - /src/articles/products/logo/img9.jpg
-  - /src/articles/products/logo/img10.jpg
-  - /src/articles/products/logo/img11.jpg
-  - /src/articles/products/logo/img12.jpg
-  - /src/articles/products/logo/img13.jpg
-  - /src/articles/products/logo/img14.jpg
+  - /products/logo/img1.jpg
+  - /products/logo/img2.jpg
+  - /products/logo/img3.jpg
+  - /products/logo/img4.jpg
+  - /products/logo/img5.jpg
+  - /products/logo/img6.jpg
+  - /products/logo/img7.jpg
+  - /products/logo/img8.jpg
+  - /products/logo/img9.jpg
+  - /products/logo/img10.jpg
+  - /products/logo/img11.jpg
+  - /products/logo/img12.jpg
+  - /products/logo/img13.jpg
+  - /products/logo/img14.jpg
 index: "0"
 ---
 **# Thiết Kế & In Logo – Nhận Diện Chuẩn, Ấn Tượng & Đồng Bộ Thương Hiệu

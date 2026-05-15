@@ -10,29 +10,29 @@ catergory: Phiếu Ship
 parent: Hóa đơn - Phiếu ship
 id: phieushiphang
 images:
-  - /src/articles/products/phieushiphang/img1.jpg
-  - /src/articles/products/phieushiphang/img2.jpg
-  - /src/articles/products/phieushiphang/img3.jpg
-  - /src/articles/products/phieushiphang/img4.jpg
-  - /src/articles/products/phieushiphang/img5.jpg
-  - /src/articles/products/phieushiphang/img6.jpg
-  - /src/articles/products/phieushiphang/img7.jpg
-  - /src/articles/products/phieushiphang/img8.jpg
-  - /src/articles/products/phieushiphang/img9.jpg
-  - /src/articles/products/phieushiphang/img10.jpg
-  - /src/articles/products/phieushiphang/img11.jpg
-  - /src/articles/products/phieushiphang/img12.jpg
-  - /src/articles/products/phieushiphang/img13.jpg
-  - /src/articles/products/phieushiphang/img14.jpg
-  - /src/articles/products/phieushiphang/img15.jpg
-  - /src/articles/products/phieushiphang/img16.jpg
-  - /src/articles/products/phieushiphang/img17.jpg
-  - /src/articles/products/phieushiphang/img18.jpg
-  - /src/articles/products/phieushiphang/img19.jpg
-  - /src/articles/products/phieushiphang/img20.jpg
-  - /src/articles/products/phieushiphang/img21.jpg
+  - /products/phieushiphang/img1.jpg
+  - /products/phieushiphang/img2.jpg
+  - /products/phieushiphang/img3.jpg
+  - /products/phieushiphang/img4.jpg
+  - /products/phieushiphang/img5.jpg
+  - /products/phieushiphang/img6.jpg
+  - /products/phieushiphang/img7.jpg
+  - /products/phieushiphang/img8.jpg
+  - /products/phieushiphang/img9.jpg
+  - /products/phieushiphang/img10.jpg
+  - /products/phieushiphang/img11.jpg
+  - /products/phieushiphang/img12.jpg
+  - /products/phieushiphang/img13.jpg
+  - /products/phieushiphang/img14.jpg
+  - /products/phieushiphang/img15.jpg
+  - /products/phieushiphang/img16.jpg
+  - /products/phieushiphang/img17.jpg
+  - /products/phieushiphang/img18.jpg
+  - /products/phieushiphang/img19.jpg
+  - /products/phieushiphang/img20.jpg
+  - /products/phieushiphang/img21.jpg
 videos:
-  - /src/articles/products/phieushiphang/vid1.mp4
+  - /products/phieushiphang/vid1.mp4
 index: "0"
 ---
 # Phiếu Ship Hàng – Rõ Ràng, Chuyên Nghiệp & Tối Ưu Vận Hành

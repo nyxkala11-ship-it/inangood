@@ -9,45 +9,45 @@ catergory: In Thiệp
 parent: Menu - Thiệp
 id: thiep
 images:
-  - /src/articles/products/thiep/img1.jpg
-  - /src/articles/products/thiep/img2.jpg
-  - /src/articles/products/thiep/img3.jpg
-  - /src/articles/products/thiep/img4.jpg
-  - /src/articles/products/thiep/img5.jpg
-  - /src/articles/products/thiep/img6.jpg
-  - /src/articles/products/thiep/img7.jpg
-  - /src/articles/products/thiep/img8.jpg
-  - /src/articles/products/thiep/img9.jpg
-  - /src/articles/products/thiep/img10.jpg
-  - /src/articles/products/thiep/img11.jpg
-  - /src/articles/products/thiep/img12.jpg
-  - /src/articles/products/thiep/img13.jpg
-  - /src/articles/products/thiep/img14.jpg
-  - /src/articles/products/thiep/img15.jpg
-  - /src/articles/products/thiep/img16.jpg
-  - /src/articles/products/thiep/img17.jpg
-  - /src/articles/products/thiep/img18.jpg
-  - /src/articles/products/thiep/img19.jpg
-  - /src/articles/products/thiep/img20.jpg
-  - /src/articles/products/thiep/img21.jpg
-  - /src/articles/products/thiep/img22.jpg
-  - /src/articles/products/thiep/img23.jpg
-  - /src/articles/products/thiep/img24.jpg
-  - /src/articles/products/thiep/img25.jpg
-  - /src/articles/products/thiep/img26.jpg
+  - /products/thiep/img1.jpg
+  - /products/thiep/img2.jpg
+  - /products/thiep/img3.jpg
+  - /products/thiep/img4.jpg
+  - /products/thiep/img5.jpg
+  - /products/thiep/img6.jpg
+  - /products/thiep/img7.jpg
+  - /products/thiep/img8.jpg
+  - /products/thiep/img9.jpg
+  - /products/thiep/img10.jpg
+  - /products/thiep/img11.jpg
+  - /products/thiep/img12.jpg
+  - /products/thiep/img13.jpg
+  - /products/thiep/img14.jpg
+  - /products/thiep/img15.jpg
+  - /products/thiep/img16.jpg
+  - /products/thiep/img17.jpg
+  - /products/thiep/img18.jpg
+  - /products/thiep/img19.jpg
+  - /products/thiep/img20.jpg
+  - /products/thiep/img21.jpg
+  - /products/thiep/img22.jpg
+  - /products/thiep/img23.jpg
+  - /products/thiep/img24.jpg
+  - /products/thiep/img25.jpg
+  - /products/thiep/img26.jpg
 videos:
-  - /src/articles/products/thiep/vid1.mp4
-  - /src/articles/products/thiep/vid2.mp4
-  - /src/articles/products/thiep/vid3.mp4
-  - /src/articles/products/thiep/vid4.mp4
-  - /src/articles/products/thiep/vid5.mp4
-  - /src/articles/products/thiep/vid6.mp4
-  - /src/articles/products/thiep/vid7.mp4
-  - /src/articles/products/thiep/vid8.mp4
-  - /src/articles/products/thiep/vid9.mp4
-  - /src/articles/products/thiep/vid10.mp4
-  - /src/articles/products/thiep/vid11.mp4
-  - /src/articles/products/thiep/vid12.mp4
+  - /products/thiep/vid1.mp4
+  - /products/thiep/vid2.mp4
+  - /products/thiep/vid3.mp4
+  - /products/thiep/vid4.mp4
+  - /products/thiep/vid5.mp4
+  - /products/thiep/vid6.mp4
+  - /products/thiep/vid7.mp4
+  - /products/thiep/vid8.mp4
+  - /products/thiep/vid9.mp4
+  - /products/thiep/vid10.mp4
+  - /products/thiep/vid11.mp4
+  - /products/thiep/vid12.mp4
 index: "0"
 ---
 # In Thiệp – Tinh Tế, Cá Nhân Hóa & Truyền Tải Cảm Xúc

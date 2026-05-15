@@ -12,13 +12,13 @@ id: bocnilon
 images:
   - none
 videos:
-  - /src/articles/products/bocnilon/vid1.mp4
-  - /src/articles/products/bocnilon/vid2.mp4
-  - /src/articles/products/bocnilon/vid3.mp4
-  - /src/articles/products/bocnilon/vid4.mp4
-  - /src/articles/products/bocnilon/vid5.mp4
-  - /src/articles/products/bocnilon/vid6.mp4
-  - /src/articles/products/bocnilon/vid7.mp4
+  - /products/bocnilon/vid1.mp4
+  - /products/bocnilon/vid2.mp4
+  - /products/bocnilon/vid3.mp4
+  - /products/bocnilon/vid4.mp4
+  - /products/bocnilon/vid5.mp4
+  - /products/bocnilon/vid6.mp4
+  - /products/bocnilon/vid7.mp4
 index: "0"
 ---
 # Bọc Nilon Ấn Phẩm – Bảo Vệ Sạch Đẹp, Tăng Tính Chuyên Nghiệp

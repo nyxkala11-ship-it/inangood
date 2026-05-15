@@ -8,28 +8,28 @@ catergory: Voucher
 parent: Tag treo - Card
 id: voucher
 images:
-  - /src/articles/products/voucher/img1.jpg
-  - /src/articles/products/voucher/img2.jpg
-  - /src/articles/products/voucher/img3.jpg
-  - /src/articles/products/voucher/img4.jpg
-  - /src/articles/products/voucher/img5.jpg
-  - /src/articles/products/voucher/img6.jpg
-  - /src/articles/products/voucher/img7.jpg
-  - /src/articles/products/voucher/img8.jpg
-  - /src/articles/products/voucher/img9.jpg
-  - /src/articles/products/voucher/img10.jpg
-  - /src/articles/products/voucher/img11.jpg
-  - /src/articles/products/voucher/img12.jpg
-  - /src/articles/products/voucher/img13.jpg
-  - /src/articles/products/voucher/img14.jpg
-  - /src/articles/products/voucher/img15.jpg
+  - /products/voucher/img1.jpg
+  - /products/voucher/img2.jpg
+  - /products/voucher/img3.jpg
+  - /products/voucher/img4.jpg
+  - /products/voucher/img5.jpg
+  - /products/voucher/img6.jpg
+  - /products/voucher/img7.jpg
+  - /products/voucher/img8.jpg
+  - /products/voucher/img9.jpg
+  - /products/voucher/img10.jpg
+  - /products/voucher/img11.jpg
+  - /products/voucher/img12.jpg
+  - /products/voucher/img13.jpg
+  - /products/voucher/img14.jpg
+  - /products/voucher/img15.jpg
 videos:
-  - /src/articles/products/voucher/vid1.mp4
-  - /src/articles/products/voucher/vid2.mp4
-  - /src/articles/products/voucher/vid3.mp4
-  - /src/articles/products/voucher/vid4.mp4
-  - /src/articles/products/voucher/vid5.mp4
-  - /src/articles/products/voucher/vid6.mp4
+  - /products/voucher/vid1.mp4
+  - /products/voucher/vid2.mp4
+  - /products/voucher/vid3.mp4
+  - /products/voucher/vid4.mp4
+  - /products/voucher/vid5.mp4
+  - /products/voucher/vid6.mp4
 index: "0"
 ---
 # In Voucher (Phiếu Quà Tặng) – Thu Hút Khách Hàng & Tăng Doanh Thu Hiệu Quả

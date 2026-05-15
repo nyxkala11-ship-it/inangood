@@ -10,23 +10,23 @@ catergory: Bao lì xì
 parent: Bao giấy - Folder
 id: baolixi
 images:
-  - /src/articles/products/baolixi/img1.jpg
-  - /src/articles/products/baolixi/img2.jpg
-  - /src/articles/products/baolixi/img3.jpg
-  - /src/articles/products/baolixi/img4.jpg
-  - /src/articles/products/baolixi/img5.jpg
-  - /src/articles/products/baolixi/img6.jpg
-  - /src/articles/products/baolixi/img7.jpg
-  - /src/articles/products/baolixi/img8.jpg
-  - /src/articles/products/baolixi/img9.jpg
-  - /src/articles/products/baolixi/img10.jpg
-  - /src/articles/products/baolixi/img11.jpg
-  - /src/articles/products/baolixi/img12.jpg
-  - /src/articles/products/baolixi/img13.jpg
-  - /src/articles/products/baolixi/img14.jpg
-  - /src/articles/products/baolixi/img15.jpg
-  - /src/articles/products/baolixi/img16.jpg
-  - /src/articles/products/baolixi/img17.jpg
+  - /products/baolixi/img1.jpg
+  - /products/baolixi/img2.jpg
+  - /products/baolixi/img3.jpg
+  - /products/baolixi/img4.jpg
+  - /products/baolixi/img5.jpg
+  - /products/baolixi/img6.jpg
+  - /products/baolixi/img7.jpg
+  - /products/baolixi/img8.jpg
+  - /products/baolixi/img9.jpg
+  - /products/baolixi/img10.jpg
+  - /products/baolixi/img11.jpg
+  - /products/baolixi/img12.jpg
+  - /products/baolixi/img13.jpg
+  - /products/baolixi/img14.jpg
+  - /products/baolixi/img15.jpg
+  - /products/baolixi/img16.jpg
+  - /products/baolixi/img17.jpg
 index: "0"
 ---
 # In Bao Lì Xì – May Mắn, Thẩm Mỹ & Nâng Tầm Thương Hiệu Dịp Tết

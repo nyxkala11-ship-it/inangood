@@ -10,20 +10,20 @@ catergory: Tem vỡ
 parent: Tem - Decal
 id: temvo
 images:
-  - /src/articles/products/temvo/img1.jpg
-  - /src/articles/products/temvo/img2.jpg
-  - /src/articles/products/temvo/img3.jpg
-  - /src/articles/products/temvo/img4.jpg
-  - /src/articles/products/temvo/img5.jpg
-  - /src/articles/products/temvo/img6.jpg
-  - /src/articles/products/temvo/img7.jpg
-  - /src/articles/products/temvo/img8.jpg
-  - /src/articles/products/temvo/img9.jpg
-  - /src/articles/products/temvo/img10.jpg
-  - /src/articles/products/temvo/img11.jpg
+  - /products/temvo/img1.jpg
+  - /products/temvo/img2.jpg
+  - /products/temvo/img3.jpg
+  - /products/temvo/img4.jpg
+  - /products/temvo/img5.jpg
+  - /products/temvo/img6.jpg
+  - /products/temvo/img7.jpg
+  - /products/temvo/img8.jpg
+  - /products/temvo/img9.jpg
+  - /products/temvo/img10.jpg
+  - /products/temvo/img11.jpg
 videos:
-  - /src/articles/products/temvo/vid1.mp4
-  - /src/articles/products/temvo/vid2.mp4
+  - /products/temvo/vid1.mp4
+  - /products/temvo/vid2.mp4
 index: "0"
 ---
 # In Tem Vỡ (Tem Niêm Phong) – Chống Giả, Chống Mở & Bảo Vệ Sản Phẩm

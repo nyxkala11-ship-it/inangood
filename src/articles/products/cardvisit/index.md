@@ -11,27 +11,27 @@ catergory: Card visit
 parent: Tag treo - Card
 id: cardvisit
 images:
-  - /src/articles/products/cardvisit/img1.jpg
-  - /src/articles/products/cardvisit/img2.jpg
-  - /src/articles/products/cardvisit/img3.jpg
-  - /src/articles/products/cardvisit/img4.jpg
-  - /src/articles/products/cardvisit/img5.jpg
-  - /src/articles/products/cardvisit/img6.jpg
-  - /src/articles/products/cardvisit/img7.jpg
-  - /src/articles/products/cardvisit/img8.jpg
-  - /src/articles/products/cardvisit/img9.jpg
-  - /src/articles/products/cardvisit/img10.jpg
-  - /src/articles/products/cardvisit/img11.jpg
-  - /src/articles/products/cardvisit/img12.jpg
-  - /src/articles/products/cardvisit/img13.jpg
-  - /src/articles/products/cardvisit/img14.jpg
-  - /src/articles/products/cardvisit/img15.jpg
+  - /products/cardvisit/img1.jpg
+  - /products/cardvisit/img2.jpg
+  - /products/cardvisit/img3.jpg
+  - /products/cardvisit/img4.jpg
+  - /products/cardvisit/img5.jpg
+  - /products/cardvisit/img6.jpg
+  - /products/cardvisit/img7.jpg
+  - /products/cardvisit/img8.jpg
+  - /products/cardvisit/img9.jpg
+  - /products/cardvisit/img10.jpg
+  - /products/cardvisit/img11.jpg
+  - /products/cardvisit/img12.jpg
+  - /products/cardvisit/img13.jpg
+  - /products/cardvisit/img14.jpg
+  - /products/cardvisit/img15.jpg
 videos:
-  - /src/articles/products/cardvisit/vid1.mp4
-  - /src/articles/products/cardvisit/vid2.mp4
-  - /src/articles/products/cardvisit/vid3.mp4
-  - /src/articles/products/cardvisit/vid4.mp4
-  - /src/articles/products/cardvisit/vid5.mp4
+  - /products/cardvisit/vid1.mp4
+  - /products/cardvisit/vid2.mp4
+  - /products/cardvisit/vid3.mp4
+  - /products/cardvisit/vid4.mp4
+  - /products/cardvisit/vid5.mp4
 index: "0"
 ---
 # Card Visit (Name Card) – Nhỏ Gọn, Ấn Tượng & Chuyên Nghiệp

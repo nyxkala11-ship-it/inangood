@@ -14,36 +14,36 @@ catergory: Túi Kraft có sẵn - giao nhanh
 parent: Túi giấy Kraft
 id: tuikraftcosan
 images:
-  - /src/articles/products/tuikraftcosan/img1.jpg
-  - /src/articles/products/tuikraftcosan/img2.jpg
-  - /src/articles/products/tuikraftcosan/img3.jpg
-  - /src/articles/products/tuikraftcosan/img4.jpg
-  - /src/articles/products/tuikraftcosan/img5.jpg
-  - /src/articles/products/tuikraftcosan/img6.jpg
-  - /src/articles/products/tuikraftcosan/img7.jpg
-  - /src/articles/products/tuikraftcosan/img8.jpg
-  - /src/articles/products/tuikraftcosan/img9.jpg
-  - /src/articles/products/tuikraftcosan/img10.jpg
-  - /src/articles/products/tuikraftcosan/img11.jpg
-  - /src/articles/products/tuikraftcosan/img12.jpg
-  - /src/articles/products/tuikraftcosan/img13.jpg
-  - /src/articles/products/tuikraftcosan/img14.jpg
-  - /src/articles/products/tuikraftcosan/img15.jpg
-  - /src/articles/products/tuikraftcosan/img16.jpg
-  - /src/articles/products/tuikraftcosan/img17.jpg
-  - /src/articles/products/tuikraftcosan/img18.jpg
-  - /src/articles/products/tuikraftcosan/img19.jpg
-  - /src/articles/products/tuikraftcosan/img20.jpg
-  - /src/articles/products/tuikraftcosan/img21.jpg
-  - /src/articles/products/tuikraftcosan/img22.jpg
-  - /src/articles/products/tuikraftcosan/img23.jpg
+  - /products/tuikraftcosan/img1.jpg
+  - /products/tuikraftcosan/img2.jpg
+  - /products/tuikraftcosan/img3.jpg
+  - /products/tuikraftcosan/img4.jpg
+  - /products/tuikraftcosan/img5.jpg
+  - /products/tuikraftcosan/img6.jpg
+  - /products/tuikraftcosan/img7.jpg
+  - /products/tuikraftcosan/img8.jpg
+  - /products/tuikraftcosan/img9.jpg
+  - /products/tuikraftcosan/img10.jpg
+  - /products/tuikraftcosan/img11.jpg
+  - /products/tuikraftcosan/img12.jpg
+  - /products/tuikraftcosan/img13.jpg
+  - /products/tuikraftcosan/img14.jpg
+  - /products/tuikraftcosan/img15.jpg
+  - /products/tuikraftcosan/img16.jpg
+  - /products/tuikraftcosan/img17.jpg
+  - /products/tuikraftcosan/img18.jpg
+  - /products/tuikraftcosan/img19.jpg
+  - /products/tuikraftcosan/img20.jpg
+  - /products/tuikraftcosan/img21.jpg
+  - /products/tuikraftcosan/img22.jpg
+  - /products/tuikraftcosan/img23.jpg
 videos:
-  - /src/articles/products/tuikraftcosan/vid1.mp4
-  - /src/articles/products/tuikraftcosan/vid2.mp4
-  - /src/articles/products/tuikraftcosan/vid3.mp4
-  - /src/articles/products/tuikraftcosan/vid4.mp4
-  - /src/articles/products/tuikraftcosan/vid5.mp4
-  - /src/articles/products/tuikraftcosan/vid6.mp4
+  - /products/tuikraftcosan/vid1.mp4
+  - /products/tuikraftcosan/vid2.mp4
+  - /products/tuikraftcosan/vid3.mp4
+  - /products/tuikraftcosan/vid4.mp4
+  - /products/tuikraftcosan/vid5.mp4
+  - /products/tuikraftcosan/vid6.mp4
 index: "0"
 ---
 # Túi Giấy Kraft Có Sẵn – Giao Nhanh, Tiện Lợi & Tiết Kiệm

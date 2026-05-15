@@ -10,23 +10,23 @@ catergory: Tờ rơi
 parent: Menu - Thiệp
 id: toroi
 images:
-  - /src/articles/products/toroi/img1.jpg
-  - /src/articles/products/toroi/img2.jpg
-  - /src/articles/products/toroi/img3.jpg
-  - /src/articles/products/toroi/img4.jpg
-  - /src/articles/products/toroi/img5.jpg
-  - /src/articles/products/toroi/img6.jpg
-  - /src/articles/products/toroi/img7.jpg
-  - /src/articles/products/toroi/img8.jpg
-  - /src/articles/products/toroi/img9.jpg
-  - /src/articles/products/toroi/img10.jpg
-  - /src/articles/products/toroi/img11.jpg
+  - /products/toroi/img1.jpg
+  - /products/toroi/img2.jpg
+  - /products/toroi/img3.jpg
+  - /products/toroi/img4.jpg
+  - /products/toroi/img5.jpg
+  - /products/toroi/img6.jpg
+  - /products/toroi/img7.jpg
+  - /products/toroi/img8.jpg
+  - /products/toroi/img9.jpg
+  - /products/toroi/img10.jpg
+  - /products/toroi/img11.jpg
 videos:
-  - /src/articles/products/toroi/vid1.mp4
-  - /src/articles/products/toroi/vid2.mp4
-  - /src/articles/products/toroi/vid3.mp4
-  - /src/articles/products/toroi/vid4.mp4
-  - /src/articles/products/toroi/vid5.mp4
+  - /products/toroi/vid1.mp4
+  - /products/toroi/vid2.mp4
+  - /products/toroi/vid3.mp4
+  - /products/toroi/vid4.mp4
+  - /products/toroi/vid5.mp4
 index: "0"
 ---
 # In Tờ Rơi – Tiếp Cận Nhanh, Chi Phí Thấp & Tăng Hiệu Quả Quảng Bá

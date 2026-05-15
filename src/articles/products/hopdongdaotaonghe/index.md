@@ -12,29 +12,29 @@ catergory: Hợp đồng đào tạo nghề
 parent: Bằng - Hợp đồng
 id: hopdongdaotaonghe
 images:
-  - /src/articles/products/hopdongdaotaonghe/img1.jpg
-  - /src/articles/products/hopdongdaotaonghe/img2.jpg
-  - /src/articles/products/hopdongdaotaonghe/img3.jpg
-  - /src/articles/products/hopdongdaotaonghe/img4.jpg
-  - /src/articles/products/hopdongdaotaonghe/img5.jpg
-  - /src/articles/products/hopdongdaotaonghe/img6.jpg
-  - /src/articles/products/hopdongdaotaonghe/img7.jpg
-  - /src/articles/products/hopdongdaotaonghe/img8.jpg
-  - /src/articles/products/hopdongdaotaonghe/img9.jpg
-  - /src/articles/products/hopdongdaotaonghe/img10.jpg
-  - /src/articles/products/hopdongdaotaonghe/img11.jpg
-  - /src/articles/products/hopdongdaotaonghe/img12.jpg
-  - /src/articles/products/hopdongdaotaonghe/img13.jpg
-  - /src/articles/products/hopdongdaotaonghe/img14.jpg
-  - /src/articles/products/hopdongdaotaonghe/img15.jpg
-  - /src/articles/products/hopdongdaotaonghe/img16.jpg
+  - /products/hopdongdaotaonghe/img1.jpg
+  - /products/hopdongdaotaonghe/img2.jpg
+  - /products/hopdongdaotaonghe/img3.jpg
+  - /products/hopdongdaotaonghe/img4.jpg
+  - /products/hopdongdaotaonghe/img5.jpg
+  - /products/hopdongdaotaonghe/img6.jpg
+  - /products/hopdongdaotaonghe/img7.jpg
+  - /products/hopdongdaotaonghe/img8.jpg
+  - /products/hopdongdaotaonghe/img9.jpg
+  - /products/hopdongdaotaonghe/img10.jpg
+  - /products/hopdongdaotaonghe/img11.jpg
+  - /products/hopdongdaotaonghe/img12.jpg
+  - /products/hopdongdaotaonghe/img13.jpg
+  - /products/hopdongdaotaonghe/img14.jpg
+  - /products/hopdongdaotaonghe/img15.jpg
+  - /products/hopdongdaotaonghe/img16.jpg
 videos:
-  - /src/articles/products/hopdongdaotaonghe/vid1.mp4
-  - /src/articles/products/hopdongdaotaonghe/vid2.mp4
-  - /src/articles/products/hopdongdaotaonghe/vid3.mp4
-  - /src/articles/products/hopdongdaotaonghe/vid4.mp4
-  - /src/articles/products/hopdongdaotaonghe/vid5.mp4
-  - /src/articles/products/hopdongdaotaonghe/vid6.mp4
+  - /products/hopdongdaotaonghe/vid1.mp4
+  - /products/hopdongdaotaonghe/vid2.mp4
+  - /products/hopdongdaotaonghe/vid3.mp4
+  - /products/hopdongdaotaonghe/vid4.mp4
+  - /products/hopdongdaotaonghe/vid5.mp4
+  - /products/hopdongdaotaonghe/vid6.mp4
 index: "0"
 ---
 # In Hợp Đồng Đào Tạo Nghề – Chuẩn Mực Pháp Lý, Rõ Ràng & Chuyên Nghiệp

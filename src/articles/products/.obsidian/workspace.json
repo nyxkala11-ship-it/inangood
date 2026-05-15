@@ -11,10 +11,14 @@
             "id": "150574d4b091448a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "tuikraft/index.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "index"
             }
           }
         ]
@@ -74,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 294.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "05fc44fa7f7bbb89",
@@ -179,8 +184,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "528d817f7c3ef4d1",
+  "active": "150574d4b091448a",
   "lastOpenFiles": [
+    "TUIGIAYKRAFT/index.md",
     "2026-05-13.md",
     "voucher/index.md",
     "temvo/index.md",
@@ -208,7 +214,6 @@
     "MENUTHIEP/index.md",
     "thiep/index.md",
     "COMBOTUIHOP/index.md",
-    "INCOMBO/index.md",
-    "BANGHOPDONG/index.md"
+    "INCOMBO/index.md"
   ]
 }

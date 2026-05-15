@@ -24,7 +24,7 @@ const blogCollection = defineCollection({
 
 const imgCollection = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/articles/products/', pattern: '**/*.png' }),
+	loader: glob({ base: './products/', pattern: '**/*.png' }),
 	// Type-check frontmatter using a schema
 	schema: z.string(),
 });

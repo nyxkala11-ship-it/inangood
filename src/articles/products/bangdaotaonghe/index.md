@@ -12,23 +12,23 @@ catergory: Bằng Đào Tạo Nghề
 parent: Bằng - Hợp đồng
 id: bangdaotaonghe
 images:
-  - /src/articles/products/bangdaotaonghe/img1.jpg
-  - /src/articles/products/bangdaotaonghe/img2.jpg
-  - /src/articles/products/bangdaotaonghe/img3.jpg
-  - /src/articles/products/bangdaotaonghe/img4.jpg
-  - /src/articles/products/bangdaotaonghe/img5.jpg
-  - /src/articles/products/bangdaotaonghe/img6.jpg
-  - /src/articles/products/bangdaotaonghe/img7.jpg
-  - /src/articles/products/bangdaotaonghe/img8.jpg
-  - /src/articles/products/bangdaotaonghe/img9.jpg
-  - /src/articles/products/bangdaotaonghe/img10.jpg
-  - /src/articles/products/bangdaotaonghe/img11.jpg
-  - /src/articles/products/bangdaotaonghe/img12.jpg
+  - /products/bangdaotaonghe/img1.jpg
+  - /products/bangdaotaonghe/img2.jpg
+  - /products/bangdaotaonghe/img3.jpg
+  - /products/bangdaotaonghe/img4.jpg
+  - /products/bangdaotaonghe/img5.jpg
+  - /products/bangdaotaonghe/img6.jpg
+  - /products/bangdaotaonghe/img7.jpg
+  - /products/bangdaotaonghe/img8.jpg
+  - /products/bangdaotaonghe/img9.jpg
+  - /products/bangdaotaonghe/img10.jpg
+  - /products/bangdaotaonghe/img11.jpg
+  - /products/bangdaotaonghe/img12.jpg
 videos:
-  - /src/articles/products/bangdaotaonghe/vid1.mp4
-  - /src/articles/products/bangdaotaonghe/vid2.mp4
-  - /src/articles/products/bangdaotaonghe/vid3.mp4
-  - /src/articles/products/bangdaotaonghe/vid4.mp4
+  - /products/bangdaotaonghe/vid1.mp4
+  - /products/bangdaotaonghe/vid2.mp4
+  - /products/bangdaotaonghe/vid3.mp4
+  - /products/bangdaotaonghe/vid4.mp4
 index: "0"
 ---
 # In Bằng Đào Tạo Nghề – Trang Trọng, Chuẩn Mực & Nâng Tầm Giá Trị Chứng Nhận

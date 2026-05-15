@@ -2,8 +2,6 @@
 // Dùng getCollection được define tại product.config.ts
 import { getCollection, render } from 'astro:content';
 import { LogsIcon } from '@lucide/astro';
-import { sortmenu } from '../scripts/untils';
-import { parse } from "astro:schema";
 // Get all data 'src/articles/products/' entries
 const ProductsCol = (await getCollection('blogCollection')).sort((a, b) => {
     // Nếu cả hai đều có index, sort theo index tăng dần

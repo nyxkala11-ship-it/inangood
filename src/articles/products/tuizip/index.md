@@ -9,15 +9,15 @@ catergory: Túi Zip
 parent: Bọc - Túi
 id: tuizip
 images:
-  - /src/articles/products/tuizip/img1.jpg
-  - /src/articles/products/tuizip/img2.jpg
-  - /src/articles/products/tuizip/img3.jpg
-  - /src/articles/products/tuizip/img4.jpg
-  - /src/articles/products/tuizip/img5.jpg
-  - /src/articles/products/tuizip/img6.jpg
+  - /products/tuizip/img1.jpg
+  - /products/tuizip/img2.jpg
+  - /products/tuizip/img3.jpg
+  - /products/tuizip/img4.jpg
+  - /products/tuizip/img5.jpg
+  - /products/tuizip/img6.jpg
 videos:
-  - /src/articles/products/tuizip/vid1.mp4
-  - /src/articles/products/tuizip/vid2.mp4
+  - /products/tuizip/vid1.mp4
+  - /products/tuizip/vid2.mp4
 index: "0"
 ---
 # Túi Zip (Zipper Bag) – Tiện Lợi, Tái Sử Dụng & Bảo Quản Hiệu Quả

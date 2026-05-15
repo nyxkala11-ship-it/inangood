@@ -1,0 +1,214 @@
+{
+  "main": {
+    "id": "4f9a87d478903ad7",
+    "type": "split",
+    "children": [
+      {
+        "id": "f822e890a7c966eb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "150574d4b091448a",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4caa948b191f2b18",
+    "type": "split",
+    "children": [
+      {
+        "id": "867c5b8ab2e62761",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "528d817f7c3ef4d1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "28664fd80fcb16f4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "logo",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "ada58b37eb0ebc28",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 294.5
+  },
+  "right": {
+    "id": "05fc44fa7f7bbb89",
+    "type": "split",
+    "children": [
+      {
+        "id": "540af2a442b7692a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f8b509726beea731",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "tuicaocap.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for tuicaocap"
+            }
+          },
+          {
+            "id": "72d0c4ad5baf762e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "tuicaocap.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from tuicaocap"
+            }
+          },
+          {
+            "id": "54d1ccb65accbbb9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "c97d3da93f8ab8d7",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f4b5066f8797c44d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "tuicaocap.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of tuicaocap"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "528d817f7c3ef4d1",
+  "lastOpenFiles": [
+    "2026-05-13.md",
+    "voucher/index.md",
+    "temvo/index.md",
+    "toroi/index.md",
+    "tuikraft/index.md",
+    "tuicaocap/index.md",
+    "BOCTUI/index.md",
+    "bocnilon/index.md",
+    "tuizip/index.md",
+    "tuiniemphong/index.md",
+    "TEMDECALP/index.md",
+    "temdecal/index.md",
+    "bangdaotaonghe/index.md",
+    "ANPHAMKHAC/index.md",
+    "Untitled.canvas",
+    "Untitled 1.canvas",
+    "2026-05-11.md",
+    "Untitled.base",
+    "logo/index.md",
+    "thietkebanghieu/index.md",
+    "thietkecondau/index.md",
+    "baolixi/index.md",
+    "BAOGIAYFOLDER/index.md",
+    "baobanhmi/index.md",
+    "MENUTHIEP/index.md",
+    "thiep/index.md",
+    "COMBOTUIHOP/index.md",
+    "INCOMBO/index.md",
+    "BANGHOPDONG/index.md"
+  ]
+}

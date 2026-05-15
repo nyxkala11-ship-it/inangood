@@ -9,7 +9,6 @@ import type { CollectionEntry } from "astro:content";
 import type { Options } from '@splidejs/splide';
 import "@splidejs/splide"
 import { ArrowBigLeftDash, ArrowBigRight, ArrowBigRightDash } from '@lucide/astro';
-import { url } from 'astro:schema';
 import ImportMedia from '../components/importMedia.astro';
 
 type Props = CollectionEntry<"blogCollection">["data"];
@@ -17,24 +16,24 @@ const { title, date, catergory, parent, id, images, videos } = Astro.props;
 
 const currentPath = import.meta.url;
 
-const currentDir = new URL('.', currentPath).pathname;
+//const currentDir = new URL('.', currentPath).pathname;
 
 // Lấy danh sách các file từ thư mục hiện tại
 const getAssets = () => {
 	// Sử dụng import tất car các file ảnh trong thư mục hiện tại
-	const allAssets = import.meta.glob('./**/*.{jpg,png,svg,mp4,webm}', {
+	const allAssets = import.meta.glob('./**/**/*.{jpg,png,svg,mp4,webm}', {
 		eager: true,
 		query: '?url',
 		import: 'default'
 	});
 
 	// hoacwj raw 
-	const rawImgAssets = import.meta.glob('./**/*.{jpg,png,svg,webm}', {
+	const rawImgAssets = import.meta.glob('./**/**/*.{jpg,png,svg,webm}', {
 		eager: true,
 	});
 
 	// hoacwj raw 
-	const rawVidAssets = import.meta.glob('./**/*.mp4', {
+	const rawVidAssets = import.meta.glob('./**/**/*.mp4', {
 		eager: true,
 		query: '?url',
 		import: 'default'

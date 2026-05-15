@@ -12,20 +12,20 @@ catergory: Thiết kế con dấu
 parent: Ấn phẩm khác
 id: thietkecondau
 images:
-  - /src/articles/products/thietkecondau/img1.jpg
-  - /src/articles/products/thietkecondau/img2.jpg
-  - /src/articles/products/thietkecondau/img3.jpg
-  - /src/articles/products/thietkecondau/img4.jpg
-  - /src/articles/products/thietkecondau/img5.jpg
-  - /src/articles/products/thietkecondau/img6.jpg
-  - /src/articles/products/thietkecondau/img7.jpg
-  - /src/articles/products/thietkecondau/img8.jpg
+  - /products/thietkecondau/img1.jpg
+  - /products/thietkecondau/img2.jpg
+  - /products/thietkecondau/img3.jpg
+  - /products/thietkecondau/img4.jpg
+  - /products/thietkecondau/img5.jpg
+  - /products/thietkecondau/img6.jpg
+  - /products/thietkecondau/img7.jpg
+  - /products/thietkecondau/img8.jpg
 videos:
-  - /src/articles/products/thietkecondau/vid1.mp4
-  - /src/articles/products/thietkecondau/vid2.mp4
-  - /src/articles/products/thietkecondau/vid3.mp4
-  - /src/articles/products/thietkecondau/vid4.mp4
-  - /src/articles/products/thietkecondau/vid5.mp4
+  - /products/thietkecondau/vid1.mp4
+  - /products/thietkecondau/vid2.mp4
+  - /products/thietkecondau/vid3.mp4
+  - /products/thietkecondau/vid4.mp4
+  - /products/thietkecondau/vid5.mp4
 index: "0"
 ---
 # Con Dấu – Chuẩn Mực Pháp Lý, Nhanh Gọn & Chuyên Nghiệp

@@ -15,7 +15,7 @@ catergory: Túi hộp đựng quà Lễ, Tết
 parent: Túi giấy Kraft
 id: tuihopdungqualetet
 images:
-  - /src/articles/products/tuihopdungqualetet/img1.jpg
+  - /products/tuihopdungqualetet/img1.jpg
 index: "0"
 ---
 # Túi Hộp Đựng Quà Dịp Lễ – Tinh Tế, Trang Trọng & Gửi Trọn Thông Điệp
