@@ -1,363 +1,333 @@
 ---
+import { getCollection, render } from "astro:content";
+import { GripVerticalIcon, HomeIcon, LogsIcon } from "@lucide/astro";
+const allProducts = await getCollection("blogCollection");
 
-
-// Dùng getCollection được define tại product.config.ts
-import { getCollection, render } from 'astro:content';
-import { GripVerticalIcon, LogsIcon } from '@lucide/astro';
-// Lấy và sort data
-const allProducts = await getCollection('blogCollection');
 const sortedProducts = [...allProducts].sort((a, b) => {
-    // Nếu cả hai đều có index, sort theo index tăng dần
-   
-        console.log('srt tăng dần');
-        return a.data.index - b.data.index;
+    console.log("srt tăng dần");
+    return a.data.index - b.data.index;
 });
 
-console.log('=== SORTED: Index items first, then no-index ===');
+console.log("=== SORTED: Index items first, then no-index ===");
 sortedProducts.forEach((product, i) => {
     const index = product.data.index;
-    console.log(`${i + 1}. ${product.data.title} - Index: ${index || 'NO INDEX'}`);
+    console.log(
+        `${i + 1}. ${product.data.title} - Index: ${index || "NO INDEX"}`,
+    );
 });
-// Xây dựng cấu trúc cây menu
+
 interface MenuItem {
-  id: string;
-  title: string;
-  slug: string;
-  index: number;
-  category: string;
-  children: MenuItem[];
+    id: string;
+    title: string;
+    slug: string;
+    index: number;
+    category: string;
+    children: MenuItem[];
 }
 
-// Map tra cứu nhanh
 const productMap = new Map<string, MenuItem>();
-// Tạo map catergory
 const categoryMap = new Map<string, MenuItem>();
 
-//const slide = await getCollection('slide');
-// Debug từng item - Xem cấu trúc đầy đủ
-console.log('=== TOTAL PRODUCTS:', allProducts.length);
-console.log('========================================');
-// Tạo menu items cho parent (category)
-sortedProducts.forEach(product => {
-    if (product.data.parent === 'none') {
+console.log("=== TOTAL PRODUCTS:", allProducts.length);
+console.log("========================================");
+sortedProducts.forEach((product) => {
+    if (product.data.parent === "none") {
         const menuItem: MenuItem = {
             id: product.id,
             title: product.data.title,
             slug: `/products/${product.id}`,
             index: product.data.index,
             category: product.data.catergory,
-            children: []
+            children: [],
         };
         categoryMap.set(product.data.catergory, menuItem);
         productMap.set(product.id, menuItem);
     }
 });
 
-sortedProducts.forEach(product => {
-    if (product.data.parent !== 'none') {
+sortedProducts.forEach((product) => {
+    if (product.data.parent !== "none") {
         const menuItem: MenuItem = {
             id: product.id,
             title: product.data.title,
             slug: `/products/${product.id}`,
             index: product.data.index,
             category: product.data.catergory,
-            children: []
+            children: [],
         };
         productMap.set(product.id, menuItem);
-        
-        // Tìm parent theo category
         const parentItem = categoryMap.get(product.data.parent);
         if (parentItem) {
             parentItem.children.push(menuItem);
-            //console.log(`✅ Đã thêm "${menuItem.title}" vào parent "${parentItem.title}"`);
         } else {
-            //console.log(`⚠️ Không tìm thấy parent category: "${product.data.parent}" cho child "${menuItem.title}"`);
         }
     }
 });
 
-// Lấy menu items gốc
 const rootMenus = Array.from(categoryMap.values());
-
 ---
 
-<!-- Component Menu -->
 <div class="menu-container flex flex-cols justify-center">
-  <button id="menuMobileBtn" class="menu-mobile-btn">
-    <LogsIcon size="32" class="inline" />
-    <span class="pl-2">Menu</span>
-  </button>
-
-  <ul id="mainMenu" class="main-menu">
-    <li class="menu-item">
-      <a href="/">Trang chủ</a>
-    </li>
-    
-    {rootMenus.map(menuitem => (
-    <li class={`menu-item ${menuitem.children.length > 0 ? 'has-dropdown' : ''}`}>
-        <a href={menuitem.slug}>{menuitem.title} {menuitem.children.length > 0 ? <GripVerticalIcon class="inline" /> : ""}</a>
-        
-        {menuitem.children.length > 0 && (
-        <ul class="dropdown-menu">
-            {menuitem.children.map(child => (
-            <li >
-                <a href={child.slug}>{child.title}</a>
-            </li>
-            ))}
-        </ul>
-        )}
-    </li>
-    ))}
-  </ul>
+    <div class="menu-mobile-btn bg-sky-100">
+        <button id="menuMobileBtn">
+            <LogsIcon size="2rem" class="inline" />
+        </button>
+        <form action="/" id="homeMobileBtn" class="inline">
+            <button type="submit">
+                <HomeIcon size="2rem" class="inline" />
+            </button>
+        </form>
+    </div>
+    <ul id="mainMenu" class="main-menu">
+        <li class="menu-item">
+            <a href="/">Trang chủ</a>
+        </li>
+        {
+            rootMenus.map((menuitem) => (
+                <li
+                    class={`menu-item ${menuitem.children.length > 0 ? "has-dropdown" : ""}`}
+                >
+                    <a href={menuitem.slug}>
+                        {menuitem.title}{" "}
+                        {menuitem.children.length > 0 ? (
+                            <GripVerticalIcon class="inline" />
+                        ) : (
+                            ""
+                        )}
+                    </a>
+                    {menuitem.children.length > 0 && (
+                        <ul class="dropdown-menu">
+                            {menuitem.children.map((child) => (
+                                <li>
+                                    <a href={child.slug}>{child.title}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </li>
+            ))
+        }
+    </ul>
 </div>
 
-<!-- Main Menu <Debug {products} />
-    
-     <div class="flex flex-col items-center">
-
-            <div id="Menu" class="items-center shadow-xl">
-
-                <button onclick="displayCom()" id="MenuMobile" class="my-2">
-                    <LogsIcon size="32" class="inline" />
-                    <p class="inline pl-2">Menu</p>
-                </button>
-                <ul id="MenuCom" class="flex items-start flex-wrap">
-					-->
-                    <!-- Trang chủ 
-                    <li id="Menu-items-tt">
-						<a href="/">
-							Trang chủ (Dynamics)
-						</a>
-					</li>
-                    {sortedProducts.filter(product => product.data.parent === 'none').map((product) => 
-                        
-                        <ul id={product.data.index} class={`${product.data.catergory} drophover Menu-items parent`}>
-                            <a href={`/products/${product.id}`} class={`menitext`} id={product.data.index}>
-                                    {product.data.title}
-                            </a>
--->
-                            <!-- parent nếu có 
-                            <ul class="bg-sky-500 drop">
-                                {sortedProducts.filter(productsub => productsub.data.parent === product.data.catergory).map(
-                                    productsub => 
-                                    productsub.data.parent === product.data.catergory ?
-                                        <li id={product.data.catergory} class={`${productsub.data.catergory} menitext flex min-w-[240px] flex-col gap-1 p-1.5 child`}>                                            <a href={`/products/${productsub.id}`}>
-                                                <a href={`/products/${productsub.id}`}>{productsub.data.title}</a>
-                                                    
-                                                </a>
-                                        </li> : null
-                                )}
-                            </ul>
-                        </ul>
-                            )
-                            }
-                    
-                </ul>
-
-            </div> 
-	
-    </div>-->
-    
 <style is:global>
-.menu-container {
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 5px;
-}
-
-.main-menu {
-  max-width: 1440px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu-item {
-  position: relative;
-  padding: 6pt 1.5rem 6pt 6pt;
-}
-
-.menu-item a {
-  font-size: 1.3rem;
-  text-decoration: none;
-  color: inherit;
-}
-
-.menu-item:hover {
-  background-color: aliceblue;
-  transition: 0.35s;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: aliceblue;
-  padding: 1rem;
-  border-radius: 5px;
-  min-width: 240px;
-  list-style: none;
-  margin: 0;
-  z-index: 999;
-        margin-left: 0rem;
-        overflow: auto;
-        max-width: 350px;
-        transition: all 0.35s;
-        cursursor: pointer;
-}
-
-.has-dropdown:hover .dropdown-menu {
-  display: block;
-  margin-top: 0.2rem;
-}
-
-.dropdown-menu li {
-  padding: 8px 0;
-}
-
-.dropdown-menu li a {
-  font-size: 1rem;
-}
-
-/* Mobile styles */
-.menu-mobile-btn {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .menu-mobile-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .main-menu {
-    display: none;
-    flex-direction: column;
-  }
-  
-  .main-menu.active {
-    display: flex;
-  }
-  
-  .menu-item {
-    width: 100%;
-  }
-  
-  .dropdown-menu {
-    position: static;
-    display: none;
-    padding-left: 20px;
-  }
-  
-  .has-dropdown.active .dropdown-menu {
-    display: block;
-  }
-}
-
-
-/*    
-    #Menu {
-        width: 1440px;
-        max-width: 100%;
+    .menu-container {
+        width: 100%;
         margin-top: 10px;
         border-radius: 5px;
     }
-    #MenuMobile {
+
+    .main-menu {
+        max-width: 1440px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        transition: all 1s;
+    }
+
+    .menu-item {
+        position: relative;
+        padding: 6pt 1.5rem 6pt 6pt;
+        transition: all 1s;
+    }
+
+    .menu-item a {
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .menu-item:hover {
+        //background-color: aliceblue;
+        color: black;
+    }
+
+    .dropdown-menu {
         display: none;
-    }
-    .Menu-items {
-        padding: 6pt;
-        padding-right: 1.5rem;
-    }
-    .Menu-items a {
-            font-size: 1.3rem;
-    }
-    #Menu-items-tt {
-        padding: 6pt;
-        padding-right: 1.5rem;
-    }
-    #Menu-items-tt a {
-            font-size: 1.3rem;
-    }
-    
-    .drophover {
-        display: inline-block;
-        float: left;
-        overflow: auto;
-        cursursor: pointer;
-    }
-    .drop {
-        display: none;
-        z-index: 999;
-        cursursor: pointer;
-    }
-    .drophover:hover {
+        position: absolute;
+        top: 100%;
+        left: 0;
         background-color: aliceblue;
-        transition: .35s, display .45s;
+        color: #000;
+        padding: 1rem;
+        border-radius: 5px;
+        min-width: 240px;
+        list-style: none;
+        margin: 0;
+        z-index: 999;
+        margin-left: 0rem;
+        overflow: auto;
+        max-width: 350px;
+        transition: all 1s;
         cursursor: pointer;
     }
-    
-    .drophover:hover .drop{
-        
+
+    .has-dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0.2rem;
+    }
+
+    .dropdown-menu li {
+        padding: 8px 0;
+        transition: all 1s;
+    }
+
+    .dropdown-menu li a {
+        font-size: 1rem;
+        transition: all 1s;
+    }
+
+    .menu-mobile-btn {
+        display: none;
     }
 
     @media screen and (max-width: 600px) {
-        #Menu-items a {
-            font-size: 1rem;
-        }
-        #Menu-items {
-            background-color: aqua;
-        }
-        #MenuMobile {
+        .menu-mobile-btn {
             display: block;
-            transition: all 0.5s;
+            padding: 10px;
+            background: none;
+            border: 0.05rem solid slategray;
+            cursor: pointer;
+            position: fixed;
+            bottom: 0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            height: 3.67rem;
+            z-index: 990;
+            border-radius: 5rem;
+            background: #ededed;
+            background: linear-gradient(
+                148deg,
+                rgba(237, 237, 237, 0.15) 0%,
+                rgba(255, 255, 255, 0.15) 50%,
+                rgba(186, 186, 186, 0.15) 100%
+            );
+            backdrop-filter: blur(0.15rem);
         }
-        #MenuMobile:hover {
-            background-color: aqua;
-            display: block;
+
+        #menuMobileBtn {
+            position: fixed;
+            border: 0.005rem solid darkslategrey;
+            border-radius: 5rem;
+            padding: 0.75rem;
+            transform: translate(-17.5%, -17%);
+            background: #ededed;
+            background: linear-gradient(
+                148deg,
+                rgba(237, 237, 237, 0.5) 0%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(186, 186, 186, 0.5) 100%
+            );
+            backdrop-filter: blur(0.5rem);
         }
-        #MenuCom {
+        #homeMobileBtn {
+            border: 0.01rem solid darkgrey;
+            border-radius: 5rem;
+            padding: 0.9rem;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%) translateY(-21.5%);
+            background: #ededed;
+            background: linear-gradient(
+                148deg,
+                rgba(237, 237, 237, 0.8) 0%,
+                rgba(255, 255, 255, 0.8) 50%,
+                rgba(186, 186, 186, 0.8) 100%
+            );
+            backdrop-filter: blur(1.8rem);
+        }
+
+        .main-menu {
+            padding: 0.5rem;
+            color: rgba(100, 100, 100);
             display: none;
+            flex-direction: row;
+            position: fixed;
+            bottom: 0;
+            z-index: 999;
+            transition: all 1s;
+            background: #ededed;
+            background: linear-gradient(
+                148deg,
+                rgba(207, 207, 207, 0.75) 0%,
+                rgba(255, 255, 255, 0.75) 50%,
+                rgba(222, 222, 222, 0.75) 100%
+            );
+            height: 80vh;
+            width: 75vw;
+            overflow-y: scroll;
+            border-radius: 0.8rem;
+            border: 0.01rem solid powderblue;
+            backdrop-filter: blur(0.2rem);
+            /*
+            -webkit-box-shadow:
+                inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.5),
+                inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.5),
+                0.2em 0.2em 0.2em 0 rgba(0, 0, 0, 0.34),
+                -0.2em -0.2em 0.2em 0 rgba(255, 255, 255, 1);
+            -moz-box-shadow:
+                inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.5),
+                inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.5),
+                0.2em 0.2em 0.2em 0 rgba(0, 0, 0, 0.34),
+                -0.2em -0.2em 0.2em 0 rgba(255, 255, 255, 1);
+            box-shadow:
+                inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.5),
+                inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.5),
+                0.2em 0.2em 0.2em 0 rgba(0, 0, 0, 0.34),
+                -0.2em -0.2em 0.2em 0 rgba(255, 255, 255, 1);
+                 */
         }
-        #MenuMobile p{
-            font-size: larger;
+
+        .main-menu.active {
+            display: block;
+            position: fixed;
+            bottom: 4.8rem;
+            left: 0.5rem;
+        }
+
+        .menu-item {
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            position: static;
+            display: none;
+            padding-left: 20px;
+            transition: all 1s;
+        }
+
+        .has-dropdown.active .dropdown-menu {
+            display: block;
         }
     }
-*/
 </style>
 <script>
-// Clean, simple JavaScript, Dùng sropdown javascript thay cho html
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuBtn = document.getElementById("menuMobileBtn");
+        const mainMenu = document.getElementById("mainMenu");
 
-document.addEventListener('DOMContentLoaded', () => {
-  const menuBtn = document.getElementById('menuMobileBtn');
-  const mainMenu = document.getElementById('mainMenu');
-  
-  if (menuBtn && mainMenu) {
-    // Mobile menu toggle
-    menuBtn.addEventListener('click', () => {
-      mainMenu.classList.toggle('active');
+        if (menuBtn && mainMenu) {
+            menuBtn.addEventListener("click", () => {
+                mainMenu.classList.toggle("active");
+            });
+
+            // Mobile dropdown toggle
+            if (window.innerWidth <= 600) {
+                const dropdownItems =
+                    document.querySelectorAll(".has-dropdown > a");
+                dropdownItems.forEach((item) => {
+                    item.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        const parent = item.parentElement;
+                        parent!.classList.toggle("active");
+                    });
+                });
+            }
+        }
     });
-    
-    // Mobile dropdown toggle
-    if (window.innerWidth <= 600) {
-      const dropdownItems = document.querySelectorAll('.has-dropdown > a');
-      dropdownItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-          e.preventDefault();
-          const parent = item.parentElement;
-          parent!.classList.toggle('active');
-        });
-      });
-    }
-  }
-});
-
 </script>

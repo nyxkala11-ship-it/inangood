@@ -1,116 +1,150 @@
 ---
-import { Image } from 'astro:assets'
-import video from '../assets/banner/video.mp4'
-import Banner1 from '../assets/banner/1.jpg'
-import Banner2 from '../assets/banner/2.jpg'
-import Banner3 from '../assets/banner/3.jpg'
-import Banner4 from '../assets/banner/4.jpg'
+import { Image } from "astro:assets";
+import video from "../assets/banner/video.mp4";
+import Banner1 from "../assets/banner/1.jpg";
+import Banner2 from "../assets/banner/2.jpg";
+import Banner3 from "../assets/banner/3.jpg";
+import Banner4 from "../assets/banner/4.jpg";
 ---
 
 <div id="flash-container" class="flex flex-col items-center">
- <div id="flash-body" class="grid grid-cols-7 gap-2">
-    <div id="flash-image" class="col-span-4">
-        <video class="aspect-3/2 w-full h-auto object-cover rounded-2" height="" controls>
-        <source src={video} type="video/mp4">
-    </video>
+    <div id="flash-body" class="grid grid-cols-7 gap-2">
+        <div id="flash-image" class="col-span-4">
+            <video
+                class="aspect-3/2 w-full h-auto object-cover rounded-2"
+                height=""
+                controls
+            >
+                <source src={video} type="video/mp4" />
+            </video>
+        </div>
+        <div id="flash-sub" class="border-2 col-span-3 grid grid-cols-2">
+            <div
+                id="second-img"
+                class="col-span-1 place-content-center justify-center"
+            >
+                <Image
+                    src={Banner1}
+                    alt=""
+                    class:list={"aspect-6/5 w-full h-full col-span-4 object-cover rounded-1"}
+                    loading="lazy"
+                />
+            </div>
+            <div
+                id="second-img"
+                class="col-span-1 place-content-center justify-center"
+            >
+                <Image
+                    src={Banner4}
+                    alt=""
+                    class:list={"aspect-6/5 w-full h-full col-span-4 object-cover rounded-1"}
+                    loading="lazy"
+                />
+            </div>
+            <div
+                id="second-img"
+                class="col-span-1 place-content-center justify-center"
+            >
+                <Image
+                    src={Banner2}
+                    alt=""
+                    class:list={"aspect-6/5 w-full h-full col-span-4 object-cover rounded-1"}
+                    loading="lazy"
+                />
+            </div>
+            <div
+                id="second-img"
+                class="col-span-1 place-content-center justify-center"
+            >
+                <Image
+                    src={Banner3}
+                    alt=""
+                    class:list={"aspect-6/5 w-full h-full col-span-4 object-cover rounded-1"}
+                    loading="lazy"
+                />
+            </div>
+        </div>
     </div>
-    <div id="flash-sub" class="border-2 col-span-3 grid grid-cols-2 ">
-        <div id="second-img" class="col-span-1 place-content-center justify-center">
-            <Image src={Banner1} alt="" 
-                class:list={"aspect-6/5 w-full h-full col-span-4 object-cover rounded-1"}
-                loading="lazy"/>
-        </div>
-        <div id="second-img" class="col-span-1 place-content-center justify-center">
-            <Image 
-                src={Banner4}
-                alt=""
-                class:list={"aspect-6/5 w-full h-full col-span-4 object-cover rounded-1"}
-                loading="lazy"
-            />
-        </div>
-        <div id="second-img" class="col-span-1 place-content-center justify-center">
-            <Image src={Banner2} alt=""
-                class:list={"aspect-6/5 w-full h-full col-span-4 object-cover rounded-1"}
-                loading="lazy" />
-        </div>
-        <div id="second-img" class="col-span-1 place-content-center justify-center">
-            <Image src={Banner3} alt="" 
-                class:list={"aspect-6/5 w-full h-full col-span-4 object-cover rounded-1"}
-                loading="lazy"/>
-    </div>
- </div>
-</div>
 
-<style>
-    video {
-        object-fit:contain;
-    }
-    #flash-container {
-        width: 100%;
-        padding-top: 0.8rem;
-        padding-bottom: 1.5rem;
-    }
-    #flash-body {
-        width: 1440px;
-        max-width: 100%;
-        padding: 8pt;
-        border-radius: 15px;
-    }
-    #flash-sub {
-        border-radius: 10px;
-    }
-    #main-flash {
-        background-color: rgba(255, 196, 204, 0.315);
-        height: auto;
-        border-radius: 10px;
-    }
-    #second-img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        padding: 5px;
-        transition: transform .35s;
-    }
-    #second-img:hover {
-        -ms-transform: scale(2.8);
-            /* IE 9 */
-        -webkit-transform: scale(1.06);
-            /* Safari 3-8 */
-        transform: scale(1.06);
-        cursor: pointer;
-        z-index: 10;
-        box-shadow:  5px 10px 1rem #88888830;
-    }
-    #flash-image {
-        overflow: hidden;
-    }
-    #flash-image img {
-        transition: transform .55s;
-        z-index: -99;
-    }
-    #flash-image:hover img {
-        -ms-transform: scale(3);
-            /* IE 9 */
-        -webkit-transform: scale(1.2);
-            /* Safari 3-8 */
-        transform: scale(1.1);
-        cursor: pointer;
-        z-index: 10;
-    }
-    img {
-        border-radius: 8px;
-    }
-    @media screen and (max-width: 600px) {
-        #flash-body {
-            display: flex;
-            flex-direction: column;
+    <style>
+        video {
+            object-fit: contain;
         }
-        #flash-img {
-            padding: 0.1rem;
+        #flash-container {
             width: 100%;
+            padding-top: 0.8rem;
+            padding-bottom: 1.5rem;
+        }
+        #flash-body {
+            width: 1440px;
+            max-width: 100%;
+            padding: 8pt;
+            border-radius: 15px;
         }
         #flash-sub {
-            width: 100%;
+            border-radius: 10px;
         }
-    }
-</style>
+        #main-flash {
+            background-color: rgba(255, 196, 204, 0.315);
+            height: auto;
+            border-radius: 10px;
+        }
+        #second-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            padding: 5px;
+            transition: transform 0.35s;
+        }
+        #second-img:hover {
+            -ms-transform: scale(2.8);
+            /* IE 9 */
+            -webkit-transform: scale(1.06);
+            /* Safari 3-8 */
+            transform: scale(1.06);
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 5px 10px 1rem #88888830;
+        }
+        #flash-image {
+            overflow: hidden;
+        }
+        #flash-image img {
+            transition: transform 0.55s;
+            z-index: -99;
+        }
+        #flash-image:hover img {
+            -ms-transform: scale(3);
+            /* IE 9 */
+            -webkit-transform: scale(1.2);
+            /* Safari 3-8 */
+            transform: scale(1.1);
+            cursor: pointer;
+            z-index: 10;
+        }
+        img {
+            border-radius: 8px;
+        }
+        @media screen and (max-width: 600px) {
+            #flash-body {
+                display: flex;
+                flex-direction: column;
+            }
+            #flash-img {
+                padding: 0.1rem;
+                width: 100%;
+            }
+            #flash-sub {
+                width: 100%;
+                background: linear-gradient(
+                    148deg,
+                    rgba(237, 237, 237, 0.8) 0%,
+                    rgba(255, 255, 255, 0.8) 50%,
+                    rgba(186, 186, 186, 0.8) 100%
+                );
+                backdrop-filter: blur(1.8rem);
+                border: 0.01rem solid darkgrey;
+            }
+        }
+    </style>
+</div>

@@ -1,52 +1,113 @@
 ---
-import "../styles/global.css"
-import MenuDynamics from "../layouts/MenuDynamics.astro"
+import "../styles/global.css";
+import MenuDynamics from "../layouts/MenuDynamics.astro";
+import { Image } from "astro:assets";
 ---
-<div class="flex-col max-w-10/10" id="container-head">
 
+<div class="flex-col max-w-10/10" id="container-head">
     <div id="header" class="flex-col items-center">
         <!-- Top bar -->
-            <div class="header">
-                <ul class="flex flex-row-reverse justify-start place-items-center py-2">
-                    <li id="abbutton" class="py-2 grow flex justify-end basis-1/3">
-                        <div class="px-4 py-5]
-                         bg-linear-95 from-red-400 to-red-200 rounded-2xl border-1 border-solid"><a href="/about" class="text-xl my-1">Về chúng tôi<a id="head-goodtext" class="text-xl my-1">(GOOD)!</a></a></div>
-                    </li>
-                    <li id="li-hai" class="pr-5">
-                        <pre class="inline">CSKH: </pre><div id="link-social" class="inline"><a target="_blank" href="https://zalo.me/0907335245">0907 335 245</a></div><pre class="inline"><a id="head-goodtext"> | </a></pre><br id="head-br" /><pre>Hotline KD: </pre><div id="link-social" class="inline-block"><a href="https://zalo.me/0789471752" target="_blank">0789 47 17 52</a></div><pre class="inline"> – </pre><div id="link-social" class="inline-block"><a target="_blank" href="https://zalo.me/0775964752">0775 96 47 52</a></div><pre class="inline"> – </pre><div id="link-social" class="inline-block"><a target="_blank" href="https://zalo.me/0901036457">0901 036 457</a></div>
-                    </li>
-                </ul>
+        <div class="header">
+            <ul
+                class="flex flex-row-reverse justify-start place-items-center py-2"
+            >
+                <li
+                    id="abbutton"
+                    class="py-[.5] grow flex justify-end basis-1/3"
+                >
+                    <div
+                        class="px-4 py-[0.2]
+                        bg-linear-95 from-red-400 to-red-200
+                        rounded-2xl border-[0.05rem] border-solid"
+                    >
+                        <a href="/about" class="text-xl my-1"
+                            >Về chúng tôi<a
+                                id="head-goodtext"
+                                class="text-xl my-1">(GOOD)!</a
+                            ></a
+                        >
+                    </div>
+                </li>
+                <li id="li-hai" class="pr-5">
+                    <pre class="inline">CSKH: </pre><div
+                        id="link-social"
+                        class="inline"
+                    >
+                        <a target="_blank" href="https://zalo.me/0907335245"
+                            >0907 335 245</a
+                        >
+                    </div><pre
+                        class="inline"><a id="head-goodtext"> | </a></pre><br
+                        id="head-br"
+                    /><pre>Hotline KD: </pre><div
+                        id="link-social"
+                        class="inline-block"
+                    >
+                        <a href="https://zalo.me/0789471752" target="_blank"
+                            >0789 47 17 52</a
+                        >
+                    </div><pre class="inline"> – </pre><div
+                        id="link-social"
+                        class="inline-block"
+                    >
+                        <a target="_blank" href="https://zalo.me/0775964752"
+                            >0775 96 47 52</a
+                        >
+                    </div><pre class="inline"> – </pre><div
+                        id="link-social"
+                        class="inline-block"
+                    >
+                        <a target="_blank" href="https://zalo.me/0901036457"
+                            >0901 036 457</a
+                        >
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div
+            class="bg-[#78172220] menu-header flex flex-row flex-wrap place-items-center"
+        >
+            <!-- Tiêu đề logo -->
+            <div class="goodTitle flex flex-row grow items-center">
+                <a href="/" class="goodlogo p-3 inline">
+                    <img
+                        src="/good.png"
+                        alt="In ấn bao bì Cần Thơ"
+                        width="80px"
+                    />
+                </a>
+
+                <a href="/" class="goodtitle inline">
+                    <img
+                        src="/good-title.png"
+                        alt="In ấn bao bì Good Lộc Phát"
+                        width="200px"
+                    />
+                </a>
             </div>
-                <div class="bg-[#78172220] menu-header flex flex-row flex-wrap place-items-center">
-                        <!-- Tiêu đề logo -->
-                        <a href="/" class="justify-items-start p-3">
-                                <img src="/good.png" width="80px" >
-                        </a>
-                        <div class="h-full flex items-end">
-                        <a href="/" class="">
-                                <img src="/good-title.png" width="200px">
-                        </a>
-                        </div>
-                        <!-- menu-header -->
-                        <div id="div-search" class="grow place-content-center h-auto">
-                            <!-- Thanh tìm kiếm -->
-                            <input class="rounded-xl" id="MenuSearch" type="text" placeholder="Tìm ấn phẩm"> 
-                        </div>
-                            
-                        <div class="grid grid-cols-2">
-                            <card class="items-center p-5 col-span1">
-                                Bảo mật thông tin an toàn
-                            </card>
-                            <card class="items-center p-5 col-span-1">
-                                Đảm bảo 100% hài lòng
-                            </card>
-                        </div>
-                </div> 
+            <!-- menu-header -->
+            <div id="div-search" class="grow place-content-center h-auto">
+                <!-- Thanh tìm kiếm -->
+                <input
+                    class="rounded-[3rem]"
+                    id="MenuSearch"
+                    type="text"
+                    placeholder="Tìm dịch vụ, sản phẩm"
+                />
+            </div>
+
+            <div class="sloganDiv grid grid-cols-2">
+                <card class="sloganCard items-center p-5 col-span1">
+                    <p>Bảo mật thông tin an toàn</p>
+                </card>
+                <card class="sloganCard items-center p-5 col-span-1">
+                    <p>Đảm bảo 100% hài lòng</p>
+                </card>
+            </div>
+        </div>
     </div>
     <MenuDynamics />
-
 </div>
-
 
 <style>
     #head-goodtext {
@@ -62,24 +123,26 @@ import MenuDynamics from "../layouts/MenuDynamics.astro"
     card {
         width: 125px;
     }
-    #MenuSearch[type=text] {
-    float: right;
-    padding: 8px;
-    padding-left: 16px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-    background-color: aliceblue;
-    margin: 10px;
-    
-    right: 0;
-    max-lines: 1;
-    height: 2.5rem;
-    width: 350px;
+    #MenuSearch[type="text"] {
+        float: right;
+        padding: 8px;
+        padding-left: 16px;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+        background-color: aliceblue;
+        margin: 10px;
+
+        right: 0;
+        max-lines: 1;
+        height: 2.5rem;
+        width: 350px;
     }
-    
-    #header{
+    #abbutton {
+        margin-top: 0.25rem;
+    }
+    #header {
         display: flex;
         justify-content: center;
     }
@@ -96,9 +159,9 @@ import MenuDynamics from "../layouts/MenuDynamics.astro"
     }
     /*Strip the ul of padding and list styling*/
     ul {
-        list-style-type:none;
-        margin:0;
-        padding:0;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
     }
     /*Create a horizontal list with spacing*/
     li {
@@ -106,7 +169,7 @@ import MenuDynamics from "../layouts/MenuDynamics.astro"
         padding-right: 5px;
         float: left;
         margin-right: 1px;
-        font-size: 1.rem;
+        font-size: 1rem;
         height: 100%;
     }
     ul li {
@@ -116,17 +179,19 @@ import MenuDynamics from "../layouts/MenuDynamics.astro"
         display: inline-block;
     }
     #container-head {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		align-items: center;
-	}
+        font-family:
+            Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+            sans-serif;
+        align-items: center;
+    }
     #link-social {
-        transition: all .55s;
+        transition: all 0.55s;
     }
     #link-social:hover {
         -ms-transform: scale(3.45);
-            /* IE 9 */
+        /* IE 9 */
         -webkit-transform: scale(1.125);
-            /* Safari 3-8 */
+        /* Safari 3-8 */
         transform: scale(1.125);
         cursor: pointer;
         color: #781722;
@@ -135,7 +200,20 @@ import MenuDynamics from "../layouts/MenuDynamics.astro"
         border-radius: 8px;
     }
     @media screen and (max-width: 600px) {
-        #MenuSearch[type=text] {
+        .goodTitle {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .goodlogo img {
+            width: 100%;
+        }
+        .goodtitle img {
+            width: 100%;
+            padding-right: 1rem;
+        }
+        #MenuSearch[type="text"] {
             width: auto;
             min-width: 100%;
             overflow: hidden;
@@ -146,9 +224,10 @@ import MenuDynamics from "../layouts/MenuDynamics.astro"
             -ms-flex-direction: column;
         }
         .header > ul > li {
-
         }
-        p, a, pre {
+        p,
+        a,
+        pre {
             font-size: 0.8rem;
             display: inline-block;
         }
@@ -164,11 +243,44 @@ import MenuDynamics from "../layouts/MenuDynamics.astro"
             right: 0.5rem;
             display: flex;
             position: absolute;
+            margin-top: 0;
         }
         #li-hai {
             padding-top: 0.2rem;
         }
         li a {
+        }
+        #div-search {
+        }
+        #MenuSearch[type="text"] {
+            left: 0;
+            display: flex;
+            position: static;
+            //padding: 0;
+            margin: 0;
+        }
+        .sloganDiv {
+        }
+        .sloganCard {
+            background: #ededed;
+            background: linear-gradient(
+                148deg,
+                rgba(237, 237, 237, 0.5) 0%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(186, 186, 186, 0.5) 100%
+            );
+            width: auto;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            margin: 0.8rem 0.3rem 0.5rem 0.3rem;
+            border-radius: 1rem;
+        }
+        .sloganCard p {
+            font-size: 1.15rem !important;
+            color: #781722;
+            font-weight: 600 !important;
+            text-align: center;
+            line-height: 1.35rem;
         }
     }
 </style>

@@ -1,160 +1,158 @@
 ---
-
 // Cấu hình Splide  -  yêu cầu npm install astro-splide @splidejs/splide-extension-auto-scroll
 
-import '@splidejs/splide'
-import { SplideExtension, SplideSlide } from 'astro-splide';
-import type { Options } from '@splidejs/splide';
+import "@splidejs/splide";
+import { SplideExtension, SplideSlide } from "astro-splide";
+import type { Options } from "@splidejs/splide";
 import { Debug } from "astro:components";
 
 const options: Options = {
-    type: 'loop',
-    drag: 'free',
-    focus: 'center',
+    type: "loop",
+    drag: "free",
+    focus: "center",
     perPage: 8,
     autoScroll: {
         speed: 2,
     },
-}
+};
 
 const optionMobile: Options = {
-    type: 'loop',
-    drag: 'free',
-    focus: 'center',
+    type: "loop",
+    drag: "free",
+    focus: "center",
     perPage: 5,
     autoScroll: {
         speed: 1,
     },
-}
+};
 
-import Slide1 from '../assets/slide/img1.jpg'
-import Slide2 from '../assets/slide/img2.jpg'
-import Slide3 from '../assets/slide/img3.jpg'
-import Slide4 from '../assets/slide/img4.jpg'
-import Slide5 from '../assets/slide/img5.jpg'
-import Slide6 from '../assets/slide/img6.jpg'
-import Slide7 from '../assets/slide/img7.jpg'
-import Slide8 from '../assets/slide/img8.jpg'
-import Slide9 from '../assets/slide/img9.jpg'
-import Slide10 from '../assets/slide/img10.jpg'
-import Slide11 from '../assets/slide/img11.jpg'
-import Slide12 from '../assets/slide/img12.jpg'
-import Slide13 from '../assets/slide/img13.jpg'
-import Slide14 from '../assets/slide/img14.jpg'
-import Slide15 from '../assets/slide/img15.jpg'
-import Slide16 from '../assets/slide/img16.jpg'
-import Slide17 from '../assets/slide/img17.jpg'
-import Slide18 from '../assets/slide/img18.jpg'
-import Slide19 from '../assets/slide/img19.jpg'
-import Slide20 from '../assets/slide/img20.jpg'
-
+import Slide1 from "../assets/slide/img1.jpg";
+import Slide2 from "../assets/slide/img2.jpg";
+import Slide3 from "../assets/slide/img3.jpg";
+import Slide4 from "../assets/slide/img4.jpg";
+import Slide5 from "../assets/slide/img5.jpg";
+import Slide6 from "../assets/slide/img6.jpg";
+import Slide7 from "../assets/slide/img7.jpg";
+import Slide8 from "../assets/slide/img8.jpg";
+import Slide9 from "../assets/slide/img9.jpg";
+import Slide10 from "../assets/slide/img10.jpg";
+import Slide11 from "../assets/slide/img11.jpg";
+import Slide12 from "../assets/slide/img12.jpg";
+import Slide13 from "../assets/slide/img13.jpg";
+import Slide14 from "../assets/slide/img14.jpg";
+import Slide15 from "../assets/slide/img15.jpg";
+import Slide16 from "../assets/slide/img16.jpg";
+import Slide17 from "../assets/slide/img17.jpg";
+import Slide18 from "../assets/slide/img18.jpg";
+import Slide19 from "../assets/slide/img19.jpg";
+import Slide20 from "../assets/slide/img20.jpg";
 ---
-<div  id="slideCom">
-<div class="content">
-    <SplideExtension options={options}>
-        <SplideSlide>
-          <img src={Slide1.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide2.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide3.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide4.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide5.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide6.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide7.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide8.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide9.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide10.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide11.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide12.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide13.src} />
-        </SplideSlide>
-        <SplideSlide>
-          <img src={Slide14.src} />
-        </SplideSlide>
-    </SplideExtension>
-</div>
+
+<div id="slideCom">
+    <div class="content">
+        <SplideExtension options={options}>
+            <SplideSlide>
+                <img src={Slide1.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide2.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide3.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide4.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide5.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide6.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide7.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide8.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide9.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide10.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide11.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide12.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide13.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide14.src} />
+            </SplideSlide>
+        </SplideExtension>
+    </div>
 </div>
 
-<div  id="slideMobile">
-<div class="content">
-<SplideExtension options={optionMobile}>
-      <SplideSlide>
-        <img src={Slide1.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide3.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide4.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide5.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide6.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide7.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide8.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide9.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide10.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide11.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide12.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide13.src} />
-      </SplideSlide>
-      <SplideSlide>
-        <img src={Slide14.src} />
-      </SplideSlide>
-</SplideExtension>
-</div>
+<div id="slideMobile">
+    <div class="content">
+        <SplideExtension options={optionMobile}>
+            <SplideSlide>
+                <img src={Slide1.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide3.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide4.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide5.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide6.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide7.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide8.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide9.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide10.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide11.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide12.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide13.src} />
+            </SplideSlide>
+            <SplideSlide>
+                <img src={Slide14.src} />
+            </SplideSlide>
+        </SplideExtension>
+    </div>
 </div>
 <style>
-  #slideMobile {
-    display: none;
-  }
-  #slideCom {
-    display: contents;
-    
-  }
-  .content {
-    width: 1440px;
-    max-width: 100%;
-  }
+    #slideMobile {
+        display: none;
+    }
+    #slideCom {
+        display: contents;
+    }
+    .content {
+        width: 1440px;
+        max-width: 100%;
+    }
     img {
         padding: 3px;
         width: auto;
@@ -162,17 +160,17 @@ import Slide20 from '../assets/slide/img20.jpg'
         border-radius: 10px;
     }
     @media screen and (max-width: 600px) {
-      #slideCom {
-        display: none;
-      }
-      #slideMobile {
-        display: contents;
-      }
+        #slideCom {
+            display: none;
+        }
+        #slideMobile {
+            display: contents;
+        }
     }
 </style>
 
-  <script>
-    import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
-    import { initSplideExtension } from "astro-splide/js/splideExtensionUtils"
-    initSplideExtension({AutoScroll})
-  </script>
+<script>
+    import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+    import { initSplideExtension } from "astro-splide/js/splideExtensionUtils";
+    initSplideExtension({ AutoScroll });
+</script>

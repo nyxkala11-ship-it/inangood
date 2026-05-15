@@ -302,16 +302,20 @@ console.log(images);
 	}
 
 	@media screen and (max-height: 368px) {
-		#news {
+		/*#news {
 			display: none;
-		}
+		}*/
 	}
 
 	@media screen and (max-width: 768px) {
-		#container {
+		#preview {
+			min-height: 90vw;
+			transition: all 0.35s;
+		}
+		/*#container {
 			display: flex;
 			flex-direction: column;
-		}
+		}*/
 
 		#hero {
 			display: block;
@@ -325,16 +329,17 @@ console.log(images);
 		#links a.button {
 			padding: 14px 18px;
 		}
-
+/*
 		#news {
 			right: 16px;
 			left: 16px;
 			bottom: 2.5rem;
 			max-width: 100%;
 		}
-
+*/
 		h1 {
-			line-height: 1.5;
+			line-height: 1.2;
+			font-size: 2rem;
 		}
 	}
 	@media screen and (max-width: 600px) {
