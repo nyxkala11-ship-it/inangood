@@ -1,31 +1,44 @@
 ---
 // ProductMedia.astro
 export interface Props {
-  productId: string;
-  mediaName: string;
-  type: 'image' | 'video';
+    productId: string;
+    mediaName: string;
+    type: "image" | "video";
 }
 
 const { productId, mediaName, type } = Astro.props;
 
 // Import trực tiếp từ thư mục của product
-let src = '';
+let src = "";
 
 try {
-  if (type === 'image') {
-    const imageModule = await import(`${mediaName}`);
-    src = imageModule.default;
-  } else {
-    const videoModule = await import(`${mediaName}`);
-    src = videoModule.default;
-  }
+    if (type === "image") {
+        const imageModule = await import(`${mediaName}`);
+        src = imageModule.default;
+    } else {
+        const videoModule = await import(`${mediaName}`);
+        src = videoModule.default;
+    }
 } catch (error) {
-  console.error(`Cannot load ${mediaName} for product ${productId}`);
+    console.error(`Cannot load ${mediaName} for product ${productId}`);
 }
 ---
 
-{type === 'image' ? (
-  <img class="mySlides aspect-square"  src={mediaName} alt="" loading="lazy" />
-) : (
-  <video width="500" height="500" class="mySlides aspect-square" controls src={src} />
-)}
+{
+    type === "image" ? (
+        <img
+            class="mySlides aspect-square"
+            src={mediaName}
+            alt=""
+            loading="lazy"
+        />
+    ) : (
+        <video
+            width="500"
+            height="500"
+            class="mySlides aspect-square"
+            controls
+            src={src}
+        />
+    )
+}

@@ -128,14 +128,14 @@ console.log(images);
 						<br><br>
 						<form action="#">
 							<label for="Size">Chọn cỡ:</label>
-							<select class="bg-white p-2 rounded-md border-1 border-black-200" name="kraft" id="kraft">
+							<select class="bg-white p-2 rounded-md border-1px border-black-200" name="kraft" id="kraft">
 							<option value="20x10">Túi 20x10</option>
 							<option value="20x20">Túi 20x20</option>
 							<option value="16x16">Túi 16x16</option>
 							</select>
 							<br><br>
 							<label for="Mau">Mẫu:</label>
-							<select class="bg-white p-2 rounded-md border-1 border-black-200" name="mau" id="mau">
+							<select class="bg-white p-2 rounded-md border-1px border-black-200" name="mau" id="mau">
 							<option value="cute01">Mẫu Cute 01</option>
 							<option value="cute02">Mẫu Cute 02</option>
 							<option value="cute03">Mẫu Cute 03</option>
@@ -146,16 +146,18 @@ console.log(images);
 							<option value="cute08">Mẫu Cute 08</option>
 							</select>
 							<br><br>
-							<input class="block items-center justify-center px-5 bg-linear-95 from-red-800 to-red-600 rounded-xl border-1 border-solid border-orange-200 float-left flex flex-row fg-white w-[250px]" type="submit" value="Đặt túi !">
+							<input class="flex items-center justify-center px-5 bg-linear-95 from-red-800 to-red-600 rounded-xl border-1px border-solid border-orange-200 float-left flex-row fg-white w-62.5" type="submit" value="Đặt túi !">
 						</form>
 					</div>
 				</div>
 
-				<div id="description" class="text-center leading-[3rem] border-solid border-1 rounded-xl border-sky-100 p-5">
+				<div id="description" class="text-center leading-12 border-solid border-1px rounded-xl border-sky-100 p-5">
 					<img id="background" src={background.src} alt="" fetchpriority="high" />
 					<div id="desdate"><p>"Cập nhật ngày:" {date}</p></div>
 					<!-- Slot cho content! -->
-					<slot slot="content" />
+					<div class="MardownContent flex flex-col justify-center items-center">
+					    <slot slot="content" />
+					</div>
 				</div>
 
 			</div>
@@ -203,13 +205,18 @@ console.log(images);
 	}
 
 	h1 {
-		font-size: 3rem;
+		font-size: 2rem;
 		font-weight: 800;
 		margin-top: 0.25em;
 	}
 	h2 {
 		font-size: 1.8rem;
 		margin-top: 0.25em;
+	}
+
+	hr {
+	margin-top: .2rem;
+	margin-left: .2rem;
 	}
 
 	#links {
@@ -246,6 +253,8 @@ console.log(images);
 
 	#preview {
 		position: relative;
+		overflow: hidden;
+		height: 50vh;
 	}
 
 	.button {
@@ -293,9 +302,9 @@ console.log(images);
 		text-align: center;
 	}
 
-	img {
-		display: flex;
-		justify-self: center;
+	#preview img {
+	    width: 45vh;
+		height: auto;
 	}
 
 	code {
@@ -306,6 +315,25 @@ console.log(images);
 		border-radius: 8px;
 		border: 1px solid transparent;
 		padding: 6px 8px;
+	}
+
+	.MardownContent img {
+	    background-color: #bc52ee;
+		width: 50%;
+		margin-top: 1rem;
+		display: flex;
+		margin: auto;
+	}
+	.MardownContent p {
+	font-size: 1.8rem;
+	line-height: 2.2rem;
+	margin-top: 1rem;
+	max-width: 50vw;
+	}
+	.MardownContent hr {
+	    margin: 2rem;
+					border: 0.1rem solid black;
+					width: 55%;
 	}
 
 	@media screen and (max-height: 368px) {

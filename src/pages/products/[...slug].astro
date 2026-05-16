@@ -1,37 +1,38 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content';
-import ProductArticles from '../../layouts/ProductsArticles.astro';
-import ProductCatergories from '../../layouts/ProductsCatergories.astro';
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import ProductArticles from "../../layouts/ProductsArticles.astro";
+import ProductCatergories from "../../layouts/ProductsCatergories.astro";
 export async function getStaticPaths() {
-	const posts = await getCollection('blogCollection');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+    const posts = await getCollection("blogCollection");
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: post,
+    }));
 }
-type Props = CollectionEntry<'blogCollection'>;
-
+type Props = CollectionEntry<"blogCollection">;
 
 const post = Astro.props;
 const { Content } = await render(post);
-const isParent = post.data.parent === 'none';
+const isParent = post.data.parent === "none";
 
-console.log(`post id la: ${post.id}`)
-
+console.log(`post id la: ${post.id}`);
 ---
-{isParent ? (
-<ProductCatergories {...post.data}>
-	<Content class="contentclass" />
-</ProductCatergories>
-) : (
-<ProductArticles {...post.data}>
-	<Content class="contentclass" />
-</ProductArticles>
-)}
+
+{
+    isParent ? (
+        <ProductCatergories {...post.data}>
+            <Content class="contentclass" />
+        </ProductCatergories>
+    ) : (
+        <ProductArticles {...post.data}>
+            <Content class="contentclass" />
+        </ProductArticles>
+    )
+}
 
 <style>
-	p {
-		color: aquamarine;
-		background-color: aqua !important;
-	}
+    p {
+        color: aquamarine;
+        background-color: aqua !important;
+    }
 </style>

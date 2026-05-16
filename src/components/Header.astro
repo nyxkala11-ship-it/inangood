@@ -77,7 +77,7 @@ import { Image } from "astro:assets";
                     />
                 </a>
 
-                <a href="/" class="goodtitle inline">
+                <a href="/" class="goodtitle inline grow">
                     <img
                         src="/good-title.png"
                         alt="In ấn bao bì Good Lộc Phát"
@@ -110,6 +110,12 @@ import { Image } from "astro:assets";
 </div>
 
 <style>
+    .goodTitle a img {
+        width: 8rem;
+    }
+    .goodTitle .goodtitle img {
+        width: 15vh !important;
+    }
     .onlyMobile {
         display: none;
     }
@@ -206,6 +212,12 @@ import { Image } from "astro:assets";
         border-radius: 8px;
     }
     @media screen and (max-width: 600px) {
+        .goodTitle a img {
+            width: 8rem;
+        }
+        .goodTitle .goodtitle img {
+            width: 45vh !important;
+        }
         .onlyMobile {
             display: inline-block;
         }

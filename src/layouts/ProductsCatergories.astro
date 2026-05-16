@@ -1,285 +1,294 @@
 ---
-import Layout from './Layout.astro';
-import Footer from '../components/Footer.astro';
-import BaseHead from '../components/Header.astro'
-import background from '../assets/background.svg';
+import Layout from "./Layout.astro";
+import Footer from "../components/Footer.astro";
+import BaseHead from "../components/Header.astro";
+import background from "../assets/background.svg";
 import type { CollectionEntry } from "astro:content";
 // Cấu hình Splide  -  yêu cầu npm install astro-splide @splidejs/splide-extension-auto-scroll
 
-import type { Options } from '@splidejs/splide';
-import '@splidejs/splide'
-import Image from 'astro/components/Image.astro';
-import "@splidejs/splide"
-import { ArrowBigLeftDash, ArrowBigRight, ArrowBigRightDash } from '@lucide/astro';
-import { getCollection, render } from 'astro:content';
+import type { Options } from "@splidejs/splide";
+import "@splidejs/splide";
+import Image from "astro/components/Image.astro";
+import "@splidejs/splide";
+import {
+    ArrowBigLeftDash,
+    ArrowBigRight,
+    ArrowBigRightDash,
+} from "@lucide/astro";
+import { getCollection, render } from "astro:content";
 type Props = CollectionEntry<"blogCollection">["data"];
 const { title, date, catergory, parent, id, images, videos } = Astro.props;
-const allProducts = await getCollection('blogCollection');
+const allProducts = await getCollection("blogCollection");
 const itemsMap = new Map<string, CatergoryItem>();
 interface CatergoryItem {
-	id: string;
-	title: string;
-	slug: string;
-	index: number;
+    id: string;
+    title: string;
+    slug: string;
+    index: number;
 }
 
-allProducts.forEach(element => {
-	if (element.data.parent === catergory) {
-		const catergoryItem: CatergoryItem ={
-			id: element.data.id,
-			title: element.data.title,
-			slug: `/products/${element.data.id}`,
-			index: element.data.index,
-		}
-		itemsMap.set(element.data.title, catergoryItem);
-	}
+allProducts.forEach((element) => {
+    if (element.data.parent === catergory) {
+        const catergoryItem: CatergoryItem = {
+            id: element.data.id,
+            title: element.data.title,
+            slug: `/products/${element.data.id}`,
+            index: element.data.index,
+        };
+        itemsMap.set(element.data.title, catergoryItem);
+    }
 });
 
 export interface PropsImg {
-   imagePath: string;
-   altText: string;
-   name: string;
-   age: number;
+    imagePath: string;
+    altText: string;
+    name: string;
+    age: number;
 }
 
-
 const option: Options = {
-    type: 'loop',
-    drag: 'free',
-    focus: 'center',
+    type: "loop",
+    drag: "free",
+    focus: "center",
     perPage: 1,
     autoScroll: {
         speed: 1,
     },
-}
+};
 
-const RootCatList = Array.from(catergory)
+const RootCatList = Array.from(catergory);
 console.log(images);
 //import { getEntry, render } from 'astro:content';
 //const products = Object.values(import.meta.glob(, {eager: true }));
-
-
 ---
+
 <Layout>
-	<BaseHead />
+    <BaseHead />
     <body>
-		<main class="flex flex-col items-center w-full" >
-			<div class="text-2xl p-4"id="container">
-				<p>Danh mục: {parent === "none" ? catergory : parent} </p>
-				{
-					
-				}
-				<div id="desimg" class="grid grid-cols-2 my-3">
-					<div id="preview" class="col-span-1 flex items-center justify-center">
-					</div>
-				</div>
-
-				<div id="description" class="text-center leading-[3rem] border-solid border-1 rounded-xl border-sky-100 p-5">
-					<img id="background" src={background.src} alt="" fetchpriority="high" />
-					<div id="desdate"><p>"Cập nhật ngày:" {date}</p></div>
-					<!-- Slot cho content! -->
-					<slot slot="content" />	
-				</div>
-
-			</div>
-		</main>
-	</body>
+        <main class="flex flex-col items-center w-full">
+            <div class="text-2xl p-4" id="container">
+                <p>Danh mục: {parent === "none" ? catergory : parent}</p>
+                {}
+                <div
+                    id="description"
+                    class="text-center border-solid rounded-xl border-sky-100 p-5"
+                >
+                    <img
+                        id="background"
+                        src={background.src}
+                        alt=""
+                        fetchpriority="high"
+                    />
+                    <!-- <div id="desdate"><p>"Cập nhật ngày:" {date}</p></div> -->
+                    <div class="">
+                    <slot slot="content" />
+                    </div>
+                    <!-- Slot cho content! -->
+                    <div class="bg-orange-300 flex flex-col items-start pl-2">
+                    {
+                      allProducts.filter(element => element.data.parent === catergory).map(element =>
+                      <a href=`/products/${element.data.id}` class="p-2">{element.data.title}</a>
+                      <br />
+                      )}
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
 
     <Footer />
 </Layout>
-	
+
 <style>
-	* {
-		font-size: 55;
-	}
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+    * {
+        font-size: 55;
+    }
+    #background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        filter: blur(100px);
+    }
 
+    .mySlides {
+        display: none;
+        position: absolute;
+        height: 100%;
+    }
 
-	.mySlides {
-		display: none;
-		position: absolute;
-		height: 100%;
-	}
+    .displaySlide {
+        display: block;
+    }
 
-	.displaySlide {
-		display: block;
-	}
+    #container {
+        font-family:
+            Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+            sans-serif;
+        width: 1440px;
+        max-width: 100%;
+        height: 100%;
+        margin-top: 2vh;
+    }
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		width: 1440px;
-		max-width: 100%;
-		height: 100%;
-		margin-top: 2vh;
-	}
+    h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-top: 0.25em;
+    }
+    h2 {
+        font-size: 1.8rem;
+        margin-top: 0.25em;
+    }
 
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin-top: 0.25em;
-	}
-	h2 {
-		font-size: 1.8rem;
-		margin-top: 0.25em;
-	}
+    #links {
+        display: flex;
+        gap: 16px;
+    }
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
+    #links a {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        color: #111827;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
+    #links a:hover {
+        color: rgb(78, 80, 86);
+    }
 
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
+    #links a svg {
+        height: 1em;
+        margin-left: 8px;
+    }
 
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
+    #links a.button {
+        color: white;
+        background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+        box-shadow:
+            inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+            inset 0 -2px 0 rgba(0, 0, 0, 0.24);
+        border-radius: 10px;
+    }
 
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
+    #preview {
+        position: relative;
+    }
 
-	#preview {
-		position: relative;
-	}
+    .button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
-	.button {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-	}
+    .previousbtn {
+        left: 0;
+    }
+    .nextbtn {
+        right: 0;
+    }
 
-	.previousbtn {
-		left: 0;
-	}
-	.nextbtn {
-		right: 0;
-	}
+    #links a.button:hover {
+        color: rgb(230, 230, 230);
+        box-shadow: none;
+    }
 
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
+    pre {
+        font-family:
+            ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+            "DejaVu Sans Mono", monospace;
+        font-weight: normal;
+        background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0;
+    }
 
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
+    h2 {
+        font-weight: normal;
+        color: #111827;
+        font-size: 20px;
+    }
 
-	h2 {
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
+    p {
+        color: #4b5563;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.006em;
+        margin: 0;
+        text-align: center;
+    }
 
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-		text-align: center;
-	}
+    img {
+        display: flex;
+        justify-self: center;
+    }
 
-	img {
-		display: flex;
-		justify-self: center;
-	}
+    code {
+        display: inline-block;
+        background:
+            linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
+            linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%)
+                border-box;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        padding: 6px 8px;
+    }
 
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
+    @media screen and (max-height: 368px) {
+        #news {
+            display: none;
+        }
+    }
 
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
+    @media screen and (max-width: 768px) {
+        #container {
+            display: flex;
+            flex-direction: column;
+        }
 
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
+        #hero {
+            display: block;
+            padding-top: 10%;
+        }
 
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
+        #links {
+            flex-wrap: wrap;
+        }
 
-		#links {
-			flex-wrap: wrap;
-		}
+        #links a.button {
+            padding: 14px 18px;
+        }
 
-		#links a.button {
-			padding: 14px 18px;
-		}
+        #news {
+            right: 16px;
+            left: 16px;
+            bottom: 2.5rem;
+            max-width: 100%;
+        }
 
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
-	@media screen and (max-width: 600px) {
-		#desimg {
-			display: flex;
-			flex-direction: column;
-		}		
-	}
+        h1 {
+            line-height: 1.5;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        #desimg {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 </style>
 
-
-
-
 <script>
-
-//Javascript Slider
-// Source - https://stackoverflow.com/a/58773720
-// Posted by Jonas Wilms, modified by community. See post 'Timeline' for change history
-// Retrieved 2026-05-02, License - CC BY-SA 4.0
-/*
+    //Javascript Slider
+    // Source - https://stackoverflow.com/a/58773720
+    // Posted by Jonas Wilms, modified by community. See post 'Timeline' for change history
+    // Retrieved 2026-05-02, License - CC BY-SA 4.0
+    /*
 var slideIndex = 0;
 showDivs();
 
@@ -287,7 +296,7 @@ showDivs();
 let mybutton = document.getElementById("demo");
 
 mybutton!.onclick = function() {currentDivs()};
- 
+
 function plusDivs() {
 	slideIndex++;
 	showDivs()
@@ -301,10 +310,10 @@ function currentDivs() {
 function showDivs() {
   let i;
   let x = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
-  
-  
+
+
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
   slideIndex++;
 
@@ -313,55 +322,55 @@ function showDivs() {
     }
 
     x[slideIndex - 1].style.display = "block";
-    
+
     setTimeout(showDivs, 2000);
 }
 */
-/// Build with brocode yt
+    /// Build with brocode yt
 
-const slides = document.querySelectorAll(".mySlides");
-let slideIndex = 0;
-let intervalId: null | ReturnType<typeof setInterval> = null;
+    const slides = document.querySelectorAll(".mySlides");
+    let slideIndex = 0;
+    let intervalId: null | ReturnType<typeof setInterval> = null;
 
-let nextbtn = document.getElementById("nextbtn");
-let prebtn = document.getElementById("prebtn");
-// initializeSlider()
-document.addEventListener("DOMContentLoaded", initializeSlider);
+    let nextbtn = document.getElementById("nextbtn");
+    let prebtn = document.getElementById("prebtn");
+    // initializeSlider()
+    document.addEventListener("DOMContentLoaded", initializeSlider);
 
-function initializeSlider(){
-	if (slides.length > 0){
-		slides[slideIndex].classList.add("displaySlide");
-		intervalId = setInterval(nextSlide, 5000);
-	}
-}
+    function initializeSlider() {
+        if (slides.length > 0) {
+            slides[slideIndex].classList.add("displaySlide");
+            intervalId = setInterval(nextSlide, 5000);
+        }
+    }
 
-nextbtn!.onclick = function() {nextSlide()};
-prebtn!.onclick = function() {prevSlide()};
+    nextbtn!.onclick = function () {
+        nextSlide();
+    };
+    prebtn!.onclick = function () {
+        prevSlide();
+    };
 
-function showSlide(index){
+    function showSlide(index) {
+        if (index >= slides.length) {
+            slideIndex = 0;
+        } else if (index < 0) {
+            slideIndex = slides.length - 1;
+        }
 
-	if (index >= slides.length) {
-		slideIndex = 0;
-	}
-	else if (index < 0) {
-		slideIndex = slides.length - 1;
-	}
+        slides.forEach((slide) => {
+            slide.classList.remove("displaySlide");
+        });
+        slides[slideIndex].classList.add("displaySlide");
+    }
 
-	slides.forEach(slide => {
-		slide.classList.remove("displaySlide");
-	});
-	slides[slideIndex].classList.add("displaySlide");
+    function prevSlide() {
+        slideIndex--;
+        showSlide(slideIndex);
+    }
 
-}
-
-function prevSlide(){
-	slideIndex--;
-	showSlide(slideIndex);
-}
-
-function nextSlide(){
-	slideIndex++;
-	showSlide(slideIndex);
-}
-
+    function nextSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+    }
 </script>

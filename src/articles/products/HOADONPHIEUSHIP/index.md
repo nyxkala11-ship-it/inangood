@@ -9,7 +9,7 @@ tags:
   - PhiêuShip
 date: 2026-04-28T00:00:00
 image:
-catergory: Hóa đơn - phiếu ship
+catergory: Hóa đơn - Phiếu ship
 parent: none
 id: hoadonphieuship
 index: "4"

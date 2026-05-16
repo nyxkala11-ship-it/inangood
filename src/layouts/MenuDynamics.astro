@@ -4,16 +4,16 @@ import { GripVerticalIcon, HomeIcon, LogsIcon } from "@lucide/astro";
 const allProducts = await getCollection("blogCollection");
 
 const sortedProducts = [...allProducts].sort((a, b) => {
-    console.log("srt tăng dần");
+    //console.log("srt tăng dần");
     return a.data.index - b.data.index;
 });
 
-console.log("=== SORTED: Index items first, then no-index ===");
+//console.log("=== SORTED: Index items first, then no-index ===");
 sortedProducts.forEach((product, i) => {
     const index = product.data.index;
-    console.log(
-        `${i + 1}. ${product.data.title} - Index: ${index || "NO INDEX"}`,
-    );
+    //console.log(
+    //    `${i + 1}. ${product.data.title} - Index: ${index || "NO INDEX"}`,
+    //);
 });
 
 interface MenuItem {
@@ -28,8 +28,8 @@ interface MenuItem {
 const productMap = new Map<string, MenuItem>();
 const categoryMap = new Map<string, MenuItem>();
 
-console.log("=== TOTAL PRODUCTS:", allProducts.length);
-console.log("========================================");
+//console.log("=== TOTAL PRODUCTS:", allProducts.length);
+//console.log("========================================");
 sortedProducts.forEach((product) => {
     if (product.data.parent === "none") {
         const menuItem: MenuItem = {
@@ -84,8 +84,36 @@ const rootMenus = Array.from(categoryMap.values());
         </li>
         {
             rootMenus.map((menuitem) => (
+                // Mobile
+                <li class={`menu-item onlyMobile`}>
+                    <a href={menuitem.slug}>{menuitem.title} </a>
+
+                    {menuitem.children.length > 0 && (
+                        <ul class="has-dropdown inline">
+                            <a href="#" class="dropdownBtn">
+                                <GripVerticalIcon class="inline" />
+                            </a>
+                            {menuitem.children.length > 0 && (
+                                <ul class="dropdown-menu">
+                                    {menuitem.children.map((child) => (
+                                        <li>
+                                            <a href={child.slug}>
+                                                {child.title}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </ul>
+                    )}
+                </li>
+                // Com
+            ))
+        }
+        {
+            rootMenus.map((menuitem) => (
                 <li
-                    class={`menu-item ${menuitem.children.length > 0 ? "has-dropdown" : ""}`}
+                    class={`menu-item onlyCom ${menuitem.children.length > 0 ? "has-dropdown" : ""}`}
                 >
                     <a href={menuitem.slug}>
                         {menuitem.title}{" "}
@@ -111,6 +139,12 @@ const rootMenus = Array.from(categoryMap.values());
 </div>
 
 <style is:global>
+    .onlyMobile {
+        display: none;
+    }
+    .onlyCom {
+        display: block;
+    }
     .menu-container {
         width: 100%;
         margin-top: 10px;
@@ -186,6 +220,12 @@ const rootMenus = Array.from(categoryMap.values());
     }
 
     @media screen and (max-width: 600px) {
+        .onlyMobile {
+            display: block;
+        }
+        .onlyCom {
+            display: none;
+        }
         .menu-mobile-btn {
             display: block;
             padding: 10px;
@@ -232,14 +272,36 @@ const rootMenus = Array.from(categoryMap.values());
             position: fixed;
             left: 50%;
             transform: translateX(-50%) translateY(-21.5%);
-            background: #ededed;
             background: linear-gradient(
                 148deg,
-                rgba(237, 237, 237, 0.8) 0%,
-                rgba(255, 255, 255, 0.8) 50%,
-                rgba(186, 186, 186, 0.8) 100%
+                rgba(237, 237, 237, 0.1) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(186, 186, 186, 0.2) 100%
             );
             backdrop-filter: blur(1.8rem);
+        }
+
+        .dropdownBtn {
+            background: linear-gradient(
+                148deg,
+                rgba(237, 237, 237, 0.1) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(186, 186, 186, 0.2) 100%
+            );
+            backdrop-filter: blur(1.8rem);
+            padding-right: 2rem;
+            padding-top: 0.38rem;
+            padding-bottom: 0.45rem;
+            transition: all 1s;
+        }
+
+        .dropdownBtn:hover {
+            background: linear-gradient(
+                148deg,
+                rgba(237, 237, 237, 0.2) 100%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(186, 186, 186, 0.5) 0%
+            );
         }
 
         .main-menu {
@@ -310,10 +372,11 @@ const rootMenus = Array.from(categoryMap.values());
     document.addEventListener("DOMContentLoaded", () => {
         const menuBtn = document.getElementById("menuMobileBtn");
         const mainMenu = document.getElementById("mainMenu");
-
+        let isActive = false;
         if (menuBtn && mainMenu) {
             menuBtn.addEventListener("click", () => {
                 mainMenu.classList.toggle("active");
+                isActive = true;
             });
 
             // Mobile dropdown toggle
@@ -322,9 +385,11 @@ const rootMenus = Array.from(categoryMap.values());
                     document.querySelectorAll(".has-dropdown > a");
                 dropdownItems.forEach((item) => {
                     item.addEventListener("click", (e) => {
-                        e.preventDefault();
-                        const parent = item.parentElement;
-                        parent!.classList.toggle("active");
+                        if ((isActive = false)) {
+                            e.preventDefault();
+                            const parent = item.parentElement;
+                            parent!.classList.toggle("active");
+                        }
                     });
                 });
             }
