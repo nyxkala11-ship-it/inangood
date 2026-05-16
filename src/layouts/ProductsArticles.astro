@@ -27,12 +27,12 @@ const getAssets = () => {
 		import: 'default'
 	});
 
-	// hoacwj raw 
+	// hoacwj raw
 	const rawImgAssets = import.meta.glob('./**/**/*.{jpg,png,svg,webm}', {
 		eager: true,
 	});
 
-	// hoacwj raw 
+	// hoacwj raw
 	const rawVidAssets = import.meta.glob('./**/**/*.mp4', {
 		eager: true,
 		query: '?url',
@@ -96,9 +96,11 @@ console.log(images);
 	<BaseHead />
     <body>
 		<main class="flex flex-col items-center w-full" >
-			<div class="text-2xl p-4"id="container">
-				<p>Danh mục: {parent === "none" ? catergory : parent} </p>
-				<div id="desimg" class="grid grid-cols-2 my-3">
+			<div class="text-2xl pt-2" id="container">
+				<div class="bg-gray-900 catName mb-1">
+				    <p>Danh mục: {parent === "none" ? catergory : parent} </p>
+				</div>
+				<div id="desimg" class="grid grid-cols-2 mb-3">
 					<div id="preview" class="col-span-1 flex items-center justify-center">
 							{processedVideos?.map(img =>
 							(img !== "none") &&
@@ -106,13 +108,13 @@ console.log(images);
 								//<video width="500" height="500" class="mySlides aspect-square" controls>
 								// 	<source style="object-fit: fill; aspect-square" src=`${img}`>
 								//</video>
-							)}		
-									
+							)}
+
 							{processedImages?.map(img =>
 							(img === "none") ? <div class="none">&nbsp;</div> :
 							//<!-- change image to img  -->
 							<ImportMedia productId={id} mediaName=`${img}` type="image" />
-								//<img loading="lazy" class="mySlides aspect-square" src=`${img}` alt="" height={500} width={500} />	
+								//<img loading="lazy" class="mySlides aspect-square" src=`${img}` alt="" height={500} width={500} />
 							)}
 							<button id="nextbtn" onclick="nextSlide()" class="button previousbtn flex items-center py-3 text-white hover:bg-blue-400"><ArrowBigLeftDash size={55} /></button>
 
@@ -146,14 +148,14 @@ console.log(images);
 							<br><br>
 							<input class="block items-center justify-center px-5 bg-linear-95 from-red-800 to-red-600 rounded-xl border-1 border-solid border-orange-200 float-left flex flex-row fg-white w-[250px]" type="submit" value="Đặt túi !">
 						</form>
-					</div>		
+					</div>
 				</div>
 
 				<div id="description" class="text-center leading-[3rem] border-solid border-1 rounded-xl border-sky-100 p-5">
 					<img id="background" src={background.src} alt="" fetchpriority="high" />
 					<div id="desdate"><p>"Cập nhật ngày:" {date}</p></div>
 					<!-- Slot cho content! -->
-					<slot slot="content" />	
+					<slot slot="content" />
 				</div>
 
 			</div>
@@ -162,7 +164,7 @@ console.log(images);
 
     <Footer />
 </Layout>
-	
+
 <style is:global>
 	* {
 		font-size: 55;
@@ -175,8 +177,13 @@ console.log(images);
 		z-index: -1;
 		filter: blur(100px);
 	}
-
-
+.desmig {
+}
+.catName p {
+    color: lightgray;
+    padding: .5rem;
+    font-weight: 500;
+}
 	.mySlides {
 		display: none;
 		position: absolute;
@@ -308,9 +315,13 @@ console.log(images);
 	}
 
 	@media screen and (max-width: 768px) {
+	* {
+	border-radius: .4rem;
+	}
 		#preview {
 			min-height: 90vw;
 			transition: all 0.35s;
+			background-color: slategrey;
 		}
 		/*#container {
 			display: flex;
@@ -346,7 +357,7 @@ console.log(images);
 		#desimg {
 			display: flex;
 			flex-direction: column;
-		}		
+		}
 	}
 </style>
 
@@ -367,7 +378,7 @@ showDivs();
 let mybutton = document.getElementById("demo");
 
 mybutton!.onclick = function() {currentDivs()};
- 
+
 function plusDivs() {
 	slideIndex++;
 	showDivs()
@@ -381,10 +392,10 @@ function currentDivs() {
 function showDivs() {
   let i;
   let x = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
-  
-  
+
+
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
   slideIndex++;
 
@@ -393,7 +404,7 @@ function showDivs() {
     }
 
     x[slideIndex - 1].style.display = "block";
-    
+
     setTimeout(showDivs, 2000);
 }
 */
