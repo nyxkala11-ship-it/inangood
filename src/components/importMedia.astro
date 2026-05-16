@@ -33,12 +33,8 @@ try {
             loading="lazy"
         />
     ) : (
-        <video
-            width="500"
-            height="500"
-            class="mySlides aspect-square"
-            controls
-            src={src}
-        />
+        <video width="500" height="500" class="mySlides aspect-square" controls>
+            <source src={src} type="video/mp4" />
+        </video>
     )
 }
