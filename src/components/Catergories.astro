@@ -1,24 +1,25 @@
 ---
 import { getCollection } from "astro:content";
-const ProductsCol = await getCollection('blogCollection');
+const ProductsCol = await getCollection("blogCollection");
+const ProductsCatRd = ProductsCol.sort(() => Math.random() - 0.5);
 ---
+
 <div id="cater-container" class="flex justify-center">
     <!-- Về sau thay này thành category của từng mục sản phẩm -->
-<div id="catergory">
-    <h1>Danh mục</h1>
-         {ProductsCol.slice(0, 15).map((product) => 
-                <ul class="inline-block flex-wrap flex" >
-                {product.data.tags.map((tag) =>
-                    <li class=" m-1 flex flex-col inline-block flex-wrap">
-                        <a href={`/products/${product.id}`}>
-                            {tag}
-                        </a>
-                    </li>
-                )}
-               </ul> 
-            )
+    <div id="catergory">
+        <h1>Thẻ danh mục</h1>
+        {
+            ProductsCatRd.slice(0, 15).map((product) => (
+                <ul class="inline-block flex-wrap flex">
+                    {product.data.tags.map((tag) => (
+                        <li class=" m-1 flex flex-col inline-block flex-wrap">
+                            <a href={`/products/${product.id}`}>{tag}</a>
+                        </li>
+                    ))}
+                </ul>
+            ))
         }
-</div>   
+    </div>
 </div>
 
 <style>
@@ -33,7 +34,7 @@ const ProductsCol = await getCollection('blogCollection');
     li {
         text-align: center;
         background-color: brown;
-        transition: all .35s;
+        transition: all 0.35s;
         color: #fff;
         font-size: 1.5rem !important;
     }
