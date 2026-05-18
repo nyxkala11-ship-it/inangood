@@ -3,25 +3,26 @@
 import "@splidejs/splide";
 import { SplideExtension, SplideSlide } from "astro-splide";
 import type { Options } from "@splidejs/splide";
-import { Image } from "astro:assets";
-import fg from "fast-glob";
-
-const ImagesSlide: string[] = fg.sync(
-    "./src/assets/slides/*.{jpg,png,webm,gif}",
-);
 
 interface Props {
     imagePath: string;
     altText: string;
-    name: string;
-    age: number;
 }
+
+const { imagePath, altText } = Astro.props as Props;
+
+const allImages = Object.values(
+    import.meta.glob<{ default: ImageMetadata }>(
+        "/src/assets/slides/*.{jpeg,jpg,png,gif}",
+        { eager: true }, // Dùng eager để load đồng bộ
+    ),
+).map((img) => img.default.src);
 
 const options: Options = {
     type: "loop",
     drag: "free",
     focus: "center",
-    perPage: 8,
+    perPage: 5,
     autoScroll: {
         speed: 2,
     },
@@ -31,7 +32,7 @@ const optionMobile: Options = {
     type: "loop",
     drag: "free",
     focus: "center",
-    perPage: 5,
+    perPage: 3,
     autoScroll: {
         speed: 1,
     },
@@ -42,9 +43,9 @@ const optionMobile: Options = {
     <div class="content">
         <SplideExtension options={options}>
             {
-                ImagesSlide.map((img) => (
+                allImages.map((img) => (
                     <SplideSlide>
-                        <img src={img} alt={""} />
+                        <img src={img} alt="" />
                     </SplideSlide>
                 ))
             }
@@ -56,7 +57,7 @@ const optionMobile: Options = {
     <div class="content">
         <SplideExtension options={optionMobile}>
             {
-                ImagesSlide.map((img) => (
+                allImages.map((img) => (
                     <SplideSlide>
                         <img src={img} alt={""} />
                     </SplideSlide>

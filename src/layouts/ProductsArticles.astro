@@ -27,12 +27,12 @@ const getAssets = () => {
 		import: 'default'
 	});
 
-	// hoacwj raw
+	// hoặc raw
 	const rawImgAssets = import.meta.glob('./**/**/*.{jpg,png,svg,webm}', {
 		eager: true,
 	});
 
-	// hoacwj raw
+	// hoặc raw
 	const rawVidAssets = import.meta.glob('./**/**/*.mp4', {
 		eager: true,
 		query: '?url',
@@ -85,11 +85,9 @@ const option: Options = {
     },
 }
 
-
 console.log(images);
 //import { getEntry, render } from 'astro:content';
 //const products = Object.values(import.meta.glob(, {eager: true }));
-
 
 ---
 <Layout>
@@ -159,11 +157,9 @@ console.log(images);
 					    <slot slot="content" />
 					</div>
 				</div>
-
 			</div>
 		</main>
-	</body>
-
+    </body>
     <Footer />
 </Layout>
 
