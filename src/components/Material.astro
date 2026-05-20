@@ -1,46 +1,66 @@
 ---
-import { Zap, Tags, BaggageClaim, FastForward, Brush, TruckElectric } from '@lucide/astro';
+// src/components/MaterialSec.astro  (hoặc LýDoChonXuong.astro)
+import {
+    Zap,
+    Tags,
+    BaggageClaim,
+    FastForward,
+    Brush,
+    TruckElectric,
+} from "@lucide/astro";
 ---
-<div id="title" class="flex flex-col">
-    <div id="title-red" class="">
-        <p><Zap size={45} class="inline-block" /> Lý do khách chọn xưởng</p>
+
+<div id="title" class="relative max-w-[1440px] mx-auto px-4 lg:px-0">
+    <!-- Title đỏ -->
+    <div id="title-red">
+        <p>
+            <Zap size={45} class="inline-block align-middle" />
+            LÝ DO KHÁCH CHỌN XƯỞNG
+        </p>
     </div>
 
-    <div class="" >
-        <div id="backdrop" class="border-3 grid grid-cols-5 divide-x-1 divide-solid">
-            <div class="text-center pr-2 col- items-start span-1 place-content-top">
-                <div class="m-1 p-2">
-                <Tags size={45} class="inline-block" />
+    <!-- Backdrop Grid -->
+    <div
+        id="backdrop"
+        class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6"
+    >
+        <div class="group">
+            <div class="item-inner">
+                <Tags size={48} class="mx-auto text-[#781722]" />
                 <h1>GIÁ TẬN GỐC</h1>
                 <p>Không qua trung gian</p>
-                </div>
             </div>
-            <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-                <div class="m-1 p-2">
-                <BaggageClaim size={45} class="inline-block" />
+        </div>
+
+        <div class="group">
+            <div class="item-inner">
+                <BaggageClaim size={48} class="mx-auto text-[#781722]" />
                 <h1>NHẬN SỐ LƯỢNG ÍT</h1>
                 <p>Linh hoạt</p>
-                </div>
             </div>
-            <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-                <div class="m-1 p-2">
-                <FastForward size={45} class="inline-block" />
+        </div>
+
+        <div class="group">
+            <div class="item-inner">
+                <FastForward size={48} class="mx-auto text-[#781722]" />
                 <h1>IN NHANH</h1>
                 <p>Có hàng trong ngày</p>
-                </div>
             </div>
-            <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-                <div class="m-1 p-2">
-                <Brush size={45} class="inline-block" />
+        </div>
+
+        <div class="group">
+            <div class="item-inner">
+                <Brush size={48} class="mx-auto text-[#781722]" />
                 <h1>MIỄN PHÍ THIẾT KẾ</h1>
                 <p>Đến khi ưng ý</p>
-                </div>
             </div>
-            <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-                <div class="m-1 p-2">
-                <TruckElectric size={45} class="inline-block" />
+        </div>
+
+        <div class="group">
+            <div class="item-inner">
+                <TruckElectric size={48} class="mx-auto text-[#781722]" />
                 <h1>GIAO HÀNG TOÀN QUỐC</h1>
-                </div>
+                <p></p>
             </div>
         </div>
     </div>
@@ -51,54 +71,78 @@ import { Zap, Tags, BaggageClaim, FastForward, Brush, TruckElectric } from '@luc
         width: 1440px;
         max-width: 100%;
     }
-    #backdrop {
-        background-color: rgba(255, 255, 255, 0.024);
-        backdrop-filter: blur(20px);
-        /*background-color: var(--main-color);*/
-        padding: 1rem;
-        border-bottom-left-radius: var(--radius-border);
-        border-bottom-right-radius: var(--radius-border);
-        border-top-right-radius: var(--radius-border);
-        z-index: 990;
-    }
-    #backdrop div div {
-        border-radius: var(--radius-border);
-        transition: all .5s;
-        height: 100%;
-    }
-    #backdrop div:hover div {
-        border-radius: 15px;
-        background-color: rgb(255, 255, 255);
-    }
-    #backdrop div div h1 {
-    transition: all .35s;
-    }
-    #backdrop div div:hover h1 {
-        -ms-transform: scale(4.6);
-            /* IE 9 */
-            -webkit-transform: scale(1.5);
-            /* Safari 3-8 */
-            transform: scale(1.5);
-    }
-    #title-red p {
-        font-size: 1.5rem !important;
-        font-weight: 500;
-        z-index: 999;
-    }
-    #title-red p {
-        font-size: 1.7rem !important;
-        font-weight: 600;
-    }
+
     #title-red {
         z-index: 2;
-		background-color: #781722;
+        background-color: #781722;
         color: aliceblue;
-		padding: 0.5rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-		border-radius: var(--radius-border);
-        border-bottom-left-radius: 0;
-		display: inline-block;
-		line-height: 2rem;
-	}
+        padding: 0.6rem 1.3rem;
+        border-radius: 25px 25px 25px 0px;
+        display: inline-block;
+        line-height: 2.1rem;
+        font-weight: 600;
+        font-size: 1.7rem;
+    }
+
+    #backdrop {
+        border: 3px solid #781722;
+        backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.25);
+        padding: 1.6rem 1.25rem;
+        border-radius: 0px 25px 25px 25px;
+    }
+
+    .item-inner {
+        text-align: center;
+        padding: 1.25rem 0.75rem;
+        border-radius: 12px;
+        height: 100%;
+        transition: all 0.4s ease;
+    }
+
+    .group:hover .item-inner {
+        background-color: rgb(255, 255, 255);
+        transform: translateY(-8px);
+    }
+
+    .item-inner h1 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #781722;
+        margin: 1rem 0 0.5rem;
+    }
+
+    .item-inner p {
+        font-size: 0.98rem;
+        color: #444;
+        line-height: 1.5;
+    }
+
+    /* Hover scale cho title */
+    .group:hover .item-inner h1 {
+        transform: scale(1.12);
+        transition: transform 0.4s;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media screen and (max-width: 1024px) {
+        #backdrop {
+            padding: 1.4rem 1rem;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        #title-red {
+            font-size: 1.4rem;
+            padding: 0.55rem 1rem;
+        }
+
+        .item-inner h1 {
+            font-size: 1.12rem;
+        }
+
+        .item-inner p {
+            font-size: 0.93rem;
+        }
+    }
 </style>

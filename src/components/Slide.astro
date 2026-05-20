@@ -1,15 +1,8 @@
 ---
-// Cấu hình Splide  -  yêu cầu npm install astro-splide @splidejs/splide-extension-auto-scroll
-import "@splidejs/splide";
+// src/components/Slide.astro
 import { SplideExtension, SplideSlide } from "astro-splide";
 import type { Options } from "@splidejs/splide";
-
-interface Props {
-    imagePath: string;
-    altText: string;
-}
-
-const { imagePath, altText } = Astro.props as Props;
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 const allImages = Object.values(
     import.meta.glob<{ default: ImageMetadata }>(
@@ -18,83 +11,77 @@ const allImages = Object.values(
     ),
 ).map((img) => img.default.src);
 
-const options: Options = {
+// ==================== OPTIONS ====================
+const sliderOptions: Options = {
     type: "loop",
     drag: "free",
     focus: "center",
     perPage: 5,
+    perMove: 1,
+    gap: "1.5rem",
     autoScroll: {
         speed: 2,
+        pauseOnHover: true,
     },
-};
-
-const optionMobile: Options = {
-    type: "loop",
-    drag: "free",
-    focus: "center",
-    perPage: 3,
-    autoScroll: {
-        speed: 1,
+    breakpoints: {
+        640: {
+            perPage: 3,
+            gap: "1rem",
+            autoScroll: { speed: 1.2 },
+        },
+        768: {
+            perPage: 4,
+            gap: "1.25rem",
+            autoScroll: { speed: 1.5 },
+        },
+        1024: {
+            perPage: 5,
+            gap: "1.4rem",
+        },
+        1280: {
+            perPage: 5,
+            gap: "1.5rem",
+        },
     },
 };
 ---
 
-<div id="slideCom">
-    <div class="content">
-        <SplideExtension options={options}>
-            {
-                allImages.map((img) => (
-                    <SplideSlide>
-                        <img src={img} alt="" />
-                    </SplideSlide>
-                ))
-            }
-        </SplideExtension>
-    </div>
+<div class="slider-wrapper max-w-360 mx-auto px-4 lg:px-0 py-8">
+    <SplideExtension options={sliderOptions}>
+        {
+            allImages.map((img) => (
+                <SplideSlide>
+                    <img src={img} alt="" />
+                </SplideSlide>
+            ))
+        }
+    </SplideExtension>
 </div>
 
-<div id="slideMobile">
-    <div class="content">
-        <SplideExtension options={optionMobile}>
-            {
-                allImages.map((img) => (
-                    <SplideSlide>
-                        <img src={img} alt={""} />
-                    </SplideSlide>
-                ))
-            }
-        </SplideExtension>
-    </div>
-    <style>
-        #slideMobile {
-            display: none;
-        }
-        #slideCom {
-            display: contents;
-        }
-        .content {
-            width: 1440px;
-            max-width: 100%;
-        }
-        img {
-            padding: 3px;
-            width: auto;
-            height: auto;
-            border-radius: 10px;
-        }
-        @media screen and (max-width: 600px) {
-            #slideCom {
-                display: none;
-            }
-            #slideMobile {
-                display: contents;
-            }
-        }
-    </style>
+<style>
+    .slider-wrapper {
+        width: 1440px;
+        max-width: 100%;
+    }
 
-    <script>
-        import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
-        import { initSplideExtension } from "astro-splide/js/splideExtensionUtils";
-        initSplideExtension({ AutoScroll });
-    </script>
-</div>
+    .slider-img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 12px;
+        padding: 4px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .splide__slide:hover .slider-img {
+        transform: scale(1.04);
+    }
+</style>
+
+<script>
+    import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+    import { initSplideExtension } from "astro-splide/js/splideExtensionUtils";
+    initSplideExtension({ AutoScroll });
+</script>

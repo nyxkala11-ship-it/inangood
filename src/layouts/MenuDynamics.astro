@@ -1,65 +1,46 @@
 ---
-import { getCollection, render } from "astro:content";
-import { GripVerticalIcon, HomeIcon, LogsIcon } from "@lucide/astro";
+// src/components/Menu.astro
+import { getCollection } from "astro:content";
+import { GripVerticalIcon, HomeIcon, LogsIcon, X } from "@lucide/astro";
+
 const allProducts = await getCollection("blogCollection");
 
-const sortedProducts = [...allProducts].sort((a, b) => {
-    //console.log("srt tăng dần");
-    return a.data.index - b.data.index;
-});
-
-//console.log("=== SORTED: Index items first, then no-index ===");
-sortedProducts.forEach((product, i) => {
-    const index = product.data.index;
-    //console.log(
-    //    `${i + 1}. ${product.data.title} - Index: ${index || "NO INDEX"}`,
-    //);
-});
+const sortedProducts = [...allProducts].sort(
+    (a, b) => (a.data.index ?? 999) - (b.data.index ?? 999),
+);
 
 interface MenuItem {
     id: string;
     title: string;
     slug: string;
-    index: number;
-    category: string;
     children: MenuItem[];
 }
 
-const productMap = new Map<string, MenuItem>();
+// Xây dựng menu
 const categoryMap = new Map<string, MenuItem>();
 
-//console.log("=== TOTAL PRODUCTS:", allProducts.length);
-//console.log("========================================");
 sortedProducts.forEach((product) => {
     if (product.data.parent === "none") {
         const menuItem: MenuItem = {
             id: product.id,
             title: product.data.title,
             slug: `/products/${product.id}`,
-            index: product.data.index,
-            category: product.data.catergory,
             children: [],
         };
-        categoryMap.set(product.data.catergory, menuItem);
-        productMap.set(product.id, menuItem);
+        categoryMap.set(product.data.catergory || product.id, menuItem);
     }
 });
 
 sortedProducts.forEach((product) => {
     if (product.data.parent !== "none") {
-        const menuItem: MenuItem = {
-            id: product.id,
-            title: product.data.title,
-            slug: `/products/${product.id}`,
-            index: product.data.index,
-            category: product.data.catergory,
-            children: [],
-        };
-        productMap.set(product.id, menuItem);
-        const parentItem = categoryMap.get(product.data.parent);
-        if (parentItem) {
-            parentItem.children.push(menuItem);
-        } else {
+        const parent = categoryMap.get(product.data.parent);
+        if (parent) {
+            parent.children.push({
+                id: product.id,
+                title: product.data.title,
+                slug: `/products/${product.id}`,
+                children: [],
+            });
         }
     }
 });
@@ -67,332 +48,302 @@ sortedProducts.forEach((product) => {
 const rootMenus = Array.from(categoryMap.values());
 ---
 
-<div class="menu-container flex flex-cols justify-center">
-    <div class="menu-mobile-btn bg-sky-100">
-        <button id="menuMobileBtn">
-            <LogsIcon size="2rem" class="inline" />
-        </button>
-        <form action="/" id="homeMobileBtn" class="inline">
-            <button type="submit">
-                <HomeIcon size="2rem" class="inline" />
-            </button>
-        </form>
-    </div>
-    <ul id="mainMenu" class="main-menu">
-        <li class="menu-item">
-            <a href="/">Trang chủ</a>
-        </li>
-        {
-            rootMenus.map((menuitem) => (
-                // Mobile
-                <li class={`menu-item onlyMobile`}>
-                    <a href={menuitem.slug}>{menuitem.title} </a>
+<nav class="menu-container max-w-[1440px] mx-auto px-4">
+    <!-- Desktop + Mobile Container -->
+    <div class="flex items-center justify-between">
+        <!-- Main Menu -->
+        <ul id="mainMenu" class="main-menu">
+            <li class="menu-item">
+                <a href="/">Trang chủ</a>
+            </li>
 
-                    {menuitem.children.length > 0 && (
-                        <ul class="has-dropdown inline">
-                            <a href="#" class="dropdownBtn">
-                                <GripVerticalIcon class="inline" />
-                            </a>
-                            {menuitem.children.length > 0 && (
-                                <ul class="dropdown-menu">
-                                    {menuitem.children.map((child) => (
-                                        <li>
-                                            <a href={child.slug}>
-                                                {child.title}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
+            {
+                rootMenus.map((item) => (
+                    <li
+                        class={`menu-item ${item.children.length > 0 ? "has-dropdown" : ""}`}
+                        data-category={item.id}
+                    >
+                        <a href={item.slug}>
+                            {item.title}
+                            {item.children.length > 0 && (
+                                <GripVerticalIcon
+                                    size={18}
+                                    class="inline ml-1"
+                                />
                             )}
-                        </ul>
-                    )}
-                </li>
-                // Com
-            ))
-        }
-        {
-            rootMenus.map((menuitem) => (
-                <li
-                    class={`menu-item onlyCom ${menuitem.children.length > 0 ? "has-dropdown" : ""}`}
-                >
-                    <a href={menuitem.slug}>
-                        {menuitem.title}{" "}
-                        {menuitem.children.length > 0 ? (
-                            <GripVerticalIcon class="inline" />
-                        ) : (
-                            ""
-                        )}
-                    </a>
-                    {menuitem.children.length > 0 && (
-                        <ul class="dropdown-menu">
-                            {menuitem.children.map((child) => (
-                                <li>
-                                    <a href={child.slug}>{child.title}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </li>
-            ))
-        }
-    </ul>
-</div>
+                        </a>
 
-<style is:global>
-    .onlyMobile {
-        display: none;
-    }
-    .onlyCom {
-        display: block;
-    }
+                        {item.children.length > 0 && (
+                            <ul class="dropdown-menu">
+                                {item.children.map((child) => (
+                                    <li key={child.id}>
+                                        <a href={child.slug}>{child.title}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </li>
+                ))
+            }
+        </ul>
+
+        <!-- ==================== MOBILE NAVBAR (App Style) ==================== -->
+        <div class="mobile-navbar md:hidden">
+            <button id="menuMobileBtn" class="mobile-btn" aria-label="Mở menu">
+                <LogsIcon size={28} />
+            </button>
+            <a href="/" class="mobile-home-btn">
+                <HomeIcon size={28} />
+            </a>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenuOverlay" class="mobile-overlay">
+            <div class="mobile-menu-panel">
+                <div class="mobile-menu-header">
+                    <h2 class="text-2xl font-bold text-[#781722]">
+                        Danh mục sản phẩm
+                    </h2>
+                    <button id="closeMobileMenu" class="close-btn">
+                        <X size={32} />
+                    </button>
+                </div>
+
+                <ul class="mobile-menu-list">
+                    <li>
+                        <a href="/" class="mobile-home-link">🏠 Trang chủ</a>
+                    </li>
+                    {
+                        rootMenus.map((item) => (
+                            <li
+                                class={
+                                    item.children.length > 0
+                                        ? "has-children"
+                                        : ""
+                                }
+                            >
+                                <a href={item.slug} class="parent-link">
+                                    {item.title}
+                                </a>
+                                {item.children.length > 0 && (
+                                    <ul class="mobile-submenu">
+                                        {item.children.map((child) => (
+                                            <li>
+                                                <a href={child.slug}>
+                                                    {child.title}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<style>
     .menu-container {
-        width: 100%;
-        margin-top: 10px;
-        border-radius: 5px;
+        width: 1440px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .main-menu {
-        max-width: 1440px;
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-start;
         list-style: none;
         margin: 0;
         padding: 0;
-        transition: all 1s;
+        gap: 0.5rem;
     }
 
     .menu-item {
         position: relative;
-        padding: 6pt 1.5rem 6pt 6pt;
-        transition: all 1s;
+        padding: 0.65rem 1.1rem;
+        font-size: 1.32rem;
+        font-weight: 700;
+        transition: all 0.3s;
     }
 
     .menu-item a {
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
         color: inherit;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 
     .menu-item:hover {
-        //background-color: aliceblue;
-        color: black;
+        color: #781722;
     }
 
+    /* Dropdown Desktop */
     .dropdown-menu {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: aliceblue;
-        color: #000;
-        padding: 1rem;
-        border-radius: 5px;
-        min-width: 240px;
+        background: #fff;
+        color: #222;
+        padding: 1rem 0;
+        border-radius: 8px;
+        min-width: 260px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
         list-style: none;
-        margin: 0;
-        z-index: 999;
-        margin-left: 0rem;
-        overflow: auto;
-        max-width: 350px;
-        transition: all 1s;
-        cursursor: pointer;
     }
 
     .has-dropdown:hover .dropdown-menu {
         display: block;
-        margin-top: 0.2rem;
-    }
-
-    .dropdown-menu li {
-        padding: 8px 0;
-        transition: all 1s;
     }
 
     .dropdown-menu li a {
-        font-size: 1rem;
-        transition: all 1s;
+        padding: 0.6rem 1.4rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        display: block;
     }
 
-    .menu-mobile-btn {
-        display: none;
+    .dropdown-menu li a:hover {
+        background: #f8f8f8;
+        color: #781722;
     }
 
-    @media screen and (max-width: 600px) {
-        .onlyMobile {
-            display: block;
-        }
-        .onlyCom {
-            display: none;
-        }
-        .menu-mobile-btn {
-            display: block;
-            padding: 10px;
-            background: none;
-            border: 0.05rem solid slategray;
-            cursor: pointer;
-            position: fixed;
-            bottom: 0.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 95%;
-            height: 3.67rem;
-            z-index: 990;
-            border-radius: 5rem;
-            background: #ededed;
-            background: linear-gradient(
-                148deg,
-                rgba(237, 237, 237, 0.15) 0%,
-                rgba(255, 255, 255, 0.15) 50%,
-                rgba(186, 186, 186, 0.15) 100%
-            );
-            backdrop-filter: blur(0.15rem);
-        }
+    /* ==================== MOBILE APP NAVBAR ==================== */
+    .mobile-navbar {
+        position: fixed;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(20px);
+        border-radius: 9999px;
+        padding: 10px 28px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        border: 1px solid rgba(120, 23, 34, 0.1);
+    }
 
-        #menuMobileBtn {
-            position: fixed;
-            border: 0.005rem solid darkslategrey;
-            border-radius: 5rem;
-            padding: 0.75rem;
-            transform: translate(-17.5%, -17%);
-            background: #ededed;
-            background: linear-gradient(
-                148deg,
-                rgba(237, 237, 237, 0.5) 0%,
-                rgba(255, 255, 255, 0.5) 50%,
-                rgba(186, 186, 186, 0.5) 100%
-            );
-            backdrop-filter: blur(0.5rem);
-        }
-        #homeMobileBtn {
-            border: 0.01rem solid darkgrey;
-            border-radius: 5rem;
-            padding: 0.9rem;
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%) translateY(-21.5%);
-            background: linear-gradient(
-                148deg,
-                rgba(237, 237, 237, 0.1) 0%,
-                rgba(255, 255, 255, 0.2) 50%,
-                rgba(186, 186, 186, 0.2) 100%
-            );
-            backdrop-filter: blur(1.8rem);
-        }
+    .mobile-btn,
+    .mobile-home-btn {
+        width: 54px;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        .dropdownBtn {
-            background: linear-gradient(
-                148deg,
-                rgba(237, 237, 237, 0.1) 0%,
-                rgba(255, 255, 255, 0.2) 50%,
-                rgba(186, 186, 186, 0.2) 100%
-            );
-            backdrop-filter: blur(1.8rem);
-            padding-right: 2rem;
-            padding-top: 0.38rem;
-            padding-bottom: 0.45rem;
-            transition: all 1s;
-        }
+    .mobile-btn:active {
+        transform: scale(0.85);
+        background: #f1f1f1;
+    }
 
-        .dropdownBtn:hover {
-            background: linear-gradient(
-                148deg,
-                rgba(237, 237, 237, 0.2) 100%,
-                rgba(255, 255, 255, 0.3) 50%,
-                rgba(186, 186, 186, 0.5) 0%
-            );
-        }
+    /* Mobile Overlay + Animation mượt */
+    .mobile-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease;
+    }
 
-        .main-menu {
-            padding: 0.5rem;
-            color: rgba(100, 100, 100);
-            display: none;
-            flex-direction: row;
-            position: fixed;
-            bottom: 0;
-            z-index: 999;
-            transition: all 1s;
-            background: #ededed;
-            background: linear-gradient(
-                148deg,
-                rgba(207, 207, 207, 0.75) 0%,
-                rgba(255, 255, 255, 0.75) 50%,
-                rgba(222, 222, 222, 0.75) 100%
-            );
-            height: 80vh;
-            width: 75vw;
-            overflow-y: scroll;
-            border-radius: 0.8rem;
-            border: 0.01rem solid powderblue;
-            backdrop-filter: blur(0.2rem);
-            /*
-            -webkit-box-shadow:
-                inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.5),
-                inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.5),
-                0.2em 0.2em 0.2em 0 rgba(0, 0, 0, 0.34),
-                -0.2em -0.2em 0.2em 0 rgba(255, 255, 255, 1);
-            -moz-box-shadow:
-                inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.5),
-                inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.5),
-                0.2em 0.2em 0.2em 0 rgba(0, 0, 0, 0.34),
-                -0.2em -0.2em 0.2em 0 rgba(255, 255, 255, 1);
-            box-shadow:
-                inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.5),
-                inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.5),
-                0.2em 0.2em 0.2em 0 rgba(0, 0, 0, 0.34),
-                -0.2em -0.2em 0.2em 0 rgba(255, 255, 255, 1);
-                 */
-        }
+    .mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
 
-        .main-menu.active {
-            display: block;
-            position: fixed;
-            bottom: 4.8rem;
-            left: 0.5rem;
-        }
+    .mobile-menu-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top-left-radius: 28px;
+        border-top-right-radius: 28px;
+        height: 85vh;
+        transform: translateY(120%);
+        transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+        box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+    }
 
-        .menu-item {
-            width: 100%;
-        }
+    .mobile-overlay.active .mobile-menu-panel {
+        transform: translateY(0);
+    }
 
-        .dropdown-menu {
-            position: static;
-            display: none;
-            padding-left: 20px;
-            transition: all 1s;
-        }
+    .mobile-menu-header {
+        padding: 1.4rem 1.5rem;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 10;
+    }
 
-        .has-dropdown.active .dropdown-menu {
-            display: block;
-        }
+    .close-btn {
+        transition: all 0.3s ease;
+    }
+    .close-btn:active {
+        transform: rotate(90deg) scale(0.85);
+    }
+
+    .mobile-menu-list a {
+        display: block;
+        padding: 16px 1.5rem;
+        font-size: 1.18rem;
+        font-weight: 500;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+    .mobile-menu-list a:active {
+        background: #f8f8f8;
+        padding-left: 2.2rem;
+    }
+
+    .parent-link {
+        font-weight: 700 !important;
+        color: #781722 !important;
     }
 </style>
+
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const menuBtn = document.getElementById("menuMobileBtn");
-        const mainMenu = document.getElementById("mainMenu");
-        let isActive = false;
-        if (menuBtn && mainMenu) {
+        const overlay = document.getElementById("mobileMenuOverlay");
+        const closeBtn = document.getElementById("closeMobileMenu");
+
+        if (menuBtn && overlay && closeBtn) {
             menuBtn.addEventListener("click", () => {
-                mainMenu.classList.toggle("active");
-                isActive = true;
+                overlay.classList.add("active");
+                document.body.style.overflow = "hidden";
             });
 
-            // Mobile dropdown toggle
-            if (window.innerWidth <= 600) {
-                const dropdownItems =
-                    document.querySelectorAll(".has-dropdown > a");
-                dropdownItems.forEach((item) => {
-                    item.addEventListener("click", (e) => {
-                        if ((isActive = false)) {
-                            e.preventDefault();
-                            const parent = item.parentElement;
-                            parent!.classList.toggle("active");
-                        }
-                    });
-                });
-            }
+            closeBtn.addEventListener("click", () => {
+                overlay.classList.remove("active");
+                document.body.style.overflow = "visible";
+            });
+
+            overlay.addEventListener("click", (e) => {
+                if (e.target === overlay) {
+                    overlay.classList.remove("active");
+                    document.body.style.overflow = "visible";
+                }
+            });
         }
     });
 </script>

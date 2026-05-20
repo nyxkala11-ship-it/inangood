@@ -1,0 +1,140 @@
+---
+import {
+    Zap,
+    Tags,
+    BaggageClaim,
+    FastForward,
+    Brush,
+    TruckElectric,
+} from "@lucide/astro";
+import Mater1 from "../assets/matersec/1.png";
+import Mater2 from "../assets/matersec/2.png";
+import Mater3 from "../assets/matersec/3.png";
+import Mater4 from "../assets/matersec/4.png";
+import Mater5 from "../assets/matersec/5.png";
+---
+
+<div id="title" class="relative">
+    <div id="title-red" class="absolute">
+        <p>
+            <Zap size={45} class="inline-block" /> IN ẤN THEO YÊU CẦU ĐA DẠNG CÁC
+            SẢN PHẨM
+        </p>
+    </div>
+    <div class="pt-9">
+        <div
+            id="backdrop"
+            class="border-3 grid grid-cols-5 divide-x-1 divide-solid"
+        >
+            <div
+                class="text-center pr-2 col- items-start span-1 place-content-top"
+            >
+                <div class="m-1 p-2">
+                    <Tags size={45} class="inline-block" />
+                    <h1>HÓA ĐƠN</h1>
+                    <p>Biên nhận, thu chi, hợp đồng</p>
+                    <img src={Mater1.src} class="inline-block" />
+                </div>
+            </div>
+            <div
+                class="text-center pr-2 pl-2 items-start col-span-1 place-content-top"
+            >
+                <div class="m-1 p-2">
+                    <BaggageClaim size={45} class="inline-block" />
+                    <h1>TEM NHÃN</h1>
+                    <p>Decal, bảo hành, bế hình</p>
+                    <img src={Mater2.src} class="inline-block" />
+                </div>
+            </div>
+            <div
+                class="text-center pr-2 pl-2 items-start col-span-1 place-content-top"
+            >
+                <div class="m-1 p-2">
+                    <FastForward size={45} class="inline-block" />
+                    <h1>BAO BÌ</h1>
+                    <p>Túi niêm phong, bọc nilon</p>
+                    <img src={Mater3.src} class="inline-block" />
+                </div>
+            </div>
+            <div
+                class="text-center pr-2 pl-2 items-start col-span-1 place-content-top"
+            >
+                <div class="m-1 p-2">
+                    <Brush size={45} class="inline-block" />
+                    <h1>THIẾT KẾ</h1>
+                    <p>Thiệp, logo, bảng hiệu, con dấu</p>
+                    <img src={Mater4.src} class="inline-block" />
+                </div>
+            </div>
+            <div
+                class="text-center pr-2 pl-2 items-start col-span-1 place-content-top"
+            >
+                <div class="m-1 p-2">
+                    <TruckElectric size={45} class="inline-block" />
+                    <h1>TÚI GẤY KRAFT</h1>
+                    <p>In logo theo yêu cầu</p>
+                    <img src={Mater5.src} class="inline-block" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #title {
+        width: 1440px;
+        max-width: 100%;
+    }
+    .vl {
+        border-left: 6px solid green;
+        height: auto;
+        position: absolute;
+        z-index: 3;
+    }
+    #backdrop {
+        border-color: #781722;
+        backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.262);
+        padding: 1rem;
+        padding-top: 1.5rem;
+        border-radius: 0px 25px 25px 25px;
+    }
+    #backdrop div div {
+        border-radius: 10px;
+        transition: 0.35s;
+        height: 100%;
+    }
+    #backdrop div:hover div {
+        border-radius: 15px;
+        background-color: rgb(255, 255, 255);
+    }
+    #backdrop div:hover div h1 {
+        transition: transform 0.35s;
+    }
+    #backdrop div:hover div h1 {
+        -ms-transform: scale(4.6);
+        /* IE 9 */
+        -webkit-transform: scale(1.5);
+        /* Safari 3-8 */
+        transform: scale(1.5);
+    }
+    #title-red p {
+        font-size: 1.5rem !important;
+        font-weight: 500;
+    }
+    #title-red p {
+        font-size: 1.7rem !important;
+        font-weight: 600;
+    }
+    #title-red {
+        z-index: 2;
+        background-color: #781722;
+        color: aliceblue;
+        padding: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-radius: 25px 25px 25px 0px;
+        display: inline-block;
+        line-height: 2rem;
+    }
+</style>

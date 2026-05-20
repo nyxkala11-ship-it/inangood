@@ -1,58 +1,105 @@
 ---
-import { Zap, Tags, BaggageClaim, FastForward, Brush, TruckElectric } from '@lucide/astro';
-import Mater1 from '../assets/matersec/1.png';
-import Mater2 from '../assets/matersec/2.png';
-import Mater3 from '../assets/matersec/3.png';
-import Mater4 from '../assets/matersec/4.png';
-import Mater5 from '../assets/matersec/5.png';
+// src/components/MaterialSec.astro
+import {
+    Zap,
+    Tags,
+    BaggageClaim,
+    FastForward,
+    Brush,
+    TruckElectric,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+
+import Mater1 from "../assets/matersec/1.png";
+import Mater2 from "../assets/matersec/2.png";
+import Mater3 from "../assets/matersec/3.png";
+import Mater4 from "../assets/matersec/4.png";
+import Mater5 from "../assets/matersec/5.png";
 ---
-<div id="title" class="relative">
-    <div id="title-red" class="absolute">
-        <p><Zap size={45} class="inline-block" /> IN ẤN THEO YÊU CẦU ĐA DẠNG CÁC SẢN PHẨM</p>
+
+<div id="title" class="relative max-w-[1440px] mx-auto px-4 lg:px-0">
+    <!-- Title đỏ nổi bật -->
+    <div id="title-red">
+        <p>
+            <Zap size={45} class="inline-block align-middle" />
+            IN ẤN THEO YÊU CẦU ĐA DẠNG CÁC SẢN PHẨM
+        </p>
     </div>
-    <div class="pt-9" >
-    <div id="backdrop" class="border-3 grid grid-cols-5 divide-x-1 divide-solid">
-        <div class="text-center pr-2 col- items-start span-1 place-content-top">
-            <div class="m-1 p-2">
-            <Tags size={45} class="inline-block" />
-            <h1>HÓA ĐƠN</h1>
-            <p>Biên nhận, thu chi, hợp đồng</p>
-            <img src={Mater1.src} class="inline-block" />
+
+    <!-- Backdrop Grid -->
+    <div
+        id="backdrop"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 mt-6"
+    >
+        <div class="group">
+            <div class="item-inner">
+                <Tags size={48} class="mx-auto text-[#781722]" />
+                <h1>HÓA ĐƠN</h1>
+                <p>Biên nhận, thu chi, hợp đồng</p>
+                <Image
+                    src={Mater1}
+                    alt="Hóa đơn"
+                    class="mx-auto mt-3"
+                    widths={[200, 300]}
+                />
             </div>
         </div>
-        <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-            <div class="m-1 p-2">
-            <BaggageClaim size={45} class="inline-block" />
-            <h1>TEM NHÃN</h1>
-            <p>Decal, bảo hành, bế hình</p>
-            <img src={Mater2.src} class="inline-block" />
+
+        <div class="group">
+            <div class="item-inner">
+                <BaggageClaim size={48} class="mx-auto text-[#781722]" />
+                <h1>TEM NHÃN</h1>
+                <p>Decal, bảo hành, bế hình</p>
+                <Image
+                    src={Mater2}
+                    alt="Tem nhãn"
+                    class="mx-auto mt-3"
+                    widths={[200, 300]}
+                />
             </div>
         </div>
-        <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-            <div class="m-1 p-2">
-            <FastForward size={45} class="inline-block" />
-            <h1>BAO BÌ</h1>
-            <p>Túi niêm phong, bọc nilon</p>
-            <img src={Mater3.src} class="inline-block" />
+
+        <div class="group">
+            <div class="item-inner">
+                <FastForward size={48} class="mx-auto text-[#781722]" />
+                <h1>BAO BÌ</h1>
+                <p>Túi niêm phong, bọc nilon</p>
+                <Image
+                    src={Mater3}
+                    alt="Bao bì"
+                    class="mx-auto mt-3"
+                    widths={[200, 300]}
+                />
             </div>
         </div>
-        <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-            <div class="m-1 p-2">
-            <Brush size={45} class="inline-block" />
-            <h1>THIẾT KẾ</h1>
-            <p>Thiệp, logo, bảng hiệu, con dấu</p>
-            <img src={Mater4.src} class="inline-block" />
+
+        <div class="group">
+            <div class="item-inner">
+                <Brush size={48} class="mx-auto text-[#781722]" />
+                <h1>THIẾT KẾ</h1>
+                <p>Thiệp, logo, bảng hiệu, con dấu</p>
+                <Image
+                    src={Mater4}
+                    alt="Thiết kế"
+                    class="mx-auto mt-3"
+                    widths={[200, 300]}
+                />
             </div>
         </div>
-        <div class="text-center pr-2 pl-2 items-start col-span-1 place-content-top">
-            <div class="m-1 p-2">
-            <TruckElectric size={45} class="inline-block" />
-            <h1>TÚI GẤY KRAFT</h1>
-            <p>In logo theo yêu cầu</p>
-            <img src={Mater5.src} class="inline-block" />
+
+        <div class="group">
+            <div class="item-inner">
+                <TruckElectric size={48} class="mx-auto text-[#781722]" />
+                <h1>TÚI GIẤY KRAFT</h1>
+                <p>In logo theo yêu cầu</p>
+                <Image
+                    src={Mater5}
+                    alt="Túi giấy Kraft"
+                    class="mx-auto mt-3"
+                    widths={[200, 300]}
+                />
             </div>
         </div>
-    </div>
     </div>
 </div>
 
@@ -61,56 +108,79 @@ import Mater5 from '../assets/matersec/5.png';
         width: 1440px;
         max-width: 100%;
     }
-    .vl {
-        border-left: 6px solid green;
-        height: auto;
-        position: absolute;
-        z-index: 3;
-        }
-    #backdrop {
-        border-color: #781722;
-        backdrop-filter: blur(20px);
-        background-color: rgba(255, 255, 255, 0.262);
-        padding: 1rem;
-        padding-top: 1.5rem;
-        border-radius: 0px 25px 25px 25px;
-    }
-    #backdrop div div {
-        border-radius: 10px;
-        transition: .35s;
-        height: 100%;
-    }
-    #backdrop div:hover div {
-        border-radius: 15px;
-        background-color: rgb(255, 255, 255);
-    }
-    #backdrop div:hover div h1 {
-        transition: transform .35s;
-    }
-    #backdrop div:hover div h1 {
-        -ms-transform: scale(4.6);
-            /* IE 9 */
-            -webkit-transform: scale(1.5);
-            /* Safari 3-8 */
-            transform: scale(1.5);
-    }
-    #title-red p {
-        font-size: 1.5rem !important;
-        font-weight: 500;
-    }
-    #title-red p {
-        font-size: 1.7rem !important;
-        font-weight: 600;
-    }
+
     #title-red {
         z-index: 2;
-		background-color: #781722;
+        background-color: #781722;
         color: aliceblue;
-		padding: 0.5rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-		border-radius: 25px 25px 25px 0px;
-		display: inline-block;
-		line-height: 2rem;
-	}
+        padding: 0.6rem 1.2rem;
+        border-radius: 25px 25px 25px 0px;
+        display: inline-block;
+        line-height: 2.1rem;
+        font-weight: 600;
+        font-size: 1.7rem;
+    }
+
+    #backdrop {
+        border: 3px solid #781722;
+        backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.25);
+        padding: 1.5rem 1.25rem;
+        border-radius: 0px 25px 25px 25px;
+    }
+
+    .item-inner {
+        text-align: center;
+        padding: 1rem 0.5rem;
+        border-radius: 12px;
+        height: 100%;
+        transition: all 0.35s ease;
+    }
+
+    .group:hover .item-inner {
+        background-color: rgba(255, 255, 255, 0.95);
+        transform: translateY(-6px);
+    }
+
+    .item-inner h1 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #781722;
+        margin: 0.75rem 0 0.4rem;
+    }
+
+    .item-inner p {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.45;
+    }
+
+    /* Hover scale icon + text */
+    .group:hover .item-inner h1 {
+        transform: scale(1.08);
+        transition: transform 0.4s;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media screen and (max-width: 1024px) {
+        #backdrop {
+            padding: 1.25rem 1rem;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        #title-red {
+            font-size: 1.35rem;
+            padding: 0.5rem 1rem;
+            line-height: 1.8rem;
+        }
+
+        .item-inner h1 {
+            font-size: 1.1rem;
+        }
+
+        .item-inner p {
+            font-size: 0.9rem;
+        }
+    }
 </style>

@@ -1,0 +1,100 @@
+---
+// Cấu hình Splide  -  yêu cầu npm install astro-splide @splidejs/splide-extension-auto-scroll
+import "@splidejs/splide";
+import { SplideExtension, SplideSlide } from "astro-splide";
+import type { Options } from "@splidejs/splide";
+
+interface Props {
+    imagePath: string;
+    altText: string;
+}
+
+const { imagePath, altText } = Astro.props as Props;
+
+const allImages = Object.values(
+    import.meta.glob<{ default: ImageMetadata }>(
+        "/src/assets/slides/*.{jpeg,jpg,png,gif}",
+        { eager: true }, // Dùng eager để load đồng bộ
+    ),
+).map((img) => img.default.src);
+
+const options: Options = {
+    type: "loop",
+    drag: "free",
+    focus: "center",
+    perPage: 5,
+    autoScroll: {
+        speed: 2,
+    },
+};
+
+const optionMobile: Options = {
+    type: "loop",
+    drag: "free",
+    focus: "center",
+    perPage: 3,
+    autoScroll: {
+        speed: 1,
+    },
+};
+---
+
+<div id="slideCom">
+    <div class="content">
+        <SplideExtension options={options}>
+            {
+                allImages.map((img) => (
+                    <SplideSlide>
+                        <img src={img} alt="" />
+                    </SplideSlide>
+                ))
+            }
+        </SplideExtension>
+    </div>
+</div>
+
+<div id="slideMobile">
+    <div class="content">
+        <SplideExtension options={optionMobile}>
+            {
+                allImages.map((img) => (
+                    <SplideSlide>
+                        <img src={img} alt={""} />
+                    </SplideSlide>
+                ))
+            }
+        </SplideExtension>
+    </div>
+    <style>
+        #slideMobile {
+            display: none;
+        }
+        #slideCom {
+            display: contents;
+        }
+        .content {
+            width: 1440px;
+            max-width: 100%;
+        }
+        img {
+            padding: 3px;
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+        }
+        @media screen and (max-width: 600px) {
+            #slideCom {
+                display: none;
+            }
+            #slideMobile {
+                display: contents;
+            }
+        }
+    </style>
+
+    <script>
+        import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+        import { initSplideExtension } from "astro-splide/js/splideExtensionUtils";
+        initSplideExtension({ AutoScroll });
+    </script>
+</div>

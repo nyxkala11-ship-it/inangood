@@ -1,348 +1,179 @@
 ---
-import Material from '../components/Material.astro';
-import Slide from '../components/Slide.astro'
-// Lucide icons
-import { CircleCheckBig, Layers, ClockCheck } from '@lucide/astro';
-import { Printer } from '@lucide/astro';
-import MaterialSec from '../components/MaterialSec.astro';
+// src/components/IntroSection.astro
+import Material from "../components/Material.astro";
+import Slide from "../components/Slide.astro";
+import MaterialSec from "../components/MaterialSec.astro";
+
+import { CircleCheckBig, Layers, ClockCheck, Printer } from "@lucide/astro";
 ---
 
-<div class="flex flex-col" id="container">
-	<main>
+<div class="flex flex-col items-center" id="container">
+    <main class="w-full">
+        <div id="intro">
+            <p id="XI">BAO BÌ</p>
+            <h1 id="intro-title">TÚI GIẤY KRAFT</h1>
 
-	<div id="intro">
+            <div id="red-intro">
+                <p>GIÁ GỐC - NHẬN TỪ 50 TÚI</p>
+            </div>
 
-		<p id="XI">BAO BÌ</p>
-		<h1 id="intro-title">TÚI GIẤY KRAFT<br></h1>
-		<div id="red-intro"><p>GIÁ GỐC - NHẬN TỪ 50 TÚI</p></div>
-		<p id="intro-h2">CÓ HÀNG TRONG NGÀY</p>
+            <p id="intro-h2">CÓ HÀNG TRONG NGÀY</p>
 
-		<div id="intro-list-contain" class="grid grid-cols-11">
-		<ul id="intro-list" class="col-span-2 md:col-span-5">
+            <!-- Benefits - 1 cột dọc, icon + text inline -->
+            <div id="intro-list-contain" class="mt-10 space-y-6">
+                <div class="benefit-item">
+                    <CircleCheckBig
+                        size={52}
+                        class="text-[#781722] flex-shrink-0"
+                    />
+                    <p>Cần in túi giấy để kịp bán hàng</p>
+                </div>
 
-		<li class="flex flex-row my-4">
-		<pre><CircleCheckBig size={44} class='' /></pre>
-		<p style="padding: 0; padding-left: 1rem; padding-bottom: 0.5rem;" class="col-span-9 self-center text-justify"> Cần in túi giấy để kịp bán hàng</p>
-		</li>
+                <div class="benefit-item">
+                    <Printer size={52} class="text-[#781722] flex-shrink-0" />
+                    <p>
+                        Xưởng in trực tiếp - làm nhanh, lấy liền, không cần số
+                        lượng lớn.
+                    </p>
+                </div>
 
-		<li class="flex flex-row my-4">
-		<pre><Printer size={44} /></pre></pre>
-		<p style="padding: 0; padding-left: 1rem; padding-bottom: 0.5rem;" class="col-span-9 self-center text-justify"> Xưởng in trực tiếp - làm nhanh, lấy liền, không cần số lượng lớn.</p>
-		</li>
-		
-		<li class="flex flex-row my-4">
-		<pre><Layers style="display: block;" size={44} /></pre>
-		<p style="padding: 0; padding-left: 1rem; padding-bottom: 0.5rem;" class="col-span-9 self-center text-justify"> Chỉ từ 50 túi, bạn đã có túi giấy in logo riêng - 
-			phù hợp shop mới, bán online hoặc test thị trường.</p>
-		</li>
+                <div class="benefit-item">
+                    <Layers size={52} class="text-[#781722] flex-shrink-0" />
+                    <p>
+                        Chỉ từ 50 túi, bạn đã có túi giấy in logo riêng - phù
+                        hợp shop mới, bán online hoặc test thị trường.
+                    </p>
+                </div>
 
-		<li class="flex flex-row my-4">
-		<pre><ClockCheck style="display: inline-block;" size={44} /></pre>
-		<p style="padding: 0; padding-left: 1rem; padding-bottom: 0.5rem;" class="col-span-9 self-center text-justify"> Ngoài ra, xưởng nhận in trọn bộ: Hóa đơn,
-			 tem nhãn, tag treo, voucher, menu, bao bì đóng gói
-			  -> giúp bạn có bộ nhận diện đồng bộ, bán chuyên nghiệp hơn.</p>
-		</li>
-	
-	</ul>
-	</div>
-	</main>
-	
-	<Material />
-	<div class="block m-5" />
-	<MaterialSec />
-	<div class="block m-5" />
-	<Slide />
-	<div class="block m-5" />
+                <div class="benefit-item">
+                    <ClockCheck
+                        size={52}
+                        class="text-[#781722] flex-shrink-0"
+                    />
+                    <p>
+                        Ngoài ra, xưởng nhận in trọn bộ: Hóa đơn, tem nhãn, tag
+                        treo, voucher, menu, bao bì đóng gói → giúp bạn có bộ
+                        nhận diện đồng bộ.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Material />
+    <div class="block m-5"></div>
+    <MaterialSec />
+    <div class="block m-5"></div>
+    <Slide />
+    <div class="block m-5"></div>
 </div>
 
 <style>
+    main {
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        max-width: 1440px; /* === Đúng yêu cầu 1440px === */
+        margin: 0 auto;
+        background-image: url("../assets/intro/advicesbackground.png");
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: right;
+        padding: 2.5rem 2.5rem 5rem;
+    }
 
-	#intro-list p {
-		padding: 1rem;
-		padding-left: 2rem;
-		font-size: 1.5rem;
-		line-height: 1.5rem;
-	}
-	#intro-h2 {
-		font-size: 2rem !important;
-		color: #781722 !important;
-		padding: 1rem; 
-		padding-left: 1.5rem;
-		margin-top: 0.5rem;
-		margin-bottom: 2rem;
-	}
-	#red-intro {
-		background-color: #781722;
-		padding: 5px;
-		margin-top: 1.5rem;
-		border-radius: 20px;
-		position: relative;
-		display: inline-block;
-		line-height: 2rem;
-	}
-	#red-intro p {
-		color: white;
-		padding-left: 1.2rem;
-		padding-right: 1.2rem;
-		padding-top: 0.9rem;
-		padding-bottom: 0.7rem;
-		font-size: 2rem;
-	}
-	#intro-title {
-		/** TÚI GIẤY KRAFT */
-		color: #781722 !important;
-		font-size: 6rem !important;
-		font-family: Tahoma, sans-serif !important;
-		font-weight: 800;
-		line-height: 5.4rem !important;
-		padding: 0rem;
-		padding-top: 0;
-		padding-left: 0;
-		padding-bottom: 0.55rem;
-	}
-	#XI {
-		color: #717171;
-		font-size: 2rem;
-		font-weight: 600;
-	}
-	#intro {
-		padding: 2rem;
-	}
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+    #intro {
+        max-width: 620px;
+        width: 100%;
+    }
 
-	#container {
-		padding-top: 1.2em;
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-		align-items: center;
-	}
+    /* Style gốc */
+    #XI {
+        color: #717171;
+        font-size: 2rem;
+        font-weight: 600;
+    }
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		max-width: 1440px;
-		background-image: url("../assets/intro/advicesbackground.png");
-		background-size: auto 100%;
-		background-repeat: no-repeat;
-		background-attachment: inherit;
-		background-position: right;
-	}
+    #intro-title {
+        color: #781722 !important;
+        font-size: 6rem !important;
+        font-family: Tahoma, sans-serif !important;
+        font-weight: 800;
+        line-height: 5.4rem !important;
+        margin-bottom: 0.8rem;
+    }
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+    #red-intro {
+        background-color: #781722;
+        padding: 5px;
+        margin-top: 1.2rem;
+        border-radius: 20px;
+        display: inline-block;
+    }
 
-	h1 {
-		margin-top: 0.25em;
-	}
+    #red-intro p {
+        color: white;
+        padding: 0.9rem 1.4rem;
+        font-size: 2rem;
+        margin: 0;
+    }
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
+    #intro-h2 {
+        font-size: 2rem !important;
+        color: #781722 !important;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
+    /* Benefit Item - Icon + Text inline */
+    .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.4rem;
+        padding: 0.6rem 0;
+    }
 
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
+    .benefit-item p {
+        margin: 0;
+        line-height: 1.65;
+        font-size: 1.15rem;
+        color: #2c2e30;
+    }
 
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
+    /* ==================== MOBILE ==================== */
+    @media screen and (max-width: 768px) {
+        main {
+            padding: 1.8rem 1.2rem 4rem;
+            background-size: cover;
+            background-position: center;
+        }
 
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
+        #intro-title {
+            font-size: 4rem !important;
+            line-height: 3.8rem !important;
+        }
 
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
+        #red-intro p {
+            font-size: 1.65rem !important;
+            padding: 0.75rem 1.2rem;
+        }
 
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
+        #intro-h2 {
+            font-size: 1.6rem !important;
+        }
 
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-	}
+        /* Glass Blur chỉ trên mobile */
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 16px;
+            padding: 1.3rem 1.5rem;
+        }
 
-	p {
-		color: #2c2e30;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
-
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
-
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
-
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: all 0.2s;
-		backdrop-filter: blur(50px);
-	}
-
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		#intro-list > li {
-			background-color: #dedede22;
-			padding-top: 1rem;
-			padding-left: 0.5rem;
-			margin-top: 0.3rem;
-			margin-bottom: 0.3rem;
-			border-radius: 0.5rem;
-			backdrop-filter: blur(35px);
-		}
-		#intro-list-contain {
-			display: flex;
-			flex-direction: column;
-		}
-		#intro-list > li > p {
-		padding: 1rem;
-		padding-left: 1rem !important;
-		padding-right: 0.2rem !important;
-		font-size: 1.2rem;
-		line-height: 1.5rem;
-		color: #111827;
-	}
-	#intro-h2 {
-		font-size: 1.5rem !important;
-		color: #781722 !important;
-		line-height: 2.5rem;
-		font-weight: 600;
-		padding: 0;
-		padding-top: 0rem;
-		padding-bottom: 0.3rem;
-		margin-top: 0rem;
-		margin-bottom: 0rem;
-	}
-	/** GIÁ GỐC NHẬN TỪ 50 TÚI */
-	#red-intro {
-		background-color: #781722;
-		padding: 0.1rem;
-		margin-top: .3rem;
-		border-radius: 20px;
-		position: relative;
-		display: inline-block;
-		line-height: 1rem;
-	}
-	#red-intro p {
-		color: white;
-		padding-left: 1rem;
-		padding-right: 1rem;
-		padding-top: 0.6rem;
-		padding-bottom: 0.5rem;
-		font-weight: 500;
-		font-size: 1.6rem;
-		line-height: 2rem;
-	}
-	/** TÚI GIẤY KRAFT */
-	#intro-title {
-		color: #781722 !important;
-		font-size: 4rem !important;
-		font-family: Tahoma, sans-serif !important;
-		font-weight: 900;
-		line-height: 3.8rem !important;
-	}
-	#XI {
-		color: #212121;
-		font-size: 2rem;
-		font-weight: 600;
-	}
-	#intro {
-		padding: 0.6rem;
-	}
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
+        .benefit-item p {
+            font-size: 1.08rem;
+        }
+    }
 </style>

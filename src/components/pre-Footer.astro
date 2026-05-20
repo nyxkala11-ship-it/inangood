@@ -1,0 +1,305 @@
+---
+import {
+    ArrowBigRight,
+    ArrowBigRightDash,
+    BadgeCentIcon,
+    BaggageClaim,
+    MessageCircleMore,
+} from "@lucide/astro";
+
+import ImgCTam from "../assets/salers/ctam.png";
+import ImgCTruyen from "../assets/salers/ctruyen.png";
+import ImgThu from "../assets/salers/thu.png";
+---
+
+<footer>
+    <div class="flex flex-col" id="container-footer">
+        <!-- Top bar -->
+        <div class="bg-sky-50 w-[1440px] max-w-full grid grid-cols-2">
+            <div id="firstelement" class="bg-[#781722] col-span-2 pt-4">
+                <div
+                    id="ibnow"
+                    class="block items-center justify-center p-3 bg-linear-95 from-red-800 to-red-600 m-3 rounded-2xl border-2 border-solid border-orange-200 w-fit float-left flex flex-row"
+                >
+                    <BaggageClaim
+                        class="inline-block h-auto text-white"
+                        size={32}
+                    />
+
+                    <h5 style="" class="pl-2 text-xl self-center text-white">
+                        INBOX NGAY <ArrowBigRightDash
+                            id="ArrowBigRightDash"
+                            class="inline"
+                            size={18}
+                        />
+                    </h5>
+                </div>
+
+                <ul
+                    id="hotline"
+                    class="flex flex-row flex-wrap justify-center h-[100%] hotline"
+                >
+                    <li class="min-w-auto flex-row flex items-center">
+                        <img
+                            src={ImgCTam.src}
+                            class="h-20 rounded-[60px] bg-orange-100 ml-3 my-2"
+                        />
+
+                        <p
+                            class="inline-block p-3 pr-5 rounded-r-2xl border-y-1 border-r-1 border-orange-200"
+                        >
+                            Hotline:
+                            <a
+                                id="link-social"
+                                href="https://zalo.me/0789471752"
+                                target="_blank">0789 47 17 52</a
+                            >
+                        </p>
+                    </li>
+                    <li class="min-w-auto flex-row flex items-center">
+                        <img
+                            src={ImgCTruyen.src}
+                            style="display: inline"
+                            class="h-20 rounded-[60px] bg-orange-100 ml-3 my-2"
+                        />
+                        <p
+                            class="inline-block p-3 pr-5 rounded-r-2xl border-y-1 border-r-1 border-orange-200"
+                        >
+                            Hotline: <a
+                                id="link-social"
+                                target="_blank"
+                                href="https://zalo.me/0775964752"
+                                >0775 96 47 52</a
+                            >
+                        </p>
+                    </li>
+                    <li class="min-w-auto flex-row flex items-center">
+                        <img
+                            src={ImgThu.src}
+                            style="display: inline"
+                            class="h-20 rounded-[60px] bg-orange-100 ml-3 my-2"
+                        />
+                        <p
+                            class="inline-block p-3 pr-5 rounded-r-2xl border-y-1 border-r-1 border-orange-200"
+                        >
+                            Hotline: <a
+                                id="link-social"
+                                target="_blank"
+                                href="https://zalo.me/0901036457"
+                                >0901 036 457</a
+                            >
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div id="socialForm" class="bg-[#781722] col-span-2 px-8 py-1 pt-0">
+                <ul class="social">
+                    <li>
+                        <img
+                            src="../ico-footer/facebook.png"
+                            width="22px"
+                            style="display: inline"
+                        />
+                        <a>Fanpage: In ấn bao bì Cần Thơ </a>
+                    </li>
+                    <li>
+                        <img
+                            src="../ico-footer/tik-tok.png"
+                            width="22px"
+                            style="display: inline"
+                        />
+                        <a>Tiktok: </a><a
+                            id="link-social"
+                            target="_blank"
+                            href="https://www.tiktok.com/@locphat1210?is_from_webapp=1&sender_device="
+                            >Good in ấn bao bì Cần Thơ</a
+                        >
+                    </li>
+                    <li>
+                        <img
+                            src="../ico-footer/shopee.png"
+                            width="22px"
+                            style="display: inline"
+                        />
+                        <a>Shopee: </a><a
+                            id="link-social"
+                            target="_blank"
+                            href="https://vn.shp.ee/NBJcLCE"
+                            >Good - In ấn bao bì</a
+                        >
+                    </li>
+                    <li>
+                        <img
+                            src="../ico-footer/shopee.png"
+                            width="22px"
+                            style="display: inline"
+                        />
+                        <a>Shopee: </a><a
+                            id="link-social"
+                            target="_blank"
+                            href="https://vn.shp.ee/PCXxUHn"
+                            >LỘC PHÁT - BAO BÌ BẠC LIÊU</a
+                        >
+                    </li>
+                    <li>
+                        <img
+                            src="../ico-footer/shopee.png"
+                            width="22px"
+                            style="display: inline"
+                        />
+                        <a>Shopee: </a><a
+                            id="link-social"
+                            target="_blank"
+                            href="https://vn.shp.ee/sECwMnF"
+                            >bao bì - túi giấy</a
+                        >
+                    </li>
+                    <li>
+                        <img
+                            src="../ico-footer/zalo.png"
+                            width="22px"
+                            style="display: inline"
+                        />
+                        <a>Tham gia ngay </a><a
+                            id="link-social"
+                            target="_blank"
+                            href="https://zalo.me/g/dztqfp388"
+                            >nhóm khách sỉ nhận ưu đãi</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="px-8 py-5 pt-2 bg-[#781722] col-span-2">
+                <p
+                    class="inline-block p-3 pr-5 rounded-2xl border-1 border-orange-200 bg-[#781722] text-2xl font-bold my-3 mt-0"
+                >
+                    Hotline KT: <a
+                        id="link-social"
+                        target="_blank"
+                        href="https://zalo.me/0907335245">0907 335 245</a
+                    >
+                </p>
+                <div class="address">
+                    <p class="text-2xl font-medium">
+                        📍 Địa chỉ: KDC Hoàng Phát, Số 6, Đường Huỳnh Thị Đê,
+                        Phường Bạc Liêu
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        bottom: 0;
+    }
+    card {
+        width: 55px;
+    }
+    /*Create a horizontal list with spacing*/
+    li {
+        float: left;
+    }
+    #container-footer {
+        font-family:
+            Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+            sans-serif;
+        align-items: center;
+    }
+    .social li {
+        display: inline-block;
+        padding: 8px;
+    }
+    .social li p {
+        color: antiquewhite;
+        font-size: 1.1rem !important;
+    }
+    .social li a {
+        color: antiquewhite;
+        font-size: 1.2rem;
+    }
+    #link-social {
+        color: darkcyan;
+    }
+    .address a,
+    .hotline a {
+        color: antiquewhite;
+        font-size: 1.3rem !important;
+    }
+    li p {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: antiquewhite;
+        height: fit-content;
+    }
+    li a {
+        font-weight: 800;
+    }
+    #ibnow {
+        transition: transform 0.35s;
+        border-radius: 2rem;
+    }
+    .hotline li img {
+        border-radius: 5rem !important;
+    }
+    #ibnow:hover {
+        -ms-transform: scale(3.45);
+        /* IE 9 */
+        -webkit-transform: scale(1.125);
+        /* Safari 3-8 */
+        transform: scale(1.125);
+        cursor: pointer;
+    }
+    #ibnow #ArrowBigRightDash {
+        transition: transform 0.45s;
+    }
+    #ibnow:hover #ArrowBigRightDash {
+        -ms-transform: scale(4.6);
+        /* IE 9 */
+        -webkit-transform: scale(1.5);
+        /* Safari 3-8 */
+        transform: scale(1.5);
+    }
+    #firstelement {
+        border-radius: 0 !important;
+    }
+
+    @media screen and (max-width: 600px) {
+        #firstelement {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center;
+        }
+        #ibnow {
+        }
+        .hotline li {
+        }
+        .hotline li img {
+            margin-left: 0;
+        }
+        .hotline {
+        }
+        #ibnow:hover {
+            -ms-transform: scale(2);
+            /* IE 9 */
+            -webkit-transform: scale(0.9);
+            /* Safari 3-8 */
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+        .social li a {
+            font-size: 0.9rem;
+            margin: 0;
+            padding: 0;
+        }
+        .social {
+            border-radius: 0;
+            padding: 0;
+        }
+        #socialForm {
+            padding: 0;
+            border-radius: 0;
+        }
+    }
+</style>

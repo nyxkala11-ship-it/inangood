@@ -1,22 +1,39 @@
 ---
+// src/components/CategoryTags.astro
 import { getCollection } from "astro:content";
-const ProductsCol = await getCollection("blogCollection");
-const ProductsCatRd = ProductsCol.sort(() => Math.random() - 0.5);
+
+const allPosts = await getCollection("blogCollection");
+
+// Lấy tất cả tags và loại bỏ trùng lặp
+const allTags = new Set<string>();
+allPosts.forEach((post) => {
+    post.data.tags?.forEach((tag) => allTags.add(tag));
+});
+
+// Chuyển thành mảng và sắp xếp alphabet
+let tagsArray = Array.from(allTags).sort((a, b) => a.localeCompare(b));
+
+// Random nhẹ trên client-side (tùy chọn)
+// const shuffledTags = tagsArray; // Nếu muốn random mỗi lần load thì uncomment dòng dưới
+const shuffledTags = tagsArray.sort(() => Math.random() - 0.5).slice(0, 15);
 ---
 
-<div id="cater-container" class="flex justify-center">
-    <!-- Về sau thay này thành category của từng mục sản phẩm -->
-    <div id="catergory">
-        <h1>Thẻ danh mục</h1>
+<div id="cater-container" class="max-w-[1440px] mx-auto px-4 py-8">
+    <div class="text-center mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-[#781722]">
+            Thẻ Danh Mục
+        </h1>
+        <p class="text-gray-600 mt-2">
+            Khám phá các sản phẩm theo danh mục ngẫu nhiên
+        </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3 md:gap-4">
         {
-            ProductsCatRd.slice(0, 15).map((product) => (
-                <ul class="inline-block flex-wrap flex">
-                    {product.data.tags.map((tag) => (
-                        <li class=" m-1 flex flex-col inline-block flex-wrap">
-                            <a href={`/products/${product.id}`}>{tag}</a>
-                        </li>
-                    ))}
-                </ul>
+            shuffledTags.map((tag) => (
+                <a href={`/tags/${tag.toLowerCase()}`} class="tag-item group">
+                    #{tag}
+                </a>
             ))
         }
     </div>
@@ -24,21 +41,37 @@ const ProductsCatRd = ProductsCol.sort(() => Math.random() - 0.5);
 
 <style>
     #cater-container {
-        padding-bottom: 1.5rem;
-    }
-    #catergory {
         width: 1440px;
         max-width: 100%;
-        max-lines: 3;
+        margin: 0 auto;
     }
-    li {
-        text-align: center;
-        background-color: brown;
-        transition: all 0.35s;
-        color: #fff;
-        font-size: 1.5rem !important;
+
+    .tag-item {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #781722, #a13a4d);
+        color: white;
+        padding: 0.65rem 1.4rem;
+        border-radius: 9999px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 15px rgba(120, 23, 34, 0.2);
+        white-space: nowrap;
     }
-    li:hover {
-        background-color: rgb(204, 131, 131);
+
+    .tag-item:hover {
+        transform: translateY(-4px) scale(1.05);
+        background: linear-gradient(135deg, #a13a4d, #781722);
+        box-shadow: 0 10px 25px rgba(120, 23, 34, 0.35);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .tag-item {
+            padding: 0.55rem 1.1rem;
+            font-size: 1rem;
+        }
     }
 </style>
