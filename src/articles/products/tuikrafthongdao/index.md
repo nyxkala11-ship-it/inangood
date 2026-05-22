@@ -1,5 +1,5 @@
 ---
-title: Túi giấy kraft nền hồng đào
+title: Túi Giấy Kraft Nền Hồng Đào
 tags:
   - tuigiay
   - kraft

@@ -1,5 +1,5 @@
 ---
-title: Bao bánh mì
+title: Bao Bánh Mì
 tags:
   - BaoBánhMì
   - Bao

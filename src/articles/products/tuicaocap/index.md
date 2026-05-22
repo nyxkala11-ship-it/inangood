@@ -1,5 +1,5 @@
 ---
-title: Túi giấy cao cấp C250 IVORY
+title: Túi Giấy Cao Cấp C250 IVORY
 tags:
   - tuigiay
   - C250

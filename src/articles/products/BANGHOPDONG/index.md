@@ -1,5 +1,5 @@
 ---
-title: Bằng - Hợp đồng
+title: Bằng - Hợp Đồng
 tags:
   - Bằng
   - HợpĐồng

@@ -73,7 +73,7 @@ import { Image } from "astro:assets";
                     <img
                         src="/good.png"
                         alt="In ấn bao bì Cần Thơ"
-                        width="80px"
+                        width="75px"
                     />
                 </a>
 
@@ -81,12 +81,15 @@ import { Image } from "astro:assets";
                     <img
                         src="/good-title.png"
                         alt="In ấn bao bì Good Lộc Phát"
-                        width="200px"
+                        width="150px"
                     />
                 </a>
             </div>
             <!-- menu-header -->
-            <div id="div-search" class="grow place-content-center h-auto">
+            <div
+                id="div-search"
+                class="grow place-content-center h-auto w-auto"
+            >
                 <!-- Thanh tìm kiếm -->
                 <input
                     class="rounded-[3rem]"
@@ -96,12 +99,16 @@ import { Image } from "astro:assets";
                 />
             </div>
 
-            <div class="sloganDiv grid grid-cols-2">
-                <card class="sloganCard items-center p-5 col-span1">
-                    <p>Bảo mật thông tin an toàn</p>
+            <div class="sloganDiv grid grid-cols-2 mx-auto">
+                <card
+                    class="sloganCard items-center flex align-middle p-3 col-span1"
+                >
+                    <p>Bao bì túi giấy đẹp<br /> in trọn gói tại 1 nơi</p>
                 </card>
-                <card class="sloganCard items-center p-5 col-span-1">
-                    <p>Đảm bảo 100% hài lòng</p>
+                <card
+                    class="sloganCard items-center flex align-middle p-3 col-span-1"
+                >
+                    <p>Thiết kế đẹp<br /> Tư vấn nhiệt Tình</p>
                 </card>
             </div>
         </div>
@@ -114,7 +121,7 @@ import { Image } from "astro:assets";
         width: 8rem;
     }
     .goodTitle .goodtitle img {
-        width: 21.5rem !important;
+        width: 18rem !important;
     }
     .onlyMobile {
         display: none;
@@ -130,26 +137,30 @@ import { Image } from "astro:assets";
     }
     #div-search {
         margin-left: 15px;
-        margin-right: 15px;
+        width: 21.875rem;
     }
     card {
-        width: 125px;
+    }
+    .sloganDiv {
+        //width: 20vw;
+    }
+    .sloganCard {
+        width: 10rem;
     }
     #MenuSearch[type="text"] {
         float: right;
-        padding: 8px;
-        padding-left: 16px;
+        padding: 0.5rem;
+        padding-left: 1rem;
         border: none;
-        margin-top: 8px;
-        margin-right: 16px;
-        font-size: 17px;
+        margin-top: 0.5rem;
+        margin-right: 0.5rem;
+        font-size: 1.05rem;
         background-color: aliceblue;
-        margin: 10px;
-
+        margin: 0.625rem;
         right: 0;
         max-lines: 1;
         height: 2.5rem;
-        width: 350px;
+        width: 21.875rem;
     }
     #abbutton {
     }
@@ -284,6 +295,7 @@ import { Image } from "astro:assets";
             margin: 0;
         }
         .sloganDiv {
+            display: flex;
         }
         .sloganCard {
             background: #ededed;
@@ -300,7 +312,7 @@ import { Image } from "astro:assets";
             border-radius: 1rem;
         }
         .sloganCard p {
-            font-size: 1.05rem !important;
+            font-size: 0.9rem !important;
             color: #781722;
             font-weight: 600 !important;
             text-align: center;

@@ -1,5 +1,5 @@
 ---
-title: Tag treo - Card
+title: Tag Treo - Card
 tags:
   - Tag
   - TagTreo

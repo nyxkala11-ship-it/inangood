@@ -1,5 +1,5 @@
 ---
-title: Bằng đào tạo nghề
+title: Bằng Đào Tạo Nghề
 tags:
   - Bằng
   - BằngĐàoTạoNghề

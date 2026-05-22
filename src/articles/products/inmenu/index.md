@@ -1,5 +1,5 @@
 ---
-title: In menu
+title: In Menu
 tags:
   - In
   - Menu

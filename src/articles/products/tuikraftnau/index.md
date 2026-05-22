@@ -1,5 +1,5 @@
 ---
-title: Túi Kraft nâu
+title: Túi Kraft Nâu
 tags:
   - Túi
   - Giấy

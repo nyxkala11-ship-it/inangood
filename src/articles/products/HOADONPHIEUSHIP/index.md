@@ -1,5 +1,5 @@
 ---
-title: Hóa đơn - Phiếu ship
+title: Hóa Đơn - Phiếu Ship
 tags:
   - Hóa
   - Đơn

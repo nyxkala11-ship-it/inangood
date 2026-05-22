@@ -1,5 +1,5 @@
 ---
-title: Hợp đồng đào tạo nghề
+title: Hợp Đồng Đào Tạo Nghề
 tags:
   - HợpĐồng
   - Đào

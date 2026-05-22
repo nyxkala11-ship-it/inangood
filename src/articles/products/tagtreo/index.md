@@ -1,5 +1,5 @@
 ---
-title: Tag treo
+title: Tag Treo
 tags:
   - Tag
   - TagTreo

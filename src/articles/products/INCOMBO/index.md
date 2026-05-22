@@ -1,5 +1,5 @@
 ---
-title: In COMBO
+title: In Combo
 tags:
   - In
   - Combo

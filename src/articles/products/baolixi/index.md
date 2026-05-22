@@ -1,5 +1,5 @@
 ---
-title: Bao lì xì
+title: Bao Lì Xì
 tags:
   - BaoLìXì
   - Bao

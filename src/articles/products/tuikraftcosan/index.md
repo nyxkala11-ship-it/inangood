@@ -1,5 +1,5 @@
 ---
-title: Túi Kraft có sẵn, giao nhanh
+title: Túi Kraft Có Sẵn, Giao Nhanh
 tags:
   - Túi
   - Giấy

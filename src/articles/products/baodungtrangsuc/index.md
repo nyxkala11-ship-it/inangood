@@ -1,5 +1,5 @@
 ---
-title: Bao đựng trang sức
+title: Bao Đựng Trang Sức
 tags:
   - BaoĐựngTrangSức
   - Bao

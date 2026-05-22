@@ -1,5 +1,5 @@
 ---
-title: In nhanh trong ngày
+title: In Nhanh Trong Ngày
 tags:
   - In
   - Nhanh

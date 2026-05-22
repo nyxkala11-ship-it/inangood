@@ -1,5 +1,5 @@
 ---
-title: Thiết kế LOGO
+title: Thiết Kế LOGO
 tags:
   - ThiếtKế
   - LOGO

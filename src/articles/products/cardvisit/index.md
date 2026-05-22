@@ -1,5 +1,5 @@
 ---
-title: Card visit
+title: Card Visit
 tags:
   - Card
   - visit

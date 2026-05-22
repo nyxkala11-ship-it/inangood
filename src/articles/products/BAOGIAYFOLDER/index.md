@@ -1,5 +1,5 @@
 ---
-title: Bao giấy - Folder
+title: Bao Giấy - Folder
 tags:
   - BaoGiấy
   - Folder

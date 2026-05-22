@@ -1,5 +1,5 @@
 ---
-title: Phiếu BH - Biên nhận điện thoại
+title: Phiếu BH - Biên Nhận Điện Thoại
 tags:
   - Phiếu
   - BảoHành

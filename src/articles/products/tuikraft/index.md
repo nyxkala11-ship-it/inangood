@@ -1,5 +1,5 @@
 ---
-title: Túi giấy kraft
+title: Túi Giấy kraft
 tags:
   - tuigiay
   - kraft

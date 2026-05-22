@@ -48,11 +48,11 @@ sortedProducts.forEach((product) => {
 const rootMenus = Array.from(categoryMap.values());
 ---
 
-<nav class="menu-container max-w-[1440px] mx-auto px-4">
+<nav class="menu-container max-w-360 mx-auto px-4">
     <!-- Desktop + Mobile Container -->
     <div class="flex items-center justify-between">
         <!-- Main Menu -->
-        <ul id="mainMenu" class="main-menu">
+        <ul id="mainMenu" class="main-menu onlyCom">
             <li class="menu-item">
                 <a href="/">Trang chủ</a>
             </li>
@@ -146,6 +146,9 @@ const rootMenus = Array.from(categoryMap.values());
 </nav>
 
 <style>
+    .onlyCom {
+        display: block;
+    }
     .menu-container {
         width: 1440px;
         max-width: 100%;
@@ -318,6 +321,11 @@ const rootMenus = Array.from(categoryMap.values());
     .parent-link {
         font-weight: 700 !important;
         color: #781722 !important;
+    }
+    @media screen and (max-width: 600px) {
+        .onlyCom {
+            display: none;
+        }
     }
 </style>
 

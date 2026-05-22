@@ -1,5 +1,5 @@
 ---
-title: Bao thư
+title: Bao Thư
 tags:
   - BaoThư
   - Bao

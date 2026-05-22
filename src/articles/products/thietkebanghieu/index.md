@@ -1,5 +1,5 @@
 ---
-title: Thiết kế bảng hiệu
+title: Thiết Kế Bảng Hiệu
 tags:
   - ThiếtKế
   - BảngHiệu

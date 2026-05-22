@@ -1,5 +1,5 @@
 ---
-title: Tem  - Decal
+title: Tem - Decal
 tags:
   - Tem
   - Decal

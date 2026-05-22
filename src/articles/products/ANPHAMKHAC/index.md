@@ -1,5 +1,5 @@
 ---
-title: Ấn phẩm khác
+title: Ấn Phẩm Khác
 tags:
   - ẤnPhẩmKhác
   - Ấn
