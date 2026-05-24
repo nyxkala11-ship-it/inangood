@@ -23,16 +23,20 @@ const sliderOptions: Options = {
         speed: 2,
         pauseOnHover: true,
     },
+    pagination: true,
+    paginationDirection: "ltr",
+    paginationKeyboard: true,
     breakpoints: {
         640: {
-            perPage: 3,
+            perPage: 2,
             gap: "1rem",
             autoScroll: { speed: 1.2 },
         },
         768: {
-            perPage: 4,
+            perPage: 3,
             gap: "1.25rem",
             autoScroll: { speed: 1.5 },
+            pagination: false,
         },
         1024: {
             perPage: 5,
@@ -51,7 +55,11 @@ const sliderOptions: Options = {
         {
             allImages.map((img) => (
                 <SplideSlide>
-                    <img src={img} alt="" />
+                    <img
+                        src={img}
+                        alt=""
+                        class="aspect-square overflow-hidden h-full"
+                    />
                 </SplideSlide>
             ))
         }
