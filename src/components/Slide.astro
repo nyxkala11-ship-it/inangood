@@ -58,7 +58,7 @@ const sliderOptions: Options = {
                     <img
                         src={img}
                         alt=""
-                        class="vuong aspect-square overflow-hidden h-full"
+                        class="vuong aspect-square overflow-hidden"
                     />
                 </SplideSlide>
             ))
@@ -67,17 +67,12 @@ const sliderOptions: Options = {
 </div>
 
 <style is:global>
-    .vuong {
-        aspect-ratio: 1/1;
-    }
     .slider-wrapper {
         width: 1440px;
         max-width: 100%;
     }
 
     .slider-img {
-        width: 100%;
-        height: auto;
         aspect-ratio: 1 / 1;
         object-fit: cover;
         border-radius: 12px;
