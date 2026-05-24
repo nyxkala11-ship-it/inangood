@@ -4,21 +4,17 @@ import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("blogCollection");
 
-// Lấy tất cả tags và loại bỏ trùng lặp
+// === LẤY TẤT CẢ TAGS (Server-side) ===
 const allTags = new Set<string>();
 allPosts.forEach((post) => {
     post.data.tags?.forEach((tag) => allTags.add(tag));
 });
 
-// Chuyển thành mảng và sắp xếp alphabet
-let tagsArray = Array.from(allTags).sort((a, b) => a.localeCompare(b));
-
-// Random nhẹ trên client-side (tùy chọn)
-// const shuffledTags = tagsArray; // Nếu muốn random mỗi lần load thì uncomment dòng dưới
-const shuffledTags = tagsArray.sort(() => Math.random() - 0.5).slice(0, 15);
+// Chuyển thành mảng và sắp xếp A-Z
+const tagsArray = Array.from(allTags).sort((a, b) => a.localeCompare(b));
 ---
 
-<div id="cater-container" class="max-w-[1440px] mx-auto px-4 py-8">
+<div id="category-tags" class="max-w-[1440px] mx-auto px-4 py-8">
     <div class="text-center mb-8">
         <h1 class="text-3xl md:text-4xl font-bold text-[#781722]">
             Thẻ Danh Mục
@@ -28,24 +24,70 @@ const shuffledTags = tagsArray.sort(() => Math.random() - 0.5).slice(0, 15);
         </p>
     </div>
 
-    <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+    <!-- 1. Danh sách ẩn để JavaScript đọc dữ liệu -->
+    <div id="all-tags-data" class="hidden">
         {
-            shuffledTags.map((tag) => (
-                <a href={`/tags/${tag.toLowerCase()}`} class="tag-item group">
-                    #{tag}
-                </a>
+            tagsArray.map((tag) => (
+                <span class="tag-data" data-tag={tag.toLowerCase()}>
+                    {tag}
+                </span>
             ))
         }
     </div>
+
+    <!-- 2. Container hiển thị tags ngẫu nhiên -->
+    <div
+        id="tags-display"
+        class="flex flex-wrap justify-center gap-3 md:gap-4 min-h-[120px]"
+    >
+        <!-- JavaScript sẽ render vào đây -->
+    </div>
 </div>
 
-<style>
-    #cater-container {
-        width: 1440px;
-        max-width: 100%;
-        margin: 0 auto;
+<script>
+    // Thuật toán Fisher-Yates Shuffle - Ngẫu nhiên tốt nhất
+    function shuffleArray<T>(array: T[]): T[] {
+        const shuffled = [...array]; // Tạo bản sao để không sửa mảng gốc
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
     }
 
+    document.addEventListener("DOMContentLoaded", () => {
+        const dataContainer = document.getElementById("all-tags-data");
+        const displayContainer = document.getElementById("tags-display");
+
+        if (!dataContainer || !displayContainer) return;
+
+        // Lấy tất cả tags từ HTML ẩn
+        const tagElements = dataContainer.querySelectorAll(".tag-data");
+
+        const tags = Array.from(tagElements)
+            .map((el) => ({
+                name: el.textContent?.trim() || "",
+                slug: el.getAttribute("data-tag") || "",
+            }))
+            .filter((tag) => tag.name !== "");
+
+        // Shuffle và lấy tối đa 15 tags
+        const shuffledTags = shuffleArray(tags).slice(0, 15);
+
+        // Xóa nội dung cũ và render tags mới
+        displayContainer.innerHTML = "";
+
+        shuffledTags.forEach((tag) => {
+            const link = document.createElement("a");
+            link.href = `/tags/${tag.slug}`;
+            link.className = "tag-item";
+            link.textContent = `#${tag.name}`;
+            displayContainer.appendChild(link);
+        });
+    });
+</script>
+
+<style is:global>
     .tag-item {
         display: inline-flex;
         align-items: center;
@@ -59,6 +101,7 @@ const shuffledTags = tagsArray.sort(() => Math.random() - 0.5).slice(0, 15);
         transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 4px 15px rgba(120, 23, 34, 0.2);
         white-space: nowrap;
+        cursor: pointer;
     }
 
     .tag-item:hover {

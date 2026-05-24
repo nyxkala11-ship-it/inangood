@@ -88,7 +88,7 @@ const rootMenus = Array.from(categoryMap.values());
         </ul>
 
         <!-- ==================== MOBILE NAVBAR (App Style) ==================== -->
-        <div class="mobile-navbar md:hidden">
+        <div class="mobile-navbar md:hidden onlyMobile">
             <button id="menuMobileBtn" class="mobile-btn" aria-label="Mở menu">
                 <LogsIcon size={28} />
             </button>
@@ -148,6 +148,9 @@ const rootMenus = Array.from(categoryMap.values());
 <style>
     .onlyCom {
         display: block;
+    }
+    .onlyMobile {
+        display: none !important;
     }
     .menu-container {
         width: 1440px;
@@ -325,6 +328,9 @@ const rootMenus = Array.from(categoryMap.values());
     @media screen and (max-width: 600px) {
         .onlyCom {
             display: none;
+        }
+        .onlyMobile {
+            display: flex !important;
         }
     }
 </style>

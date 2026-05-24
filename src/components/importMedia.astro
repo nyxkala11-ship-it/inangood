@@ -1,40 +1,56 @@
 ---
-// ProductMedia.astro
 export interface Props {
     productId: string;
-    mediaName: string;
+    mediaName: string | any;
     type: "image" | "video";
+    alt?: string;
+    class?: string;
 }
 
-const { productId, mediaName, type } = Astro.props;
+const {
+    productId,
+    mediaName,
+    type,
+    alt = "",
+    class: className = "",
+} = Astro.props;
 
-// Import trực tiếp từ thư mục của product
+// Xử lý src an toàn hơn
 let src = "";
 
-try {
-    if (type === "image") {
-        const imageModule = await import(`${mediaName}`);
-        src = imageModule.default;
+if (mediaName) {
+    if (typeof mediaName === "string") {
+        src = mediaName;
+    } else if (mediaName.default) {
+        src = mediaName.default;
     } else {
-        const videoModule = await import(`${mediaName}`);
-        src = videoModule.default;
+        src = mediaName;
     }
-} catch (error) {
-    console.error(`Cannot load ${mediaName} for product ${productId}`);
 }
 ---
 
 {
     type === "image" ? (
         <img
-            class="mySlides aspect-square"
-            src={mediaName}
-            alt=""
+            src={src}
+            alt={alt}
             loading="lazy"
+            class={`w-full h-full object-cover rounded-2xl ${className}`}
         />
     ) : (
-        <video width="500" height="500" class="mySlides aspect-square" controls>
-            <source src={mediaName} type="video/mp4" />
-        </video>
+        <div class="relative w-full aspect-video bg-black rounded-3xl overflow-hidden flex items-center justify-center">
+            <video
+                src={src}
+                controls
+                loop
+                playsinline
+                muted
+                class={`w-full h-full object-cover ${className}`}
+                aria-label={alt}
+            >
+                <source src={src} type="video/mp4" />
+                Trình duyệt không hỗ trợ video.
+            </video>
+        </div>
     )
 }

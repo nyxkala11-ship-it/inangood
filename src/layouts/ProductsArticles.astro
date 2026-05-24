@@ -1,488 +1,256 @@
 ---
-import Layout from './Layout.astro';
-import Footer from '../components/Footer.astro';
-import BaseHead from '../components/Header.astro'
-import background from '../assets/background.svg';
+import Layout from "./Layout.astro";
+import Footer from "../components/Footer.astro";
+import BaseHead from "../components/Header.astro";
+import background from "../assets/background.svg";
 import type { CollectionEntry } from "astro:content";
-// Cấu hình Splide  -  yêu cầu npm install astro-splide @splidejs/splide-extension-auto-scroll
-
-import type { Options } from '@splidejs/splide';
-import "@splidejs/splide"
-import { ArrowBigLeftDash, ArrowBigRight, ArrowBigRightDash } from '@lucide/astro';
-import ImportMedia from '../components/importMedia.astro';
+import ImportMedia from "../components/importMedia.astro";
 
 type Props = CollectionEntry<"blogCollection">["data"];
-const { title, date, catergory, parent, id, images, videos } = Astro.props;
 
-const currentPath = import.meta.url;
+const {
+    title,
+    date,
+    catergory,
+    parent,
+    id,
+    images = [],
+    videos = [],
+} = Astro.props;
 
-//const currentDir = new URL('.', currentPath).pathname;
-
-// Lấy danh sách các file từ thư mục hiện tại
+// ==================== XỬ LÝ ASSETS ====================
 const getAssets = () => {
-	// Sử dụng import tất car các file ảnh trong thư mục hiện tại
-	const allAssets = import.meta.glob('./**/**/*.{jpg,png,svg,mp4,webm}', {
-		eager: true,
-		query: '?url',
-		import: 'default'
-	});
+    const rawImgAssets = import.meta.glob("./**/**/*.{jpg,png,svg,webp}", {
+        eager: true,
+    });
 
-	// hoặc raw
-	const rawImgAssets = import.meta.glob('./**/**/*.{jpg,png,svg,webm}', {
-		eager: true,
-	});
+    const rawVidAssets = import.meta.glob("./**/**/*.mp4", {
+        eager: true,
+        query: "?url",
+        import: "default",
+    });
 
-	// hoặc raw
-	const rawVidAssets = import.meta.glob('./**/**/*.mp4', {
-		eager: true,
-		query: '?url',
-		import: 'default'
-	});
-
-	return {allAssets, rawImgAssets, rawVidAssets};
+    return { rawImgAssets, rawVidAssets };
 };
 
 const assets = getAssets();
 
-const processedImages = images?.map(imgName => {
-	if (imgName === 'none') return 'none';
+// Xử lý ảnh và video - trả về URL đúng
+const processedImages = images?.map((imgName) => {
+    if (imgName === "none") return "none";
 
-	// timf file anhr trong thuw mucj hieenj taij
-	for (const [path, module] of Object.entries(assets.rawImgAssets)) {
-		if (path.includes(imgName) || path.endsWith(imgName)) {
-			return module;
-		}
-	}
-	return imgName;
+    for (const [path, module] of Object.entries(assets.rawImgAssets)) {
+        if (path.includes(imgName) || path.endsWith(imgName)) {
+            return (module as any).default || module; // Đảm bảo lấy URL
+        }
+    }
+    return imgName;
 });
 
-const processedVideos = videos?.map(vidName => {
-	if (vidName === 'none') return 'none';
+const processedVideos = videos?.map((vidName) => {
+    if (vidName === "none") return "none";
 
-	// timf file anhr trong thuw mucj hieenj taij
-	for (const [path, module] of Object.entries(assets.rawVidAssets)) {
-		if (path.includes(vidName) || path.endsWith(vidName)) {
-			return module;
-		}
-	}
-	return vidName;
+    for (const [path, module] of Object.entries(assets.rawVidAssets)) {
+        if (path.includes(vidName) || path.endsWith(vidName)) {
+            return module;
+        }
+    }
+    return vidName;
 });
 
-export interface PropsImg {
-   imagePath: string;
-   altText: string;
-   name: string;
-   age: number;
-}
-
-const option: Options = {
-    type: 'loop',
-    drag: 'free',
-    focus: 'center',
-    perPage: 1,
-    autoScroll: {
-        speed: 1,
-    },
-}
-
-console.log(images);
-//import { getEntry, render } from 'astro:content';
-//const products = Object.values(import.meta.glob(, {eager: true }));
-
+const mainVideo = processedVideos?.[0] || null;
+const previewImages = processedImages?.slice(0, 10) || [];
 ---
+
 <Layout>
-	<BaseHead />
+    <BaseHead />
     <body>
-		<main class="flex flex-col items-center w-full" >
-			<div class="text-2xl pt-2" id="container">
-				<div class="bg-gray-900 catName mb-1">
-				    <p>Danh mục: {parent === "none" ? catergory : parent} </p>
-				</div>
-				<div id="desimg" class="grid grid-cols-2 mb-3">
-					<div id="preview" class="col-span-1 flex items-center justify-center">
-							{processedVideos?.map(img =>
-							(img !== "none") &&
-							<ImportMedia productId={id} mediaName=`${img}` type="video" />
-								//<video width="500" height="500" class="mySlides aspect-square" controls>
-								// 	<source style="object-fit: fill; aspect-square" src=`${img}`>
-								//</video>
-							)}
+        <main class="flex flex-col items-center w-full">
+            <div class="text-2xl pt-2" id="container">
+                <!-- Danh mục -->
+                <div class="bg-gray-900 catName mb-6">
+                    <p>Danh mục: {parent === "none" ? catergory : parent}</p>
+                </div>
 
-							{processedImages?.map(img =>
-							(img === "none") ? <div class="none">&nbsp;</div> :
-							//<!-- change image to img  -->
-							<ImportMedia productId={id} mediaName=`${img}` type="image" />
-								//<img loading="lazy" class="mySlides aspect-square" src=`${img}` alt="" height={500} width={500} />
-							)}
-							<button id="nextbtn" onclick="nextSlide()" class="button previousbtn flex items-center py-3 text-white hover:bg-blue-400"><ArrowBigLeftDash size={55} /></button>
+                <!-- Preview + Form -->
+                <div
+                    id="desimg"
+                    class="flex flex-col gap-12 w-full max-w-6xl mx-auto mb-12"
+                >
+                    <!-- PREVIEW -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Video -->
+                        {
+                            mainVideo && mainVideo !== "none" && (
+                                <div class="w-full aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl">
+                                    <ImportMedia
+                                        productId={id}
+                                        mediaName={mainVideo}
+                                        type="video"
+                                    />
+                                </div>
+                            )
+                        }
 
-							<button id="prebtn" onclick="nextSlide()" class="button nextbtn flex items-center py-3 text-white hover:bg-blue-400"><ArrowBigRightDash size={55} /></button>
+                        <!-- Grid ảnh -->
+                        <div>
+                            <p class="text-lg font-medium text-gray-300 mb-4">
+                                Hình ảnh chi tiết sản phẩm
+                            </p>
+                            <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+                                {
+                                    previewImages.map(
+                                        (img, index) =>
+                                            img !== "none" && (
+                                                <div
+                                                    key={index}
+                                                    class="aspect-square rounded-2xl overflow-hidden border border-gray-700 hover:border-violet-500 transition-all duration-300"
+                                                >
+                                                    <ImportMedia
+                                                        productId={id}
+                                                        mediaName={img}
+                                                        type="image"
+                                                    />
+                                                </div>
+                                            ),
+                                    )
+                                }
+                            </div>
+                        </div>
+                    </div>
 
-						<!---<slot /> -->
-					</div>
-					<div id="desselect" class="col-span-1 p-5">
-						Chọn quy cách
-						<div id="title" class=""><h1>{title}</h1></div>
-						<br><br>
-						<form action="#">
-							<label for="Size">Chọn cỡ:</label>
-							<select class="bg-white p-2 rounded-md border-1px border-black-200" name="kraft" id="kraft">
-							<option value="20x10">Túi 20x10</option>
-							<option value="20x20">Túi 20x20</option>
-							<option value="16x16">Túi 16x16</option>
-							</select>
-							<br><br>
-							<label for="Mau">Mẫu:</label>
-							<select class="bg-white p-2 rounded-md border-1px border-black-200" name="mau" id="mau">
-							<option value="cute01">Mẫu Cute 01</option>
-							<option value="cute02">Mẫu Cute 02</option>
-							<option value="cute03">Mẫu Cute 03</option>
-							<option value="cute04">Mẫu Cute 04</option>
-							<option value="cute05">Mẫu Cute 05</option>
-							<option value="cute06">Mẫu Cute 06</option>
-							<option value="cute07">Mẫu Cute 07</option>
-							<option value="cute08">Mẫu Cute 08</option>
-							</select>
-							<br><br>
-							<input class="flex items-center justify-center px-5 bg-linear-95 from-red-800 to-red-600 rounded-xl border-1px border-solid border-orange-200 float-left flex-row fg-white w-62.5" type="submit" value="Đặt túi !">
-						</form>
-					</div>
-				</div>
+                    <!-- CHỌN QUY CÁCH -->
+                    <div class="p-8 rounded-3xl border border-gray-700">
+                        <h2 class="text-3xl font-bold mb-6">Chọn quy cách</h2>
 
-				<div id="description" class="text-center leading-12 border-solid border-1px rounded-xl border-sky-100 p-5">
-					<img id="background" src={background.src} alt="" fetchpriority="high" />
-					<div id="desdate"><p>"Cập nhật ngày:" {date}</p></div>
-					<!-- Slot cho content! -->
-					<div class="MardownContent flex flex-col justify-center items-center">
-					    <slot slot="content" />
-					</div>
-				</div>
-			</div>
-		</main>
+                        <div class="mb-8">
+                            <h1 class="text-2xl font-semibold leading-tight">
+                                {title}
+                            </h1>
+                        </div>
+
+                        <form action="#" class="space-y-8">
+                            <div>
+                                <label
+                                    for="Size"
+                                    class="block text-sm mb-2 text-gray-400"
+                                    >Chọn cỡ túi:</label
+                                >
+                                <select
+                                    class="w-full bg-gray-800 border border-gray-600 text-white p-4 rounded-2xl focus:border-violet-500 outline-none"
+                                    name="kraft"
+                                    id="kraft"
+                                >
+                                    <option value="20x10">Túi 20x10</option>
+                                    <option value="20x20">Túi 20x20</option>
+                                    <option value="16x16">Túi 16x16</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label
+                                    for="Mau"
+                                    class="block text-sm mb-2 text-gray-400"
+                                    >Chọn mẫu:</label
+                                >
+                                <select
+                                    class="w-full bg-gray-800 border border-gray-600 text-white p-4 rounded-2xl focus:border-violet-500 outline-none"
+                                    name="mau"
+                                    id="mau"
+                                >
+                                    <option value="cute01">Mẫu Cute 01</option>
+                                    <option value="cute02">Mẫu Cute 02</option>
+                                    <option value="cute03">Mẫu Cute 03</option>
+                                    <option value="cute04">Mẫu Cute 04</option>
+                                    <option value="cute05">Mẫu Cute 05</option>
+                                    <option value="cute06">Mẫu Cute 06</option>
+                                    <option value="cute07">Mẫu Cute 07</option>
+                                    <option value="cute08">Mẫu Cute 08</option>
+                                </select>
+                            </div>
+
+                            <input
+                                type="submit"
+                                value="Đặt túi ngay !"
+                                class="w-full py-5 bg-linear-to-r from-[#781722] to-[#a13a4d] text-white font-bold text-xl rounded-2xl hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
+                            />
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Phần mô tả -->
+                <div
+                    id="description"
+                    class="text-center leading-12 border border-sky-100 rounded-3xl p-8"
+                >
+                    <img
+                        id="background"
+                        src={background.src}
+                        alt=""
+                        fetchpriority="high"
+                    />
+                    <div id="desdate"><p>Cập nhật ngày: {date}</p></div>
+
+                    <div
+                        class="MardownContent flex flex-col justify-center items-center"
+                    >
+                        <slot slot="content" />
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
     <Footer />
 </Layout>
 
 <style is:global>
-	* {
-		font-size: 55;
-	}
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
-.desmig {
-}
-.catName p {
-    color: lightgray;
-    padding: .5rem;
-    font-weight: 500;
-}
-	.mySlides {
-		display: none;
-		position: absolute;
-		height: 100%;
-	}
-
-	.displaySlide {
-		display: block;
-	}
-
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		width: 1440px;
-		max-width: 100%;
-		height: 100%;
-		margin-top: 2vh;
-	}
-
-	h1 {
-		font-size: 2rem;
-		font-weight: 800;
-		margin-top: 0.25em;
-	}
-	h2 {
-		font-size: 1.8rem;
-		margin-top: 0.25em;
-	}
-
-	hr {
-	margin-top: .2rem;
-	margin-left: .2rem;
-	}
-
-	#links {
-		display: flex;
-		gap: 16px;
-	}
-
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
-
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
-
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
-
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
-
-	#preview {
-		position: relative;
-		overflow: hidden;
-		height: 50vh;
-	}
-
-	.button {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.previousbtn {
-		left: 0;
-	}
-	.nextbtn {
-		right: 0;
-	}
-
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
-
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
-
-	h2 {
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
-
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-		text-align: center;
-	}
-
-	#preview img {
-	    width: 30rem;
-		height: auto;
-	}
-
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
-
-	.MardownContent img {
-	    background-color: #bc52ee;
-		width: 50%;
-		margin-top: 1rem;
-		display: flex;
-		margin: auto;
-	}
-	.MardownContent p {
-	font-size: 1.8rem;
-	line-height: 2.2rem;
-	margin-top: 1rem;
-	max-width: 50vw;
-	}
-	.MardownContent hr {
-	    margin: 2rem;
-					border: 0.1rem solid black;
-					width: 55%;
-	}
-
-	@media screen and (max-height: 368px) {
-		/*#news {
-			display: none;
-		}*/
-	}
-
-	@media screen and (max-width: 768px) {
-	.MardownContent p {
-	font-size: 1.2rem;
-	line-height: 2.2rem;
-	margin-top: 1rem;
-	max-width: 90vw;
-	}
-	* {
-	border-radius: .4rem;
-	}
-		#preview {
-			min-height: 90vw;
-			transition: all 0.35s;
-			background-color: slategrey;
-		}
-		/*#container {
-			display: flex;
-			flex-direction: column;
-		}*/
-
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-/*
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-*/
-		h1 {
-			line-height: 1.2;
-			font-size: 2rem;
-		}
-	}
-	@media screen and (max-width: 600px) {
-		#desimg {
-			display: flex;
-			flex-direction: column;
-		}
-	}
-</style>
-
-
-
-
-<script>
-
-//Javascript Slider
-// Source - https://stackoverflow.com/a/58773720
-// Posted by Jonas Wilms, modified by community. See post 'Timeline' for change history
-// Retrieved 2026-05-02, License - CC BY-SA 4.0
-/*
-var slideIndex = 0;
-showDivs();
-
-// Get the button:
-let mybutton = document.getElementById("demo");
-
-mybutton!.onclick = function() {currentDivs()};
-
-function plusDivs() {
-	slideIndex++;
-	showDivs()
-}
-
-function currentDivs() {
-  slideIndex--;
-  showDivs()
-}
-
-function showDivs() {
-  let i;
-  let x = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
-
-
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  slideIndex++;
-
-  if (slideIndex > x.length) {
-        slideIndex = 1;
+    #container {
+        font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+        width: 1440px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding-top: 2vh;
     }
 
-    x[slideIndex - 1].style.display = "block";
+    .catName p {
+        color: lightgray;
+        padding: 0.5rem;
+        font-weight: 500;
+    }
 
-    setTimeout(showDivs, 2000);
-}
-*/
-/// Build with brocode yt
+    #background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        filter: blur(100px);
+    }
 
-const slides = document.querySelectorAll(".mySlides");
-let slideIndex = 0;
-let intervalId: null | ReturnType<typeof setInterval> = null;
+    /* Responsive Grid */
+    @media (max-width: 1023px) {
+        #desimg {
+            gap: 3rem;
+        }
+    }
 
-let nextbtn = document.getElementById("nextbtn");
-let prebtn = document.getElementById("prebtn");
-// initializeSlider()
-document.addEventListener("DOMContentLoaded", initializeSlider);
+    .MardownContent img {
+        width: 50%;
+        margin: 1.5rem auto;
+        border-radius: 12px;
+    }
 
-function initializeSlider(){
-	if (slides.length > 0){
-		slides[slideIndex].classList.add("displaySlide");
-		intervalId = setInterval(nextSlide, 5000);
-	}
-}
+    .MardownContent p {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        max-width: 65ch;
+        margin: 1rem auto;
+    }
 
-nextbtn!.onclick = function() {nextSlide()};
-prebtn!.onclick = function() {prevSlide()};
-
-function showSlide(index){
-
-	if (index >= slides.length) {
-		slideIndex = 0;
-	}
-	else if (index < 0) {
-		slideIndex = slides.length - 1;
-	}
-
-	slides.forEach(slide => {
-		slide.classList.remove("displaySlide");
-	});
-	slides[slideIndex].classList.add("displaySlide");
-
-}
-
-function prevSlide(){
-	slideIndex--;
-	showSlide(slideIndex);
-}
-
-function nextSlide(){
-	slideIndex++;
-	showSlide(slideIndex);
-}
-
-</script>
+    @media (max-width: 768px) {
+        .MardownContent p {
+            font-size: 1rem;
+            max-width: 90vw;
+        }
+    }
+</style>
