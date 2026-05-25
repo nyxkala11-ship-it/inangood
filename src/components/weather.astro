@@ -1,52 +1,56 @@
 ---
-import { CloudAlert } from "@lucide/astro";
+export const prerender = false;
+
+const city = "Bac_Lieu";
+let weatherText = "Đang tải...";
+let iconWeather = "🌦️"; // Icon mặc định
+let error = false;
+
+try {
+    const weatherUrl = `https://wttr.in/${encodeURIComponent(city)}?format=j1`;
+
+    const response = await fetch(weatherUrl, {
+        headers: {
+            "User-Agent": "Mozilla/5.0 (compatible; Astro/1.0)",
+        },
+        cache: "no-store",
+    });
+
+    if (!response.ok) throw new Error();
+
+    const data = await response.json();
+
+    const area = data.nearest_area?.[0]?.areaName?.[0]?.value || "BẠC LIÊU";
+    const temp = data.current_condition?.[0]?.temp_C || "--";
+    const desc =
+        data.current_condition?.[0]?.lang_vi?.[0]?.value ||
+        data.current_condition?.[0]?.weatherDesc?.[0]?.value ||
+        "";
+
+    // Lấy icon (wttr.in trả về URL icon)
+    const iconUrl = data.current_condition?.[0]?.weatherIconUrl?.[0]?.value;
+
+    weatherText = `${area}: ${temp}°C`; // ${desc}
+
+    if (iconUrl) {
+        iconWeather = iconUrl; // Đây là URL ảnh
+    }
+} catch (e) {
+    console.error("Weather error:", e);
+    weatherText = "❌ Lỗi thời tiết";
+    error = true;
+}
 ---
 
-<div class="TERM-CONTAINER text-[.8rem] font-bold flex flex-col items-center">
+<div class="TERM-CONTAINER flex items-center gap-2">
+    <img
+        src={iconWeather}
+        alt="weather icon"
+        width="28"
+        height="28"
+        class="inline"
+    />
+    <p class={`text-[.8rem] font-bold ${error ? "text-red-500" : ""}`}>
+        {weatherText.toUpperCase()}
+    </p>
 </div>
-
-<script>
-    // Hàm lấy thời tiết từ JSON
-    async function getWeather() {
-        const city = "Bạc_Liêu";
-        const originalUrl = `https://wttr.in/${city}?format=j1`;
-
-        // Sử dụng CORS Proxy
-        const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(originalUrl)}`;
-
-        try {
-            const response = await fetch(proxyUrl);
-
-            if (!response.ok) throw new Error("Không lấy được dữ liệu");
-
-            const data = await response.json();
-            console.log(JSON.stringify(data, null, 2));
-            // Lấy thông tin thời tiết
-            const area = data.nearest_area[0]?.areaName[0]?.value || "BẠC LIÊU";
-            const temp = data.current_condition[0]?.temp_C || "--";
-            const icon =
-                data.current_condition[0]?.weatherIconUrl?.[0].value || "";
-            const desc =
-                data.current_condition[0]?.lang_vi?.[0]?.value ||
-                data.current_condition[0]?.weatherDesc?.[0]?.value ||
-                "N/A";
-
-            const weatherText = `<img src=${icon} class="block h-2 w-2" /> <div class="block weather-wid">${area}: ${temp}°C<div>`;
-
-            // Chèn vào div
-            const container = document.querySelector(".TERM-CONTAINER");
-            if (container) {
-                container.innerHTML = `<p class="text-[.8rem] font-bold">${weatherText.toUpperCase()}</p>`;
-            }
-        } catch (error) {
-            console.error("Lỗi:", error);
-            const container = document.querySelector(".TERM-CONTAINER");
-            if (container) {
-                container.innerHTML = `<p class="text-[.8rem] font-bold text-red-500">❌ LỖI THỜI TIẾT</p>`;
-            }
-        }
-    }
-
-    // Chạy khi trang load
-    document.addEventListener("DOMContentLoaded", getWeather);
-</script>
