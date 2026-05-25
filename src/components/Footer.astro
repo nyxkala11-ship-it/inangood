@@ -10,11 +10,11 @@ import ImgThu from "../assets/salers/thu.png";
     <div class="max-w-360 mx-auto">
         <!-- Top Bar - Dark background -->
         <div class="bg-[#5c1420] border-b-4 border-[#781722]">
-            <div class="px-4 lg:px-8 pt-6 pb-8">
+            <div class="px-2 lg:px-3 pt-2 pb-8">
                 <!-- Inbox Button -->
                 <div
                     id="ibnow"
-                    class="inline-flex items-center gap-3 bg-linear-to-r from-red-800 to-red-600 text-white px-6 py-4 rounded-2xl border-2 border-orange-200 hover:scale-105 transition-transform cursor-pointer shadow-xl"
+                    class="inline-flex items-center gap-3 bg-linear-to-r from-red-800 to-red-600 text-white px-3 py-2 rounded-xl border border-orange-200 hover:scale-105 transition-transform cursor-pointer shadow-xl"
                 >
                     <BaggageClaim size={34} />
                     <h5 class="text-xl font-semibold flex items-center gap-2">
@@ -38,7 +38,7 @@ import ImgThu from "../assets/salers/thu.png";
                             alt="Chị Tâm"
                         />
                         <p
-                            class="inline-block p-3 pr-5 rounded-r-4xl border-y border-r border-orange-200 translate-x-[-0.8rem]"
+                            class="hotlinecard inline-block p-3 pr-5 rounded-r-4xl border-y border-r border-orange-200 translate-x-[-0.8rem]"
                         >
                             Hotline:
                             <a href="https://zalo.me/0789471752" target="_blank"
@@ -55,7 +55,7 @@ import ImgThu from "../assets/salers/thu.png";
                             alt="Chị Truyền"
                         />
                         <p
-                            class="inline-block p-3 pr-5 rounded-r-4xl border-y border-r border-orange-200 translate-x-[-0.8rem]"
+                            class="hotlinecard inline-block p-3 pr-5 rounded-r-4xl border-y border-r border-orange-200 translate-x-[-0.8rem]"
                         >
                             Hotline:
                             <a href="https://zalo.me/0775964752" target="_blank"
@@ -72,7 +72,7 @@ import ImgThu from "../assets/salers/thu.png";
                             alt="chị Thư"
                         />
                         <p
-                            class="inline-block p-3 pr-5 rounded-r-4xl border-y border-r border-orange-200 translate-x-[-0.8rem]"
+                            class="hotlinecard inline-block p-3 pr-5 rounded-r-4xl border-y border-r border-orange-200 translate-x-[-0.8rem]"
                         >
                             Hotline:
                             <a href="https://zalo.me/0901036457" target="_blank"
@@ -221,7 +221,11 @@ import ImgThu from "../assets/salers/thu.png";
         color: #ffeb3b;
         font-weight: 700;
     }
-
+    .hotlinecard {
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        border-radius: 1rem;
+    }
     .hotline-item a:hover {
         color: white;
         text-decoration: underline;
@@ -240,10 +244,20 @@ import ImgThu from "../assets/salers/thu.png";
             flex-direction: column;
             text-align: center;
             gap: 8px;
+            padding: 0 !important;
         }
 
         .hotline-item p {
             font-size: 1.2rem;
+        }
+
+        .hotlinecard {
+            border-radius: 1rem;
+            border: solid 0.1rem;
+            margin: 0 !important;
+            transform: translateX(0.8rem);
+            padding-bottom: 0.3rem;
+            padding-top: 0.2rem;
         }
     }
 </style>

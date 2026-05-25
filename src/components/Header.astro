@@ -1,12 +1,14 @@
 ---
 import "../styles/global.css";
 import MenuDynamics from "../layouts/MenuDynamics.astro";
+import ThoiTiet from "../components/weather.astro";
 import { Image } from "astro:assets";
 ---
 
 <div class="flex-col max-w-10/10" id="container-head">
     <div id="header" class="flex-col items-center">
         <!-- Top bar -->
+
         <div class="header">
             <ul
                 class="flex flex-row-reverse justify-start place-items-center py-2 items-center"
@@ -18,7 +20,7 @@ import { Image } from "astro:assets";
                     <div
                         class="px-4 py-[0.2]
                         bg-linear-95 from-red-400 to-red-200
-                        rounded-2xl border-[0.05rem] border-solid text-center"
+                        rounded-xl border text-center"
                     >
                         <a href="/about" class="text-xl my-1 text-center"
                             >Về chúng tôi<a
@@ -28,6 +30,7 @@ import { Image } from "astro:assets";
                         >
                     </div>
                 </div>
+
                 <div id="li-hai" class="pl-1">
                     <pre class="inline">CSKH: </pre><div
                         id="link-social"
@@ -61,6 +64,10 @@ import { Image } from "astro:assets";
                             >0901 036 457</a
                         >
                     </div>
+                </div>
+
+                <div class="weather px-3">
+                    <ThoiTiet />
                 </div>
             </ul>
         </div>
@@ -227,7 +234,7 @@ import { Image } from "astro:assets";
             width: 8rem;
         }
         .goodTitle .goodtitle img {
-            width: 45vh !important;
+            width: 85vw !important;
         }
         .onlyMobile {
             display: inline-block;
@@ -283,9 +290,16 @@ import { Image } from "astro:assets";
         #li-hai {
             width: 100%;
         }
+        .weather {
+            position: absolute;
+            right: 0.01rem;
+            top: 3rem;
+        }
         li a {
         }
         #div-search {
+            padding: 0 0.5rem;
+            margin-inline: auto;
         }
         #MenuSearch[type="text"] {
             left: 0;

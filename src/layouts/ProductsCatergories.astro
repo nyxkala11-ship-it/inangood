@@ -71,7 +71,7 @@ console.log(images);
                 {}
                 <div
                     id="description"
-                    class="text-center border-solid rounded-xl border-sky-100 p-5"
+                    class="text-center border-solid rounded-xl border-sky-100"
                 >
                     <img
                         id="background"
@@ -80,16 +80,35 @@ console.log(images);
                         fetchpriority="high"
                     />
                     <!-- <div id="desdate"><p>"Cập nhật ngày:" {date}</p></div> -->
-                    <div class="">
-                    <slot slot="content" />
-                    </div>
+
                     <!-- Slot cho content! -->
-                    <div class="bg-orange-300 flex flex-col items-start pl-2">
+                    <div class="flex flex-col items-start mt-12">
                     {
                       allProducts.filter(element => element.data.parent === catergory).map(element =>
-                      <a href=`/products/${element.data.id}` class="p-2">{element.data.title}</a>
+                      <a href=`/products/${element.data.id}` class="
+                      bg-[#78172210]
+                      p-6 m-2 pl-8
+                      w-full
+                      mx-auto
+                      text-left
+                      shadow-xl shadow-olive-300
+                      transition-all
+                      hover:shadow-xs hover:shadow-olive-400 hover:translate-y-0.75
+                      rounded-2xl
+                      border-zinc-100 border
+                      caterogy
+                      ">
+                          {element.data.title}
+                      </a>
                       <br />
                       )}
+                    </div>
+                    <div
+                        class="mx-auto
+                        text-left
+                    MardownContent flex flex-col lg:max-w-[55vw]"
+                    >
+                    <slot slot="content" />
                     </div>
                 </div>
             </div>
@@ -196,6 +215,8 @@ console.log(images);
         box-shadow: none;
     }
 
+
+
     pre {
         font-family:
             ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
@@ -244,7 +265,6 @@ console.log(images);
             display: none;
         }
     }
-
     @media screen and (max-width: 768px) {
         #container {
             display: flex;

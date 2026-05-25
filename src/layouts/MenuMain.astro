@@ -22,7 +22,7 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
 
 
 <!-- Main Menu <Debug {products} />-->
-    
+
      <div class="flex flex-col items-center">
 
             <div id="Menu" class="items-center shadow-xl">
@@ -32,15 +32,15 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
                     <p class="inline pl-2">Menu</p>
                 </button>
                 <ul id="MenuCom" class="flex items-start flex-wrap">
-					
+
                     <!-- Trang chủ -->
                     <li id="Menu-items-tt">
 						<a href="/">
 							Trang chủ (Dynamics)
 						</a>
 					</li>
-                    {ProductsCol.filter(product => product.data.parent === 'none').map((product) => 
-                        
+                    {ProductsCol.filter(product => product.data.parent === 'none').map((product) =>
+
                         <ul id={product.data.index} class={`${product.data.catergory} drophover Menu-items parent`}>
                             <a href={`/products/${product.id}`} class={`menitext`} id={product.data.index}>
                                     {product.data.title}
@@ -49,11 +49,12 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
                             <!-- parent nếu có -->
                             <ul class="bg-sky-500 drop">
                                 {ProductsCol.filter(productsub => productsub.data.parent === product.data.catergory).map(
-                                    productsub => 
+                                    productsub =>
                                     productsub.data.parent === product.data.catergory ?
-                                        <li id={product.data.catergory} class={`${productsub.data.catergory} menitext flex min-w-[240px] flex-col gap-1 p-1.5 child`}>                                            <a href={`/products/${productsub.id}`}>
+                                        <li id={product.data.catergory} class={`${productsub.data.catergory} menitext flex min-w-60 flex-col gap-1 p-1.5 child`}>
+                                            <a href={`/products/${productsub.id}`}>
                                                 <a href={`/products/${productsub.id}`}>{productsub.data.title}</a>
-                                                    
+
                                                 </a>
                                         </li> : null
                                 )}
@@ -61,15 +62,15 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
                         </ul>
                             )
                             }
-                    
+
                 </ul>
 
-            </div> 
-	
+            </div>
+
     </div>
 
 <style>
-    
+
     #Menu {
         width: 1440px;
         max-width: 100%;
@@ -93,7 +94,7 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
     #Menu-items-tt a {
             font-size: 1.3rem;
     }
-    
+
     .drophover {
         display: inline-block;
         float: left;
@@ -110,7 +111,7 @@ console.log(`Sort1 la: ${ProductsCol.map(pro => pro.data.index)}`);
         transition: .35s, display .45s;
         cursursor: pointer;
     }
-    
+
     .drophover:hover .drop{
         margin-top: 7pt;
         margin-left: -7pt;
@@ -219,7 +220,7 @@ document.addEventListener("DOMContentLoaded", sortList);
         parentuldrop = document.getElementsByTagName("li"); // Tất cả danh mục dung menuCom
         child = parent.getElementsByTagName("li");
         // lọc qua danh sách, nếu có class name giống với class parent-parent thì add vô parent
-        
+
         console.log(`ParentUL ${parentul.length}`);
 
         for (i = 0; i < parentul.length; i++) {
@@ -274,7 +275,7 @@ document.addEventListener("DOMContentLoaded", sortList);
                     }
                 }
                 }
-            
+
         }
     }
     }

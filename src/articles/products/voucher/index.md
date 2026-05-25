@@ -43,11 +43,8 @@ Voucher (phiếu quà tặng / phiếu giảm giá) là công cụ marketing m�
 Voucher là phiếu có giá trị quy đổi (giảm giá hoặc quà tặng), thường được sử dụng trong:
 
 - Khuyến mãi, khai trương
-    
 - Chương trình tri ân khách hàng
-    
 - Quà tặng sự kiện, lễ Tết
-    
 
 👉 Đây là “đòn bẩy” giúp tăng tỷ lệ chuyển đổi cực kỳ hiệu quả.
 
@@ -58,23 +55,17 @@ Voucher là phiếu có giá trị quy đổi (giảm giá hoặc quà tặng), 
 ### 💰 Tăng Doanh Thu Nhanh
 
 - Kích thích khách hàng quay lại
-    
 - Thúc đẩy quyết định mua hàng
-    
 
 ### 🎁 Tạo Trải Nghiệm Tặng Quà
 
 - Dùng làm quà tặng khách hàng
-    
 - Tăng sự hài lòng & thiện cảm
-    
 
 ### 📣 Công Cụ Marketing Hiệu Quả
 
 - Quảng bá thương hiệu rộng rãi
-    
 - Dễ dàng lan truyền qua khách hàng
-    
 
 ---
 
@@ -83,20 +74,14 @@ Voucher là phiếu có giá trị quy đổi (giảm giá hoặc quà tặng), 
 ### 📏 Kích Thước Phổ Biến
 
 - 7 x 15 cm (phổ biến)
-    
 - 10 x 20 cm
-    
 - Tùy chỉnh theo yêu cầu
-    
 
 ### 📄 Chất Liệu
 
 - Giấy Couche (in đẹp, phổ biến)
-    
 - Giấy Ivory (cứng, cao cấp)
-    
 - Giấy mỹ thuật (độc đáo, sang trọng)
-    
 
 ---
 
@@ -105,41 +90,27 @@ Voucher là phiếu có giá trị quy đổi (giảm giá hoặc quà tặng), 
 ### 🎨 Phong Cách Thiết Kế
 
 - Sang trọng – cao cấp
-    
 - Trẻ trung – nổi bật
-    
 - Tối giản – hiện đại
-    
 
 ### 🖨️ Gia Công Tăng Giá Trị
 
 - Ép kim vàng/bạc ✨
-    
 - Dập nổi logo
-    
 - Phủ UV định vị
-    
 - Cán màng mờ / bóng
-    
 - Bế răng cưa (dễ xé)
-    
 
 ---
 
 ## 📋 Nội Dung Trên Voucher
 
 - Logo & tên thương hiệu
-    
 - Giá trị voucher (VD: 50K, 20%, …)
-    
 - Thời hạn sử dụng
-    
 - Điều kiện áp dụng
-    
 - Mã code / serial
-    
 - Thông tin liên hệ
-    
 
 ---
 
@@ -156,26 +127,18 @@ Voucher là phiếu có giá trị quy đổi (giảm giá hoặc quà tặng), 
 ## 🎯 Ứng Dụng Thực Tế
 
 - Shop thời trang, mỹ phẩm
-    
 - Spa, salon, nail
-    
 - Nhà hàng, quán café
-    
 - Trung tâm dịch vụ, giáo dục
-    
 
 ---
 
 ## 💡 Gợi Ý Sử Dụng Hiệu Quả
 
 - Tặng kèm đơn hàng
-    
 - Phát tại sự kiện, khai trương
-    
 - Kết hợp combo (voucher + card + túi)
-    
 - Tạo chương trình “giới thiệu bạn bè”
-    
 
 ---
 

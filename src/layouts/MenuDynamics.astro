@@ -1,7 +1,7 @@
 ---
 // src/components/Menu.astro
 import { getCollection } from "astro:content";
-import { GripVerticalIcon, HomeIcon, LogsIcon, X } from "@lucide/astro";
+import { GripVerticalIcon, Home, LogsIcon, X } from "@lucide/astro";
 
 const allProducts = await getCollection("blogCollection");
 
@@ -48,7 +48,7 @@ sortedProducts.forEach((product) => {
 const rootMenus = Array.from(categoryMap.values());
 ---
 
-<nav class="menu-container max-w-360 mx-auto px-4">
+<nav class="menu-container max-w-360 mx-auto">
     <!-- Desktop + Mobile Container -->
     <div class="flex items-center justify-between">
         <!-- Main Menu -->
@@ -76,7 +76,7 @@ const rootMenus = Array.from(categoryMap.values());
                         {item.children.length > 0 && (
                             <ul class="dropdown-menu">
                                 {item.children.map((child) => (
-                                    <li key={child.id}>
+                                    <li>
                                         <a href={child.slug}>{child.title}</a>
                                     </li>
                                 ))}
@@ -93,7 +93,7 @@ const rootMenus = Array.from(categoryMap.values());
                 <LogsIcon size={28} />
             </button>
             <a href="/" class="mobile-home-btn">
-                <HomeIcon size={28} />
+                <Home size={28} />
             </a>
         </div>
 
@@ -181,10 +181,18 @@ const rootMenus = Array.from(categoryMap.values());
         display: flex;
         align-items: center;
         gap: 6px;
+        transition: all 0.35s;
+    }
+
+    .menu-item:hover:after {
+        width: 100%;
+        left: 0;
+        background-color: #00fffc;
     }
 
     .menu-item:hover {
-        color: #781722;
+        background-color: #781722;
+        color: #fff;
     }
 
     /* Dropdown Desktop */
@@ -222,13 +230,13 @@ const rootMenus = Array.from(categoryMap.values());
     /* ==================== MOBILE APP NAVBAR ==================== */
     .mobile-navbar {
         position: fixed;
-        bottom: 16px;
+        bottom: 0.8rem;
         left: 50%;
         transform: translateX(-50%);
         background: rgba(255, 255, 255, 0.96);
         backdrop-filter: blur(20px);
         border-radius: 9999px;
-        padding: 10px 28px;
+        padding: 0.4rem 1.2rem;
         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
         z-index: 999;
         display: flex;
@@ -246,6 +254,8 @@ const rootMenus = Array.from(categoryMap.values());
         justify-content: center;
         border-radius: 50%;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
     }
 
     .mobile-btn:active {

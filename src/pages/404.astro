@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+    <Header />
+    <div class="notfound mx-auto my-auto p-6 font-bold">
+        <p class="mx-auto my-auto">Trang chưa hỗ trợ</p>
+        Lỗi tìm kiếm 404!
+    </div>
+    <Footer />
+</Layout>
+
+<style>
+    .notfound {
+        height: 20vw;
+        font-size: 3rem;
+    }
+</style>
