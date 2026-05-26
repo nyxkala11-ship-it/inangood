@@ -1,0 +1,86 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+    const products = await getCollection("blogCollection");
+
+    // Lấy tất cả tags và loại bỏ trùng
+    const allTags = products.flatMap((product) => product.data.tags || []);
+    const uniqueTags = [...new Set(allTags)];
+
+    return uniqueTags.map((search) => {
+        const filteredPosts = products.filter((product) =>
+            product.data.tags?.includes(search),
+        );
+
+        return {
+            params: { search: search.toLowerCase().replace(/\s+/g, "-") },
+            props: {
+                search: search,
+                products: filteredPosts,
+            },
+        };
+    });
+}
+
+const { search } = Astro.params;
+const { products } = Astro.props;
+---
+
+<Layout>
+    <Header />
+    <div class="max-w-360 mx-auto w-full my-15">
+        <h1 class="mx-auto">
+            Các dịch vụ có từ khóa: <strong class="tag-item">#{search}</strong>
+        </h1>
+
+        <ul class="tags flex flex-wrap">
+            {
+                products.map((product) => (
+                    <li class="my-2 mx-2 w-auto">
+                        <a
+                            class="
+                                block
+                                bg-[#78172210]
+                                p-6 pl-8
+                                text-left
+                                shadow-xl shadow-olive-300
+                                transition-all
+                                hover:shadow-xs hover:shadow-olive-400 hover:translate-y-0.75
+                                rounded-2xl
+                                border-zinc-100 border
+                                caterogy
+                                "
+                            href={`/products/${product.id}`}
+                        >
+                            {product.data.title}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+    <Footer />
+</Layout>
+
+<style>
+    .tag-item {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #781722, #a13a4d);
+        color: white;
+        padding: 0.13rem 0.9rem 0.35rem 0.8rem;
+        border-radius: 9999px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 15px rgba(120, 23, 34, 0.2);
+        white-space: nowrap;
+        cursor: pointer;
+    }
+</style>

@@ -58,14 +58,12 @@ const option: Options = {
 
 const RootCatList = Array.from(catergory);
 console.log(images);
-//import { getEntry, render } from 'astro:content';
-//const products = Object.values(import.meta.glob(, {eager: true }));
 ---
 
 <Layout>
     <BaseHead />
     <body>
-        <main class="flex flex-col items-center w-full">
+        <main class="flex flex-col items-center w-full my-15">
             <div class="text-2xl p-4" id="container">
                 <p>Danh mục: {parent === "none" ? catergory : parent}</p>
                 {}
@@ -73,15 +71,13 @@ console.log(images);
                     id="description"
                     class="text-center border-solid rounded-xl border-sky-100"
                 >
+                    <slot slot="content" />
                     <img
                         id="background"
                         src={background.src}
                         alt=""
                         fetchpriority="high"
                     />
-                    <!-- <div id="desdate"><p>"Cập nhật ngày:" {date}</p></div> -->
-
-                    <!-- Slot cho content! -->
                     <div class="flex flex-col items-start mt-12">
                     {
                       allProducts.filter(element => element.data.parent === catergory).map(element =>
@@ -108,7 +104,7 @@ console.log(images);
                         text-left
                     MardownContent flex flex-col lg:max-w-[55vw]"
                     >
-                    <slot slot="content" />
+
                     </div>
                 </div>
             </div>
@@ -304,50 +300,6 @@ console.log(images);
 </style>
 
 <script>
-    //Javascript Slider
-    // Source - https://stackoverflow.com/a/58773720
-    // Posted by Jonas Wilms, modified by community. See post 'Timeline' for change history
-    // Retrieved 2026-05-02, License - CC BY-SA 4.0
-    /*
-var slideIndex = 0;
-showDivs();
-
-// Get the button:
-let mybutton = document.getElementById("demo");
-
-mybutton!.onclick = function() {currentDivs()};
-
-function plusDivs() {
-	slideIndex++;
-	showDivs()
-}
-
-function currentDivs() {
-  slideIndex--;
-  showDivs()
-}
-
-function showDivs() {
-  let i;
-  let x = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
-
-
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  slideIndex++;
-
-  if (slideIndex > x.length) {
-        slideIndex = 1;
-    }
-
-    x[slideIndex - 1].style.display = "block";
-
-    setTimeout(showDivs, 2000);
-}
-*/
-    /// Build with brocode yt
-
     const slides = document.querySelectorAll(".mySlides");
     let slideIndex = 0;
     let intervalId: null | ReturnType<typeof setInterval> = null;

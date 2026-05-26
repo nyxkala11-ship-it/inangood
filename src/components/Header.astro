@@ -3,6 +3,7 @@ import "../styles/global.css";
 import MenuDynamics from "../layouts/MenuDynamics.astro";
 import ThoiTiet from "../components/weather.astro";
 import { Image } from "astro:assets";
+import { Search } from "@lucide/astro";
 ---
 
 <div class="flex-col max-w-10/10" id="container-head">
@@ -93,24 +94,33 @@ import { Image } from "astro:assets";
                 </a>
             </div>
             <!-- menu-header -->
-            <div
-                id="div-search"
-                class="grow place-content-center h-auto w-auto"
+            <form
+                id="form-search"
+                class="flex items-stretch grow place-content-center content-center h-auto w-auto"
             >
                 <!-- Thanh tìm kiếm -->
                 <input
-                    class="rounded-[3rem]"
+                    class="rounded-[3rem] flex-1 px-4 focus:outline-none"
                     id="MenuSearch"
                     type="text"
-                    placeholder="Tìm dịch vụ, sản phẩm"
+                    placeholder="Tìm ấn phẩm, dịch vụ"
+                    required
                 />
-            </div>
-
+                <button
+                    id="searchBtn"
+                    type="submit"
+                    class="inline px-3 self-center my-auto"
+                >
+                    <Search size={35} color="#fff" />
+                </button>
+            </form>
             <div class="sloganDiv grid grid-cols-2 mx-auto">
                 <card
                     class="sloganCard items-center flex align-middle p-3 col-span1"
                 >
-                    <p>Bao bì túi giấy đẹp<br /> in trọn gói tại 1 nơi</p>
+                    <p>
+                        Bao bì túi giấy đẹp<br /> in trọn gói tại 1 nơi
+                    </p>
                 </card>
                 <card
                     class="sloganCard items-center flex align-middle p-3 col-span-1"
@@ -120,8 +130,8 @@ import { Image } from "astro:assets";
             </div>
         </div>
     </div>
-    <MenuDynamics />
 </div>
+<MenuDynamics />
 
 <style>
     .goodTitle a img {
@@ -291,22 +301,33 @@ import { Image } from "astro:assets";
             width: 100%;
         }
         .weather {
-            position: absolute;
-            right: 0.01rem;
-            top: 3rem;
+            color: #000;
+            position: fixed;
+            right: 0.1rem;
+            top: 2.3rem;
+            background-color: #ffffff40;
+            padding: 0.2rem;
+            padding-bottom: 0.2rem;
+            padding-top: 0.5`rem;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 0.1rem solid white;
+            border-radius: 1rem;
+            z-index: 998;
         }
         li a {
         }
-        #div-search {
+        #form-search {
             padding: 0 0.5rem;
             margin-inline: auto;
+            flex-grow: 0;
+            width: 80vw;
         }
         #MenuSearch[type="text"] {
             left: 0;
             display: flex;
             position: static;
-            //padding: 0;
-            margin: 0;
+            flex-grow: 1;
         }
         .sloganDiv {
             display: flex;
@@ -334,3 +355,25 @@ import { Image } from "astro:assets";
         }
     }
 </style>
+
+<script>
+    const formSearch = document.getElementById("form-search");
+    const searchInput = document.getElementById(
+        "MenuSearch",
+    ) as HTMLInputElement;
+
+    formSearch?.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const query = searchInput?.value.trim();
+
+        if (!query) {
+            alert("Vui lòng nhập từ khóa tìm kiếm!");
+            searchInput?.focus();
+            return;
+        }
+
+        // Chuyển hướng đến trang search với query string
+        window.location.href = `/search/${encodeURIComponent(query)}`;
+    });
+</script>
