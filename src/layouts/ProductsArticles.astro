@@ -68,10 +68,15 @@ const previewImages = processedImages?.slice(0, 10) || [];
         <main class="flex flex-col items-center w-full">
             <div class="text-2xl" id="container">
                 <!-- Danh mục -->
-                <div class="bg-gray-900 catName mb-6">
+                <div class="bg-gray-900 catName mb-3">
                     <p>Danh mục: {parent === "none" ? catergory : parent}</p>
                 </div>
 
+                <div class="mb-8">
+                    <h1 class="text-5xl font-semibold leading-tight">
+                        {title}
+                    </h1>
+                </div>
                 <!-- Preview + Form -->
                 <div
                     id="desimg"
@@ -119,12 +124,6 @@ const previewImages = processedImages?.slice(0, 10) || [];
                     <!-- CHỌN QUY CÁCH -->
                     <div class="p-8 rounded-3xl border border-gray-700">
                         <h2 class="text-3xl font-bold mb-6">Chọn quy cách</h2>
-
-                        <div class="mb-8">
-                            <h1 class="text-2xl font-semibold leading-tight">
-                                {title}
-                            </h1>
-                        </div>
 
                         <form action="#" class="space-y-8">
                             <div>
@@ -178,7 +177,7 @@ const previewImages = processedImages?.slice(0, 10) || [];
                 <!-- Phần mô tả -->
                 <div
                     id="description"
-                    class="text-center leading-12 border border-sky-100 rounded-3xl p-8"
+                    class="text-center leading-12 border border-sky-100 rounded-3xl p-8 mb-8"
                 >
                     <img
                         id="background"
@@ -186,16 +185,16 @@ const previewImages = processedImages?.slice(0, 10) || [];
                         alt=""
                         fetchpriority="high"
                     />
-                    <div id="desdate" class="text-[.8rem]">
-                        <p>Cập nhật ngày: {date}</p>
-                    </div>
 
                     <div
-                        class="mx-auto
+                        class="mx-auto mb-4
                         text-left
                     MardownContent flex flex-col lg:max-w-[55vw]"
                     >
                         <slot />
+                    </div>
+                    <div id="desdate" class="text-[.8rem] pb-2">
+                        <p>Cập nhật ngày: {date}</p>
                     </div>
                 </div>
             </div>
@@ -215,7 +214,7 @@ const previewImages = processedImages?.slice(0, 10) || [];
     .catName p {
         color: lightgray;
         padding: 0.5rem;
-        font-weight: 500;
+        font-weight: 400;
     }
 
     #background {
@@ -240,11 +239,29 @@ const previewImages = processedImages?.slice(0, 10) || [];
         border-radius: 12px;
     }
 
-    .MardownContent h1 {
-        margin-bottom: 5rem;
-        font-size: 3rem;
+    .MardownContent p,
+    .MardownContent a,
+    .MardownContent li {
+        text-align: left;
+        font-size: 1.2rem;
+        padding-bottom: 0.2rem;
     }
 
+    .MardownContent h1 {
+        margin-bottom: 5rem;
+        font-size: 2rem;
+    }
+
+    .MardownContent h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .MardownContent h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: lightcoral;
+    }
     .MardownContent hr {
         border: 0.1rem darkviolet;
         border-style: dashed none none none;

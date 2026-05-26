@@ -1,7 +1,7 @@
 ---
 export const prerender = false;
 
-const city = "Bac_Lieu";
+const city = "Bac Lieu";
 let weatherText = "Đang tải...";
 let iconWeather = "🌦️"; // Icon mặc định
 let error = false;
@@ -37,20 +37,20 @@ try {
     }
 } catch (e) {
     console.error("Weather error:", e);
-    weatherText = "❌ Lỗi thời tiết";
+    weatherText = "❌ Lỗi lấy dữ liệu thời tiết";
     error = true;
 }
 ---
 
-<div class="TERM-CONTAINER flex items-center gap-2">
+<div class="TERM-CONTAINER flex flex-col max-sm:flex-row items-center gap-2">
     <img
         src={iconWeather}
         alt="weather icon"
-        width="28"
-        height="28"
-        class="inline"
+        width="38"
+        height="38"
+        class="block rounded-xl sticky"
     />
-    <p class={`text-[.8rem] font-bold ${error ? "text-red-500" : ""}`}>
+    <p class={`text-[.6rem] font-bold ${error ? "text-red-500" : ""}`}>
         {weatherText.toUpperCase()}
     </p>
 </div>

@@ -67,44 +67,47 @@ console.log(images);
             <div class="text-2xl p-4" id="container">
                 <p>Danh mục: {parent === "none" ? catergory : parent}</p>
                 {}
+                <div class="flex flex-col items-start mt-12 mb-8">
+                {
+                  allProducts.filter(element => element.data.parent === catergory).map(element =>
+                  <a href=`/products/${element.data.id}` class="
+                  bg-[#78172210]
+                  p-6 m-2 pl-8
+                  w-full
+                  mx-auto
+                  text-left
+                  shadow-xl shadow-olive-300
+                  transition-all
+                  hover:shadow-xs hover:shadow-olive-400 hover:translate-y-0.75
+                  rounded-2xl
+                  border-zinc-100 border
+                  caterogy
+                  ">
+                      {element.data.title}
+                  </a>
+                  )}
+                </div>
+                <!-- Phần mô tả -->
                 <div
                     id="description"
-                    class="text-center border-solid rounded-xl border-sky-100"
+                    class="text-center leading-12 border border-sky-100 rounded-3xl p-8"
                 >
-                    <slot slot="content" />
                     <img
                         id="background"
                         src={background.src}
                         alt=""
                         fetchpriority="high"
                     />
-                    <div class="flex flex-col items-start mt-12">
-                    {
-                      allProducts.filter(element => element.data.parent === catergory).map(element =>
-                      <a href=`/products/${element.data.id}` class="
-                      bg-[#78172210]
-                      p-6 m-2 pl-8
-                      w-full
-                      mx-auto
-                      text-left
-                      shadow-xl shadow-olive-300
-                      transition-all
-                      hover:shadow-xs hover:shadow-olive-400 hover:translate-y-0.75
-                      rounded-2xl
-                      border-zinc-100 border
-                      caterogy
-                      ">
-                          {element.data.title}
-                      </a>
-                      <br />
-                      )}
-                    </div>
+
                     <div
                         class="mx-auto
                         text-left
                     MardownContent flex flex-col lg:max-w-[55vw]"
                     >
-
+                        <slot />
+                    </div>
+                    <div id="desdate" class="text-[.8rem] pb-2">
+                        <p>Cập nhật ngày: {date}</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +117,8 @@ console.log(images);
     <Footer />
 </Layout>
 
-<style>
+<style is:global>
+
     * {
         font-size: 55;
     }
@@ -145,16 +149,6 @@ console.log(images);
         max-width: 100%;
         height: 100%;
         margin-top: 2vh;
-    }
-
-    h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        margin-top: 0.25em;
-    }
-    h2 {
-        font-size: 1.8rem;
-        margin-top: 0.25em;
     }
 
     #links {
@@ -211,8 +205,6 @@ console.log(images);
         box-shadow: none;
     }
 
-
-
     pre {
         font-family:
             ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
@@ -256,6 +248,49 @@ console.log(images);
         padding: 6px 8px;
     }
 
+    .MarKdownContentc {
+        background-color: #bc52ee !important;
+    }
+
+    .MarKdownContentc img {
+        width: 50%;
+        margin: 1.5rem auto;
+        border-radius: 12px;
+    }
+
+    .MarKdownContentc p,
+    .MarKdownContentc a,
+    .MarKdownContentc li {
+        text-align: left;
+        font-size: 1.2rem;
+        padding-bottom: 0.2rem;
+    }
+
+    .MarkdownContentc h1 {
+        margin-bottom: 5rem;
+        font-size: 2rem;
+    }
+
+    .MarKdownContentc h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .MarKdownContentc h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: lightcoral;
+    }
+    .MarKdownContentc hr {
+        border: 0.1rem darkviolet;
+        border-style: dashed none none none;
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+        width: 60%;
+        height: 1rem;
+        margin: auto;
+    }
+
     @media screen and (max-height: 368px) {
         #news {
             display: none;
@@ -289,6 +324,11 @@ console.log(images);
 
         h1 {
             line-height: 1.5;
+        }
+
+        .MarKdownContentc p {
+            font-size: 1rem;
+            max-width: 100vw;
         }
     }
     @media screen and (max-width: 600px) {
