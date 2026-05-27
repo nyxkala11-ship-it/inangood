@@ -9,16 +9,20 @@ import Footer from "../components/Footer.astro";
 
 <Layout>
     <Header />
-    <div class="notfound mx-auto my-auto p-6 font-bold">
-        <p class="mx-auto my-auto">404!</p>
-        <a>Không tìm thấy trang được yêu cầu</a>
-    </div>
+    <body>
+        <main class="flex flex-col items-center">
+            <div class="border-t border-dashed mt-4">
+                <p class="notfound">
+                    404!<br />Không tìm thấy trang được yêu cầu
+                </p>
+            </div>
+        </main>
+    </body>
     <Footer />
 </Layout>
 
 <style>
     .notfound {
-        height: 20vw;
         font-size: 3rem;
     }
 </style>

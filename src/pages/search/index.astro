@@ -1,0 +1,126 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+/* Dùng cho search tags
+export async function getStaticPaths() {
+    const products = await getCollection("blogCollection");
+
+    // Lấy tất cả tags và loại bỏ trùng
+    const allTags = products.flatMap((product) => product.data.tags || []);
+    const uniqueTags = [...new Set(allTags)];
+
+    return uniqueTags.map((search) => {
+        const filteredPosts = products.filter((product) =>
+            product.data.tags?.includes(search),
+        );
+
+        return {
+            params: { search: search.toLowerCase().replace(/\s+/g, "-") },
+            props: {
+                search: search,
+                products: filteredPosts,
+            },
+        };
+    });
+}
+*/
+
+export const prerender = false;
+
+const query = Astro.url.searchParams.get("q")?.trim().toLowerCase() || "";
+
+export function covertTiengVietKhongDau(str: string): string {
+    let result = str
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[đĐ]/g, (math) => (math === "đ" ? "d" : "D"));
+    return result;
+}
+const queryNormal = covertTiengVietKhongDau(query);
+const allProducts = await getCollection("blogCollection");
+
+const filteredProducts = allProducts.filter((product) => {
+    //if (!query) return false;
+
+    const title =
+        covertTiengVietKhongDau(product.data.title?.toLowerCase()) || "";
+    const tags =
+        covertTiengVietKhongDau(product.data.tags?.join(" ").toLowerCase()) ||
+        "";
+    //const body = covertTiengVietKhongDau(product.data.body?.toLowerCase()) || "";
+
+    return (
+        title.includes(queryNormal) || tags.includes(queryNormal) //|| body.includes(queryNormal)
+    );
+});
+
+const { search } = Astro.params;
+const { products } = Astro.props;
+---
+
+<Layout>
+    <Header />
+    <div class="max-w-360 mx-auto w-full my-15 mb-25">
+        <h1 class="mx-auto mb-5">
+            Các kết quả tìm kiếm của: <strong class="tag-item"
+                >{query ? `${query}` : "Tất cả sản phẩm"} ({
+                    filteredProducts.length
+                })</strong
+            >
+        </h1>
+        {
+            filteredProducts.length > 0 ? (
+                <ul class="tags flex flex-wrap pl-5">
+                    {filteredProducts.map((product) => (
+                        <li class="my-2 mx-2 w-auto">
+                            <a
+                                class="
+                                block
+                                bg-[#78172210]
+                                p-6 pl-8
+                                text-left
+                                shadow-xl shadow-olive-300
+                                transition-all
+                                hover:shadow-xs hover:shadow-olive-400 hover:translate-y-0.75
+                                rounded-2xl
+                                border-zinc-100 border
+                                caterogy
+                                "
+                                href={`/products/${product.id}`}
+                            >
+                                {product.data.title}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p>
+                    Chúng mình chưa hỗ trợ sản phẩm, dịch vụ ({query}) bạn đang
+                    tìm kiếm. Xin hãy liên hệ CSKH để được tư vấn các sản phẩm,
+                    dịch vụ phù hợp với nhu cầu của bạn!
+                </p>
+            )
+        }
+    </div>
+    <Footer />
+</Layout>
+
+<style>
+    .tag-item {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #781722, #a13a4d);
+        color: white;
+        padding: 0.13rem 0.9rem 0.35rem 0.8rem;
+        border-radius: 9999px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 15px rgba(120, 23, 34, 0.2);
+        white-space: nowrap;
+        cursor: pointer;
+    }
+</style>

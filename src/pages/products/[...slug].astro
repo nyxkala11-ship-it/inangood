@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import ProductArticles from "../../layouts/ProductsArticles.astro";
 import ProductCatergories from "../../layouts/ProductsCatergories.astro";
+
 export async function getStaticPaths() {
     const posts = await getCollection("blogCollection");
     return posts.map((post) => ({
@@ -15,7 +16,26 @@ const post = Astro.props;
 const { Content } = await render(post);
 const isParent = post.data.parent === "none";
 
+/* ---- Dùng cho server side nếu cần scale lớn cho các chức năng như tìm kiếm hay shopping
+
+const { slug } = Astro.params;
+
+if (!slug) {
+    return Astro.redirect("/404");
+}
+
+const allProducts = await getCollection("blogCollection");
+
+const post = allProducts.find((p) => p.id == slug);
+if (!post) {
+    return Astro.redirect("/404");
+}
+const { Content } = await render(post);
+const isParent = post.data.parent === "none";
+
 console.log(`post id la: ${post.id}`);
+
+*/
 ---
 
 {
