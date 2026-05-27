@@ -18,6 +18,24 @@ const {
     videos = [],
 } = Astro.props;
 
+// Xử lý ngày tháng năm
+function formatToVietnameseDate(dateInput: string | Date): string {
+    const date = new Date(dateInput);
+
+    // Return early if the date is invalid
+    if (isNaN(date.getTime())) return "Ngày không hợp lệ";
+
+    const formatter = new Intl.DateTimeFormat("vi-VN", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "Asia/Ho_Chi_Minh",
+    });
+
+    return formatter.format(date);
+}
+
 // ==================== XỬ LÝ ASSETS ====================
 const getAssets = () => {
     const rawImgAssets = import.meta.glob("./**/**/*.{jpg,png,svg,webp}", {
