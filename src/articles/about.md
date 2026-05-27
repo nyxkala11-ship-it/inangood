@@ -8,14 +8,14 @@ tags:
 # **IN TÚI GIẤY KRAFT GIÁ GỐC – NHẬN TỪ 50 TÚI, CÓ HÀNG TRONG NGÀY**
 <br><br>
 
-## **Cần in túi giấy kraft gấp để kịp bán hàng?**
+### **Cần in túi giấy kraft gấp để kịp bán hàng?**
 #### Xưởng in trực tiếp – làm nhanh, lấy liền, không cần số lượng lớn.
 <br>
-Chỉ từ <b><i>50 túi</b></i>, bạn đã có túi giấy <b><i>in logo riêng</b></i> – phù hợp shop mới, bán online hoặc test thị trường.
+Chỉ từ <b>50 túi</b>bạn đã có túi giấy <b><i>in logo riêng</b></i> – phù hợp shop mới, bán online hoặc test thị trường.
 Ngoài ra, xưởng nhận in trọn bộ: <i>hóa đơn, tem nhãn, tag treo, voucher, menu, bao bì đóng gói</i> → giúp bạn có bộ nhận diện đồng bộ, bán chuyên nghiệp hơn.
 <br><br>
-
 ## ⚡ **Lý do khách chọn xưởng**
+
 ✔ Giá tận gốc – không qua trung gian <br>
 ✔ Nhận số lượng ít – linh hoạt <br>
 ✔ In nhanh – có hàng trong ngày <br>
@@ -24,6 +24,7 @@ Ngoài ra, xưởng nhận in trọn bộ: <i>hóa đơn, tem nhãn, tag treo, v
 <br>
 
 ## 🎯 **In ấn theo yêu cầu đa dạng các sản phẩm:**
+
 **Hóa đơn**: biên nhận, thu chi, hợp đồng, ...<br>
 **Tem nhãn:** decal, bảo hành, bế hình<br>
 **Bao bì:** Túi niêm phong, bọc nilon<br>
@@ -32,7 +33,7 @@ Ngoài ra, xưởng nhận in trọn bộ: <i>hóa đơn, tem nhãn, tag treo, v
 <br><br>
 
 ## 🚀 **Tăng hiệu quả bán hàng**
+
 Túi đẹp + tem nhãn + voucher đồng bộ → khách nhớ thương hiệu, dễ quay lại mua lần sau
 <br><br>
-
 ## 👉 **Inbox ngay để nhận báo giá & mẫu trong vài phút**
