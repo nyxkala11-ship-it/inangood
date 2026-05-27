@@ -6,7 +6,7 @@ tags:
   - IVORY
   - Túi
   - Giấy
-date: 2026-04-27
+date: 2026-04-27T00:00:00
 image:
 catergory: Túi giấy Kraft
 parent: Túi giấy Kraft

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "products/hoadon/index.md",
+                "file": "products/thietkecondau/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 297.5
   },
   "right": {
     "id": "3211aedff5818425",
@@ -185,6 +185,10 @@
   },
   "active": "06b6f83eed4acf50",
   "lastOpenFiles": [
+    "products/toroi/index.md",
+    "products/tuicaocap/index.md",
+    "products/ANPHAMKHAC/index.md",
+    "products/hoadon/index.md",
     "products/HOADONPHIEUSHIP/index.md",
     "products/INCOMBO/index.md",
     "products/hopdongdaotaonghe/index.md",
@@ -193,7 +197,6 @@
     "products/baolixi/index.md",
     "products/BAOGIAYFOLDER/index.md",
     "products/voucher/index.md",
-    "products/ANPHAMKHAC/index.md",
     "products/tuizip/index.md",
     "template/template.md",
     "template/param.md",
@@ -204,13 +207,10 @@
     "products/tuikraft/index.md",
     "products/tuihopdungqualetet/index.md",
     "products/TUIGIAYKRAFT/index.md",
-    "products/tuicaocap/index.md",
-    "products/toroi/index.md",
     "products/thietkecondau/index.md",
     "products/thietkebanghieu/index.md",
     "products/thiep/index.md",
     "products/temvo/index.md",
-    "products/TEMDECALP/index.md",
     "products/bangdaotaonghe/img12.jpg",
     "products/bangdaotaonghe/img11.jpg",
     "products/bangdaotaonghe/img10.jpg",
