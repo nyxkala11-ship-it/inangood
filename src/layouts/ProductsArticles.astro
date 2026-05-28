@@ -24,6 +24,7 @@ const {
     description,
 } = Astro.props;
 
+
 // Xử lý ngày tháng năm
 function formatToVietnameseDate(dateInput: string | Date): string {
     const date = new Date(dateInput);
@@ -86,7 +87,6 @@ const processedVideos = videos?.map((vidName) => {
 const mainVideo = processedVideos?.[0] || null;
 const previewImages = processedImages?.slice(0, 10) || [];
 
-console.log(`kich thuoc la :${kichThuoc.length !== 0}`);
 ---
 
 <Layout>
@@ -199,7 +199,7 @@ console.log(`kich thuoc la :${kichThuoc.length !== 0}`);
                                     for="Size"
                                     class="block text-sm mb-2 text-gray-400 "
                                     >Quy cách:</label>
-                                <p class="text-start tuyChonP">{quyCach.toUpperCase()}</p>
+                                <p class="text-start tuyChonP">{quyCach?.toUpperCase()}</p>
                             </div>
 
                             {kieu.length !== 0 &&
