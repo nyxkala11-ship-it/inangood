@@ -28,6 +28,30 @@ videos:
   - /products/toroi/vid4.mp4
   - /products/toroi/vid5.mp4
 index: "0"
+kieu:
+  - Giấy Couche 100
+  - Giấy Couche 150
+  - Giấy Couche 200
+soLuong:
+  - "500"
+  - "1000"
+  - "2000"
+  - "3000"
+  - "5000"
+  - "10000"
+quyCach: tờ
+kichThuoc:
+  - A4 (21x30)
+  - A5 (15x21)
+  - A6 (10.5x15)
+tuyChon:
+  - Cán màng mờ A5 (1000 tờ)
+  - Cán màng mờ A4 (1000 tờ)
+description: |-
+  - Miễn phí thiết kế theo yêu cầu
+  - In Offset - In thông tin 2 ặt
+  - Thời gian có hàng từ 2 - 3 ngày (Sau khi khách chốt mẫu)
+  Giá trên chưa bao gồm VAT (thuế GTGT), phí vận chuyển
 ---
 # In Tờ Rơi – Tiếp Cận Nhanh, Chi Phí Thấp & Tăng Hiệu Quả Quảng Bá
 

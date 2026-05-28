@@ -50,6 +50,33 @@ images:
 videos:
   - /products/hoadon/vid1.mp4
 index: "0"
+kieu:
+  - Giấy For 60gsm
+soLuong:
+  - "3"
+  - "5"
+  - "10"
+  - "50"
+  - "100"
+kichThuoc:
+  - A4 (21x30)
+  - A5 (15x21)
+  - A6 (10.5x15)
+  - A6 (10.5x15) 2 liên
+  - A5 (15x21) 2 liên
+  - A5 (15x21) 3 liên
+  - A4 (21x30) 2 liên
+  - A4 (21x30) 3 liên
+tuyChon:
+  - Giấy For 80gsm
+  - Đóng số nhảy 2 vị trí
+  - Đóng số nhảy 1 vị trí
+  - In thêm mặt
+  - Chạy răng cưa thêm liên
+quyCach: quyển
+description: |-
+  - Đối với hóa đơn in 2 liên, mặc định chạy răng cưa 1 liên (liên trắng hoặc liên hồng)
+  Giá bán chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
 ---
 
 # In Hóa Đơn – Chuyên Nghiệp, Rõ Ràng & Đồng Bộ Thương Hiệu

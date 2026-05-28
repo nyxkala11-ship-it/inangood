@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "about.md",
+                "file": "products/tuikraftcosan/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "about"
+              "title": "index"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "3211aedff5818425",
@@ -185,32 +186,35 @@
   },
   "active": "5ec37633cac490c0",
   "lastOpenFiles": [
-    "about.md",
-    "products/voucher/index.md",
-    "template/param.md",
-    "products/tuikraft/index.md",
-    "products/thietkecondau/index.md",
-    "products/toroi/index.md",
-    "products/tuicaocap/index.md",
-    "products/ANPHAMKHAC/index.md",
+    "products/tuiniemphong/index.md",
+    "products/tuituhuy/index.md",
+    "products/temvo/index.md",
+    "products/hopdongdaotaonghe/index.md",
+    "products/baothuoffset/index.md",
+    "products/baobanhmi/index.md",
+    "products/baothu/index.md",
+    "products/baothuoffset",
+    "products/thiepcuoi/index.md",
+    "products/thiep/index.md",
+    "products/thiepcuoi",
     "products/hoadon/index.md",
     "products/HOADONPHIEUSHIP/index.md",
-    "products/INCOMBO/index.md",
-    "products/hopdongdaotaonghe/index.md",
+    "products/bocnilon/index.md",
+    "products/BOCTUI/index.md",
+    "products/tuituhuy",
+    "products/TEMDECALP/index.md",
+    "products/tuicaocap/index.md",
     "products/INHOP/index.md",
-    "products/baothu/index.md",
-    "products/baolixi/index.md",
-    "products/BAOGIAYFOLDER/index.md",
-    "products/tuizip/index.md",
-    "template/template.md",
-    "products/tuiniemphong/index.md",
-    "products/tuikraftnau/index.md",
+    "products/toroi/index.md",
     "products/tuikrafthongdao/index.md",
     "products/tuikraftcosan/index.md",
-    "products/tuihopdungqualetet/index.md",
-    "products/TUIGIAYKRAFT/index.md",
-    "products/thietkebanghieu/index.md",
-    "products/thiep/index.md",
+    "products/tuikraftnau/index.md",
+    "products/tuikraft/index.md",
+    "products/tuizip/index.md",
+    "products/inmenu/index.md",
+    "products/bangdaotaonghe/index.md",
+    "about.md",
+    "products/voucher/index.md",
     "products/bangdaotaonghe/img12.jpg",
     "products/bangdaotaonghe/img11.jpg",
     "products/bangdaotaonghe/img10.jpg",

@@ -56,6 +56,20 @@ videos:
   - /products/inmenu/vid17.mp4
   - /products/inmenu/vid18.mp4
 index: "0"
+soLuong:
+  - "2"
+  - "5"
+  - "10"
+quyCach: tờ
+kieu:
+  - Decal nhựa dẻo ép Plastic
+  - Giấy For 250gsm ép Plastic
+kichThuoc:
+  - 20x30
+description: |-
+  - Nội dung cách viền 0.5cm
+  - In 2 mặt, miễn phí thiết kế
+  - Chất liệu nhựa PVC 3 lớp chống thấm nước
 ---
 # In Menu – Rõ Ràng, Thẩm Mỹ & Tăng Trải Nghiệm Khách Hàng
 

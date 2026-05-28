@@ -25,6 +25,28 @@ videos:
   - /products/temvo/vid1.mp4
   - /products/temvo/vid2.mp4
 index: "0"
+kieu:
+  - Decal giấy, cán màng bóng
+soLuong:
+  - "500"
+  - "1000"
+  - "2000"
+  - "3000"
+quyCach: cái
+kichThuoc:
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"
+  - "9"
+  - "10"
+description: |-
+  - Miễn phí thiết kế theo yêu cầu
+  - Thời gianc có hàng từ 5 - 7 ngày 9Sau khi khách chốt mẫu)
+  Giá bán chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
 ---
 # In Tem Vỡ (Tem Niêm Phong) – Chống Giả, Chống Mở & Bảo Vệ Sản Phẩm
 

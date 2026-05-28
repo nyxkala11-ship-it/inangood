@@ -36,6 +36,20 @@ videos:
   - /products/hopdongdaotaonghe/vid5.mp4
   - /products/hopdongdaotaonghe/vid6.mp4
 index: "0"
+soLuong:
+  - "20"
+  - "50"
+  - "100"
+  - "200"
+kieu:
+  - Giấy For 180gsm 1 mặt
+  - Giấy For 180gsm 2 mặt
+kichThuoc:
+  - A4 (21x30)
+quyCach: tờ
+description: |-
+  Thời gian có hàng từ 2 - 3 ngày (Sau khi khách chốt mẫu)
+  Giá bán chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
 ---
 # In Hợp Đồng Đào Tạo Nghề – Chuẩn Mực Pháp Lý, Rõ Ràng & Chuyên Nghiệp
 

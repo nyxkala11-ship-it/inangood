@@ -19,6 +19,12 @@ const blogCollection = defineCollection({
 
       images: z.string().array().optional(),
       videos: z.string().array().optional(),
+      kieu: z.string().array().optional(),
+      soLuong: z.string().array().optional(),
+      kichThuoc: z.string().array().optional(),
+      tuyChon: z.string().array().optional(),
+      quyCach: z.string().optional(),
+      description: z.string().optional(),
     }),
 });
 

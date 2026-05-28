@@ -49,6 +49,23 @@ videos:
   - /products/thiep/vid11.mp4
   - /products/thiep/vid12.mp4
 index: "0"
+kieu:
+  - Vỏ thiệp Giấy For 200gms + Ruột Thiệp Giấy For 180gms
+kichThuoc:
+  - Vỏ Thiệp Đứng 11x16 cm + Ruột thiệp A6
+  - Vỏ Thiệp Đứng 11x16 cm + Ruột thiệp A5
+soLuong:
+  - "50"
+  - "100"
+  - "200"
+  - "300"
+  - "500"
+tuyChon:
+  - In thêm mặt sau
+description: |-
+  - Miễn phí thiết kế theo yêu cầu
+  Giá trên chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
+quyCach: thiệp
 ---
 # In Thiệp – Tinh Tế, Cá Nhân Hóa & Truyền Tải Cảm Xúc
 

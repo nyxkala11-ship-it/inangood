@@ -20,6 +20,28 @@ images:
 videos:
   - /products/tuikrafthongdao/vid1.mp4
 index: "0"
+soLuong:
+  - "50"
+  - "100"
+  - "200"
+  - "500"
+kieu:
+  - Giấy Kraft nền hồng đào 150gsm
+kichThuoc:
+  - 10x12x6
+  - 12x16x6
+  - 20x20x10
+  - 30x20x10
+  - 36x26x13
+quyCach: túi
+tuyChon:
+  - quai se bóng
+  - quai ruy băng
+description: "- Áp dụng cho quai giấy\r
+
+  - Chưa bao gồm nơ\r
+
+  Bảng giá chưa bao gồm VAT (thuế GTGT), phí vận chuyển."
 ---
 # Túi Giấy Kraft Nền Hồng Đào – Ngọt Ngào, Hiện Đại & Khác Biệt
 

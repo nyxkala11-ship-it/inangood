@@ -4,6 +4,10 @@
     "cssclasses": "multitext",
     "tags": "tags",
     "date": "datetime",
-    "images": "multitext"
+    "images": "multitext",
+    "soLuong": "multitext",
+    "kieu": "multitext",
+    "kichThuoc": "multitext",
+    "tuyChon": "multitext"
   }
 }

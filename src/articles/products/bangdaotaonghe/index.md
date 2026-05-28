@@ -30,6 +30,24 @@ videos:
   - /products/bangdaotaonghe/vid3.mp4
   - /products/bangdaotaonghe/vid4.mp4
 index: "0"
+kieu:
+  - Giấy For 180gsm
+  - Giấy For 250gsm
+soLuong:
+  - 10 tờ
+  - 20 tờ
+  - 50 tờ
+kichThuoc:
+  - A4
+tuyChon:
+  - Ép Plastic
+description: |-
+  - Miễn phí thiết kế theo yêu cầu
+  - Giấy For 180gsm, 250gsm, in 1 mặt, không cán màng, KT A4
+  - Hỗ trợ lấy trước 2 tờ (những tờ còn lại sẽ được lưu mẫu cũ mỗi lần lấy)
+  - Thời gian có hàng từ 2 - 3 ngày (Sau khi khách chốt mẫu)
+  Giá trên chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
+quyCach: cái
 ---
 # In Bằng Đào Tạo Nghề – Trang Trọng, Chuẩn Mực & Nâng Tầm Giá Trị Chứng Nhận
 

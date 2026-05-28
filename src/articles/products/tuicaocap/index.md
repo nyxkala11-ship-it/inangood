@@ -39,6 +39,61 @@ videos:
   - /products/tuicaocap/vid7.mp4
   - /products/tuicaocap/vid8.mp4
 index: "0"
+kieu:
+  - Giấy Couche 250
+  - Giấy Ivory 300
+kichThuoc:
+  - Túi đứng 10x12x6
+  - Túi đứng 12x16x6
+  - Túi đứng 19x25x7
+  - Túi đứng 16x18x8
+  - Túi đứng 20x20x10
+  - Túi đứng 13x13x13
+  - Túi đứng 20x28x10
+  - Túi đứng 19x32x14
+  - Túi đứng 28x38x10
+  - Túi ngang 15x10x9
+  - Túi ngang 20x15x10
+  - Túi ngang 24x18x10
+  - Túi ngang 30x20x10
+  - Túi ngang 36x26x13
+  - Túi ngang 37x27x12
+  - Túi đứng 10x20x10
+  - Túi đứng 12x22x8
+  - Túi đứng 13x24x6
+  - Túi đứng 19x29x7
+  - Túi đứng 15x27x10
+  - Túi đứng 16x28x8
+  - Túi đứng 18x28x8
+  - Túi đứng 20x0x10
+  - Túi đứng 21x30x10
+  - Túi đứng 22x32x10
+  - Tuiddungsw 25x35x15
+  - túi đứng 23x30x15
+  - Túi đứng 30x40x10
+  - Túi đứng 32x42x10
+  - Túi đứng 28x38x13
+  - Túi đứng 27x47x15
+  - Túi ngang 35x25x10
+  - Túi ngang 38x28x10
+  - Túi ngang 40x30x10
+quyCach: túi
+soLuong:
+  - "500"
+  - "1000"
+tuyChon:
+  - Nền túi màu hồng
+  - Nền túi màu cam
+  - Nền túi màu nâu
+  - Nền túi màu xám
+  - Dây se bóng
+  - Dây ruy băng
+  - Quai ruy băng gân
+  - Ép kim
+description: |-
+  - Áp dụng cho túi nền trắng, đen, đỏ, màu nhạt
+  - Mặc định là dây vải thường
+  Bảng giá chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
 ---
 # Túi Giấy C250 Ivory – Thanh Lịch, Cứng Cáp & Nâng Tầm Thương Hiệu
 

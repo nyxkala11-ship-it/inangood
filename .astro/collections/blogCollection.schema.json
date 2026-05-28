@@ -37,6 +37,36 @@
         "type": "string"
       }
     },
+    "kieu": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "soLuong": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "kichThuoc": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tuyChon": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quyCach": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
     "$schema": {
       "type": "string"
     }

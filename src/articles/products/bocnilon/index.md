@@ -20,6 +20,18 @@ videos:
   - /products/bocnilon/vid6.mp4
   - /products/bocnilon/vid7.mp4
 index: "0"
+kieu:
+  - PE Màu
+  - PE Trong
+soLuong:
+  - Từ 10kg/size trở lên
+  - Từ 20kg/size trở lên
+tuyChon:
+  - In mạ nhũ vàng
+  - In thêm mặt
+  - In thêm màu
+description: Giá bán chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
+quyCach: kg
 ---
 # Bọc Nilon Ấn Phẩm – Bảo Vệ Sạch Đẹp, Tăng Tính Chuyên Nghiệp
 

@@ -24,6 +24,22 @@ videos:
   - /products/tuiniemphong/vid5.mp4
   - /products/tuiniemphong/vid6.mp4
 index: "0"
+soLuong:
+  - "1"
+  - "5"
+  - "10"
+quyCach: cuộn
+kichThuoc:
+  - 20x30
+  - 25x35
+  - 28x42
+  - 32x45
+  - 35x45
+  - 38x52
+  - 45x60
+description: |-
+  - 1 cuộn 100 cái ± 1 cái.
+  Bảng giá chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
 ---
 # Túi Niêm Phong – Bảo Mật, Chắc Chắn & Chuyên Nghiệp Cho Mọi Đơn Hàng
 

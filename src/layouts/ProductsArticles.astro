@@ -16,6 +16,12 @@ const {
     id,
     images = [],
     videos = [],
+    kieu = [],
+    soLuong = [],
+    kichThuoc = [],
+    tuyChon = [],
+    quyCach,
+    description,
 } = Astro.props;
 
 // Xử lý ngày tháng năm
@@ -35,6 +41,7 @@ function formatToVietnameseDate(dateInput: string | Date): string {
 
     return formatter.format(date);
 }
+
 
 // ==================== XỬ LÝ ASSETS ====================
 const getAssets = () => {
@@ -78,6 +85,8 @@ const processedVideos = videos?.map((vidName) => {
 
 const mainVideo = processedVideos?.[0] || null;
 const previewImages = processedImages?.slice(0, 10) || [];
+
+console.log(`kich thuoc la :${kichThuoc.length !== 0}`);
 ---
 
 <Layout>
@@ -125,7 +134,7 @@ const previewImages = processedImages?.slice(0, 10) || [];
                                     previewImages.map(
                                         (img, index) =>
                                             img !== "none" && (
-                                                <div class="aspect-square rounded-2xl overflow-hidden border border-gray-700 hover:border-violet-500 transition-all duration-300">
+                                                <div class="aspect-square rounded overflow-hidden border border-gray-700 hover:border-violet-500 transition-all duration-300">
                                                     <ImportMedia
                                                         productId={id}
                                                         mediaName={img}
@@ -144,49 +153,101 @@ const previewImages = processedImages?.slice(0, 10) || [];
                         <h2 class="text-3xl font-bold mb-6">Chọn quy cách</h2>
 
                         <form action="#" class="space-y-8">
+                            {kichThuoc.length !== 0 &&
                             <div>
                                 <label
                                     for="Size"
                                     class="block text-sm mb-2 text-gray-400"
-                                    >Chọn cỡ túi:</label
+                                    >Chọn kích cỡ:</label
                                 >
                                 <select
-                                    class="w-full bg-gray-800 border border-gray-600 text-white p-4 rounded-2xl focus:border-violet-500 outline-none"
+                                    class="w-full bg-gray-800 border border-gray-600 text-white p-4 rounded focus:border-violet-500 outline-none"
                                     name="kraft"
                                     id="kraft"
                                 >
-                                    <option value="20x10">Túi 20x10</option>
-                                    <option value="20x20">Túi 20x20</option>
-                                    <option value="16x16">Túi 16x16</option>
+                                    {
+                                      kichThuoc.map(type =>
+                                        <option value=`${type}`>{type}</option>
+                                      )
+                                    }
                                 </select>
                             </div>
+                            }
 
+                            {soLuong.length !== 0 &&
+                            <div>
+                                <label
+                                    for="Size"
+                                    class="block text-sm mb-2 text-gray-400"
+                                    >Chọn số lượng:</label>
+                                <select
+                                    class="w-full bg-gray-800 border border-gray-600 text-white p-4 rounded focus:border-violet-500 outline-none"
+                                    name="kraft"
+                                    id="kraft"
+                                >
+                                    {
+                                      soLuong.map(type =>
+                                        <option value=`${type}`>{type}</option>
+                                      )
+                                    }
+                                </select>
+                            </div>
+                            }
+
+                            <div class="tuyChon flex flex-col">
+                                <label
+                                    for="Size"
+                                    class="block text-sm mb-2 text-gray-400 "
+                                    >Quy cách:</label>
+                                <p class="text-start tuyChonP">{quyCach.toUpperCase()}</p>
+                            </div>
+
+                            {kieu.length !== 0 &&
                             <div>
                                 <label
                                     for="Mau"
                                     class="block text-sm mb-2 text-gray-400"
-                                    >Chọn mẫu:</label
+                                    >Chọn kiểu:</label
                                 >
                                 <select
-                                    class="w-full bg-gray-800 border border-gray-600 text-white p-4 rounded-2xl focus:border-violet-500 outline-none"
+                                    class="w-full bg-gray-800 border border-gray-600 text-white p-4 rounded focus:border-violet-500 outline-none"
                                     name="mau"
                                     id="mau"
                                 >
-                                    <option value="cute01">Mẫu Cute 01</option>
-                                    <option value="cute02">Mẫu Cute 02</option>
-                                    <option value="cute03">Mẫu Cute 03</option>
-                                    <option value="cute04">Mẫu Cute 04</option>
-                                    <option value="cute05">Mẫu Cute 05</option>
-                                    <option value="cute06">Mẫu Cute 06</option>
-                                    <option value="cute07">Mẫu Cute 07</option>
-                                    <option value="cute08">Mẫu Cute 08</option>
+                                    {
+                                      kieu.map(type =>
+                                        <option value=`${type}`>{type}</option>
+                                      )
+                                    }
+
                                 </select>
+                            </div>
+                            }
+
+                            {tuyChon.length !== 0 &&
+                            <div>
+                                <label
+                                    for="Mau"
+                                    class="block text-sm mb-2 text-gray-400"
+                                    >Tùy chọn thêm:</label
+                                >
+                                    {
+                                      tuyChon.map(type =>
+                                      <input type="checkbox" id=`${type}` name=`${type}` value=`${type}` class="h-3 ml-4">
+                                      <label for=`${type}`>{type}</label>
+                                      )
+                                    }
+                            </div>
+                            }
+
+                            <div>
+                                <pre class="whitespace-pre-wrap">{description}</pre>
                             </div>
 
                             <input
                                 type="submit"
                                 value="Đặt túi ngay !"
-                                class="w-full py-5 bg-linear-to-r from-[#781722] to-[#a13a4d] text-white font-bold text-xl rounded-2xl hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
+                                class="mt-4 w-full py-5 bg-linear-to-r from-[#781722] to-[#a13a4d] text-white font-bold text-xl rounded-2xl hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
                             />
                         </form>
                     </div>
@@ -229,6 +290,10 @@ const previewImages = processedImages?.slice(0, 10) || [];
         margin: 0 auto;
     }
 
+    .tuyChonP {
+        text-align: left;
+        font-size: 1.5rem !important;
+    }
     .catName p {
         color: lightgray;
         padding: 0.5rem;

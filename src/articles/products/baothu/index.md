@@ -1,9 +1,12 @@
 ---
-title: Bao Thư
+title: Bao Thư - In Nhanh
 tags:
   - BaoThư
   - Bao
   - Thư
+  - InNhanh
+  - In
+  - Nhanh
 date: 2026-04-28T00:00:00
 image:
 catergory: Bao thư
@@ -24,6 +27,32 @@ videos:
   - /products/baothu/vid4.mp4
   - /products/baothu/vid5.mp4
 index: "0"
+soLuong:
+  - "100"
+  - "200"
+  - "300"
+  - "500"
+  - "1000"
+kieu:
+  - Giấy For 80gsm
+  - Giấy For 100gsm
+  - Giấy For 120gsm
+  - Giấy For 150gsm
+  - Giấy For 180gsm
+kichThuoc:
+  - Ngang 22 cao 12 cm
+  - Ngang 18 cao 12 cm
+  - 12x22
+  - 17x23
+  - 25x35
+description: |-
+  - Miễn phí thiết kế theo yêu cầu
+  - Bao Thư Giấy For 80gms/ln 1 mặt trước (không in được phủ nền màu, nội dung cách viền 0.5cm)
+  * Giá trên chưa bao gồm VAT (thuế GTGT), phí vận chuyển
+tuyChon:
+  - Keo Nắp
+  - In thêm mặt sau
+quyCach: cái
 ---
 # In Bao Thư (Envelope) – Chuyên Nghiệp, Đồng Bộ & Nâng Tầm Hình Ảnh Doanh Nghiệp
 

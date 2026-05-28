@@ -19,6 +19,19 @@ images:
 videos:
   - /products/baobanhmi/vid1.mp4
 index: "0"
+kieu:
+  - Giấy kraft nâu in lụa 1 màu/1 mặt
+  - Giấy trắng in lụa 1 màu/1 mặt
+soLuong:
+  - "1000"
+  - "2000"
+  - "5000"
+  - "10000"
+description: |-
+  - Miễn phí thiết kế theo yêu cầu.
+  - Thời gian có hàng từ 7 - 10 ngày (Sau khi khách chốt mẫu)
+  Giá trên chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
+quyCach: bao
 ---
 # Bao Bánh Mì – Sạch Sẽ, Tiện Lợi & Tăng Nhận Diện Thương Hiệu
 

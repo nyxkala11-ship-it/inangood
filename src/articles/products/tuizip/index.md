@@ -19,6 +19,25 @@ videos:
   - /products/tuizip/vid1.mp4
   - /products/tuizip/vid2.mp4
 index: "0"
+kieu:
+  - Túi Zip Bạc - Trong
+  - Túi Zip Kraft Cửa Sổ
+quyCach: kg
+soLuong:
+  - 5 - 24
+  - "25"
+kichThuoc:
+  - 12x19 (100 - 101 cái/kg) (100 - 150 gam)
+  - 15x22 (73 - 74 cái/kg) (200 - 300 gam)
+  - 18x26 (47 cái/kg) (500 - 600 gam)
+  - 20x28 (45 cái/kg) (600 gam - 1 kg)
+  - 22x30 (32 cái/kg) (1 - 2 kg)
+description: |-
+  - In 1 màu/ 1 mặt
+  - Nhận in tối thiểu 5kg/size
+  - Nhận in tem dán theo yêu cầu
+  - Bảng giá trên chưa bao gồm phí in logo theo yêu cầu
+  Bảng giá chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
 ---
 # Túi Zip (Zipper Bag) – Tiện Lợi, Tái Sử Dụng & Bảo Quản Hiệu Quả
 

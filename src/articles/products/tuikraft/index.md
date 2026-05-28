@@ -57,6 +57,36 @@ images:
   - /products/tuikraft/img44.jpg
   - /products/tuikraft/img45.jpg
 index: "0"
+soLuong:
+  - "50"
+  - "100"
+  - "200"
+  - "500"
+  - "1000"
+kichThuoc:
+  - 10x12x6
+  - 12x16x6
+  - 15x10x9
+  - 16x18x8
+  - 19x25x7
+  - 20x15x10
+  - 20x20x10
+  - 30x20x10
+  - 36x26x13
+kieu:
+  - Giấy kraft 150gsm/In 1 mặt nền trắng (quai giấy/ quai vải)
+quyCach: túi
+tuyChon:
+  - quai se bóng
+  - quai ruy băng
+  - In thêm mặt
+  - In 20 túi
+  - In 30 túi
+  - In 40 túi
+description: |-
+  - Tính giá ở cột 50 túi
+  - Bảng giá trên tinhd theo đơn vị đồng/túi, miễn phí thiết kế, giá chưa bao gồm nơ
+  Bảng giá chưa bao gồm VAT (thuế GTGT), phí vận chuyển
 ---
 
 # *Túi Giấy Kraft – Giải Pháp Bao Bì Xanh, Tinh Tế & Đẳng Cấp*
