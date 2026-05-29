@@ -53,7 +53,7 @@ parent: none
 
 ---
 
-### 6. **H2 – Thiết kế & gia công**
+### 6. **H2 – Thiết kế & Thiết kế miễn phí theo yêu cầu của khách**
 
 - Style thiết kế
 - Công nghệ in  

@@ -122,7 +122,7 @@ In combo là dịch vụ **thiết kế & in ấn trọn bộ** nhiều ấn ph�
 
 ---
 
-## 🖨️ Kỹ Thuật In & Gia Công
+## 🖨️ Kỹ Thuật In & Thiết kế miễn phí theo yêu cầu của khách
 
 - In offset (sắc nét, số lượng lớn)
     
@@ -143,7 +143,7 @@ In combo là dịch vụ **thiết kế & in ấn trọn bộ** nhiều ấn ph�
     
 3. Duyệt mẫu & chỉnh sửa
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng đúng tiến độ
     

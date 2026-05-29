@@ -107,7 +107,7 @@ Bao lì xì không chỉ là phong tục trao gửi may mắn mà còn là ấn 
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Phong Cách Thiết Kế
 
@@ -188,7 +188,7 @@ Bao lì xì không chỉ là phong tục trao gửi may mắn mà còn là ấn 
     
 3. Duyệt mẫu
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng
     

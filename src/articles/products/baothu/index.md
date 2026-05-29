@@ -134,7 +134,7 @@ Bao thư không chỉ dùng để đựng tài liệu mà còn là “điểm ch
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Thiết Kế Chuẩn
 
@@ -215,7 +215,7 @@ Bao thư không chỉ dùng để đựng tài liệu mà còn là “điểm ch
     
 3. Duyệt mẫu
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng
     

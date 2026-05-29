@@ -116,7 +116,7 @@ Tem decal là giải pháp nhãn dán tiện lợi giúp **định danh sản ph
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Phong Cách Thiết Kế
 

@@ -120,7 +120,7 @@ Bao đựng trang sức là chi tiết nhỏ nhưng đóng vai trò quan trọng
 
 ---
 
-## 🖨️ In Ấn & Gia Công
+## 🖨️ In Ấn & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Thiết Kế
 
@@ -188,7 +188,7 @@ Bao đựng trang sức là chi tiết nhỏ nhưng đóng vai trò quan trọng
     
 3. Duyệt mẫu
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng
     

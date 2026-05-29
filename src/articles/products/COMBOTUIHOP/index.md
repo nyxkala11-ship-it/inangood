@@ -101,7 +101,7 @@ Combo túi + hộp là giải pháp bao bì trọn bộ giúp sản phẩm của
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Phong Cách
 
@@ -114,7 +114,7 @@ Combo túi + hộp là giải pháp bao bì trọn bộ giúp sản phẩm của
 - Creative – màu sắc nổi bật
     
 
-### 🖨️ Gia Công Cao Cấp
+### 🖨️ Thiết kế miễn phí theo yêu cầu của khách
 
 - Cán màng mờ / bóng
     
@@ -158,7 +158,7 @@ Combo túi + hộp là giải pháp bao bì trọn bộ giúp sản phẩm của
     
 3. Duyệt mẫu
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng
     

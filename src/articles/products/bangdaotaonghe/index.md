@@ -102,7 +102,7 @@ Bằng đào tạo nghề là minh chứng quan trọng ghi nhận quá trình h
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Phong Cách Thiết Kế
 
@@ -113,7 +113,7 @@ Bằng đào tạo nghề là minh chứng quan trọng ghi nhận quá trình h
 - Hiện đại – tinh gọn
     
 
-### 🖨️ Gia Công Cao Cấp
+### 🖨️ Thiết kế miễn phí theo yêu cầu của khách
 
 - Ép kim (quốc huy, logo) ✨
     
@@ -189,7 +189,7 @@ Bằng đào tạo nghề là minh chứng quan trọng ghi nhận quá trình h
     
 3. Duyệt nội dung & mẫu in
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Bàn giao thành phẩm
     

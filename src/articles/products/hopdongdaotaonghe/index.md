@@ -156,7 +156,7 @@ Hợp đồng đào tạo nghề là văn bản quan trọng xác lập thỏa t
 
 ---
 
-## 🖨️ Tùy Chỉnh & Gia Công
+## 🖨️ Tùy Chỉnh & Thiết kế miễn phí theo yêu cầu của khách
 
 - Đánh số hợp đồng tự động
     
@@ -200,7 +200,7 @@ Hợp đồng đào tạo nghề là văn bản quan trọng xác lập thỏa t
     
 3. Duyệt bản in
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng
     

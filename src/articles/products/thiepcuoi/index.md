@@ -112,7 +112,7 @@ Thiệp cưới không chỉ là lời mời tham dự hôn lễ mà còn là d�
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Phong Cách Thiết Kế
 
@@ -197,7 +197,7 @@ Thiệp cưới không chỉ là lời mời tham dự hôn lễ mà còn là d�
     
 3. Duyệt nội dung
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng
     

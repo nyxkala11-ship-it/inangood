@@ -168,7 +168,7 @@ Túi giấy C250 Ivory là dòng bao bì cao cấp được sản xuất từ gi
 - Phong cách từ minimal đến luxury
     
 
-### 🖨️ Kỹ Thuật Gia Công Cao Cấp
+### 🖨️ Kỹ Thuật Thiết kế miễn phí theo yêu cầu của khách
 
 - Ép kim (gold/silver foil) ✨
     
@@ -215,7 +215,7 @@ Túi giấy C250 Ivory là dòng bao bì cao cấp được sản xuất từ gi
 ☑️ Cứng cáp – form túi chuẩn đẹp  
 ☑️ In ấn sắc nét – màu lên chuẩn  
 ☑️ Tăng giá trị thương hiệu  
-☑️ Đa dạng gia công cao cấp  
+☑️ Đa dạng Thiết kế miễn phí theo yêu cầu của khách
 ☑️ Phù hợp phân khúc trung & cao cấp
 
 ---

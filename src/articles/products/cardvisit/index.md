@@ -89,7 +89,7 @@ Card visit (name card) là ấn phẩm không thể thiếu trong kinh doanh và
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Phong Cách Thiết Kế
 
@@ -100,7 +100,7 @@ Card visit (name card) là ấn phẩm không thể thiếu trong kinh doanh và
 - Creative – sáng tạo, độc đáo
     
 
-### 🖨️ Kỹ Thuật Gia Công Cao Cấp
+### 🖨️ Kỹ Thuật Thiết kế miễn phí theo yêu cầu của khách
 
 - Ép kim vàng/bạc ✨
     

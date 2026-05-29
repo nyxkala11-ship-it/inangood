@@ -135,7 +135,7 @@ Bao thư offset là lựa chọn phổ biến cho doanh nghiệp cần hình ả
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Thiết Kế Chuẩn
 
@@ -203,7 +203,7 @@ Bao thư offset là lựa chọn phổ biến cho doanh nghiệp cần hình ả
     
 3. Duyệt mẫu
     
-4. In offset & gia công
+4. In offset & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng
     

@@ -126,7 +126,7 @@ Sổ không chỉ là vật dụng ghi chép mà còn là công cụ thể hiệ
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Thiết Kế Theo Yêu Cầu
 
@@ -179,7 +179,7 @@ Sổ không chỉ là vật dụng ghi chép mà còn là công cụ thể hiệ
     
 3. Duyệt mẫu
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng
     

@@ -96,7 +96,7 @@ Folder (bìa hồ sơ) là ấn phẩm quan trọng giúp doanh nghiệp **lưu 
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Thiết Kế Chuẩn
 
@@ -107,7 +107,7 @@ Folder (bìa hồ sơ) là ấn phẩm quan trọng giúp doanh nghiệp **lưu 
 - Layout tối giản, dễ nhìn
     
 
-### 🖨️ Gia Công Cao Cấp
+### 🖨️ Thiết kế miễn phí theo yêu cầu của khách
 
 - Cán màng mờ / bóng
     
@@ -177,7 +177,7 @@ Folder (bìa hồ sơ) là ấn phẩm quan trọng giúp doanh nghiệp **lưu 
     
 3. Duyệt mẫu
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng
     

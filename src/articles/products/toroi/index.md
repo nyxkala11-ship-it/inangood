@@ -129,7 +129,7 @@ Tờ rơi (flyer) là công cụ marketing truyền thống nhưng vẫn cực k
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Nguyên Tắc Thiết Kế Hiệu Quả
 

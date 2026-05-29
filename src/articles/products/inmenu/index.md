@@ -158,7 +158,7 @@ Menu không chỉ là danh sách món mà còn là “bộ mặt” của quán.
 
 ---
 
-## 🎨 Thiết Kế & Gia Công
+## 🎨 Thiết Kế & Thiết kế miễn phí theo yêu cầu của khách
 
 ### 🎨 Phong Cách Thiết Kế
 
@@ -228,7 +228,7 @@ Menu không chỉ là danh sách món mà còn là “bộ mặt” của quán.
     
 3. Duyệt nội dung
     
-4. In ấn & gia công
+4. In ấn & Thiết kế miễn phí theo yêu cầu của khách
     
 5. Giao hàng
     
