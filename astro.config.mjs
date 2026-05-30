@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
@@ -15,4 +15,21 @@ export default defineConfig({
   site: "https://example.com",
   integrations: [mdx(), sitemap()],
   adapter: vercel(),
+
+  fonts: [
+    {
+      provider: fontProviders.local(),
+      name: "DistantGalaxy",
+      cssVariable: "--font-fleur-de-leah",
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/FleurDeLeah-Regular.ttf"],
+            weight: "normal",
+            style: "normal",
+          },
+        ],
+      },
+    },
+  ],
 });

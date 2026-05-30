@@ -3,23 +3,155 @@
 import Material from "../components/Material.astro";
 import Slide from "../components/Slide.astro";
 import MaterialSec from "../components/MaterialSec.astro";
+import Flash from "../components/FlashImages.astro";
 
-import { CircleCheckBig, Layers, ClockCheck, Printer } from "@lucide/astro";
+import {
+    BadgeDollarSign,
+    CircleCheckBig,
+    FilePenLine,
+    Gift,
+    PencilRuler,
+    Truck,
+} from "@lucide/astro";
 ---
 
 <div class="flex flex-col items-center" id="container">
     <main class="w-full">
-        <div id="intro">
-            <p id="XI">BAO BÌ</p>
-            <h1 id="intro-title">TÚI GIẤY KRAFT</h1>
-
-            <div id="red-intro">
-                <p>GIÁ GỐC - NHẬN TỪ 50 TÚI</p>
+        <div id="" class="w-full flex flex-col items-center h-10">
+            <p
+                id="xuongin"
+                class="text-center w-fit px-7 py-0 mt-3 mb-0
+                text-3xl font-bold
+                rounded-4xl bg-linear-180 from-[#f33788ff] to-[#cd0c58ff]
+                text-white"
+            >
+                XƯỞNG IN
+            </p>
+            <div
+                id="intro-title"
+                class="drop-shadow-[1_0.5rem_0.1rem_rgba(0,0,255,0.8)]"
+            >
+                <h1
+                    class="pt-[0.3rem]
+                bg-linear-180 from-[#2964d5ff] to-[#00185dff]
+                bg-clip-text text-transparent
+                text-center
+                /*
+                Source - https://stackoverflow.com/a/74753353
+                Posted by Philipp John, modified by community. See post 'Timeline' for change history
+                Retrieved 2026-05-30, License - CC BY-SA 4.0
+                */
+                drop-shadow-[0.1rem_0.1rem_0.1rem_rgba(255,255,255,1)]"
+                >
+                    BAO BÌ - TÚI GIẤY
+                </h1>
+            </div>
+            <div id="intro-title">
+                <h2
+                    class="pt-3
+                    bg-linear-180 from-[#f23379ff] to-[#cd0c58ff]
+                    bg-clip-text text-transparent text-center
+                    /*
+                    Source - https://stackoverflow.com/a/74753353
+                    Posted by Philipp John, modified by community. See post 'Timeline' for change history
+                    Retrieved 2026-05-30, License - CC BY-SA 4.0
+                    */
+                    drop-shadow-[0.1rem_0.1rem_0.1rem_rgba(255,255,255,1)]"
+                >
+                    TEM NHÃN GIÁ XƯỞNG
+                </h2>
+            </div>
+            <div
+                id="linead"
+                class="text-center w-fit px-8 py-0 mt-1 mb-2
+            rounded-4xl bg-linear-180 from-[#2964d5ff] to-[#00185dff]
+            font-bold
+            text-white"
+            >
+                <p>THIẾT KẾ VÀ IN TRỌN GÓI TẠI 1 NƠI</p>
             </div>
 
-            <p id="intro-h2">CÓ HÀNG TRONG NGÀY</p>
-
-            <!-- Benefits - 1 cột dọc, icon + text inline -->
+            <!-- Danh sách -->
+            <div class="grid grid-cols-2 w-full max-md:flex max-md:flex-col">
+                <div
+                    class="benefits md:ml-5 -translate-y-8 max-md:translate-y-1"
+                >
+                    <div class="nut flex flex-row justify-start items-center">
+                        <div class="nutIcon onlyCom nutIconRed p-6 pl-5">
+                            <CircleCheckBig
+                                size={32}
+                                class="text-[#ffffff] font-bold shrink-0"
+                            />
+                        </div>
+                        <p class="nutText inline font-bold text-[#e63c51ff]">
+                            <strong>IN SỐ LƯỢNG ÍT</strong><br />VẪN NHẬN
+                        </p>
+                    </div>
+                    <div class="nut flex flex-row justify-start items-center">
+                        <div class="nutIcon onlyCom nutIconOrange p-6 pl-5">
+                            <FilePenLine
+                                size={32}
+                                class="text-[#ffffff] font-bold shrink-0"
+                            />
+                        </div>
+                        <p class="nutText inline font-bold text-[#f7720bff]">
+                            <strong>THIẾT KẾ</strong><br />THEO YÊU CẦU RIÊNG
+                        </p>
+                    </div>
+                    <div class="nut flex flex-row justify-start items-center">
+                        <div class="nutIcon onlyCom nutIconGreen p-6 pl-5">
+                            <Gift
+                                size={32}
+                                class="text-[#ffffff] font-bold shrink-0"
+                            />
+                        </div>
+                        <p class="nutText inline font-bold text-[#307d5fff]">
+                            <strong>MẪU MÃ ĐA DẠNG</strong><br />NHIỀU NGÀNH
+                            HÀNG
+                        </p>
+                    </div>
+                    <div class="nut flex flex-row justify-start items-center">
+                        <div class="nutIcon onlyCom nutIconBlue p-6 pl-5">
+                            <BadgeDollarSign
+                                size={32}
+                                class="text-[#ffffff] font-bold shrink-0"
+                            />
+                        </div>
+                        <p class="nutText inline font-bold text-[#037ed8ff]">
+                            <strong>GIÁ XƯỞNG TẬN NƠI</strong><br />KHÔNG QUA
+                            TRUNG GIAN
+                        </p>
+                    </div>
+                    <div class="nut flex flex-row justify-start items-center">
+                        <div class="nutIcon onlyCom nutIconPurple p-6 pl-5">
+                            <PencilRuler
+                                size={32}
+                                class="text-[#ffffff] font-bold shrink-0"
+                            />
+                        </div>
+                        <p class="nutText inline font-bold text-[#852cd1ff]">
+                            <strong>HỖ TRỢ CHỈNH SỬA</strong><br />ĐẾN KHI ƯNG
+                        </p>
+                    </div>
+                    <div class="nut flex flex-row justify-start items-center">
+                        <div class="nutIcon onlyCom nutIconPink p-6 pl-5">
+                            <Truck
+                                size={32}
+                                class="text-[#ffffff] font-bold shrink-0"
+                            />
+                        </div>
+                        <p class="nutText inline font-bold text-[#ed1577ff]">
+                            <strong>GIAO HÀNG NHANH</strong><br />TOÀN QUỐC
+                        </p>
+                    </div>
+                </div>
+                <div class="slogan flex justify-end max-md:pt-3">
+                    <p class="font-sans font-bold italic">
+                        Chiếc túi đẹp hôm nay<br />Thương hiệu mạnh ngày mai 💕
+                    </p>
+                </div>
+            </div>
+            <!-- Benefits - 1 cột dọc, icon + text inline
             <div id="intro-list-contain" class="mt-10 space-y-6">
                 <div class="benefit-item">
                     <CircleCheckBig size={52} class="text-[#781722] shrink-0" />
@@ -51,6 +183,7 @@ import { CircleCheckBig, Layers, ClockCheck, Printer } from "@lucide/astro";
                     </p>
                 </div>
             </div>
+             -->
         </div>
     </main>
 
@@ -58,22 +191,81 @@ import { CircleCheckBig, Layers, ClockCheck, Printer } from "@lucide/astro";
     <div class="block m-5"></div>
     <MaterialSec />
     <div class="block m-5"></div>
+    <Flash />
     <Slide />
     <div class="block m-5"></div>
 </div>
 
-<style>
+<style is:global>
+    .slogan {
+        font-family: var(--font-fleur-de-leah);
+    }
+    .nut {
+        background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="65.180504mm" height="15.829581mm" viewBox="0 0 65.180504 15.829581" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color-background-shadowless" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="65.180504" height="15.829581" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><filter style="color-interpolation-filters:sRGB" inkscape:label="Drop Shadow" id="filter123" x="-0.0105557" y="-0.047607262" width="1.0258329" height="1.1236071"><feFlood result="flood" in="SourceGraphic" flood-opacity="0.231373" flood-color="rgb(0,0,0)" id="feFlood122" /><feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="0.27945823" id="feGaussianBlur122" /><feOffset result="offset" in="blur" dx="0.300000" dy="0.400000" id="feOffset122" /><feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite122" /><feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite123" /></filter></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-73.484683,76.103337)"><path id="rect1" style="opacity:1;fill:%23fefefe;fill-opacity:1;stroke-width:0.354999;stroke-dasharray:1.42, 0.709999;filter:url(%23filter123)" d="m 76.155261,-75.432634 c -1.108,0 -1.999878,0.891878 -1.999878,1.999878 v 9.73274 c 0,1.108 0.891878,1.999878 1.999878,1.999878 h 58.019709 c 0.3944,0 0.76104,-0.112954 1.07022,-0.308509 0.56581,0.181101 1.49775,0.471812 1.99419,0.598414 0.53227,0.135737 0.56413,0.0827 0.26872,-0.361736 -0.29541,-0.444434 -0.91801,-1.280259 -1.22938,-1.698087 -0.0402,-0.05391 -0.0754,-0.100681 -0.10594,-0.141593 0.001,-0.02932 0.002,-0.05873 0.002,-0.08837 v -9.73274 c 0,-1.108 -0.89188,-1.999878 -1.99988,-1.999878 z" /></g></svg>');
+        background-repeat: no-repeat;
+        background-size: cover;
+        aspect-ratio: 4.118;
+        box-sizing: border-box;
+        height: 5rem;
+        transition: all 0.35s;
+    }
+
+    .nut:hover {
+        transform: translateX(-0.8rem) scale(1.1);
+        cursor: pointer;
+    }
+
+    .nut p {
+        line-height: 1.5;
+    }
+    .nutIconRed {
+        background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="12.868136mm" height="12.911821mm" viewBox="0 0 12.868136 12.911821" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="12.868136" height="12.911821" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><linearGradient id="linearGradient132" inkscape:collect="always"><stop style="stop-color:%23ed7485;stop-opacity:1;" offset="0" id="stop132" /><stop style="stop-color:%23df0824;stop-opacity:1;" offset="1" id="stop133" /></linearGradient><filter style="color-interpolation-filters:sRGB" inkscape:label="Drop Shadow" id="filter126" x="-0.21997823" y="-0.22140676" width="1.4743281" height="1.4889399"><feFlood result="flood" in="SourceGraphic" flood-opacity="0.231373" flood-color="rgb(0,0,0)" id="feFlood125" /><feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="0.800000" id="feGaussianBlur125" /><feOffset result="offset" in="blur" dx="0.300000" dy="0.400000" id="feOffset125" /><feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite125" /><feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite126" /></filter><linearGradient inkscape:collect="always" xlink:href="%23linearGradient132" id="linearGradient133" x1="74.427147" y1="-52.360058" x2="81.694916" y2="-45.314438" gradientUnits="userSpaceOnUse" gradientTransform="translate(0,1.479611)" /></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-72.078606,53.181249)"><path id="rect125" style="fill:url(%23linearGradient133);stroke-width:0.354999;stroke-dasharray:1.42, 0.709999;filter:url(%23filter126)" d="m 74.998545,-51.261249 c -0.554,0 -0.999939,0.446456 -0.999939,1.000456 v 6.671427 c 0,0.554 0.445939,0.999939 0.999939,0.999939 h 5.76864 c 0.554,0 0.809072,-0.479857 0.999939,-0.999939 0.320469,-0.873226 0.537318,-1.747204 0.827339,-2.598291 0.172987,-0.518968 0.17795,-0.593339 0.0052,-1.173572 -0.296755,-0.996743 -0.536228,-1.958432 -0.832507,-2.899564 -0.166357,-0.528433 -0.445939,-1.000456 -0.999939,-1.000456 z" sodipodi:nodetypes="sssssssssss" /></g></svg>');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .nutIconOrange {
+        background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="12.868136mm" height="12.911821mm" viewBox="0 0 12.868136 12.911821" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="12.868136" height="12.911821" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><linearGradient id="linearGradient139" inkscape:collect="always"><stop style="stop-color:%23f9b174;stop-opacity:1;" offset="0" id="stop138" /><stop style="stop-color:%23f7720b;stop-opacity:1;" offset="1" id="stop139" /></linearGradient><filter style="color-interpolation-filters:sRGB" inkscape:label="Drop Shadow" id="filter126-1" x="-0.21997823" y="-0.22140676" width="1.4743281" height="1.4889399"><feFlood result="flood" in="SourceGraphic" flood-opacity="0.231373" flood-color="rgb(0,0,0)" id="feFlood125-1" /><feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="0.800000" id="feGaussianBlur125-5" /><feOffset result="offset" in="blur" dx="0.300000" dy="0.400000" id="feOffset125-2" /><feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite125-7" /><feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite126-6" /></filter><linearGradient inkscape:collect="always" xlink:href="%23linearGradient139" id="linearGradient134" gradientUnits="userSpaceOnUse" x1="74.969116" y1="-52.721375" x2="81.875572" y2="-44.591808" gradientTransform="translate(13.059992,1.4796107)" /></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-85.138598,53.181249)"><path id="rect125-2" style="fill:url(%23linearGradient134);stroke-width:0.354999;stroke-dasharray:1.42, 0.709999;filter:url(%23filter126-1)" d="m 88.058537,-51.261249 c -0.554,0 -0.999939,0.446456 -0.999939,1.000456 v 6.671427 c 0,0.554 0.445939,0.999939 0.999939,0.999939 h 5.76864 c 0.554,0 0.809072,-0.479857 0.999939,-0.999939 0.320469,-0.873226 0.537318,-1.747204 0.827339,-2.598291 0.172987,-0.518968 0.17795,-0.593339 0.0052,-1.173572 -0.296755,-0.996743 -0.536228,-1.958432 -0.832507,-2.899564 -0.166357,-0.528433 -0.445939,-1.000456 -0.999939,-1.000456 z" sodipodi:nodetypes="sssssssssss" /></g></svg>');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .nutIconGreen {
+        background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="12.868105mm" height="12.911821mm" viewBox="0 0 12.868105 12.911821" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="12.868105" height="12.911821" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><linearGradient id="linearGradient141" inkscape:collect="always"><stop style="stop-color:%2345bc75;stop-opacity:1;" offset="0" id="stop140" /><stop style="stop-color:%23307d5f;stop-opacity:1;" offset="1" id="stop141" /></linearGradient><filter style="color-interpolation-filters:sRGB" inkscape:label="Drop Shadow" id="filter126-6" x="-0.21997904" y="-0.22140676" width="1.4743298" height="1.4889399"><feFlood result="flood" in="SourceGraphic" flood-opacity="0.231373" flood-color="rgb(0,0,0)" id="feFlood125-8" /><feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="0.800000" id="feGaussianBlur125-57" /><feOffset result="offset" in="blur" dx="0.300000" dy="0.400000" id="feOffset125-6" /><feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite125-1" /><feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite126-8" /></filter><linearGradient inkscape:collect="always" xlink:href="%23linearGradient141" id="linearGradient135" gradientUnits="userSpaceOnUse" x1="74.78846" y1="-51.998745" x2="81.333603" y2="-44.772465" gradientTransform="translate(26.119979,1.479611)" /></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-98.19859,53.181249)"><path id="rect125-7" style="fill:url(%23linearGradient135);stroke-width:0.354999;stroke-dasharray:1.42, 0.709999;filter:url(%23filter126-6)" d="m 101.11852,-51.261249 c -0.554,0 -0.99993,0.446456 -0.99993,1.000456 v 6.671427 c 0,0.554 0.44593,0.999939 0.99993,0.999939 h 5.76865 c 0.554,0 0.80907,-0.479857 0.99993,-0.999939 0.32047,-0.873226 0.53732,-1.747204 0.82734,-2.598291 0.17299,-0.518968 0.17795,-0.593339 0.005,-1.173572 -0.29675,-0.996743 -0.53622,-1.958432 -0.8325,-2.899564 -0.16636,-0.528433 -0.44594,-1.000456 -0.99994,-1.000456 z" sodipodi:nodetypes="sssssssssss" /></g></svg>');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .nutIconBlue {
+        background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="12.868105mm" height="12.911821mm" viewBox="0 0 12.868105 12.911821" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="12.868105" height="12.911821" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><linearGradient id="linearGradient143" inkscape:collect="always"><stop style="stop-color:%2334b2f2;stop-opacity:1;" offset="0" id="stop142" /><stop style="stop-color:%23037ed8;stop-opacity:1;" offset="1" id="stop143" /></linearGradient><filter style="color-interpolation-filters:sRGB" inkscape:label="Drop Shadow" id="filter126-12" x="-0.21997904" y="-0.22140676" width="1.4743298" height="1.4889399"><feFlood result="flood" in="SourceGraphic" flood-opacity="0.231373" flood-color="rgb(0,0,0)" id="feFlood125-3" /><feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="0.800000" id="feGaussianBlur125-3" /><feOffset result="offset" in="blur" dx="0.300000" dy="0.400000" id="feOffset125-4" /><feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite125-11" /><feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite126-3" /></filter><linearGradient inkscape:collect="always" xlink:href="%23linearGradient143" id="linearGradient136" gradientUnits="userSpaceOnUse" x1="74.065834" y1="-52.360058" x2="81.694916" y2="-45.314438" gradientTransform="translate(39.17994,1.479611)" /></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-111.25855,53.181249)"><path id="rect125-4" style="fill:url(%23linearGradient136);stroke-width:0.354999;stroke-dasharray:1.42, 0.709999;filter:url(%23filter126-12)" d="m 114.17848,-51.261249 c -0.554,0 -0.99993,0.446456 -0.99993,1.000456 v 6.671427 c 0,0.554 0.44593,0.999939 0.99993,0.999939 h 5.76864 c 0.554,0 0.80908,-0.479857 0.99994,-0.999939 0.32047,-0.873226 0.53732,-1.747204 0.82734,-2.598291 0.17299,-0.518968 0.17795,-0.593339 0.005,-1.173572 -0.29675,-0.996743 -0.53622,-1.958432 -0.8325,-2.899564 -0.16636,-0.528433 -0.44594,-1.000456 -0.99994,-1.000456 z" sodipodi:nodetypes="sssssssssss" /></g></svg>');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .nutIconPurple {
+        background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="12.868105mm" height="12.911821mm" viewBox="0 0 12.868105 12.911821" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="12.868105" height="12.911821" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><linearGradient id="linearGradient145" inkscape:collect="always"><stop style="stop-color:%23c08be5;stop-opacity:1;" offset="0" id="stop144" /><stop style="stop-color:%23852cd1;stop-opacity:1;" offset="1" id="stop145" /></linearGradient><filter style="color-interpolation-filters:sRGB" inkscape:label="Drop Shadow" id="filter126-3" x="-0.21997904" y="-0.22140676" width="1.4743298" height="1.4889399"><feFlood result="flood" in="SourceGraphic" flood-opacity="0.231373" flood-color="rgb(0,0,0)" id="feFlood125-19" /><feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="0.800000" id="feGaussianBlur125-8" /><feOffset result="offset" in="blur" dx="0.300000" dy="0.400000" id="feOffset125-65" /><feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite125-0" /><feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite126-2" /></filter><linearGradient inkscape:collect="always" xlink:href="%23linearGradient145" id="linearGradient137" gradientUnits="userSpaceOnUse" x1="74.78846" y1="-52.360058" x2="81.875572" y2="-46.21772" gradientTransform="translate(52.2399,1.4796111)" /></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-124.31851,53.181249)"><path id="rect125-0" style="fill:url(%23linearGradient137);stroke-width:0.354999;stroke-dasharray:1.42, 0.709999;filter:url(%23filter126-3)" d="m 127.23844,-51.261249 c -0.554,0 -0.99993,0.446456 -0.99993,1.000456 v 6.671427 c 0,0.554 0.44593,0.999939 0.99993,0.999939 h 5.76865 c 0.55399,0 0.80907,-0.479857 0.99993,-0.999939 0.32047,-0.873226 0.53732,-1.747204 0.82734,-2.598291 0.17299,-0.518968 0.17795,-0.593339 0.005,-1.173572 -0.29675,-0.996743 -0.53623,-1.958432 -0.8325,-2.899564 -0.16636,-0.528433 -0.44594,-1.000456 -0.99994,-1.000456 z" sodipodi:nodetypes="sssssssssss" /></g></svg>');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .nutIconPink {
+        background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="12.868111mm" height="12.911821mm" viewBox="0 0 12.868111 12.911821" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="12.868111" height="12.911821" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><linearGradient id="linearGradient147" inkscape:collect="always"><stop style="stop-color:%23ef96c3;stop-opacity:1;" offset="0" id="stop146" /><stop style="stop-color:%23ed1577;stop-opacity:1;" offset="1" id="stop147" /></linearGradient><filter style="color-interpolation-filters:sRGB" inkscape:label="Drop Shadow" id="filter126-5" x="-0.21997888" y="-0.22140676" width="1.4743295" height="1.4889399"><feFlood result="flood" in="SourceGraphic" flood-opacity="0.231373" flood-color="rgb(0,0,0)" id="feFlood125-0" /><feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="0.800000" id="feGaussianBlur125-9" /><feOffset result="offset" in="blur" dx="0.300000" dy="0.400000" id="feOffset125-0" /><feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite125-06" /><feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite126-1" /></filter><linearGradient inkscape:collect="always" xlink:href="%23linearGradient147" id="linearGradient138" gradientUnits="userSpaceOnUse" x1="74.24649" y1="-52.179401" x2="81.514259" y2="-45.675751" gradientTransform="translate(65.29986,1.479611)" /></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-137.37847,53.181249)"><path id="rect125-9" style="fill:url(%23linearGradient138);stroke-width:0.354999;stroke-dasharray:1.42, 0.709999;filter:url(%23filter126-5)" d="m 140.29841,-51.261249 c -0.554,0 -0.99994,0.446456 -0.99994,1.000456 v 6.671427 c 0,0.554 0.44594,0.999939 0.99994,0.999939 h 5.76864 c 0.554,0 0.80907,-0.479857 0.99994,-0.999939 0.32047,-0.873226 0.53731,-1.747204 0.82734,-2.598291 0.17298,-0.518968 0.17795,-0.593339 0.005,-1.173572 -0.29676,-0.996743 -0.53623,-1.958432 -0.83251,-2.899564 -0.16636,-0.528433 -0.44594,-1.000456 -0.99994,-1.000456 z" sodipodi:nodetypes="sssssssssss" /></g></svg>');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .slogan p {
+        line-height: 1rem;
+    }
+    .onlyCom {
+        display: block;
+    }
     main {
         height: 100%;
         display: flex;
         justify-content: flex-start;
-        max-width: 1440px; /* === Đúng yêu cầu 1440px === */
-        margin: 0 auto;
-        background-image: url("../assets/intro/advicesbackground.png");
-        background-size: auto 100%;
+        max-width: 1440px;
+        background-image: url("../assets/intro/advicebackgrounds/advicebackground-com.jpg");
+        background-size: cover;
         background-repeat: no-repeat;
-        background-position: right;
-        padding: 2.5rem 2.5rem 5rem;
+        background-position: center center;
+        aspect-ratio: 1280 / 853;
+        padding: 0.3rem 0.3rem;
     }
 
     #intro {
@@ -83,18 +275,17 @@ import { CircleCheckBig, Layers, ClockCheck, Printer } from "@lucide/astro";
 
     /* Style gốc */
     #XI {
-        color: #717171;
         font-size: 2rem;
-        font-weight: 600;
+        font-weight: 700;
     }
 
     #intro-title {
-        color: #781722 !important;
-        font-size: 6rem !important;
-        font-family: Tahoma, sans-serif !important;
+        /*color: #781722 !important;*/
+        font-size: 3.5rem;
+        font-family: Tahoma, sans-serif;
         font-weight: 800;
-        line-height: 5.4rem !important;
-        margin-bottom: 0.8rem;
+        line-height: 3.8rem;
+        margin: 0;
     }
 
     #red-intro {
@@ -110,6 +301,12 @@ import { CircleCheckBig, Layers, ClockCheck, Printer } from "@lucide/astro";
         padding: 0.9rem 1.4rem;
         font-size: 2rem;
         margin: 0;
+    }
+
+    #xuongin {
+        padding-top: 0.2rem;
+        padding-bottom: 0.3rem;
+        line-height: 1;
     }
 
     #intro-h2 {
@@ -134,17 +331,62 @@ import { CircleCheckBig, Layers, ClockCheck, Printer } from "@lucide/astro";
         color: #2c2e30;
     }
 
-    /* ==================== MOBILE ==================== */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1080px) {
         main {
-            padding: 1.8rem 1.2rem 4rem;
             background-size: cover;
             background-position: center;
+            background-image: url("../assets/intro/advicebackgrounds/advicebackground-mobile.jpg");
+            aspect-ratio: 9/16;
+        }
+        #intro-title h1 {
+            font-size: 2.5rem;
+            padding: 0;
+            margin-top: 0.3;
+            line-height: 1.3;
+            filter: drop-shadow(0rem, 0.1rem, 0.1rem, rgba(255, 255, 255, 1))
+                drop-shadow(0.2rem, 0.2rem, 0.2rem, rgba(0, 0, 0, 1));
         }
 
-        #intro-title {
-            font-size: 4rem !important;
-            line-height: 3.8rem !important;
+        #intro-title h2 {
+            padding: 0;
+
+            line-height: 1.3;
+            font-size: 1.8rem;
+            filter: drop-shadow(0rem, 0.1rem, 0.1rem, rgba(255, 255, 255, 1))
+                drop-shadow(0.2rem, 0.2rem, 0.2rem, rgba(0, 0, 0, 1));
+        }
+
+        #xuongin {
+            padding-top: 0.4rem;
+            padding-bottom: 0.3rem;
+            line-height: 1;
+        }
+        #linead {
+            margin: 0;
+        }
+    }
+    /* ==================== MOBILE ==================== */
+    @media screen and (max-width: 768px) {
+        .benefits {
+            display: flex;
+        }
+        .nut {
+            max-width: 15.6vw;
+            max-height: 2rem;
+            padding-left: 0.35rem;
+        }
+        .nutIcon {
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+        .nutText {
+            font-size: 0.3rem;
+        }
+        .onlyCom {
+            display: none;
+        }
+        main {
+            padding: 0.3rem 0.3rem;
         }
 
         #red-intro p {
