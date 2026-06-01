@@ -6,18 +6,24 @@ import MaterialSec from "../components/MaterialSec.astro";
 import Flash from "../components/FlashImages.astro";
 
 import {
+    Atom,
     BadgeDollarSign,
     CircleCheckBig,
+    Clover,
     FilePenLine,
     Gift,
+    Headset,
+    PencilLine,
     PencilRuler,
+    ShieldCheck,
+    ThumbsUp,
     Truck,
 } from "@lucide/astro";
 ---
 
 <div class="flex flex-col items-center" id="container">
-    <main class="w-full">
-        <div id="" class="w-full flex flex-col items-center h-10">
+    <main class="w-full flex flex-col">
+        <div id="" class="w-full flex flex-col items-center h-full">
             <p
                 id="xuongin"
                 class="text-center w-fit px-7 py-0 mt-3 mb-0
@@ -32,7 +38,7 @@ import {
                 class="drop-shadow-[1_0.5rem_0.1rem_rgba(0,0,255,0.8)]"
             >
                 <h1
-                    class="pt-[0.3rem]
+                    class="pt-2
                 bg-linear-180 from-[#2964d5ff] to-[#00185dff]
                 bg-clip-text text-transparent
                 text-center
@@ -63,7 +69,7 @@ import {
             </div>
             <div
                 id="linead"
-                class="text-center w-fit px-8 py-0 mt-1 mb-2
+                class="text-center w-fit px-8 my-2
             rounded-4xl bg-linear-180 from-[#2964d5ff] to-[#00185dff]
             font-bold
             text-white"
@@ -72,15 +78,34 @@ import {
             </div>
 
             <!-- Danh sách -->
-            <div class="grid grid-cols-2 w-full max-md:flex max-md:flex-col">
+            <div
+                class="flex flex-row-reverse
+                w-full h-full mx-auto max-xl:grid
+                max-xl:content-end max-xl:mb-3"
+            >
+                <div class="slogan flex justify-end max-xl:pt-3">
+                    <p
+                        class="slogan
+                    font-sans
+                    max-md:pb-1
+                    mr-4"
+                    >
+                        Bao bì đẹp - Thương hiệu mạnh - Khách hàng nhớ lâu 💕
+                    </p>
+                </div>
                 <div
-                    class="benefits md:ml-5 -translate-y-8 max-md:translate-y-1"
+                    class="benefits justify-start
+                    w-full
+                    md:ml-5
+                    max-md:translate-y-1 max-xl:flex-wrap
+                    max-xl:flex max-xl:flex-row
+                    max-md:w-full max-xl:justify-around
+                    max-md:content-end"
                 >
                     <div class="nut flex flex-row justify-start items-center">
-                        <div class="nutIcon onlyCom nutIconRed p-6 pl-5">
+                        <div class="nutIcon nutIconRed p-6 pl-5">
                             <CircleCheckBig
-                                size={32}
-                                class="text-[#ffffff] font-bold shrink-0"
+                                class="text-[#ffffff] font-bold shrink-0 lucideIcon"
                             />
                         </div>
                         <p class="nutText inline font-bold text-[#e63c51ff]">
@@ -88,10 +113,9 @@ import {
                         </p>
                     </div>
                     <div class="nut flex flex-row justify-start items-center">
-                        <div class="nutIcon onlyCom nutIconOrange p-6 pl-5">
+                        <div class="nutIcon nutIconOrange p-6 pl-5">
                             <FilePenLine
-                                size={32}
-                                class="text-[#ffffff] font-bold shrink-0"
+                                class="text-[#ffffff] font-bold shrink-0 lucideIcon"
                             />
                         </div>
                         <p class="nutText inline font-bold text-[#f7720bff]">
@@ -99,10 +123,9 @@ import {
                         </p>
                     </div>
                     <div class="nut flex flex-row justify-start items-center">
-                        <div class="nutIcon onlyCom nutIconGreen p-6 pl-5">
+                        <div class="nutIcon nutIconGreen p-6 pl-5">
                             <Gift
-                                size={32}
-                                class="text-[#ffffff] font-bold shrink-0"
+                                class="text-[#ffffff] font-bold shrink-0 lucideIcon"
                             />
                         </div>
                         <p class="nutText inline font-bold text-[#307d5fff]">
@@ -111,10 +134,9 @@ import {
                         </p>
                     </div>
                     <div class="nut flex flex-row justify-start items-center">
-                        <div class="nutIcon onlyCom nutIconBlue p-6 pl-5">
+                        <div class="nutIcon nutIconBlue p-6 pl-5">
                             <BadgeDollarSign
-                                size={32}
-                                class="text-[#ffffff] font-bold shrink-0"
+                                class="text-[#ffffff] font-bold shrink-0 lucideIcon"
                             />
                         </div>
                         <p class="nutText inline font-bold text-[#037ed8ff]">
@@ -123,10 +145,9 @@ import {
                         </p>
                     </div>
                     <div class="nut flex flex-row justify-start items-center">
-                        <div class="nutIcon onlyCom nutIconPurple p-6 pl-5">
+                        <div class="nutIcon nutIconPurple p-6 pl-5">
                             <PencilRuler
-                                size={32}
-                                class="text-[#ffffff] font-bold shrink-0"
+                                class="text-[#ffffff] font-bold shrink-0 lucideIcon"
                             />
                         </div>
                         <p class="nutText inline font-bold text-[#852cd1ff]">
@@ -134,10 +155,9 @@ import {
                         </p>
                     </div>
                     <div class="nut flex flex-row justify-start items-center">
-                        <div class="nutIcon onlyCom nutIconPink p-6 pl-5">
+                        <div class="nutIcon nutIconPink p-6 pl-5">
                             <Truck
-                                size={32}
-                                class="text-[#ffffff] font-bold shrink-0"
+                                class="text-[#ffffff] font-bold shrink-0 lucideIcon"
                             />
                         </div>
                         <p class="nutText inline font-bold text-[#ed1577ff]">
@@ -145,12 +165,8 @@ import {
                         </p>
                     </div>
                 </div>
-                <div class="slogan flex justify-end max-md:pt-3">
-                    <p class="font-sans font-bold italic">
-                        Chiếc túi đẹp hôm nay<br />Thương hiệu mạnh ngày mai 💕
-                    </p>
-                </div>
             </div>
+
             <!-- Benefits - 1 cột dọc, icon + text inline
             <div id="intro-list-contain" class="mt-10 space-y-6">
                 <div class="benefit-item">
@@ -185,20 +201,69 @@ import {
             </div>
              -->
         </div>
+        <div
+            id="splash-footer"
+            class="flex content-center justify-around xl:py-2"
+        >
+            <card class="flex content-center items-center hidden">
+                <div class="">
+                    <PencilLine
+                        class="lucideIconFoot py-3 max-md:p-0 bg"
+                        stroke-width={2}
+                    />
+                </div>
+                <div>
+                    <p class="text-white">NHẬN THIẾT KẾ - IN ẤN</p>
+                    <h3 class="text-white font-bold">THEO YÊU CẦU</h3>
+                </div>
+            </card>
+            <card class="flex flex-row items-center">
+                <div class="">
+                    <ThumbsUp
+                        class="lucideIconFoot p-3 max-md:p-0"
+                        stroke-width={2}
+                    />
+                </div>
+                <div>
+                    <p class="text-white">CÔNG NGHỆ HIỆN ĐẠI</p>
+                    <h3 class="text-white font-bold">SẮC NÉT - CHUẨN MÀU</h3>
+                </div>
+            </card>
+            <card class="flex flex-row items-center">
+                <div class="p-3 max-xl:p-0">
+                    <ShieldCheck class="lucideIconFoot" stroke-width={2} />
+                </div>
+                <div>
+                    <p class="text-white">CHẤT LIỆU GIẤY CAO CẤP</p>
+                    <h3 class="text-white font-bold">THÂN THIỆN MÔI TRƯỜNG</h3>
+                </div>
+            </card>
+            <card class="flex flex-row items-center">
+                <div class="p-3 max-md:p-0">
+                    <Headset class="lucideIconFoot" stroke-width={2} />
+                </div>
+                <div>
+                    <p class="text-white">ĐỘI NGŨ TƯ VẤN</p>
+                    <h3 class="text-white font-bold">
+                        NHIỆT TÌNH - CHUYÊN NGHIỆP
+                    </h3>
+                </div>
+            </card>
+        </div>
     </main>
 
     <Material />
-    <div class="block m-5"></div>
     <MaterialSec />
-    <div class="block m-5"></div>
     <Flash />
     <Slide />
-    <div class="block m-5"></div>
 </div>
 
 <style is:global>
     .slogan {
         font-family: var(--font-fleur-de-leah);
+        font-size: 1.8rem;
+        color: #022565;
+        line-height: 2.2rem;
     }
     .nut {
         background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="65.180504mm" height="15.829581mm" viewBox="0 0 65.180504 15.829581" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color-background-shadowless" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="65.180504" height="15.829581" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><filter style="color-interpolation-filters:sRGB" inkscape:label="Drop Shadow" id="filter123" x="-0.0105557" y="-0.047607262" width="1.0258329" height="1.1236071"><feFlood result="flood" in="SourceGraphic" flood-opacity="0.231373" flood-color="rgb(0,0,0)" id="feFlood122" /><feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="0.27945823" id="feGaussianBlur122" /><feOffset result="offset" in="blur" dx="0.300000" dy="0.400000" id="feOffset122" /><feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite122" /><feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite123" /></filter></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-73.484683,76.103337)"><path id="rect1" style="opacity:1;fill:%23fefefe;fill-opacity:1;stroke-width:0.354999;stroke-dasharray:1.42, 0.709999;filter:url(%23filter123)" d="m 76.155261,-75.432634 c -1.108,0 -1.999878,0.891878 -1.999878,1.999878 v 9.73274 c 0,1.108 0.891878,1.999878 1.999878,1.999878 h 58.019709 c 0.3944,0 0.76104,-0.112954 1.07022,-0.308509 0.56581,0.181101 1.49775,0.471812 1.99419,0.598414 0.53227,0.135737 0.56413,0.0827 0.26872,-0.361736 -0.29541,-0.444434 -0.91801,-1.280259 -1.22938,-1.698087 -0.0402,-0.05391 -0.0754,-0.100681 -0.10594,-0.141593 0.001,-0.02932 0.002,-0.05873 0.002,-0.08837 v -9.73274 c 0,-1.108 -0.89188,-1.999878 -1.99988,-1.999878 z" /></g></svg>');
@@ -218,6 +283,22 @@ import {
     .nut p {
         line-height: 1.5;
     }
+
+    .lucideIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+        color: #ffffff;
+    }
+
+    .lucideIconFoot {
+        width: 3rem;
+        height: 3rem;
+        padding: 0.5rem;
+        border: 0.1rem solid gray;
+        color: rgba(255, 252, 251, 1);
+        border-radius: 2rem;
+    }
+
     .nutIconRed {
         background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="12.868136mm" height="12.911821mm" viewBox="0 0 12.868136 12.911821" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="12.868136" height="12.911821" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><linearGradient id="linearGradient132" inkscape:collect="always"><stop style="stop-color:%23ed7485;stop-opacity:1;" offset="0" id="stop132" /><stop style="stop-color:%23df0824;stop-opacity:1;" offset="1" id="stop133" /></linearGradient><filter style="color-interpolation-filters:sRGB" inkscape:label="Drop Shadow" id="filter126" x="-0.21997823" y="-0.22140676" width="1.4743281" height="1.4889399"><feFlood result="flood" in="SourceGraphic" flood-opacity="0.231373" flood-color="rgb(0,0,0)" id="feFlood125" /><feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="0.800000" id="feGaussianBlur125" /><feOffset result="offset" in="blur" dx="0.300000" dy="0.400000" id="feOffset125" /><feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite125" /><feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite126" /></filter><linearGradient inkscape:collect="always" xlink:href="%23linearGradient132" id="linearGradient133" x1="74.427147" y1="-52.360058" x2="81.694916" y2="-45.314438" gradientUnits="userSpaceOnUse" gradientTransform="translate(0,1.479611)" /></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-72.078606,53.181249)"><path id="rect125" style="fill:url(%23linearGradient133);stroke-width:0.354999;stroke-dasharray:1.42, 0.709999;filter:url(%23filter126)" d="m 74.998545,-51.261249 c -0.554,0 -0.999939,0.446456 -0.999939,1.000456 v 6.671427 c 0,0.554 0.445939,0.999939 0.999939,0.999939 h 5.76864 c 0.554,0 0.809072,-0.479857 0.999939,-0.999939 0.320469,-0.873226 0.537318,-1.747204 0.827339,-2.598291 0.172987,-0.518968 0.17795,-0.593339 0.0052,-1.173572 -0.296755,-0.996743 -0.536228,-1.958432 -0.832507,-2.899564 -0.166357,-0.528433 -0.445939,-1.000456 -0.999939,-1.000456 z" sodipodi:nodetypes="sssssssssss" /></g></svg>');
         background-repeat: no-repeat;
@@ -249,9 +330,6 @@ import {
         background-size: cover;
     }
 
-    .slogan p {
-        line-height: 1rem;
-    }
     .onlyCom {
         display: block;
     }
@@ -261,7 +339,7 @@ import {
         justify-content: flex-start;
         max-width: 1440px;
         background-image: url("../assets/intro/advicebackgrounds/advicebackground-com.jpg");
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
         aspect-ratio: 1280 / 853;
@@ -331,6 +409,54 @@ import {
         color: #2c2e30;
     }
 
+    #splash-footer {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding: 0;
+        border-radius: 3rem;
+        align-content: center;
+        background: #c4edff;
+        background: -webkit-linear-gradient(
+            180deg,
+            rgba(196, 237, 255, 1) 0%,
+            rgba(237, 249, 255, 1) 3%,
+            rgba(240, 243, 255, 1) 50%,
+            rgba(242, 230, 255, 1) 100%
+        );
+        background: -moz-linear-gradient(
+            180deg,
+            rgba(196, 237, 255, 1) 0%,
+            rgba(237, 249, 255, 1) 3%,
+            rgba(240, 243, 255, 1) 50%,
+            rgba(242, 230, 255, 1) 100%
+        );
+        background: linear-gradient(
+            180deg,
+            rgba(196, 237, 255, 1) 0%,
+            rgba(237, 249, 255, 1) 3%,
+            rgba(240, 243, 255, 1) 50%,
+            rgba(242, 230, 255, 1) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#C4EDFF", endColorstr="#F2E6FF", GradientType=0);
+    }
+
+    .lucideIconFoot {
+        border: 0.2rem solid gray;
+        padding: 0.8rem;
+        width: 4rem;
+        height: 4rem;
+        color: rgba(25, 3, 1, 1);
+        border-radius: 5rem;
+    }
+    #splash-footer card {
+        margin-right: 1rem;
+    }
+    #splash-footer card p,
+    #splash-footer card h3 {
+        color: rgba(5, 2, 1, 1);
+        font-size: 1.2inkrem;
+    }
+
     @media screen and (max-width: 1080px) {
         main {
             background-size: cover;
@@ -349,7 +475,6 @@ import {
 
         #intro-title h2 {
             padding: 0;
-
             line-height: 1.3;
             font-size: 1.8rem;
             filter: drop-shadow(0rem, 0.1rem, 0.1rem, rgba(255, 255, 255, 1))
@@ -361,26 +486,64 @@ import {
             padding-bottom: 0.3rem;
             line-height: 1;
         }
-        #linead {
-            margin: 0;
+        #splash-footer .onlyCom {
+            display: none;
+        }
+
+        #splash-footer {
+            background: #ffffff;
+            background: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(227, 232, 255, 1) 50%,
+                rgba(255, 230, 230, 1) 100%
+            );
+            border-radius: 2rem;
+            align-content: center;
+        }
+        #splash-footer card {
+        }
+        #splash-footer card p,
+        #splash-footer card h3 {
+            color: rgba(5, 2, 1, 1);
+            font-size: 0.8rem;
+        }
+        .lucideIconFoot {
+            border: 0.1rem solid gray;
+            padding: 0.1rem;
+            color: rgba(5, 2, 1, 1);
+            border-radius: 2rem;
         }
     }
     /* ==================== MOBILE ==================== */
     @media screen and (max-width: 768px) {
+        .nutIcon {
+            padding: 0.5rem;
+            margin: 0;
+        }
+        .lucideIcon {
+            width: 1rem;
+            height: 1rem;
+            padding: 0;
+            padding-right: 0.1rem;
+            margin: 0;
+            line-height: 0;
+            background-color: #e3c3e500;
+        }
         .benefits {
             display: flex;
         }
-        .nut {
-            max-width: 15.6vw;
-            max-height: 2rem;
-            padding-left: 0.35rem;
+        .slogan {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
-        .nutIcon {
-            width: 0.5rem;
-            height: 0.5rem;
+        .nut {
+            max-height: 1.95rem;
+            padding-left: 0.1rem;
         }
         .nutText {
-            font-size: 0.3rem;
+            font-size: 0.4rem;
         }
         .onlyCom {
             display: none;
@@ -410,6 +573,24 @@ import {
 
         .benefit-item p {
             font-size: 1.08rem;
+        }
+        #splash-footer {
+            padding-left: 0.2rem;
+            padding-right: 0.1rem;
+            border-radius: 1rem;
+        }
+        #splash-footer card p,
+        #splash-footer card h3 {
+            font-size: 0.39rem;
+            color: #000444;
+        }
+        .lucideIconFoot {
+            padding: 0.3rem;
+            margin: 0.1rem;
+            margin-right: 0.2rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            color: #000444;
         }
     }
 </style>

@@ -4,53 +4,61 @@ import {
     Zap,
     Tags,
     BaggageClaim,
-    FastForward,
     Brush,
     TruckElectric,
+    ShieldCheck,
+    TicketCheck,
+    PrinterCheck,
 } from "@lucide/astro";
 ---
 
-<div id="title" class="relative max-w-360 mx-auto px-4 lg:px-0">
+<div id="title" class="relative max-w-360 mx-auto px-1 lg:px-0 mt-2">
     <!-- Title đỏ -->
-    <div id="title-red">
+    <div id="title-red" class="bg-linear-180 from-[#ed7485ff] to-[#df0824ff]">
         <p>
-            <Zap size={45} class="inline-block align-middle" />
-            LÝ DO KHÁCH CHỌN XƯỞNG
+            <Zap size={25} class="inline-block align-middle" />
+            7 LÝ DO KHÁCH CHỌN XƯỞNG
         </p>
     </div>
 
     <!-- Backdrop Grid -->
     <div
         id="backdrop"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6"
+        class="flex flex-row flex-wrap
+        md:grid-cols-3 lg:grid-cols-5
+        gap-1 lg:gap-6
+        justify-between"
     >
         <div class="group">
             <div class="item-inner">
-                <Tags size={48} class="mx-auto text-[#781722]" />
-                <h1>GIÁ TẬN GỐC</h1>
-                <p>Không qua trung gian</p>
+                <Tags size={30} class="mx-auto text-[#781722]" />
+                <h1>CHẤT LIỆU CAO CẤP</h1>
+                <p>Giấy dày dặn, in sắC nét</p>
             </div>
         </div>
 
         <div class="group">
             <div class="item-inner">
-                <BaggageClaim size={48} class="mx-auto text-[#781722]" />
-                <h1>NHẬN SỐ LƯỢNG ÍT</h1>
-                <p>Linh hoạt</p>
+                <BaggageClaim size={30} class="mx-auto text-[#781722]" />
+                <h1>ĐỘI NGŨ CHUYÊN NGHIỆP</h1>
+                <p>Tư vấn nhiệt tình, tận tâm</p>
             </div>
         </div>
 
         <div class="group">
             <div class="item-inner">
-                <FastForward size={48} class="mx-auto text-[#781722]" />
-                <h1>IN NHANH</h1>
-                <p>Có hàng trong ngày</p>
+                <ShieldCheck size={30} class="mx-auto text-[#781722]" />
+                <h1>CAM KẾT CHẤT LƯỢNG</h1>
+                <p>
+                    Đúng mẫu, giá tốt<br />
+                    Lỗi 1 đổi 1
+                </p>
             </div>
         </div>
 
         <div class="group">
             <div class="item-inner">
-                <Brush size={48} class="mx-auto text-[#781722]" />
+                <Brush size={30} class="mx-auto text-[#781722]" />
                 <h1>MIỄN PHÍ THIẾT KẾ</h1>
                 <p>Đến khi ưng ý</p>
             </div>
@@ -58,7 +66,26 @@ import {
 
         <div class="group">
             <div class="item-inner">
-                <TruckElectric size={48} class="mx-auto text-[#781722]" />
+                <TicketCheck size={30} class="mx-auto text-[#781722]" />
+                <h1>NHẬN IN SỐ LƯỢNG ÍT</h1>
+                <p>Linh hoạt, tiết kiệm chi phí</p>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="item-inner">
+                <PrinterCheck size={30} class="mx-auto text-[#781722]" />
+                <h1>HỖ TRỢ IN NHANH</h1>
+                <p>
+                    Cho khách cần gấp<br />
+                    Có hàng trong ngày
+                </p>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="item-inner">
+                <TruckElectric size={30} class="mx-auto text-[#781722]" />
                 <h1>GIAO HÀNG TOÀN QUỐC</h1>
                 <p></p>
             </div>
@@ -74,27 +101,26 @@ import {
 
     #title-red {
         z-index: 2;
-        background-color: #781722;
         color: aliceblue;
-        padding: 0.6rem 1.3rem;
-        border-radius: 25px 25px 25px 0px;
+        padding: 0.3rem 0.6rem;
+        border-radius: 15px 15px 15px 0px;
         display: inline-block;
-        line-height: 2.1rem;
+        line-height: 1.8rem;
         font-weight: 600;
-        font-size: 1.7rem;
+        font-size: 1rem;
     }
 
     #backdrop {
         border: 3px solid #781722;
         backdrop-filter: blur(20px);
         background-color: rgba(255, 255, 255, 0.25);
-        padding: 1.6rem 1.25rem;
+        padding: 0.85rem;
         border-radius: 0px 25px 25px 25px;
     }
 
     .item-inner {
         text-align: center;
-        padding: 1.25rem 0.75rem;
+        padding: 0.5rem;
         border-radius: 12px;
         height: 100%;
         transition: all 0.4s ease;
@@ -106,16 +132,16 @@ import {
     }
 
     .item-inner h1 {
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 700;
         color: #781722;
         margin: 1rem 0 0.5rem;
     }
 
     .item-inner p {
-        font-size: 0.98rem;
+        font-size: 0.75rem;
         color: #444;
-        line-height: 1.5;
+        line-height: 1.2;
     }
 
     /* Hover scale cho title */
@@ -133,16 +159,16 @@ import {
 
     @media screen and (max-width: 640px) {
         #title-red {
-            font-size: 1.4rem;
-            padding: 0.55rem 1rem;
+            font-size: 1rem;
+            padding: 0.2rem 0.95rem;
         }
 
         .item-inner h1 {
-            font-size: 1.12rem;
+            font-size: 0.75rem;
         }
 
         .item-inner p {
-            font-size: 0.93rem;
+            font-size: 0.5rem;
         }
     }
 </style>

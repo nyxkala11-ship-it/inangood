@@ -73,6 +73,14 @@ import { Font } from "astro:assets";
     #topbutton:hover {
         background-color: #6e2a2a; /* Add a dark-grey background on hover */
     }
+
+    @media screen and (max-width: 768px) {
+        html,
+        body {
+            padding-left: 0rem !important;
+            padding-right: 0rem !important;
+        }
+    }
 </style>
 
 <script>
