@@ -1,13 +1,5 @@
 ---
 // src/components/MaterialSec.astro
-import {
-    Zap,
-    Tags,
-    BaggageClaim,
-    FastForward,
-    Brush,
-    TruckElectric,
-} from "@lucide/astro";
 import { Image } from "astro:assets";
 
 import Mater1 from "../assets/matersec/1.jpg";
@@ -22,10 +14,7 @@ import Mater5 from "../assets/matersec/5.jpg";
 <div id="title" class="relative max-w-360 mx-auto px-2 lg:px-0 mt-2">
     <!-- Title đỏ nổi bật -->
     <div id="title-red" class="bg-linear-180 from-[#ed7485ff] to-[#df0824ff]">
-        <p>
-            <Zap size={25} class="inline-block align-middle" />
-            IN ẤN THEO YÊU CẦU ĐA DẠNG CÁC SẢN PHẨM
-        </p>
+        <p>IN ẤN THEO YÊU CẦU ĐA DẠNG CÁC SẢN PHẨM</p>
     </div>
 
     <!-- Backdrop Grid -->
@@ -35,7 +24,6 @@ import Mater5 from "../assets/matersec/5.jpg";
     >
         <div class="group">
             <div class="item-inner">
-                <Tags size={48} class="mx-auto text-[#781722]" />
                 <h1>HÓA ĐƠN</h1>
                 <p>Biên nhận, thu chi, hợp đồng</p>
                 <Image
@@ -49,7 +37,6 @@ import Mater5 from "../assets/matersec/5.jpg";
 
         <div class="group">
             <div class="item-inner">
-                <BaggageClaim size={48} class="mx-auto text-[#781722]" />
                 <h1>TEM NHÃN</h1>
                 <p>Decal, bảo hành, bế hình</p>
                 <Image
@@ -63,7 +50,6 @@ import Mater5 from "../assets/matersec/5.jpg";
 
         <div class="group">
             <div class="item-inner">
-                <FastForward size={48} class="mx-auto text-[#781722]" />
                 <h1>BAO BÌ</h1>
                 <p>Túi niêm phong, bọc nilon</p>
                 <Image
@@ -77,7 +63,6 @@ import Mater5 from "../assets/matersec/5.jpg";
 
         <div class="group">
             <div class="item-inner">
-                <Brush size={48} class="mx-auto text-[#781722]" />
                 <h1>THIẾT KẾ</h1>
                 <p>Thiệp, logo, bảng hiệu, con dấu</p>
                 <Image
@@ -91,7 +76,6 @@ import Mater5 from "../assets/matersec/5.jpg";
 
         <div class="group">
             <div class="item-inner">
-                <TruckElectric size={48} class="mx-auto text-[#781722]" />
                 <h1>TÚI GIẤY KRAFT</h1>
                 <p>In logo theo yêu cầu</p>
                 <Image
@@ -113,14 +97,13 @@ import Mater5 from "../assets/matersec/5.jpg";
 
     #title-red {
         z-index: 2;
-        background-color: #781722;
         color: aliceblue;
-        padding: 0.6rem 1.2rem;
-        border-radius: 25px 25px 25px 0px;
+        padding: 0.3rem 0.6rem;
+        border-radius: 15px 15px 15px 0px;
         display: inline-block;
-        line-height: 2.1rem;
+        line-height: 1.8rem;
         font-weight: 600;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     #backdrop {
@@ -137,6 +120,7 @@ import Mater5 from "../assets/matersec/5.jpg";
         border-radius: 12px;
         height: 100%;
         transition: all 0.35s ease;
+        cursor: pointer;
     }
 
     .group:hover .item-inner {
@@ -172,9 +156,8 @@ import Mater5 from "../assets/matersec/5.jpg";
 
     @media screen and (max-width: 640px) {
         #title-red {
-            font-size: 1.35rem;
-            padding: 0.5rem 1rem;
-            line-height: 1.8rem;
+            font-size: 1rem;
+            padding: 0.2rem 0.95rem;
         }
 
         .item-inner h1 {

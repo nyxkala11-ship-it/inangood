@@ -3,6 +3,7 @@ title: In Nhanh Trong Ngày
 tags:
   - In
   - Nhanh
+  - InNhanhTrongNgày
 date: 2026-04-28T00:00:00
 image:
 catergory: In nhanh trong ngày

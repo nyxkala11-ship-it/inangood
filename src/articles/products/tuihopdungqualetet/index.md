@@ -2,13 +2,14 @@
 title: Túi Hộp Đựng Quà Dịp Lễ 20.10 - 8.03 - 20.11 - Trung Thu - Tết
 tags:
   - Túi
-  - Quà
-  - Lễ
-  - Tết
   - Giấy
   - TrungThu
-  - Trung
-  - Thu
+  - TúiTrungThu
+  - TúiQuà
+  - TúiQuàLễTết
+  - TúiQuà8Tháng3
+  - TúiQuà10tháng11
+  - TúiQuà20tháng10
 date: 2026-04-28T00:00:00
 image:
 catergory: Túi hộp đựng quà Lễ, Tết

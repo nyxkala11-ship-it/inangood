@@ -2,7 +2,6 @@
 title: Card Visit
 tags:
   - Card
-  - visit
   - Cardvisit
   - VisitingCard
 date: 2026-04-22

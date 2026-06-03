@@ -2,9 +2,6 @@
 title: Bao Bánh Mì
 tags:
   - BaoBánhMì
-  - Bao
-  - Bánh
-  - Mì
 date: 2026-04-28T00:00:00
 image:
 catergory: Bao bánh mì

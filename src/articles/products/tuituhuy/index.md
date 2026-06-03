@@ -2,8 +2,6 @@
 title: Túi Tự Hủy
 tags:
   - Túi
-  - Tự
-  - Hủy
   - TúiTựHủy
 date: 2026-05-28T13:17:00
 id: tuituhuy

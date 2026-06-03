@@ -2,8 +2,7 @@
 title: Phiếu Ship Hàng
 tags:
   - Phiếu
-  - Ship
-  - Hàng
+  - PhiếuShipHàng
 date: 2026-04-22
 image:
 catergory: Phiếu Ship

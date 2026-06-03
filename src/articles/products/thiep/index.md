@@ -3,6 +3,7 @@ title: In Thiệp
 tags:
   - In
   - Thiệp
+  - InThiệp
 date: 2026-04-22
 image:
 catergory: In Thiệp

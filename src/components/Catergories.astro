@@ -72,7 +72,7 @@ const tagsArray = Array.from(allTags).sort((a, b) => a.localeCompare(b));
             .filter((tag) => tag.name !== "");
 
         // Shuffle và lấy tối đa 15 tags
-        const shuffledTags = shuffleArray(tags).slice(0, 15);
+        const shuffledTags = shuffleArray(tags).slice(0, 20);
 
         // Xóa nội dung cũ và render tags mới
         displayContainer.innerHTML = "";

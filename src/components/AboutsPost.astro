@@ -1,10 +1,7 @@
 ---
-import astroLogo from "../assets/astro.svg";
 import background from "../assets/background.svg";
-
 import * as aboutPost from "../articles/about.md";
 import Content from "../articles/about.md";
-
 function formatToVietnameseDate(dateInput: string | Date): string {
     const date = new Date(dateInput);
 
@@ -33,69 +30,41 @@ function formatToVietnameseDate(dateInput: string | Date): string {
             <div
                 class="mx-auto mb-4
                         text-left
-                    MardownContent flex flex-col lg:max-w-[55vw]"
+                    MarKdownContentc flex flex-col lg:max-w-[55vw]"
             >
                 <h1>{aboutPost.frontmatter.title}</h1>
+
+                <br />
+                <div
+                    class="mx-auto mb-4
+                text-left
+             flex flex-col lg:max-w-[55vw]"
+                >
+                    <Content />
+                </div>
                 <p>
                     Cập nhật ngày: {
                         formatToVietnameseDate(aboutPost.frontmatter.date)
                     }
                 </p>
-                <br />
-                <Content />
             </div>
         </main>
-
         <!--
-		<a href="https://astro.build/blog/astro-6-beta/" id="news" class="box">
-		<p>Phần class box có thể dùng Chat hỗ trợ!</p>
-	</a>
-	-->
+		<a href="
+                    https:
+                    astro.build
+                    blog
+                    astro-6-beta
+                    "
+                    id="news"
+                    class="box"
+                >
+                    <p>Phần class box có thể dùng Chat hỗ trợ!</p>
+                </div>
+                -->
     </div>
 </main>
-<style>
-    .MarKdownContentc {
-        background-color: #bc52ee !important;
-    }
-
-    .MarKdownContentc img {
-        width: 50%;
-        margin: 1.5rem auto;
-        border-radius: 12px;
-    }
-
-    .MarKdownContentc p,
-    .MarKdownContentc a,
-    .MarKdownContentc li {
-        text-align: left;
-        font-size: 1.2rem;
-        padding-bottom: 0.2rem;
-    }
-
-    .MarkdownContentc h1 {
-        margin-bottom: 5rem;
-        font-size: 2rem;
-    }
-
-    .MarKdownContentc h2 {
-        font-size: 1.8rem;
-        font-weight: 500;
-    }
-
-    .MarKdownContentc h4 {
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: lightcoral !important;
-    }
-    .MarKdownContentc hr {
-        border: 0.1rem darkviolet;
-        border-style: dashed none none none;
-        margin-top: 2rem !important;
-        margin-bottom: 2rem !important;
-        width: 60%;
-        height: 1rem;
-        margin: auto;
-    }
+<style is:global>
     * {
         font-size: 55;
     }
@@ -120,16 +89,6 @@ function formatToVietnameseDate(dateInput: string | Date): string {
 
     main {
         height: auto;
-    }
-
-    h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        margin-top: 0.25em;
-    }
-    h2 {
-        font-size: 1.8rem;
-        margin-top: 0.25em;
     }
 
     #links {
@@ -169,33 +128,6 @@ function formatToVietnameseDate(dateInput: string | Date): string {
         box-shadow: none;
     }
 
-    pre {
-        font-family:
-            ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-            "DejaVu Sans Mono", monospace;
-        font-weight: normal;
-        background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin: 0;
-    }
-
-    h2 {
-        margin: 0 0 1em;
-        font-weight: normal;
-        color: #111827;
-        font-size: 20px;
-    }
-
-    p {
-        color: #4b5563;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.006em;
-        margin: 0;
-    }
-
     code {
         display: inline-block;
         background:
@@ -226,6 +158,60 @@ function formatToVietnameseDate(dateInput: string | Date): string {
 
     #news:hover {
         background: rgba(255, 255, 255, 0.55);
+    }
+
+    .MarKdownContentc {
+    }
+
+    .MarKdownContentc img {
+        width: 50%;
+        margin: 1.5rem auto;
+        border-radius: 12px;
+    }
+
+    .MarKdownContentc p,
+    .MarKdownContentc a,
+    .MarKdownContentc li {
+        text-align: left;
+        font-size: 1rem;
+        padding-bottom: 0.2rem;
+    }
+
+    .MarKdownContentc h1 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    .MarKdownContentc h3 {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        font-weight: 500;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .MarKdownContentc h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: lightcoral;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .MarKdownContentc h5 {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-top: 0.5rem;
+        margin-bottom: 0.15rem;
+    }
+    .MarKdownContentc hr {
+        border: 0.1rem darkviolet;
+        border-style: dashed none none none;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+        width: 60%;
+        height: 1rem;
+        margin: auto;
     }
 
     @media screen and (max-height: 368px) {

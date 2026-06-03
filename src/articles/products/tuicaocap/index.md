@@ -6,6 +6,9 @@ tags:
   - IVORY
   - Túi
   - Giấy
+  - TúiGiấyCaoCấp
+  - TúiGiấyC250
+  - TúiGiấyIVORY
 date: 2026-04-27T00:00:00
 image:
 catergory: Túi giấy Kraft

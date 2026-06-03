@@ -2,9 +2,6 @@
 title: Ấn Phẩm Khác
 tags:
   - ẤnPhẩmKhác
-  - Ấn
-  - Phẩm
-  - Khác
 date: 2026-04-28T00:00:00
 image:
 catergory: Ấn Phẩm Khác

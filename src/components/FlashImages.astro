@@ -15,8 +15,7 @@ import Banner4 from "../assets/banner/4.jpg";
 ---
 
 <div class={`flash-section w-full ${className}`}>
-    <!-- Container giới hạn 1440px -->
-    <div class="max-w-360 mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
+    <div class="max-w-360 mx-auto max-md:px-2 max-md:rounded">
         <!-- Flash Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-7 gap-4 lg:gap-6">
             <!-- Video chính - lg:col-span-4 -->
@@ -38,9 +37,9 @@ import Banner4 from "../assets/banner/4.jpg";
             </div>
 
             <!-- 4 ảnh phụ - lg:col-span-3 -->
-            <div class="lg:col-span-3 grid grid-cols-2 gap-4 lg:gap-6">
+            <div class="lg:col-span-3 grid grid-cols-2 gap-2 lg:gap-4">
                 <div
-                    class="rounded-3xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
+                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
                 >
                     <Image
                         src={Banner1}
@@ -51,7 +50,7 @@ import Banner4 from "../assets/banner/4.jpg";
                     />
                 </div>
                 <div
-                    class="rounded-3xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
+                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
                 >
                     <Image
                         src={Banner2}
@@ -62,7 +61,7 @@ import Banner4 from "../assets/banner/4.jpg";
                     />
                 </div>
                 <div
-                    class="rounded-3xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
+                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
                 >
                     <Image
                         src={Banner3}
@@ -73,7 +72,7 @@ import Banner4 from "../assets/banner/4.jpg";
                     />
                 </div>
                 <div
-                    class="rounded-3xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
+                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
                 >
                     <Image
                         src={Banner4}

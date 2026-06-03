@@ -3,7 +3,6 @@ title: Tem Vỡ
 tags:
   - TemVỡ
   - Tem
-  - Vỡ
 date: 2026-04-22
 image:
 catergory: Tem vỡ

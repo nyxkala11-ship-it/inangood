@@ -12,19 +12,19 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  site: "https://example.com",
+  site: "https:/inangood.net",
   integrations: [mdx(), sitemap()],
   adapter: vercel(),
 
   fonts: [
     {
       provider: fontProviders.local(),
-      name: "DistantGalaxy",
-      cssVariable: "--font-fleur-de-leah",
+      name: "Nunito",
+      cssVariable: "--font-nunito",
       options: {
         variants: [
           {
-            src: ["./src/assets/fonts/FleurDeLeah-Regular.ttf"],
+            src: ["./src/assets/fonts/Nunito-VariableFont_wght.ttf"],
             weight: "normal",
             style: "normal",
           },

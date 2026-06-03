@@ -3,10 +3,7 @@ title: Thiết Kế Bảng Hiệu
 tags:
   - ThiếtKế
   - BảngHiệu
-  - Thiết
-  - Kế
-  - Bảng
-  - Hiệu
+  - ThiếtKếBảngHiệu
 date: 2026-04-22
 image:
 catergory: Thiết kế bảng hiệu

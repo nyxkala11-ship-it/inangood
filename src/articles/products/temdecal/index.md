@@ -3,6 +3,7 @@ title: Tem Decal
 tags:
   - Tem
   - Decal
+  - TemDecal
 date: 2026-04-28T00:00:00
 image:
 catergory: Tem Decal

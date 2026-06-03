@@ -3,7 +3,6 @@ title: Thiệp Cưới
 date: 2026-05-28T13:49:00
 tags:
   - Thiệp
-  - Cưới
   - ThiệpCưới
 catergory: Thiệp Cưới
 parent: Menu - Thiệp

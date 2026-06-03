@@ -1,4 +1,4 @@
 declare module 'astro:assets' {
 	/** @internal */
-	export type CssVariable = (["--font-fleur-de-leah"])[number];
+	export type CssVariable = (["--font-nunito"])[number];
 }

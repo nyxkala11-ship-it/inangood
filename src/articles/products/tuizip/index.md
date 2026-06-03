@@ -2,7 +2,7 @@
 title: Túi Zip
 tags:
   - Túi
-  - Zip
+  - TúiZip
 date: 2026-04-28T00:00:00
 image:
 catergory: Túi Zip

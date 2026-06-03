@@ -2,8 +2,6 @@
 title: Phiếu Giữ Xe
 tags:
   - Phiếu
-  - Giữ
-  - Xe
   - PhiếuGiữXe
 date: 2026-04-22
 image:

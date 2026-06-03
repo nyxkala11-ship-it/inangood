@@ -1,10 +1,7 @@
 ---
 title: Bằng - Hợp Đồng
 tags:
-  - Bằng
   - HợpĐồng
-  - Hợp
-  - Đồng
 date: 2026-04-28T00:00:00
 image:
 catergory: Bằng - Hợp đồng

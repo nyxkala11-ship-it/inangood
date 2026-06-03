@@ -2,8 +2,6 @@
 title: Tờ Rơi
 tags:
   - TờRơi
-  - Tờ
-  - Rơi
 date: 2026-04-28T00:00:00
 image:
 catergory: Tờ rơi

@@ -4,7 +4,7 @@ import Material from "../components/Material.astro";
 import Slide from "../components/Slide.astro";
 import MaterialSec from "../components/MaterialSec.astro";
 import Flash from "../components/FlashImages.astro";
-
+import SloganAfterAstroComponent from "./SloganAfter.astro";
 import {
     Atom,
     BadgeDollarSign,
@@ -22,8 +22,8 @@ import {
 ---
 
 <div class="flex flex-col items-center" id="container">
-    <main class="w-full flex flex-col">
-        <div id="" class="w-full flex flex-col items-center h-full">
+    <main class="w-full flex flex-col h-auto">
+        <div id="" class="w-full flex flex-col items-center h-auto">
             <p
                 id="xuongin"
                 class="text-center w-fit px-7 py-0 mt-3 mb-0
@@ -68,31 +68,30 @@ import {
                 </h2>
             </div>
             <div
-                id="linead"
-                class="text-center w-fit px-8 my-2
+                id=""
+                class="text-center w-fit px-6 mt-2
             rounded-4xl bg-linear-180 from-[#2964d5ff] to-[#00185dff]
             font-bold
             text-white"
             >
                 <p>THIẾT KẾ VÀ IN TRỌN GÓI TẠI 1 NƠI</p>
             </div>
-
+            <div class="flex m-0">
+                <p
+                    class="slogan
+                font-sans
+                max-md:pb-1
+                mr-4"
+                >
+                    Bao bì đẹp - Thương hiệu mạnh - Khách hàng nhớ lâu
+                </p>
+            </div>
             <!-- Danh sách -->
             <div
                 class="flex flex-row-reverse
                 w-full h-full mx-auto max-xl:grid
-                max-xl:content-end max-xl:mb-3"
+                max-xl:content-end max-xl:mb-3 onlyCom"
             >
-                <div class="slogan flex justify-end max-xl:pt-3">
-                    <p
-                        class="slogan
-                    font-sans
-                    max-md:pb-1
-                    mr-4"
-                    >
-                        Bao bì đẹp - Thương hiệu mạnh - Khách hàng nhớ lâu 💕
-                    </p>
-                </div>
                 <div
                     class="benefits justify-start
                     w-full
@@ -201,69 +200,152 @@ import {
             </div>
              -->
         </div>
-        <div
-            id="splash-footer"
-            class="flex content-center justify-around xl:py-2"
-        >
-            <card class="flex content-center items-center hidden">
-                <div class="">
-                    <PencilLine
-                        class="lucideIconFoot py-3 max-md:p-0 bg"
-                        stroke-width={2}
-                    />
+        <div class="h-full items-end flex max-md:flex-col
+        content-end">
+            <div
+                class="onlyMobile benefits justify-start
+                w-full mt-auto m-2
+                max-md:mx-auto
+                max-md:translate-y-1 max-xl:flex-wrap
+                max-xl:flex max-xl:flex-row
+                max-md:w-full max-xl:justify-around
+                max-md:content-end"
+            >
+                <div class="nut flex flex-row justify-start items-center">
+                    <div class="nutIcon nutIconRed p-6 pl-5">
+                        <CircleCheckBig
+                            class="text-[#ffffff] font-bold shrink-0 lucideIcon"
+                        />
+                    </div>
+                    <p class="nutText inline font-bold text-[#e63c51ff]">
+                        <strong>IN SỐ LƯỢNG ÍT</strong><br />VẪN NHẬN
+                    </p>
                 </div>
-                <div>
-                    <p class="text-white">NHẬN THIẾT KẾ - IN ẤN</p>
-                    <h3 class="text-white font-bold">THEO YÊU CẦU</h3>
+                <div class="nut flex flex-row justify-start items-center">
+                    <div class="nutIcon nutIconOrange p-6 pl-5">
+                        <FilePenLine
+                            class="text-[#ffffff] font-bold shrink-0 lucideIcon"
+                        />
+                    </div>
+                    <p class="nutText inline font-bold text-[#f7720bff]">
+                        <strong>THIẾT KẾ</strong><br />THEO YÊU CẦU RIÊNG
+                    </p>
                 </div>
-            </card>
-            <card class="flex flex-row items-center">
-                <div class="">
-                    <ThumbsUp
-                        class="lucideIconFoot p-3 max-md:p-0"
-                        stroke-width={2}
-                    />
+                <div class="nut flex flex-row justify-start items-center">
+                    <div class="nutIcon nutIconGreen p-6 pl-5">
+                        <Gift
+                            class="text-[#ffffff] font-bold shrink-0 lucideIcon"
+                        />
+                    </div>
+                    <p class="nutText inline font-bold text-[#307d5fff]">
+                        <strong>MẪU MÃ ĐA DẠNG</strong><br />NHIỀU NGÀNH HÀNG
+                    </p>
                 </div>
-                <div>
-                    <p class="text-white">CÔNG NGHỆ HIỆN ĐẠI</p>
-                    <h3 class="text-white font-bold">SẮC NÉT - CHUẨN MÀU</h3>
+                <div class="nut flex flex-row justify-start items-center">
+                    <div class="nutIcon nutIconBlue p-6 pl-5">
+                        <BadgeDollarSign
+                            class="text-[#ffffff] font-bold shrink-0 lucideIcon"
+                        />
+                    </div>
+                    <p class="nutText inline font-bold text-[#037ed8ff]">
+                        <strong>GIÁ XƯỞNG TẬN NƠI</strong><br />KHÔNG QUA TRUNG
+                        GIAN
+                    </p>
                 </div>
-            </card>
-            <card class="flex flex-row items-center">
-                <div class="p-3 max-xl:p-0">
-                    <ShieldCheck class="lucideIconFoot" stroke-width={2} />
+                <div class="nut flex flex-row justify-start items-center">
+                    <div class="nutIcon nutIconPurple p-6 pl-5">
+                        <PencilRuler
+                            class="text-[#ffffff] font-bold shrink-0 lucideIcon"
+                        />
+                    </div>
+                    <p class="nutText inline font-bold text-[#852cd1ff]">
+                        <strong>HỖ TRỢ CHỈNH SỬA</strong><br />ĐẾN KHI ƯNG
+                    </p>
                 </div>
-                <div>
-                    <p class="text-white">CHẤT LIỆU GIẤY CAO CẤP</p>
-                    <h3 class="text-white font-bold">THÂN THIỆN MÔI TRƯỜNG</h3>
+                <div class="nut flex flex-row justify-start items-center">
+                    <div class="nutIcon nutIconPink p-6 pl-5">
+                        <Truck
+                            class="text-[#ffffff] font-bold shrink-0 lucideIcon"
+                        />
+                    </div>
+                    <p class="nutText inline font-bold text-[#ed1577ff]">
+                        <strong>GIAO HÀNG NHANH</strong><br />TOÀN QUỐC
+                    </p>
                 </div>
-            </card>
-            <card class="flex flex-row items-center">
-                <div class="p-3 max-md:p-0">
-                    <Headset class="lucideIconFoot" stroke-width={2} />
-                </div>
-                <div>
-                    <p class="text-white">ĐỘI NGŨ TƯ VẤN</p>
-                    <h3 class="text-white font-bold">
-                        NHIỆT TÌNH - CHUYÊN NGHIỆP
-                    </h3>
-                </div>
-            </card>
+            </div>
+            <div
+                id="splash-footer"
+                class="flex content-end justify-around xl:py-2 w-full"
+            >
+                <card class="flex content-center items-center hidden">
+                    <div class="">
+                        <PencilLine
+                            class="lucideIconFoot py-3 max-md:p-0 bg"
+                            stroke-width={2}
+                        />
+                    </div>
+                    <div>
+                        <p class="text-white">NHẬN THIẾT KẾ - IN ẤN</p>
+                        <h3 class="text-white font-bold">THEO YÊU CẦU</h3>
+                    </div>
+                </card>
+                <card class="flex flex-row items-center">
+                    <div class="">
+                        <ThumbsUp
+                            class="lucideIconFoot p-3 max-md:p-0"
+                            stroke-width={2}
+                        />
+                    </div>
+                    <div>
+                        <p class="text-white">CÔNG NGHỆ HIỆN ĐẠI</p>
+                        <h3 class="text-white font-bold">
+                            SẮC NÉT - CHUẨN MÀU
+                        </h3>
+                    </div>
+                </card>
+                <card class="flex flex-row items-center">
+                    <div class="p-3 max-xl:p-0">
+                        <ShieldCheck class="lucideIconFoot" stroke-width={2} />
+                    </div>
+                    <div>
+                        <p class="text-white">CHẤT LIỆU GIẤY CAO CẤP</p>
+                        <h3 class="text-white font-bold">
+                            THÂN THIỆN MÔI TRƯỜNG
+                        </h3>
+                    </div>
+                </card>
+                <card class="flex flex-row items-center">
+                    <div class="p-3 max-md:p-0">
+                        <Headset class="lucideIconFoot" stroke-width={2} />
+                    </div>
+                    <div>
+                        <p class="text-white">ĐỘI NGŨ TƯ VẤN</p>
+                        <h3 class="text-white font-bold">
+                            NHIỆT TÌNH - CHUYÊN NGHIỆP
+                        </h3>
+                    </div>
+                </card>
+            </div>
         </div>
     </main>
 
     <Material />
     <MaterialSec />
+    <SloganAfterAstroComponent />
     <Flash />
     <Slide />
 </div>
 
 <style is:global>
+    .onlyMobile {
+        display: none;
+    }
     .slogan {
-        font-family: var(--font-fleur-de-leah);
+        font-family: var(--font-nunito);
         font-size: 1.8rem;
+        font-weight: 800;
         color: #022565;
-        line-height: 2.2rem;
+        line-height: 2rem;
     }
     .nut {
         background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="65.180504mm" height="15.829581mm" viewBox="0 0 65.180504 15.829581" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color-background-shadowless" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="65.180504" height="15.829581" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><filter style="color-interpolation-filters:sRGB" inkscape:label="Drop Shadow" id="filter123" x="-0.0105557" y="-0.047607262" width="1.0258329" height="1.1236071"><feFlood result="flood" in="SourceGraphic" flood-opacity="0.231373" flood-color="rgb(0,0,0)" id="feFlood122" /><feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="0.27945823" id="feGaussianBlur122" /><feOffset result="offset" in="blur" dx="0.300000" dy="0.400000" id="feOffset122" /><feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite122" /><feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite123" /></filter></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-73.484683,76.103337)"><path id="rect1" style="opacity:1;fill:%23fefefe;fill-opacity:1;stroke-width:0.354999;stroke-dasharray:1.42, 0.709999;filter:url(%23filter123)" d="m 76.155261,-75.432634 c -1.108,0 -1.999878,0.891878 -1.999878,1.999878 v 9.73274 c 0,1.108 0.891878,1.999878 1.999878,1.999878 h 58.019709 c 0.3944,0 0.76104,-0.112954 1.07022,-0.308509 0.56581,0.181101 1.49775,0.471812 1.99419,0.598414 0.53227,0.135737 0.56413,0.0827 0.26872,-0.361736 -0.29541,-0.444434 -0.91801,-1.280259 -1.22938,-1.698087 -0.0402,-0.05391 -0.0754,-0.100681 -0.10594,-0.141593 0.001,-0.02932 0.002,-0.05873 0.002,-0.08837 v -9.73274 c 0,-1.108 -0.89188,-1.999878 -1.99988,-1.999878 z" /></g></svg>');
@@ -342,7 +424,7 @@ import {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
-        aspect-ratio: 1280 / 853;
+        aspect-ratio: 1280/853;
         padding: 0.3rem 0.3rem;
     }
 
@@ -414,7 +496,7 @@ import {
         padding-bottom: 1rem;
         padding: 0;
         border-radius: 3rem;
-        align-content: center;
+        align-content: end;
         background: #c4edff;
         background: -webkit-linear-gradient(
             180deg,
@@ -458,11 +540,14 @@ import {
     }
 
     @media screen and (max-width: 1080px) {
+        .onlyMobile {
+            display: block;
+        }
         main {
+            height: auto;
             background-size: cover;
             background-position: center;
-            background-image: url("../assets/intro/advicebackgrounds/advicebackground-mobile.jpg");
-            aspect-ratio: 9/16;
+            background-image: url("../assets/intro/advicebackgrounds/advicebackground-com.jpg");
         }
         #intro-title h1 {
             font-size: 2.5rem;
@@ -534,7 +619,9 @@ import {
             display: flex;
         }
         .slogan {
-            font-size: 1.2rem;
+            margin-inline: auto;
+            font-size: 0.9rem;
+            font-weight: 800;
             margin-bottom: 0;
             padding-bottom: 0;
         }

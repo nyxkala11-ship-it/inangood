@@ -4,10 +4,6 @@ tags:
   - Phiếu
   - BảoHành
   - BiênNhận
-  - Biên
-  - Nhận
-  - Bảo
-  - Hành
 date: 2026-04-22
 image:
 catergory: Phiếu BH - Biên nhận điện thoại

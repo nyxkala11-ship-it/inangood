@@ -1,12 +1,8 @@
 ---
 title: Hóa Đơn - Phiếu Ship
 tags:
-  - Hóa
-  - Đơn
   - HóaĐơn
-  - Phiếu
-  - Ship
-  - PhiêuShip
+  - PhiếuShip
 date: 2026-04-28T00:00:00
 image:
 catergory: Hóa đơn - Phiếu ship

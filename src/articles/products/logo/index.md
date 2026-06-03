@@ -3,8 +3,6 @@ title: Thiết Kế LOGO
 tags:
   - ThiếtKế
   - LOGO
-  - Thiết
-  - Kế
 date: 2026-04-22
 image:
 catergory: Thiết kế logo

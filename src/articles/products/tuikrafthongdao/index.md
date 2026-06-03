@@ -5,7 +5,8 @@ tags:
   - kraft
   - Túi
   - Giấy
-  - Hongdao
+  - HợpĐồngĐàoTạoNghề
+  - TúiGiấyHồngĐào
 date: 2026-04-28T00:00:00
 image:
 catergory: Túi giấy Kraft nền Hồng đào

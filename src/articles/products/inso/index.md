@@ -3,6 +3,7 @@ title: In Sổ
 tags:
   - In
   - Sổ
+  - InSổ
 date: 2026-04-28T00:00:00
 image:
 catergory: In Sổ

@@ -3,30 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-/* Dùng cho search tags
-export async function getStaticPaths() {
-    const products = await getCollection("blogCollection");
 
-    // Lấy tất cả tags và loại bỏ trùng
-    const allTags = products.flatMap((product) => product.data.tags || []);
-    const uniqueTags = [...new Set(allTags)];
-
-    return uniqueTags.map((search) => {
-        const filteredPosts = products.filter((product) =>
-            product.data.tags?.includes(search),
-        );
-
-        return {
-            params: { search: search.toLowerCase().replace(/\s+/g, "-") },
-            props: {
-                search: search,
-                products: filteredPosts,
-            },
-        };
-    });
-}
-*/
-
+// Search script trên server riêng page Search
 export const prerender = false;
 
 const query = Astro.url.searchParams.get("q")?.trim().toLowerCase() || "";
@@ -57,7 +35,6 @@ const filteredProducts = allProducts.filter((product) => {
 });
 
 const { search } = Astro.params;
-const { products } = Astro.props;
 ---
 
 <Layout>

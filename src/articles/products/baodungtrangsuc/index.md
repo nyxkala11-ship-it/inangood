@@ -2,10 +2,6 @@
 title: Bao Đựng Trang Sức
 tags:
   - BaoĐựngTrangSức
-  - Bao
-  - Đựng
-  - Trang
-  - Sức
 date: 2026-04-28T00:00:00
 image:
 catergory: Bao đựng trang sức
