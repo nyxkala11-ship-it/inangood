@@ -2,6 +2,7 @@
 import { ArrowBigUpDash } from "@lucide/astro";
 import "../styles/global.css";
 import { Font } from "astro:assets";
+import backgrounds from "../assets/backgrounds.svg";
 ---
 
 <!doctype html>
@@ -21,6 +22,7 @@ import { Font } from "astro:assets";
         <Font cssVariable="--font-nunito" />
     </head>
     <body>
+        <img id="background" src={backgrounds.src} />
         <slot />
         <button onclick="topFunction()" id="topbutton" title="Go to top"
             ><ArrowBigUpDash size={38} /></button
@@ -49,8 +51,6 @@ import { Font } from "astro:assets";
         min-height: 100svh;
 
         /*background-color: #f7f4ef;*/
-        background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="272.86063mm" height="672.44305mm" viewBox="0 0 272.86063 672.44305" version="1.1" id="svg1" xml:space="preserve" inkscape:export-batch-name="batchicon-color-background-page" inkscape:export-batch-path="D:\resources\DkyWeb\svgs" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm"><inkscape:page x="0" y="0" width="272.86063" height="672.44305" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><linearGradient id="linearGradient1915" inkscape:collect="always"><stop style="stop-color:%23d6e1fb;stop-opacity:1;" offset="0" id="stop1915" /><stop style="stop-color:%2383b4e3;stop-opacity:0.61627907;" offset="0.15000001" id="stop1917" /><stop style="stop-color:%23f7cde9;stop-opacity:1;" offset="0.27272728" id="stop1918" /><stop style="stop-color:%23d7eafd;stop-opacity:1;" offset="0.42207792" id="stop1919" /><stop style="stop-color:%23ecdef0;stop-opacity:1;" offset="0.58441561" id="stop1921" /><stop style="stop-color:%2376a3df;stop-opacity:1;" offset="0.75" id="stop1922" /><stop style="stop-color:%23c7d9f8;stop-opacity:1;" offset="0.87987012" id="stop1923" /><stop style="stop-color:%234e8ad6;stop-opacity:1;" offset="1" id="stop1916" /></linearGradient><linearGradient inkscape:collect="always" xlink:href="%23linearGradient1915" id="linearGradient1916" x1="-331.11179" y1="-131.98056" x2="-331.11179" y2="399.58243" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1,0,0,1.3708334,0,-148.55746)" /></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(455.78967,271.83868)"><rect style="opacity:1;fill:url(%23linearGradient1916);stroke:none;stroke-width:0.415642;stroke-dasharray:1.66257, 0.831285" id="rect1915" width="272.86063" height="672.44305" x="-455.78967" y="-271.83868" rx="1" ry="1.3708333" /></g></svg>');
-        background-size: cover;
     }
     #topbutton {
         display: none; /* Hidden by default */
@@ -72,6 +72,18 @@ import { Font } from "astro:assets";
 
     #topbutton:hover {
         background-color: #6e2a2a; /* Add a dark-grey background on hover */
+    }
+
+    #background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: auto;
+        filter: blur(3rem);
+        transform: scale(1.1);
+        overflow: hidden;
     }
 
     @media screen and (max-width: 768px) {

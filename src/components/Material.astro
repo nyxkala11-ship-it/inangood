@@ -1,15 +1,9 @@
 ---
 // src/components/MaterialSec.astro  (hoặc LýDoChonXuong.astro)
-import {
-    Zap,
-    Tags,
-    BaggageClaim,
-    Brush,
-    TruckElectric,
-    ShieldCheck,
-    TicketCheck,
-    PrinterCheck,
-} from "@lucide/astro";
+import { Zap, Tags } from "@lucide/astro";
+import { getCollection } from "astro:content";
+import LucideIconAstroComponent from "./LucideIcon.astro";
+const materials = await getCollection("materialColection");
 ---
 
 <div id="title" class="relative max-w-360 mx-auto px-1 lg:px-0 mt-2">
@@ -17,7 +11,7 @@ import {
     <div id="title-red" class="bg-linear-180 from-[#ed7485ff] to-[#df0824ff]">
         <p>
             <Zap size={25} class="inline-block align-middle" />
-            7 LÝ DO KHÁCH CHỌN XƯỞNG
+            LÝ DO KHÁCH CHỌN XƯỞNG
         </p>
     </div>
 
@@ -29,147 +23,121 @@ import {
         gap-1 lg:gap-6
         justify-between"
     >
-        <div class="group">
-            <div class="item-inner">
-                <Tags size={30} class="mx-auto text-[#781722]" />
-                <h1>CHẤT LIỆU CAO CẤP</h1>
-                <p>Giấy dày dặn, in sắC nét</p>
-            </div>
-        </div>
-
-        <div class="group">
-            <div class="item-inner">
-                <BaggageClaim size={30} class="mx-auto text-[#781722]" />
-                <h1>ĐỘI NGŨ CHUYÊN NGHIỆP</h1>
-                <p>Tư vấn nhiệt tình, tận tâm</p>
-            </div>
-        </div>
-
-        <div class="group">
-            <div class="item-inner">
-                <ShieldCheck size={30} class="mx-auto text-[#781722]" />
-                <h1>CAM KẾT CHẤT LƯỢNG</h1>
-                <p>
-                    Đúng mẫu, giá tốt<br />
-                    Lỗi 1 đổi 1
-                </p>
-            </div>
-        </div>
-
-        <div class="group">
-            <div class="item-inner">
-                <Brush size={30} class="mx-auto text-[#781722]" />
-                <h1>MIỄN PHÍ THIẾT KẾ</h1>
-                <p>Đến khi ưng ý</p>
-            </div>
-        </div>
-
-        <div class="group">
-            <div class="item-inner">
-                <TicketCheck size={30} class="mx-auto text-[#781722]" />
-                <h1>NHẬN IN SỐ LƯỢNG ÍT</h1>
-                <p>Linh hoạt, tiết kiệm chi phí</p>
-            </div>
-        </div>
-
-        <div class="group">
-            <div class="item-inner">
-                <PrinterCheck size={30} class="mx-auto text-[#781722]" />
-                <h1>HỖ TRỢ IN NHANH</h1>
-                <p>
-                    Cho khách cần gấp<br />
-                    Có hàng trong ngày
-                </p>
-            </div>
-        </div>
-
-        <div class="group">
-            <div class="item-inner">
-                <TruckElectric size={30} class="mx-auto text-[#781722]" />
-                <h1>GIAO HÀNG TOÀN QUỐC</h1>
-                <p></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    #title {
-        width: 1440px;
-        max-width: 100%;
-    }
-
-    #title-red {
-        z-index: 2;
-        color: aliceblue;
-        padding: 0.3rem 0.6rem;
-        border-radius: 15px 15px 15px 0px;
-        display: inline-block;
-        line-height: 1.8rem;
-        font-weight: 600;
-        font-size: 1rem;
-    }
-
-    #backdrop {
-        border: 3px solid #781722;
-        backdrop-filter: blur(20px);
-        background-color: rgba(255, 255, 255, 0.25);
-        padding: 0.85rem;
-        border-radius: 0px 25px 25px 25px;
-    }
-
-    .item-inner {
-        text-align: center;
-        padding: 0.5rem;
-        border-radius: 12px;
-        height: 100%;
-        transition: all 0.4s ease;
-        cursor: pointer;
-    }
-
-    .group:hover .item-inner {
-        background-color: rgb(255, 255, 255);
-        transform: translateY(-8px);
-    }
-
-    .item-inner h1 {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #781722;
-        margin: 1rem 0 0.5rem;
-    }
-
-    .item-inner p {
-        font-size: 0.75rem;
-        color: #444;
-        line-height: 1.2;
-    }
-
-    /* Hover scale cho title */
-    .group:hover .item-inner h1 {
-        transform: scale(1.12);
-        transition: transform 0.4s;
-    }
-
-    /* ==================== RESPONSIVE ==================== */
-    @media screen and (max-width: 1024px) {
-        #backdrop {
-            padding: 1.4rem 1rem;
+        {
+            materials.map((mater) => (
+                <div class="group">
+                    <div class="item-inner">
+                        <LucideIconAstroComponent
+                            name={mater.data.icon as any}
+                            size={30}
+                            class="mx-auto text-[#ffffff] itemicon"
+                        />
+                        <h1>{mater.data.title}</h1>
+                        <p>
+                            {mater.data.description === "none"
+                                ? ""
+                                : mater.data.description}
+                        </p>
+                    </div>
+                </div>
+            ))
         }
-    }
+    </div>
 
-    @media screen and (max-width: 640px) {
+    <style>
+        .itemicon {
+            background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!-- Created with Inkscape (http://www.inkscape.org/) --><svg width="10.58134mm" height="10.58134mm" viewBox="0 0 10.58134 10.58134" version="1.1" id="svg1" inkscape:export-filename="componentbackground.svg" inkscape:export-xdpi="96" inkscape:export-ydpi="96" sodipodi:docname="componentbackground.svg" xml:space="preserve" inkscape:export-batch-name="redcircle" inkscape:export-batch-path="..\..\resources\DkyWeb\svgs" inkscape:version="1.4.3 (0d15f75, 2025-12-25)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview1" pagecolor="%23ffffff" bordercolor="%23000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="%23d1d1d1" inkscape:document-units="mm" inkscape:zoom="2.1924439" inkscape:cx="971.29054" inkscape:cy="-74.80237" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="layer1-38"><inkscape:page x="0" y="0" width="10.58134" height="10.58134" id="page1" margin="0" bleed="0" /></sodipodi:namedview><defs id="defs1"><linearGradient id="linearGradient1" inkscape:collect="always"><stop style="stop-color:%23ed7485;stop-opacity:1;" offset="0" id="stop1" /><stop style="stop-color:%23df0824;stop-opacity:1;" offset="1" id="stop2" /></linearGradient><linearGradient inkscape:collect="always" xlink:href="%23linearGradient1" id="linearGradient2" x1="74.830963" y1="31.753229" x2="85.181137" y2="29.553234" gradientUnits="userSpaceOnUse" /></defs><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1-38" transform="translate(-74.71538,35.943902)"><circle style="fill:url(%23linearGradient2);stroke:none;stroke-width:1.638;stroke-linecap:round" id="path1" cx="80.00605" cy="30.653233" r="5.2906699" transform="scale(1,-1)" /></g></svg>');
+            background-size: cover;
+            aspect-ratio: 1/1;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 3.5rem;
+            height: auto;
+            padding: 0.6rem;
+            transition: all 0.5s;
+        }
+
+        .group:hover .itemicon {
+            transform: scale(1.2);
+        }
+
+        #title {
+            width: 1440px;
+            max-width: 100%;
+        }
+
         #title-red {
+            z-index: 2;
+            color: aliceblue;
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px 15px 15px 0px;
+            display: inline-block;
+            line-height: 1.8rem;
+            font-weight: 600;
             font-size: 1rem;
-            padding: 0.2rem 0.95rem;
+        }
+
+        #backdrop {
+            border: 3px solid #781722;
+            backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 0.25);
+            padding: 0.85rem;
+            border-radius: 0px 25px 25px 25px;
+        }
+
+        .item-inner {
+            text-align: center;
+            padding: 0.5rem;
+            border-radius: 12px;
+            height: 100%;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .group:hover .item-inner {
+            background-color: rgb(255, 255, 255);
+            transform: translateY(-8px);
         }
 
         .item-inner h1 {
-            font-size: 0.75rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #781722;
+            margin: 1rem 0 0.5rem;
         }
 
         .item-inner p {
-            font-size: 0.5rem;
+            font-size: 0.75rem;
+            color: #444;
+            line-height: 1.2;
         }
-    }
-</style>
+
+        /* Hover scale cho title */
+        .group:hover .item-inner h1 {
+            transform: scale(1.12);
+            transition: transform 0.4s;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media screen and (max-width: 1024px) {
+            #backdrop {
+                padding: 1.4rem 1rem;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            #title-red {
+                font-size: 1rem;
+                padding: 0.2rem 0.95rem;
+            }
+
+            .item-inner h1 {
+                font-size: 0.75rem;
+            }
+
+            .item-inner p {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</div>
