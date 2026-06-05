@@ -13,6 +13,18 @@ const materialColection = defineCollection({
     }),
 });
 
+const materialTwoColection = defineCollection({
+  loader: glob({ base: "./src/articles/materialstwo/", pattern: "**/*.md" }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string().optional(),
+      icon: z.string().optional(),
+      image: z.string().optional(),
+      video: z.string().optional(),
+    }),
+});
+
 const blogCollection = defineCollection({
   // Load Markdown and MDX files in the `src/content/blog/` directory.
   loader: glob({ base: "./src/articles/products/", pattern: "**/*.md" }),
@@ -40,4 +52,8 @@ const blogCollection = defineCollection({
     }),
 });
 
-export const collections = { blogCollection, materialColection };
+export const collections = {
+  blogCollection,
+  materialColection,
+  materialTwoColection,
+};

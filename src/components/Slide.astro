@@ -50,44 +50,63 @@ const sliderOptions: Options = {
 };
 ---
 
-<div class="slider-wrapper max-w-360 mx-auto px-4 lg:px-0 py-8">
+<div class="containSlide slider-wrapper max-w-360 mx-auto px-4 lg:px-0 md:pt-8">
     <SplideExtension options={sliderOptions}>
         {
             allImages.map((img) => (
                 <SplideSlide>
                     <img
                         src={img}
-                        alt=""
-                        class="vuong aspect-square overflow-hidden"
+                        alt="
+    "
+                        class="vuong aspect-square"
                     />
                 </SplideSlide>
             ))
         }
+
+        <style is:global>
+            .containSlide {
+                padding-bottom: 2rem;
+                padding-top: 1.5rem;
+            }
+            .slider-wrapper {
+                width: 1440px;
+                max-width: 100%;
+            }
+
+            .slider-img {
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 12px;
+                padding: 4px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+            .vuong {
+                transition: transform 0.3s ease;
+            }
+            .vuong:hover {
+                transform: scale(1.1);
+                transition: transform 0.3s ease;
+            }
+            .splide__track {
+                overflow: hidden;
+                max-width: 1440px;
+            }
+            .splide__slide:hover .slider-img {
+                transform: scale(1.04);
+            }
+            .splide__pagination {
+                bottom: 0;
+                transform: translateY(1.8rem);
+            }
+        </style>
+
+        <script>
+            import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+            import { initSplideExtension } from "astro-splide/js/splideExtensionUtils";
+            initSplideExtension({ AutoScroll });
+        </script>
     </SplideExtension>
 </div>
-
-<style is:global>
-    .slider-wrapper {
-        width: 1440px;
-        max-width: 100%;
-    }
-
-    .slider-img {
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border-radius: 12px;
-        padding: 4px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-
-    .splide__slide:hover .slider-img {
-        transform: scale(1.04);
-    }
-</style>
-
-<script>
-    import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
-    import { initSplideExtension } from "astro-splide/js/splideExtensionUtils";
-    initSplideExtension({ AutoScroll });
-</script>

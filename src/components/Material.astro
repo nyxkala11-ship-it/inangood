@@ -6,11 +6,15 @@ import LucideIconAstroComponent from "./LucideIcon.astro";
 const materials = await getCollection("materialColection");
 ---
 
-<div id="title" class="relative max-w-360 mx-auto px-1 lg:px-0 mt-2">
+<div id="title" class="max-w-360 mx-auto px-1 lg:px-0 mt-2">
     <!-- Title đỏ -->
-    <div id="title-red" class="bg-linear-180 from-[#ed7485ff] to-[#df0824ff]">
+    <div
+        id="title-red"
+        class="rounded-2xl rounded-bl-none
+    bg-linear-180 from-[#ed7485ff] to-[#df0824ff]"
+    >
         <p>
-            <Zap size={25} class="inline-block align-middle" />
+            <Zap size={20} class="inline-block align-middle" />
             LÝ DO KHÁCH CHỌN XƯỞNG
         </p>
     </div>
@@ -19,6 +23,7 @@ const materials = await getCollection("materialColection");
     <div
         id="backdrop"
         class="flex flex-row flex-wrap
+        rounded-2xl
         md:grid-cols-3 lg:grid-cols-5
         gap-1 lg:gap-6
         justify-between"
@@ -26,7 +31,7 @@ const materials = await getCollection("materialColection");
         {
             materials.map((mater) => (
                 <div class="group">
-                    <div class="item-inner">
+                    <div class="item-inner rounded-lg">
                         <LucideIconAstroComponent
                             name={mater.data.icon as any}
                             size={30}
@@ -54,11 +59,16 @@ const materials = await getCollection("materialColection");
             width: 3.5rem;
             height: auto;
             padding: 0.6rem;
-            transition: all 0.5s;
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 55;
         }
 
         .group:hover .itemicon {
             transform: scale(1.2);
+            position: relative;
+            z-index: 55;
+            transition: all 0.2s ease-out;
         }
 
         #title {
@@ -67,10 +77,11 @@ const materials = await getCollection("materialColection");
         }
 
         #title-red {
+            position: relative;
             z-index: 2;
+            transform: translateY(0.8rem);
             color: aliceblue;
             padding: 0.3rem 0.6rem;
-            border-radius: 15px 15px 15px 0px;
             display: inline-block;
             line-height: 1.8rem;
             font-weight: 600;
@@ -78,25 +89,24 @@ const materials = await getCollection("materialColection");
         }
 
         #backdrop {
-            border: 3px solid #781722;
-            backdrop-filter: blur(20px);
+            border: 0.1rem solid #781722;
+            backdrop-filter: blur(50px);
             background-color: rgba(255, 255, 255, 0.25);
             padding: 0.85rem;
-            border-radius: 0px 25px 25px 25px;
         }
 
         .item-inner {
             text-align: center;
             padding: 0.5rem;
-            border-radius: 12px;
             height: 100%;
-            transition: all 0.4s ease;
+            transition: all 0.2s ease-in-out;
             cursor: pointer;
         }
 
         .group:hover .item-inner {
             background-color: rgb(255, 255, 255);
             transform: translateY(-8px);
+            transition: all 0.2s ease-out;
         }
 
         .item-inner h1 {

@@ -1,171 +1,131 @@
 ---
 // src/components/MaterialSec.astro
-import { Image } from "astro:assets";
-
-import Mater1 from "../assets/matersec/1.jpg";
-import Mater2 from "../assets/matersec/2.jpg";
-import Mater3 from "../assets/matersec/3.jpg";
-import Mater4 from "../assets/matersec/4.jpg";
-import Mater5 from "../assets/matersec/5.jpg";
-
-// DDang placeholder
+import { getCollection } from "astro:content";
+const materials = await getCollection("materialTwoColection");
 ---
 
-<div id="title" class="relative max-w-360 mx-auto px-2 lg:px-0 mt-2">
+<div id="title" class="max-w-360 mx-auto px-2 lg:px-0 mt-2">
     <!-- Title đỏ nổi bật -->
-    <div id="title-red" class="bg-linear-180 from-[#ed7485ff] to-[#df0824ff]">
+    <div
+        id="title-red"
+        class="rounded-2xl rounded-bl-none
+    bg-linear-180 from-[#ed7485ff] to-[#df0824ff]"
+    >
         <p>IN ẤN THEO YÊU CẦU ĐA DẠNG CÁC SẢN PHẨM</p>
     </div>
 
     <!-- Backdrop Grid -->
     <div
         id="backdrop"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6"
+        class="rounded-2xl
+        grid grid-cols-2 mx-auto
+        md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6"
     >
-        <div class="group">
-            <div class="item-inner">
-                <h1>HÓA ĐƠN</h1>
-                <p>Biên nhận, thu chi, hợp đồng</p>
-                <Image
-                    src={Mater1}
-                    alt="Hóa đơn"
-                    class="mx-auto mt-3"
-                    widths={[200, 300]}
-                />
-            </div>
-        </div>
-
-        <div class="group">
-            <div class="item-inner">
-                <h1>TEM NHÃN</h1>
-                <p>Decal, bảo hành, bế hình</p>
-                <Image
-                    src={Mater2}
-                    alt="Tem nhãn"
-                    class="mx-auto mt-3"
-                    widths={[200, 300]}
-                />
-            </div>
-        </div>
-
-        <div class="group">
-            <div class="item-inner">
-                <h1>BAO BÌ</h1>
-                <p>Túi niêm phong, bọc nilon</p>
-                <Image
-                    src={Mater3}
-                    alt="Bao bì"
-                    class="mx-auto mt-3"
-                    widths={[200, 300]}
-                />
-            </div>
-        </div>
-
-        <div class="group">
-            <div class="item-inner">
-                <h1>THIẾT KẾ</h1>
-                <p>Thiệp, logo, bảng hiệu, con dấu</p>
-                <Image
-                    src={Mater4}
-                    alt="Thiết kế"
-                    class="mx-auto mt-3"
-                    widths={[200, 300]}
-                />
-            </div>
-        </div>
-
-        <div class="group">
-            <div class="item-inner">
-                <h1>TÚI GIẤY KRAFT</h1>
-                <p>In logo theo yêu cầu</p>
-                <Image
-                    src={Mater5}
-                    alt="Túi giấy Kraft"
-                    class="mx-auto mt-3"
-                    widths={[200, 300]}
-                />
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    #title {
-        width: 1440px;
-        max-width: 100%;
-    }
-
-    #title-red {
-        z-index: 2;
-        color: aliceblue;
-        padding: 0.3rem 0.6rem;
-        border-radius: 15px 15px 15px 0px;
-        display: inline-block;
-        line-height: 1.8rem;
-        font-weight: 600;
-        font-size: 1rem;
-    }
-
-    #backdrop {
-        border: 3px solid #781722;
-        backdrop-filter: blur(20px);
-        background-color: rgba(255, 255, 255, 0.25);
-        padding: 1.5rem 1.25rem;
-        border-radius: 0px 25px 25px 25px;
-    }
-
-    .item-inner {
-        text-align: center;
-        padding: 1rem 0.5rem;
-        border-radius: 12px;
-        height: 100%;
-        transition: all 0.35s ease;
-        cursor: pointer;
-    }
-
-    .group:hover .item-inner {
-        background-color: rgba(255, 255, 255, 0.95);
-        transform: translateY(-6px);
-    }
-
-    .item-inner h1 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #781722;
-        margin: 0.75rem 0 0.4rem;
-    }
-
-    .item-inner p {
-        font-size: 0.95rem;
-        color: #444;
-        line-height: 1.45;
-    }
-
-    /* Hover scale icon + text */
-    .group:hover .item-inner h1 {
-        transform: scale(1.08);
-        transition: transform 0.4s;
-    }
-
-    /* ==================== RESPONSIVE ==================== */
-    @media screen and (max-width: 1024px) {
-        #backdrop {
-            padding: 1.25rem 1rem;
+        {
+            materials.map((mater) => (
+                <div class="group">
+                    <div class="item-inner rounded-lg">
+                        <h1>{mater.data.title}</h1>
+                        <p>{mater.data.description}</p>
+                        {mater.data.image !== "none" && (
+                            <img
+                                src={mater.data.image}
+                                class="mx-auto mt-3 w-[200] h-[300] rounded"
+                            />
+                        )}
+                        {mater.data.video !== "none" && (
+                            <video
+                                autoplay
+                                controls
+                                class="mx-auto mt-3 w-[200] h-[300] rounded"
+                            >
+                                <source src={mater.data.video} />
+                            </video>
+                        )}
+                    </div>
+                </div>
+            ))
         }
-    }
+    </div>
 
-    @media screen and (max-width: 640px) {
+    <style>
+        #title {
+            width: 1440px;
+            max-width: 100%;
+        }
+
         #title-red {
+            z-index: 2;
+            position: relative;
+            color: aliceblue;
+            padding: 0.3rem 0.6rem;
+            display: inline-block;
+            line-height: 1.8rem;
+            font-weight: 600;
             font-size: 1rem;
-            padding: 0.2rem 0.95rem;
+            transform: translateY(0.8rem);
+        }
+
+        #backdrop {
+            border: 0.1rem solid #781722;
+            backdrop-filter: blur(50px);
+            background-color: rgba(255, 255, 255, 0.25);
+            padding: 1.5rem 1.25rem;
+            z-index: -1;
+        }
+
+        .item-inner {
+            text-align: center;
+            padding: 0.2rem 0.5rem;
+            height: 100%;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .group:hover .item-inner {
+            background-color: rgba(255, 255, 255, 0.95);
+            transform: translateY(-6px);
         }
 
         .item-inner h1 {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #781722;
+            margin: 0.1rem 0 0.4rem;
         }
 
         .item-inner p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.45;
         }
-    }
-</style>
+
+        /* Hover scale icon + text */
+        .group:hover .item-inner h1 {
+            transform: scale(1.08);
+            transition: transform 0.4s;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media screen and (max-width: 1024px) {
+            #backdrop {
+                padding: 1.25rem 1rem;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            #title-red {
+                font-size: 1rem;
+                padding: 0.2rem 0.95rem;
+            }
+
+            .item-inner h1 {
+                font-size: 1.1rem;
+            }
+
+            .item-inner p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</div>

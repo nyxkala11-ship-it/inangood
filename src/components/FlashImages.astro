@@ -15,12 +15,12 @@ import Banner4 from "../assets/banner/4.jpg";
 ---
 
 <div class={`flash-section w-full ${className}`}>
-    <div class="max-w-360 mx-auto max-md:px-2 max-md:rounded">
+    <div class="max-w-360 mx-auto mt-5 max-md:px-2 max-md:rounded">
         <!-- Flash Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-7 gap-4 lg:gap-6">
             <!-- Video chính - lg:col-span-4 -->
             <div
-                class="lg:col-span-4 rounded-3xl overflow-hidden shadow-2xl aspect-4/3 md:aspect-square lg:aspect-4/3"
+                class="lg:col-span-4 rounded-3xl overflow-hidden shadow-md aspect-4/3 md:aspect-square lg:aspect-4/3"
             >
                 <video
                     class="w-full h-full object-cover"
@@ -39,7 +39,7 @@ import Banner4 from "../assets/banner/4.jpg";
             <!-- 4 ảnh phụ - lg:col-span-3 -->
             <div class="lg:col-span-3 grid grid-cols-2 gap-2 lg:gap-4">
                 <div
-                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
+                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:shadow-xl banner hover:scale-[1.04] transition-transform duration-300"
                 >
                     <Image
                         src={Banner1}
@@ -50,7 +50,7 @@ import Banner4 from "../assets/banner/4.jpg";
                     />
                 </div>
                 <div
-                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
+                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:shadow-xl banner hover:scale-[1.04] transition-transform duration-300"
                 >
                     <Image
                         src={Banner2}
@@ -61,7 +61,7 @@ import Banner4 from "../assets/banner/4.jpg";
                     />
                 </div>
                 <div
-                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
+                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:shadow-xl banner hover:scale-[1.04] transition-transform duration-300"
                 >
                     <Image
                         src={Banner3}
@@ -72,7 +72,7 @@ import Banner4 from "../assets/banner/4.jpg";
                     />
                 </div>
                 <div
-                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:scale-[1.04] transition-transform duration-300"
+                    class="rounded-xl overflow-hidden aspect-square shadow-md hover:shadow-xl banner hover:scale-[1.04] transition-transform duration-300"
                 >
                     <Image
                         src={Banner4}
@@ -94,6 +94,12 @@ import Banner4 from "../assets/banner/4.jpg";
             "liga" 1;
     }
 
+    .banner {
+        transition: all 0.15s ease-in;
+    }
+    .banner:hover {
+        transition: all 0.35s ease-out;
+    }
     /* Video luôn cover đầy khung */
     video {
         object-fit: cover;

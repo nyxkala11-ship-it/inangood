@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "materials/7.md",
+                "file": "materialstwo/4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "7"
+              "title": "4"
             }
           }
         ],
@@ -200,8 +200,24 @@
   },
   "active": "f14bf209b6467aa4",
   "lastOpenFiles": [
-    "materials/6.md",
+    "materialstwo/3.md",
+    "materialstwo/2.md",
+    "materialstwo/1.md",
+    "materialstwo/4.md",
+    "products/bangdaotaonghe/index.md",
+    "products/tuikraft/index.md",
+    "products/tuicaocap/index.md",
+    "products/TUIGIAYKRAFT/index.md",
+    "materialstwo/5.md",
+    "products/bocnilon/index.md",
+    "products/temdecal/index.md",
+    "products/hoadon/index.md",
+    "products/baothu/index.md",
     "materials/7.md",
+    "materialstwo/7.md",
+    "materialstwo/6.md",
+    "materialstwo",
+    "materials/6.md",
     "materials/5.md",
     "materials/1.md",
     "materials/2.md",
@@ -212,21 +228,6 @@
     "2026-06-03.md",
     "template/param.md",
     "products/voucher/index.md",
-    "products/tuizip/index.md",
-    "products/tuituhuy/index.md",
-    "products/tuiniemphong/index.md",
-    "products/tuikraftnau/index.md",
-    "products/tuikrafthongdao/index.md",
-    "products/tuikraftcosan/index.md",
-    "products/tuikraft/index.md",
-    "products/tuihopdungqualetet/index.md",
-    "products/TUIGIAYKRAFT/index.md",
-    "products/tuicaocap/index.md",
-    "products/toroi/index.md",
-    "products/thietkecondau/index.md",
-    "products/thietkebanghieu/index.md",
-    "products/thiepcuoi/index.md",
-    "products/thiep/index.md",
     "products/baothuoffset",
     "products/thiepcuoi",
     "products/tuituhuy",
@@ -244,7 +245,6 @@
     "products/bangdaotaonghe/vid3.mp4",
     "products/bangdaotaonghe/vid2.mp4",
     "products/bangdaotaonghe/vid1.mp4",
-    "products/template",
-    "products/tuikraft"
+    "products/template"
   ]
 }
