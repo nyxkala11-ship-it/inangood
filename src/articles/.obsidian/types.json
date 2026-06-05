@@ -8,6 +8,7 @@
     "soLuong": "multitext",
     "kieu": "multitext",
     "kichThuoc": "multitext",
-    "tuyChon": "multitext"
+    "tuyChon": "multitext",
+    "id": "text"
   }
 }

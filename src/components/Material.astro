@@ -3,7 +3,37 @@
 import { Zap, Tags } from "@lucide/astro";
 import { getCollection } from "astro:content";
 import LucideIconAstroComponent from "./LucideIcon.astro";
-const materials = await getCollection("materialColection");
+const materials = await getCollection("materialColection").then((material) => {
+    if (!material) {
+        return [];
+    }
+
+    return material.sort((a, b) => {
+        const indexA: string = a?.data?.index ?? 0; // fallback nếu undefined
+        const indexB: string = b?.data?.index ?? 0;
+
+        return indexA - indexB;
+    });
+});
+
+function capitalizeText(input: string): string {
+    if (!input || typeof input !== "string") return input;
+
+    let text = input.trim();
+
+    // Viết hoa sau đầu câu và sau dấu chấm, chấm than, chấm hỏi
+    text = text.replace(/(^|[.!?])\s*(\w)/g, (match, punct, letter) => {
+        return punct + " " + letter.toUpperCase();
+    });
+
+    // Viết hoa sau dấu gạch nối (-)
+    text = text.replace(/-\s*(\w)/g, (match, letter) => {
+        return "- " + letter.toUpperCase();
+    });
+
+    // Dọn dẹp khoảng trắng thừa
+    return text.replace(/\s+/g, " ").trim();
+}
 ---
 
 <div id="title" class="max-w-360 mx-auto px-1 lg:px-0 mt-2">
@@ -37,11 +67,13 @@ const materials = await getCollection("materialColection");
                             size={30}
                             class="mx-auto text-[#ffffff] itemicon"
                         />
-                        <h1>{mater.data.title}</h1>
+                        <h1>{mater.data.title.toUpperCase()}</h1>
                         <p>
                             {mater.data.description === "none"
                                 ? ""
-                                : mater.data.description}
+                                : capitalizeText(
+                                      mater.data.description!.toString(),
+                                  )}
                         </p>
                     </div>
                 </div>

@@ -10,6 +10,7 @@ const materialColection = defineCollection({
       description: z.string().optional(),
       icon: z.string().optional(),
       image: z.string().optional(),
+      index: z.string().optional(),
     }),
 });
 
