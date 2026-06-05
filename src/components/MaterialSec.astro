@@ -30,14 +30,14 @@ const materials = await getCollection("materialTwoColection");
                         {mater.data.image !== "none" && (
                             <img
                                 src={mater.data.image}
-                                class="mx-auto mt-3 w-[200] h-[300] rounded"
+                                class="mx-auto mt-3 w-[200] h-auto rounded aspect-square"
                             />
                         )}
                         {mater.data.video !== "none" && (
                             <video
                                 autoplay
                                 controls
-                                class="mx-auto mt-3 w-[200] h-[300] rounded"
+                                class="mx-auto mt-3 w-[200] h-auto rounded aspect-square"
                             >
                                 <source src={mater.data.video} />
                             </video>
