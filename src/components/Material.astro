@@ -9,8 +9,8 @@ const materials = await getCollection("materialColection").then((material) => {
     }
 
     return material.sort((a, b) => {
-        const indexA: string = a?.data?.index ?? 0; // fallback nếu undefined
-        const indexB: string = b?.data?.index ?? 0;
+        const indexA: string = a?.data?.index ?? "0"; // fallback nếu undefined
+        const indexB: string = b?.data?.index ?? "0";
 
         return indexA - indexB;
     });

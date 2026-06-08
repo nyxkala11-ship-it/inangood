@@ -152,7 +152,7 @@ const previewImages = processedImages?.slice(0, 10) || [];
                     <div class="p-8 rounded-3xl border border-gray-700">
                         <h2 class="text-3xl font-bold mb-6">Chọn quy cách</h2>
 
-                        <form action="#" class="space-y-8">
+                        <form id="formQuyCach" action="" class="space-y-8">
                             {kichThuoc.length !== 0 &&
                             <div>
                                 <label
@@ -248,7 +248,8 @@ const previewImages = processedImages?.slice(0, 10) || [];
                                 type="submit"
                                 value="Đặt túi ngay !"
                                 class="mt-4 w-full py-5 bg-linear-to-r from-[#781722] to-[#a13a4d] text-white font-bold text-xl rounded-2xl hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
-                            />
+                                onclick=""
+                                />
                         </form>
                     </div>
                 </div>
@@ -406,3 +407,13 @@ const previewImages = processedImages?.slice(0, 10) || [];
         }
     }
 </style>
+
+<script>
+
+  const form = document.getElementById("formQuyCach");
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    alert('Bấm đặt túi!');
+    console.log('Bấm đặt túi!');
+  })
+</script>

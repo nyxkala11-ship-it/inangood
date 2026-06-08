@@ -17,6 +17,12 @@
     "video": {
       "type": "string"
     },
+    "catergory": {
+      "type": "string"
+    },
+    "index": {
+      "type": "string"
+    },
     "$schema": {
       "type": "string"
     }

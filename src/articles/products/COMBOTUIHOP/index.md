@@ -6,11 +6,28 @@ tags:
   - Túi
   - Hộp
 date: 2026-04-28T00:00:00
-image:
+image: /products/combotuihop/img1.jpg
 catergory: Combo Túi Hộp
 parent: none
 id: combotuihop
 index: "10"
+images:
+  - /products/COMBOTUIHOP/img1.jpg
+  - /products/COMBOTUIHOP/img2.jpg
+  - /products/COMBOTUIHOP/img3.jpg
+  - /products/COMBOTUIHOP/img4.jpg
+  - /products/COMBOTUIHOP/img5.jpg
+  - /products/COMBOTUIHOP/img6.jpg
+  - /products/COMBOTUIHOP/img7.jpg
+  - /products/COMBOTUIHOP/img8.jpg
+  - /products/COMBOTUIHOP/img9.jpg
+videos:
+  - /products/COMBOTUIHOP/vid1.mp4
+  - /products/COMBOTUIHOP/vid2.mp4
+  - /products/COMBOTUIHOP/vid3.mp4
+  - /products/COMBOTUIHOP/vid4.mp4
+  - /products/COMBOTUIHOP/vid5.mp4
+  - /products/COMBOTUIHOP/vid6.mp4
 ---
 # Combo Túi + Hộp – Đồng Bộ Bao Bì, Nâng Tầm Trải Nghiệm & Thương Hiệu
 

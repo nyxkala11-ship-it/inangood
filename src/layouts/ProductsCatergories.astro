@@ -5,6 +5,7 @@ import BaseHead from "../components/Header.astro";
 import background from "../assets/background.svg";
 import type { CollectionEntry } from "astro:content";
 import FormattedDateAstroComponent from "../components/FormattedDate.astro";
+import ImportMediaAstroComponent from "../components/importMedia.astro";
 // Cấu hình Splide  -  yêu cầu npm install astro-splide @splidejs/splide-extension-auto-scroll
 
 import type { Options } from "@splidejs/splide";
@@ -76,6 +77,48 @@ function formatToVietnameseDate(dateInput: string | Date): string {
 
     return formatter.format(date);
 }
+// ==================== XỬ LÝ ASSETS ====================
+const getAssets = () => {
+    const rawImgAssets = import.meta.glob("./**/**/*.{jpg,png,svg,webp}", {
+        eager: true,
+    });
+
+    const rawVidAssets = import.meta.glob("./**/**/*.mp4", {
+        eager: true,
+        query: "?url",
+        import: "default",
+    });
+
+    return { rawImgAssets, rawVidAssets };
+};
+
+const assets = getAssets();
+
+// Xử lý ảnh và video - trả về URL đúng
+const processedImages = images?.map((imgName) => {
+    if (imgName === "none") return "none";
+
+    for (const [path, module] of Object.entries(assets.rawImgAssets)) {
+        if (path.includes(imgName) || path.endsWith(imgName)) {
+            return (module as any).default || module; // Đảm bảo lấy URL
+        }
+    }
+    return imgName;
+});
+
+const processedVideos = videos?.map((vidName) => {
+    if (vidName === "none") return "none";
+
+    for (const [path, module] of Object.entries(assets.rawVidAssets)) {
+        if (path.includes(vidName) || path.endsWith(vidName)) {
+            return module;
+        }
+    }
+    return vidName;
+});
+
+const mainVideo = processedVideos?.[0] || null;
+const previewImages = processedImages?.slice(0, 10) || [];
 
 ---
 
@@ -104,6 +147,64 @@ function formatToVietnameseDate(dateInput: string | Date): string {
                       {element.data.title}
                   </a>
                   )}
+                </div>
+                <!-- Preview + Form -->
+                <div
+                    id="desimg"
+                    class="flex flex-col gap-12 w-full max-w-6xl mx-auto mb-12"
+                >
+                    <!-- PREVIEW -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Video -->
+                        {
+                            mainVideo && mainVideo !== "none" && (
+                                <div class="w-full aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl">
+                                    <ImportMediaAstroComponent
+                                        productId={id}
+                                        mediaName={mainVideo}
+                                        type="video"
+                                    />
+                                </div>
+                            )
+                        }
+
+                        <!-- Grid ảnh -->
+                        <div>
+                            <p class="text-lg font-medium text-gray-900 mb-4">
+                                Hình ảnh chi tiết sản phẩm
+                            </p>
+                            <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+                                {
+                                    previewImages.map(
+                                        (img, index) =>
+                                            img !== "none" && (
+                                                <div class="aspect-square rounded overflow-hidden border border-gray-700 hover:border-violet-500 transition-all duration-300">
+                                                    <ImportMediaAstroComponent
+                                                        productId={id}
+                                                        mediaName={img}
+                                                        type="image"
+                                                    />
+                                                </div>
+                                            ),
+                                    )
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHỌN QUY CÁCH -->
+                    <div class="p-8 rounded-3xl border border-gray-700">
+                        <form id="formQuyCach" action="" class="space-y-8">
+
+
+                            <input
+                                type="submit"
+                                value="Đặt túi ngay !"
+                                class="mt-4 w-full py-5 bg-linear-to-r from-[#781722] to-[#a13a4d] text-white font-bold text-xl rounded-2xl hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
+                                onclick=""
+                                />
+                        </form>
+                    </div>
                 </div>
                 <!-- Phần mô tả -->
                 <div

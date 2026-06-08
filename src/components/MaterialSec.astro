@@ -1,7 +1,50 @@
 ---
-// src/components/MaterialSec.astro
 import { getCollection } from "astro:content";
-const materials = await getCollection("materialTwoColection");
+
+// 1. Lấy dữ liệu song song để tăng tốc độ load trang thay vì dùng await tuần tự
+const [materials, products] = await Promise.all([
+    getCollection("materialTwoColection"),
+    getCollection("blogCollection"),
+]);
+// 2. Tạo một Map để map từ 'catergory' -> 'id' (hoặc href) của product giúp tra cứu O(1)
+const categoryToProductLink = new Map<string, string>();
+
+products.forEach((product) => {
+    if (product.data.catergory) {
+        // Lưu link tương ứng với category.
+        // Nếu một category có nhiều product, cái sau sẽ ghi đè cái trước
+        categoryToProductLink.set(
+            product.data.catergory,
+            `/products/${product.data.id}`,
+        );
+    }
+});
+function capitalizeText(input: string): string {
+    if (!input || typeof input !== "string") return input;
+
+    let text = input.trim();
+
+    // Viết hoa sau đầu câu và sau dấu chấm, chấm than, chấm hỏi
+    text = text.replace(/(^|[.!?])\s*(\w)/g, (match, punct, letter) => {
+        return punct + " " + letter.toUpperCase();
+    });
+
+    // Viết hoa sau dấu gạch nối (-)
+    text = text.replace(/-\s*(\w)/g, (match, letter) => {
+        return "- " + letter.toUpperCase();
+    });
+
+    text = text.replace(/[(](\w)/g, (match, letter) => {
+        return "(" + letter.toUpperCase();
+    });
+
+    text = text.replace(/[(]\s*(\w)/g, (match, letter) => {
+        return "(" + letter.toUpperCase();
+    });
+
+    // Dọn dẹp khoảng trắng thừa
+    return text.replace(/\s+/g, " ").trim();
+}
 ---
 
 <div id="title" class="max-w-360 mx-auto px-2 lg:px-0 mt-2">
@@ -17,34 +60,60 @@ const materials = await getCollection("materialTwoColection");
     <!-- Backdrop Grid -->
     <div
         id="backdrop"
-        class="rounded-2xl
-        grid grid-cols-2 mx-auto
-        md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6"
+        class="rounded-2xl grid grid-cols-2 mx-auto md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6"
     >
         {
-            materials.map((mater) => (
-                <div class="group">
-                    <div class="item-inner rounded-lg">
-                        <h1>{mater.data.title}</h1>
-                        <p>{mater.data.description}</p>
-                        {mater.data.image !== "none" && (
-                            <img
-                                src={mater.data.image}
-                                class="mx-auto mt-3 w-[200] h-auto rounded aspect-square"
-                            />
-                        )}
-                        {mater.data.video !== "none" && (
-                            <video
-                                autoplay
-                                controls
-                                class="mx-auto mt-3 w-[200] h-auto rounded aspect-square"
-                            >
-                                <source src={mater.data.video} />
-                            </video>
-                        )}
-                    </div>
-                </div>
-            ))
+            materials
+                .sort((a, b) => {
+                    const indexA: string = a?.data?.index ?? "0"; // fallback nếu undefined
+                    const indexB: string = b?.data?.index ?? "0";
+
+                    return indexA - indexB;
+                })
+                .map((mater) => {
+                    // Lấy link sản phẩm dựa vào category của material, nếu không có thì mặc định để "#"
+                    const productHref =
+                        categoryToProductLink.get(mater.data.catergory!) || "#";
+
+                    return (
+                        <a href={productHref}>
+                            <div class="group">
+                                <div class="item-inner rounded-lg">
+                                    <h1>{mater.data.title.toUpperCase()}</h1>
+                                    <p>
+                                        {capitalizeText(
+                                            mater.data.description!,
+                                        )}
+                                    </p>
+
+                                    {mater.data.image &&
+                                        mater.data.image !== "none" && (
+                                            <img
+                                                src={mater.data.image}
+                                                class="mx-auto mt-3 w-50 h-auto rounded aspect-square"
+                                                alt={mater.data.title}
+                                            />
+                                        )}
+
+                                    {mater.data.video &&
+                                        mater.data.video !== "none" && (
+                                            <video
+                                                autoplay
+                                                muted
+                                                loop
+                                                controls
+                                                class="mx-auto mt-3 w-50 h-auto rounded aspect-square"
+                                            >
+                                                <source
+                                                    src={mater.data.video}
+                                                />
+                                            </video>
+                                        )}
+                                </div>
+                            </div>
+                        </a>
+                    );
+                })
         }
     </div>
 
@@ -89,15 +158,23 @@ const materials = await getCollection("materialTwoColection");
 
         .item-inner h1 {
             font-size: 1.25rem;
+            line-height: 1.25;
             font-weight: 700;
             color: #781722;
             margin: 0.1rem 0 0.4rem;
+            margin-top: auto;
         }
 
         .item-inner p {
             font-size: 0.95rem;
             color: #444;
             line-height: 1.45;
+            margin-top: auto;
+        }
+
+        .item-inner img,
+        .item-inner video {
+            margin-bottom: auto;
         }
 
         /* Hover scale icon + text */

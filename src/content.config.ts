@@ -23,6 +23,8 @@ const materialTwoColection = defineCollection({
       icon: z.string().optional(),
       image: z.string().optional(),
       video: z.string().optional(),
+      catergory: z.string().optional(),
+      index: z.string().optional(),
     }),
 });
 

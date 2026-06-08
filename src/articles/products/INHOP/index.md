@@ -29,5 +29,19 @@ kichThuoc:
 tuyChon:
   - In thông tin
 description: Giá bán chưa bao gồm VAT (thuế GTGT), phí vận chuyển.
+images:
+  - /products/INHOP/img6.jpg
+  - /products/INHOP/img5.jpg
+  - /products/INHOP/img4.jpg
+  - /products/INHOP/img3.jpg
+  - /products/INHOP/img2.jpg
+  - /products/INHOP/img1.jpg
+  - /products/INHOP/img7.jpg
+  - /products/INHOP/img8.jpg
+videos:
+  - /products/INHOP/vid1.mp4
+  - /products/INHOP/vid2.mp4
+  - /products/INHOP/vid3.mp4
+  - /products/INHOP/vid4.mp4
 ---
 # Tổng hợp các mục in hộp trong caterogy

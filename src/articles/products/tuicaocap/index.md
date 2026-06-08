@@ -11,7 +11,7 @@ tags:
   - TúiGiấyIVORY
 date: 2026-04-27T00:00:00
 image:
-catergory: Túi giấy Kraft
+catergory: Túi giấy Cao Cấp C250
 parent: Túi giấy Kraft
 id: tuicaocap
 images:
